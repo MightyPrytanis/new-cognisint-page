@@ -1,12 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Clock, Handshake, FileText } from "lucide-react"
+import { Clock, Handshake, FileText, CheckSquare, Star } from "lucide-react"
 import Image from "next/image"
 
 export default function Pricing() {
   const engagementModels = [
     {
-      icon: Checklist
+      icon: CheckSquare,
       title: "Project-Based",
       description:
         "Defined scope, clear deliverables. Ideal for specific challenges like workflow design, policy development, or technology assessment.",
@@ -24,7 +24,7 @@ export default function Pricing() {
         "Ongoing partnership with dedicated availability. Best for organizations seeking sustained transformation and continuous improvement.",
     },
     {
-      icon: Star
+      icon: Star,
       title: "Deliverable-Based",
       description: "Priced per specific output—reports, assessments, training materials, or custom tool development.",
     },
@@ -39,8 +39,7 @@ export default function Pricing() {
             Bespoke Consulting Engagements
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
-            Every organization faces unique challenges. Rather than rigid packages, Cognisint offers tailored engagement
-            structures—from a single focused project to an ongoing advisory relationship. Pricing is structured to match
+            Every organization faces unique challenges. Instead of a one-size-fits-us fee schedule and billing for time in 12-minute increments (no matter how wisely or productively the time is used) Cognisint uses tailored engagement modes—from a single focused project to an ongoing advisory relationship. Pricing is structured to match
             your scope, timeline, and goals.
           </p>
         </div>
@@ -88,7 +87,7 @@ export default function Pricing() {
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-[#0288D1] hover:shadow-[0_0_20px_rgba(2,136,209,0.5)] rounded-md"
           >
-            Schedule a Discovery Call
+            Schedule a Conversation
           </Button>
         </div>
 

@@ -50,8 +50,8 @@ export default function Hero() {
             </Link>
           </div>
 
-          <p className="mt-12 text-sm text-muted-foreground">
-            Cognisint advocates for ethical tech infrastructure that reduces burnout instead of amplifying it.
+          <p className="mt-12 text-xl md:text-2xl text-muted-foreground italic leading-relaxed">
+            Cognisint designs ethical tech infrastructure that reduces burnout instead of amplifying it.
           </p>
         </div>
       </div>
