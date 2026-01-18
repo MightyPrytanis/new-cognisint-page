@@ -1,12 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Clock, Handshake, FileText } from "lucide-react"
+import { Clock, Handshake, FileText, Clipboard, Star } from "lucide-react"
 import Image from "next/image"
 
 export default function Pricing() {
   const engagementModels = [
     {
-      icon: Checklist
+      icon: Clipboard,
       title: "Project-Based",
       description:
         "Defined scope, clear deliverables. Ideal for specific challenges like workflow design, policy development, or technology assessment.",
@@ -24,7 +24,7 @@ export default function Pricing() {
         "Ongoing partnership with dedicated availability. Best for organizations seeking sustained transformation and continuous improvement.",
     },
     {
-      icon: Star
+      icon: Star,
       title: "Deliverable-Based",
       description: "Priced per specific output—reports, assessments, training materials, or custom tool development.",
     },

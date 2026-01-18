@@ -1,14 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Jost } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
-const jost = Jost({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-sans",
-})
 
 export const metadata: Metadata = {
   title: "Cognisint LLC - Human-Scale Legal Technology",
@@ -40,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jost.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>
