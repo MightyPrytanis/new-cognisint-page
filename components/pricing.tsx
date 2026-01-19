@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Clock, Handshake, FileText, CheckSquare, Star } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Pricing() {
   const engagementModels = [
@@ -84,10 +85,11 @@ export default function Pricing() {
             and constraints. From there, we'll propose a structure and scope that makes sense for you.
           </p>
           <Button
+            asChild
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-white rounded-md"
           >
-            Schedule a Conversation
+            <Link href="/contact">Schedule a Conversation</Link>
           </Button>
         </div>
 
