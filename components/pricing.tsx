@@ -85,7 +85,7 @@ export default function Pricing() {
           </p>
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-[#0288D1] hover:shadow-[0_0_20px_rgba(2,136,209,0.5)] rounded-md"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-white rounded-md"
           >
             Schedule a Conversation
           </Button>

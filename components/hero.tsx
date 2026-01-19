@@ -29,16 +29,6 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground hover:text-[#0288D1] hover:shadow-[0_0_30px_rgba(2,136,209,0.5)] transition-all duration-300"
-            >
-              <Link href="/beta">
-                Request LexFiat Beta Access
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
             <Link href="/manifesto">
               <Button
                 size="lg"
@@ -48,6 +38,16 @@ export default function Hero() {
                 Our Manifesto for Ethical Tech
               </Button>
             </Link>
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground hover:text-white transition-all duration-300"
+            >
+              <Link href="/beta">
+                Request LexFiat Beta Access
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
 
           <p className="mt-12 text-xl md:text-2xl text-muted-foreground italic leading-relaxed">

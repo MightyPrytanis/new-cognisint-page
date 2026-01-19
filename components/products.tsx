@@ -16,14 +16,15 @@ export default function Products() {
       tagline: "Change the system, not the symptom.",
       logo: "/lexfiat-wordmark.png",
       description:
-        "Ten Rules-compliant legal tech platform with integrated GoodCounsel ethics engine, Chronometric time management, and Forecaster financial projections.",
+        "Intelligent legal workflow automation. Orchestrates multiple and multi-modal AIs via our sophisticated "Multi Agent Engine" and gives them tools to make your practice hum. Keep parts about Chronometric and Forecaster (also planned as a standalone). Make GoodCounsel last (but not least.) Automation isn't truly intelligent without the clear values and emotional intelligence needed to promote professional ethics and development, foster strong relationships, and fight burnout before it happens. GoodCounsel puts that intelligence at the core of your practice, not an afterthought.",
       detailedDescription:
-        "LexFiat is being built to align with principles of ethical AI technology and rigorous professional standards for stakeholder information security and privacy. Designed to integrate with practice management software like Clio, not replace it. GoodCounsel is integrated throughout the platform—an ethics, development, and relationship-centered engine that encourages strong professional relationships, individual health, and growth. Chronometric helps lawyers manage their greatest fear: time. It can reconstruct time for billing purposes using evidence and creating an audit trail to avoid inflation and underbilling, and can evaluate and project optimal uses of attorney time. Forecaster is designed to project financial outcomes across a range of scenarios, including tax implications, support calculations, bankruptcy analysis, contracts, property settlements, and more.",
+        "LexFiat is being built to align with principles of ethical AI technology and rigorous professional standards for stakeholder information security and privacy. Designed to integrate with practice management software like Clio, not replace it. Chronometric helps lawyers manage their greatest fear: time. It can reconstruct time for billing purposes using evidence and creating an audit trail to avoid inflation and underbilling, and can evaluate and project optimal uses of attorney time. Forecaster is designed to project financial outcomes across a range of scenarios, including tax implications, support calculations, bankruptcy analysis, contracts, property settlements, and more. GoodCounsel is integrated throughout the platform—an ethics, development, and relationship-centered engine that encourages strong professional relationships, individual health, and growth. Automation isn't truly intelligent without the clear values and emotional intelligence needed to promote professional ethics and development, foster strong relationships, and fight burnout before it happens. GoodCounsel puts that intelligence at the core of your practice, not an afterthought.",
       features: [
         "Ten Rules-compliant AI architecture",
-        "GoodCounsel: Integrated ethics, development, and relationship engine",
+        "Multi Agent Engine orchestrating multiple and multi-modal AIs",
         "Chronometric: Evidence-based time reconstruction and billing optimization",
         "Forecaster: Financial projections for tax, bankruptcy, support, settlements",
+        "GoodCounsel: Integrated ethics, development, and emotional intelligence engine",
         "Designed to integrate with practice management software like Clio",
       ],
     },
@@ -51,15 +52,16 @@ export default function Products() {
       logo: null,
       component: CyranoWordmark,
       description:
-        "Second-generation, modular MCP server with 70+ tools, multi-agent orchestration, and model agnosticism for auditable, explainable AI.",
+        "Modular MCP server with 70+ tools, multi-agent orchestration, and model agnosticism for auditable, explainable AI. Provides the backend support that makes LexFiat, Arkiver, and other apps now in development work and easy to upgrade.",
       detailedDescription:
-        "Cyrano is our modular, second-generation, AI-enhancing MCP server. Built on the Model Context Protocol (MCP), Cyrano prioritizes user sovereignty and model agnosticism. It orchestrates multi-agent, multi-model reasoning through our Modular Agent Engine (MAE), currently includes 70+ specialized legal and information management tools (and growing), and is designed so that every AI recommendation can be made auditable, explainable, and within your control.",
+        "Cyrano is our modular AI-enhancing MCP server. Built on the Model Context Protocol (MCP), Cyrano prioritizes user sovereignty and model agnosticism. It orchestrates multi-agent, multi-model reasoning through our Modular Agent Engine (MAE), currently includes 70+ specialized legal and information management tools (and growing), and is designed so that every AI recommendation can be made auditable, explainable, and within your control. Cyrano provides the backend support that makes LexFiat, Arkiver, and other apps now in development work and easy to upgrade.",
       features: [
         "Model Context Protocol (MCP) infrastructure",
         "Model agnosticism—choose your AI providers",
         "Multi-agent, multi-model orchestration via MAE",
         "70+ specialized legal tools and growing",
         "Auditable, explainable AI reasoning chains",
+        "Backend support for LexFiat, Arkiver, and apps in development",
       ],
     },
   ]
