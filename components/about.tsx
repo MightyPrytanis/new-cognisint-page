@@ -16,7 +16,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-foreground leading-relaxed">
-              Cognisint is a one-person technology solutions studio with a legal and public-sector focus, leveraging
+              Right now, Cognisint is a one-person technology solutions studio with a legal and public-sector focus, leveraging
               lessons from more than two decades in law to develop practical solutions—software, workflows, and policy
               frameworks—not just bullet points on a resume.
             </p>
