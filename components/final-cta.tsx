@@ -5,12 +5,14 @@ export default function FinalCTA() {
   return (
     <section className="bg-primary py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance">
-          Ready to transform your practice?
-        </h2>
-        <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-          Connect with our team to explore how Cognisint can help humanize your legal practice and drive sustainable
-          growth.
+        <p className="text-lg md:text-xl text-primary-foreground/90 mb-2">
+          Your work is <strong>important</strong>.
+        </p>
+        <p className="text-lg md:text-xl text-primary-foreground/90 mb-2">
+          <em>Transform</em> how you work.
+        </p>
+        <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
+          Make your work <strong><em>Transformative</em></strong>.
         </p>
         <Button
           size="lg"

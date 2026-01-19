@@ -90,23 +90,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal Links */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="/privacy" className="text-muted-foreground hover:text-[#0288D1] transition">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms" className="text-muted-foreground hover:text-[#0288D1] transition">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
-
+          {/* Connect Links */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Connect</h4>
             <div className="flex gap-4">
@@ -135,6 +119,23 @@ export default function Footer() {
                 <MailIcon size={20} />
               </a>
             </div>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/privacy" className="text-muted-foreground hover:text-[#0288D1] transition">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="text-muted-foreground hover:text-[#0288D1] transition">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
