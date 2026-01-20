@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="bg-card border-t border-border border-t-slate-900">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-40 h-40">
@@ -90,10 +90,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Connect Links */}
+          {/* Connect and Legal Links Combined */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a
                 href="https://bsky.app/profile/cognisint.com"
                 className="text-muted-foreground hover:text-[#0288D1] transition hover:shadow-[0_0_15px_rgba(2,136,209,0.4)] rounded-full p-1"
@@ -119,10 +119,7 @@ export default function Footer() {
                 <MailIcon size={20} />
               </a>
             </div>
-          </div>
-
-          {/* Legal Links */}
-          <div>
+            
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>

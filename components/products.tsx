@@ -16,14 +16,15 @@ export default function Products() {
       tagline: "Change the system, not the symptom.",
       logo: "/lexfiat-wordmark.png",
       description:
-        "Ten Rules-compliant legal tech platform with integrated GoodCounsel ethics engine, Chronometric time management, and Forecaster financial projections.",
+        "Intelligent legal workflow automation. Orchestrates multiple and multi-modal AIs via our sophisticated Multi Agent Engine and gives them tools to make your practice hum.",
       detailedDescription:
-        "LexFiat is being built to align with principles of ethical AI technology and rigorous professional standards for stakeholder information security and privacy. Designed to integrate with practice management software like Clio, not replace it. GoodCounsel is integrated throughout the platform—an ethics, development, and relationship-centered engine that encourages strong professional relationships, individual health, and growth. Chronometric helps lawyers manage their greatest fear: time. It can reconstruct time for billing purposes using evidence and creating an audit trail to avoid inflation and underbilling, and can evaluate and project optimal uses of attorney time. Forecaster is designed to project financial outcomes across a range of scenarios, including tax implications, support calculations, bankruptcy analysis, contracts, property settlements, and more.",
+        "Built to align with ethical AI principles and rigorous professional standards, LexFiat integrates seamlessly with existing practice management software like Clio. The platform combines three specialized systems: Chronometric reconstructs billable time using evidence and audit trails to ensure accuracy; Forecaster projects financial outcomes across tax, bankruptcy, support, and settlement scenarios; and GoodCounsel—woven throughout the platform—provides ethics guidance, professional development support, and relationship management tools. True automation requires not just technical capability, but the emotional intelligence to promote professional ethics, foster strong relationships, and prevent burnout.",
       features: [
         "Ten Rules-compliant AI architecture",
-        "GoodCounsel: Integrated ethics, development, and relationship engine",
+        "Multi Agent Engine orchestrating multiple and multi-modal AIs",
         "Chronometric: Evidence-based time reconstruction and billing optimization",
         "Forecaster: Financial projections for tax, bankruptcy, support, settlements",
+        "GoodCounsel: Integrated ethics, development, and emotional intelligence engine",
         "Designed to integrate with practice management software like Clio",
       ],
     },
@@ -35,7 +36,7 @@ export default function Products() {
       description:
         "Preserve personal and institutional memory with semantic knowledge graphs, version control, and natural language discovery.",
       detailedDescription:
-        "Arkiver is designed to preserve personal and institutional memory and make knowledge accessible across an organization. With semantic knowledge graphs, version-controlled precedent libraries, workflow archaeology, and forensic timeframe reconstruction, Arkiver enables you to leverage collective expertise while maintaining role-based access controls and stakeholder confidentiality. Natural language discovery makes it easy to find what you need, when you need it.",
+        "Organizations lose critical knowledge when employees leave, projects evolve, or institutional memory fades. Arkiver prevents this by creating semantic knowledge graphs that map relationships between documents, decisions, and expertise across your organization. Version-controlled precedent libraries track how policies and procedures evolve over time, while workflow archaeology reconstructs the history and rationale behind past decisions. Role-based access ensures confidentiality while making collective expertise discoverable through natural language search.",
       features: [
         "Semantic knowledge graph construction",
         "Cross-referenced precedent libraries",
@@ -51,15 +52,16 @@ export default function Products() {
       logo: null,
       component: CyranoWordmark,
       description:
-        "Second-generation, modular MCP server with 70+ tools, multi-agent orchestration, and model agnosticism for auditable, explainable AI.",
+        "Modular MCP server providing the backend infrastructure that powers LexFiat, Arkiver, and other apps in development.",
       detailedDescription:
-        "Cyrano is our modular, second-generation, AI-enhancing MCP server. Built on the Model Context Protocol (MCP), Cyrano prioritizes user sovereignty and model agnosticism. It orchestrates multi-agent, multi-model reasoning through our Modular Agent Engine (MAE), currently includes 70+ specialized legal and information management tools (and growing), and is designed so that every AI recommendation can be made auditable, explainable, and within your control.",
+        "Built on the Model Context Protocol (MCP), Cyrano serves as the intelligent infrastructure layer for the entire Cognisint platform. It prioritizes user sovereignty—you choose your AI providers and maintain full control over how and when AI is used. The Modular Agent Engine (MAE) coordinates multiple AI models simultaneously, each with access to over 70 specialized legal and information management tools. Every recommendation includes a complete reasoning chain, making AI decisions auditable and explainable. As the backend foundation for LexFiat, Arkiver, and future applications, Cyrano ensures the ecosystem remains upgradeable and interoperable.",
       features: [
         "Model Context Protocol (MCP) infrastructure",
         "Model agnosticism—choose your AI providers",
         "Multi-agent, multi-model orchestration via MAE",
         "70+ specialized legal tools and growing",
         "Auditable, explainable AI reasoning chains",
+        "Backend support for LexFiat, Arkiver, and apps in development",
       ],
     },
   ]
