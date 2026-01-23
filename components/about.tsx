@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function About() {
   return (
@@ -31,6 +32,17 @@ export default function About() {
             <Card className="bg-background border-border sticky top-20">
               <CardContent className="pt-6">
                 <div className="space-y-4">
+                  {/* Founder Photo */}
+                  <div className="flex justify-center mb-4">
+                    <div className="relative w-40 h-40 rounded-full overflow-hidden grayscale">
+                      <Image
+                        src="/placeholder-user.jpg"
+                        alt="David Towne"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
                   <div>
                     <p className="text-xs uppercase font-semibold text-muted-foreground tracking-wider mb-2">Founder</p>
                     <h3 className="text-xl font-bold text-foreground">David Towne</h3>

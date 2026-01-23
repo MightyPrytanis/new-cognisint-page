@@ -50,7 +50,7 @@ export default function Pricing() {
           {engagementModels.map((model, index) => (
             <Card
               key={index}
-              className="border-border border-l-4 border-l-slate-900 transition-all hover:shadow-[0_8px_30px_rgba(2,136,209,0.25)]"
+              className="border-border border-l-4 border-l-slate-900 transition-all hover:shadow-[0_8px_30px_rgba(2,136,209,0.5)]"
             >
               <CardHeader>
                 <div className="flex items-center gap-4">

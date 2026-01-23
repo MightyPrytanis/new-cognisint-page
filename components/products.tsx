@@ -83,7 +83,7 @@ export default function Products() {
               <div
                 key={product.name}
                 id={product.id}
-                className="bg-background border border-border border-l-4 border-l-slate-900 p-6 flex flex-col transition-all duration-300 hover:shadow-[0_0_40px_rgba(2,136,209,0.4)]"
+                className="bg-background border border-border border-l-4 border-l-slate-900 p-6 flex flex-col transition-all duration-300 hover:shadow-[0_0_40px_rgba(2,136,209,0.5)]"
               >
                 <div className="mb-4 h-12 relative">
                   {product.component ? (
