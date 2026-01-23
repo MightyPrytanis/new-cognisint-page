@@ -46,7 +46,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-background border border-border border-l-4 border-l-slate-900 p-6 transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.4)]"
+              className="bg-background border border-border border-l-4 border-l-slate-900 p-6 transition-all duration-300 hover:shadow-[0_0_40px_rgba(2,136,209,0.5)]"
             >
               <div className="h-12 w-12 bg-transparent flex items-center justify-center text-primary mb-4">
                 {feature.icon === "ai" ? (

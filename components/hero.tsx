@@ -33,7 +33,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-border bg-transparent text-foreground hover:shadow-[0_0_20px_rgba(2,136,209,0.4)] transition-all duration-300"
+                className="border-border bg-transparent text-foreground hover:shadow-[0_0_20px_rgba(2,136,209,0.5)] transition-all duration-300"
               >
                 Our Manifesto for Ethical Tech
               </Button>
