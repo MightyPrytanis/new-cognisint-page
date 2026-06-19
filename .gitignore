@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+.npm-cache/
+.npm-vercel-cache/
+.vercel-cache/
 
 # next.js
 /.next/
@@ -21,6 +24,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# system files
+.DS_Store
 
 # typescript
 *.tsbuildinfo
