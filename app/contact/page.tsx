@@ -1,134 +1,179 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Mail, Phone } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import type React from "react"
+import { type ChangeEvent, type FormEvent, useState } from "react"
+
+const reasons = [
+  "Leadership/Employment Opportunity",
+  "Advisory or consulting work",
+  "Custom app or workflow solution",
+  "Speaking or workshop",
+  "Writing or publication inquiry",
+  "Civic or institutional project",
+  "General inquiry",
+]
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organization: "",
+    reason: reasons[0],
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent("Schedule a Conversation - Inquiry from " + formData.name)
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+
+    const subject = encodeURIComponent(`${formData.reason} - Cognisint inquiry from ${formData.name}`)
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Organization: ${formData.organization}\n\n` +
-      `Message:\n${formData.message}`
+        `Email: ${formData.email}\n` +
+        `Organization: ${formData.organization}\n` +
+        `Reason for Contact: ${formData.reason}\n\n` +
+        `Message:\n${formData.message}`
     )
-    
+
     window.location.href = `mailto:info@cognisint.com?subject=${subject}&body=${body}`
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     })
   }
 
   return (
-    <main className="min-h-screen bg-background pt-12 pb-16">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <Link href="/">
-          <Button variant="outline" className="mb-8 bg-transparent">
+    <main className="min-h-screen bg-background py-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <Button asChild variant="outline" className="mb-8 rounded-sm bg-transparent">
+          <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
-          </Button>
-        </Link>
+          </Link>
+        </Button>
 
-        <div className="bg-card border border-border p-8 rounded-lg">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Schedule a Conversation</h1>
-          <p className="text-lg text-muted-foreground mb-8">
-            We'd love to hear from you. Please fill out this form and we'll be in touch shortly.
-          </p>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_0.72fr]">
+          <section className="package-card p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Contact</p>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground">Start a Conversation</h1>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              Reach out about leadership opportunities, advisory work, consulting engagements, custom app solutions,
+              institutional strategy, technology governance, public-sector modernization, civic proposals, speaking,
+              workshops, or related conversations.
+            </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+              <Field label="Name" required>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="form-field"
+                />
+              </Field>
+
+              <Field label="Email" required>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="form-field"
+                />
+              </Field>
+
+              <Field label="Organization">
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  value={formData.organization}
+                  onChange={handleChange}
+                  className="form-field"
+                />
+              </Field>
+
+              <Field label="Reason for Contact" htmlFor="reason">
+                <select id="reason" name="reason" value={formData.reason} onChange={handleChange} className="form-field">
+                  {reasons.map((reason) => (
+                    <option key={reason} value={reason}>
+                      {reason}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+
+              <Field label="Message" required>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={7}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="form-field resize-vertical"
+                  placeholder="Share enough context to make the first conversation useful."
+                />
+              </Field>
+
+              <Button type="submit" size="lg" className="w-full rounded-sm bg-primary text-primary-foreground hover:bg-primary/90">
+                Send Inquiry
+              </Button>
+            </form>
+          </section>
+
+          <aside className="package-card h-fit p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Direct Details</p>
+            <div className="mt-6 space-y-3 text-base leading-7 text-muted-foreground">
+              <p className="text-xl font-semibold text-foreground">Cognisint LLC</p>
+              <p>David Towne, Founder and Principal</p>
+              <p>Lansing, MI 48910</p>
+              <a href="tel:+15173914815" className="flex items-center gap-2 text-foreground hover:text-[var(--blue)]">
+                <Phone className="h-4 w-4" />
+                +1 (517) 391-4815
+              </a>
+              <a href="mailto:info@cognisint.com" className="flex items-center gap-2 text-foreground hover:text-[var(--blue)]">
+                <Mail className="h-4 w-4" />
+                info@cognisint.com
+              </a>
             </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                Organization
-              </label>
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                value={formData.organization}
-                onChange={handleChange}
-                className="w-full px-4 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={6}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full px-4 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-vertical"
-                placeholder="Tell us about your needs, challenges, or questions..."
-              />
-            </div>
-
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-            >
-              Send Inquiry
-            </Button>
-          </form>
-
-          <p className="mt-6 text-sm text-muted-foreground text-center">
-            Or email us directly at{" "}
-            <a href="mailto:info@cognisint.com" className="text-primary hover:underline">
-              info@cognisint.com
-            </a>
-          </p>
+          </aside>
         </div>
       </div>
     </main>
+  )
+}
+
+function Field({
+  label,
+  htmlFor,
+  required,
+  children,
+}: {
+  label: string
+  htmlFor?: string
+  required?: boolean
+  children: React.ReactNode
+}) {
+  const id = htmlFor ?? label.toLowerCase().replaceAll(" ", "-")
+
+  return (
+    <div>
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-foreground">
+        {label}
+        {required ? " *" : ""}
+      </label>
+      {children}
+    </div>
   )
 }

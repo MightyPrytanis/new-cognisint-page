@@ -1,49 +1,51 @@
-/* Import Jost from Google Fonts - will gracefully fail in sandboxed environments */
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
-
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to use Cognisint brand colors: #002147 (midnight navy), #3A6B5C (forest green), #0288D1 (sapphire blue) */
-  --background: oklch(0.98 0.01 200);
-  /* Midnight navy #002147 for text */
-  --foreground: oklch(0.15 0.04 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.04 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.04 240);
-  /* Forest green #3A6B5C as primary */
-  --primary: oklch(0.48 0.06 160);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.94 0.01 210);
-  --secondary-foreground: oklch(0.15 0.04 240);
-  --muted: oklch(0.88 0.02 200);
-  --muted-foreground: oklch(0.5 0.02 210);
-  /* Sapphire blue #0288D1 for accent/glow */
-  --accent: oklch(0.55 0.14 225);
-  --accent-foreground: oklch(0.98 0.01 200);
+  --ink: #071522;
+  --navy: #002147;
+  --blue: #0288d1;
+  --forest: #3a6b5c;
+  --forest-light: #6aa58e;
+  --paper: #f8f7f2;
+  --surface: #eeede7;
+  --charcoal: #20242a;
+  --metal: #b8c0c8;
+  --background: #f8f7f2;
+  --foreground: #15202b;
+  --card: #ffffff;
+  --card-foreground: #15202b;
+  --popover: #ffffff;
+  --popover-foreground: #15202b;
+  --primary: #002147;
+  --primary-foreground: #ffffff;
+  --secondary: #eeede7;
+  --secondary-foreground: #15202b;
+  --muted: #e4e3dc;
+  --muted-foreground: #535c66;
+  --accent: #0288d1;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.02 210);
-  --input: oklch(0.92 0.02 210);
-  --ring: oklch(0.48 0.06 160);
-  --chart-1: oklch(0.48 0.06 160);
-  --chart-2: oklch(0.15 0.04 240);
+  --border: #d4d0c6;
+  --input: #d4d0c6;
+  --ring: #0288d1;
+  --chart-1: #002147;
+  --chart-2: #3a6b5c;
   --chart-3: oklch(0.6 0.118 184.704);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.98 0.01 200);
-  --sidebar-foreground: oklch(0.15 0.04 240);
-  --sidebar-primary: oklch(0.48 0.06 160);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.55 0.14 225);
-  --sidebar-accent-foreground: oklch(0.98 0.01 200);
-  --sidebar-border: oklch(0.92 0.02 210);
-  --sidebar-ring: oklch(0.48 0.06 160);
+  --radius: 0.25rem;
+  --sidebar: #f8f7f2;
+  --sidebar-foreground: #15202b;
+  --sidebar-primary: #002147;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0288d1;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #d4d0c6;
+  --sidebar-ring: #0288d1;
 }
 
 .dark {
@@ -82,8 +84,7 @@
 }
 
 @theme inline {
-  /* Using Jost Semi Bold as primary font with system font fallbacks */
-  --font-sans: "Jost", "Geist", "Geist Fallback", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Avenir Next", "Geist", "Geist Fallback", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -129,5 +130,115 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--blue) 28%, transparent);
+  }
+}
+
+@layer components {
+  .section-band {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  .framework-hero {
+    min-height: calc(100svh - 81px);
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .framework-hero {
+      padding-top: 7.5rem;
+      padding-bottom: 7.5rem;
+    }
+  }
+
+  .section-title {
+    @apply text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl;
+  }
+
+  .package-card {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76)),
+      linear-gradient(90deg, rgba(184, 192, 200, 0.14), transparent 42%);
+    box-shadow: 0 18px 45px rgba(7, 21, 34, 0.06);
+  }
+
+  .dark-package-card {
+    border: 1px solid rgba(184, 192, 200, 0.22);
+    border-left: 4px solid var(--forest);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+      #0a1c2d;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  }
+
+  .publication-card {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--navy);
+    background: #fff;
+    padding: 1.5rem;
+  }
+
+  .form-field {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--background);
+    padding: 0.625rem 0.875rem;
+    color: var(--foreground);
+  }
+
+  .form-field:focus {
+    outline: 2px solid color-mix(in srgb, var(--blue) 60%, transparent);
+    outline-offset: 2px;
+  }
+
+  .package-panel {
+    border: 1px solid rgba(184, 192, 200, 0.28);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+      radial-gradient(circle at top right, rgba(2, 136, 209, 0.18), transparent 38%),
+      #071522;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  }
+
+  .policy-page {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .policy-page h2 {
+    margin-top: 1.65rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.18rem;
+    font-weight: 650;
+    color: var(--foreground);
+  }
+
+  .policy-page p {
+    margin-bottom: 0.7rem;
+    color: var(--muted-foreground);
+  }
+
+  .packaging-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(115deg, rgba(2, 136, 209, 0.18), transparent 35%);
+    background-size:
+      44px 44px,
+      44px 44px,
+      100% 100%;
   }
 }

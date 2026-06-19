@@ -4,8 +4,9 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Cognisint LLC - Human-Scale Legal Technology",
-  description: "Advancing innovative, human-scaled solutions to enterprise-size challenges",
+  title: "Cognisint | Institutional Strategy, Trust, and Integrity",
+  description:
+    "An ethically focused, technology-conscious platform for institutional strategy, governance frameworks, writing, advisory work, custom app concepts, and responsible modernization.",
   generator: "v0.app",
   icons: {
     icon: [
