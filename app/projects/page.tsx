@@ -3,6 +3,16 @@ import { Archive, ArrowLeft, Cpu, Landmark, Map } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+type TechnologyConcept = {
+  name: string
+  status: string
+  src: string
+  width: number
+  height: number
+  href?: string
+  linkLabel?: string
+}
+
 const projectGroups = [
   {
     label: "Selected Concepts",
@@ -30,7 +40,7 @@ const projectGroups = [
   },
 ]
 
-const technologyConcepts = [
+const technologyConcepts: TechnologyConcept[] = [
   {
     name: "Cyrano",
     status: "MCP agent platform concept",
@@ -51,6 +61,15 @@ const technologyConcepts = [
     src: "/arkiver-wordmark-approved.png",
     width: 290,
     height: 68,
+  },
+  {
+    name: "MiCite",
+    status: "Michigan-specific legal citation formatting app coming soon",
+    src: "/micite-wordmark-approved.png",
+    width: 320,
+    height: 180,
+    href: "https://micite.online",
+    linkLabel: "MiCite.online",
   },
 ]
 
@@ -101,24 +120,39 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {technologyConcepts.map((concept) => (
-              <article key={concept.name} className="package-card flex min-h-48 flex-col justify-between p-5">
-                <div className="flex h-24 items-center">
-                  <Image
-                    src={concept.src}
-                    alt={`${concept.name} logo`}
-                    width={concept.width}
-                    height={concept.height}
-                    className="max-h-20 w-auto object-contain"
-                  />
-                </div>
-                <div className="mt-6 border-t border-border pt-4">
-                  <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {technologyConcepts.map((concept) => {
+              const card = (
+                <article className="package-card flex min-h-48 flex-col justify-between p-5 transition group-hover:border-[var(--blue)]">
+                  <div className="flex h-24 items-center">
+                    <Image
+                      src={concept.src}
+                      alt={`${concept.name} logo`}
+                      width={concept.width}
+                      height={concept.height}
+                      className="max-h-20 w-auto object-contain"
+                    />
+                  </div>
+                  <div className="mt-6 border-t border-border pt-4">
+                    <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
+                    {concept.linkLabel ? (
+                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
+                        {concept.linkLabel}
+                      </p>
+                    ) : null}
+                  </div>
+                </article>
+              )
+
+              return concept.href ? (
+                <a key={concept.name} href={concept.href} target="_blank" rel="noreferrer" className="group block">
+                  {card}
+                </a>
+              ) : (
+                <div key={concept.name}>{card}</div>
+              )
+            })}
           </div>
         </section>
       </div>
