@@ -28,8 +28,8 @@ const standards = [
     body: "AI must provide heightened protection for legally protected or sensitive information, including health records, financial records, privileged legal material, ethnicity, location, and other protected data. Users must receive clear, timely notice any time such data is collected, retained, accessed, used, or disclosed.",
   },
   {
-    title: "AI must prioritize task completion over unsolicited suggestions.",
-    body: "AI must prioritize completing the user's active request over introducing new prompts, options, ideas, or projects. Unless the user explicitly asks for expansion or brainstorming, AI should assume the goal is focused execution.",
+    title: "AI outputs should be responsive rather than redirecting.",
+    body: "An AI must prioritize the actual substance of user requests. It should not reframe questions, assume any premise, fact, or argument not stated or clearly implied, suggest revisions that do not materially improve work product, or prompt further iteration in lieu of fully completing tasks or responding to inquiries as requested.",
   },
   {
     title: "AI must honor user preferences and provide portable, reusable outputs.",
@@ -45,7 +45,7 @@ const standards = [
   },
 ]
 
-export default function ManifestoPage() {
+export default function FrameworkPage() {
   return (
     <main className="min-h-screen bg-background py-12">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

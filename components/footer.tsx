@@ -5,7 +5,7 @@ import Link from "next/link"
 const links = [
   { label: "About", href: "/#what-is-cognisint" },
   { label: "Founder", href: "/about" },
-  { label: "Framework", href: "/manifesto" },
+  { label: "Framework", href: "/framework" },
   { label: "Writing", href: "/writing" },
   { label: "Projects", href: "/projects" },
   { label: "Services", href: "/services" },
@@ -27,7 +27,7 @@ export default function Footer() {
               className="h-auto w-52 brightness-0 invert"
             />
             <p className="mt-6 max-w-md text-sm leading-6 text-slate-300">
-              Institutional Strategy, Trust, and Integrity in an AI-Enabled World.
+              Strategy, Trust, and Integrity in the AI Age.
             </p>
             <p className="mt-4 text-sm font-semibold text-white">Real Intelligence. Real Judgment. Real Results.</p>
           </div>

@@ -209,7 +209,7 @@ export default function Home() {
         <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
           <div className="relative z-10 max-w-3xl">
             <h1 className="text-balance text-4xl font-semibold leading-[1.04] text-white sm:text-5xl lg:text-6xl">
-              Institutional Strategy, Trust, and Integrity in an AI-Enabled World
+              Strategy, Trust, and Integrity in the AI Age
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
               Cognisint is an ethically focused, technology-conscious platform for helping institutions modernize
@@ -432,7 +432,7 @@ export default function Home() {
               </p>
             </div>
             <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
-              <Link href="/manifesto">
+              <Link href="/framework">
                 Read the Framework
                 <BookOpenText className="ml-2 h-4 w-4" />
               </Link>
