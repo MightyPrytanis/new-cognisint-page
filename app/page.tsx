@@ -238,32 +238,38 @@ export default function Home() {
 
           <div className="relative z-10">
             <div className="package-panel mx-auto max-w-md p-6 sm:p-8">
-              <Image
-                src="/cognisint-logo-horizontal-reversed.png"
-                alt="Cognisint"
-                width={3012}
-                height={856}
-                className="h-auto w-full max-w-[23rem]"
-                priority
-              />
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Institutional Strategy / Trust / Applied Governance
-              </p>
-              <div className="my-8 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
-              <div className="space-y-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-300">Founded by</p>
-                <div>
-                  <p className="text-3xl font-semibold text-white">David Towne</p>
-                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[var(--blue)]">
-                    Attorney / Strategist / Institutional Problem-Solver
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Latest</p>
+              <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
+              <div className="divide-y divide-white/10">
+                <a
+                  href="https://www.linkedin.com/company/cognisint"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group block py-6"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">June 22, 2026</p>
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Connect with us on LinkedIn
+                  </h2>
+                </a>
+
+                <Link href="/framework" className="group block py-6">
+                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Responsiveness is not optional.
+                  </h2>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    Read Our Updated AI Trust Framework
                   </p>
-                </div>
-                <div className="grid grid-cols-2 gap-3 border-t border-white/10 pt-6 text-center text-[0.68rem] uppercase tracking-[0.14em] text-slate-300 sm:grid-cols-4">
-                  <span>Governance</span>
-                  <span>Trust</span>
-                  <span>Judgment</span>
-                  <span>Integrity</span>
-                </div>
+                </Link>
+
+                <Link href="/about" className="group block pt-6">
+                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Behind the Curtain
+                  </h2>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    Founder Bio
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
