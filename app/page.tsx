@@ -241,26 +241,26 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Latest</p>
               <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
               <div className="divide-y divide-white/10">
+                <Link href="/framework" className="group block py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">June 22, 2026</p>
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    AI Responsiveness Is a Must-Have
+                  </h2>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    Read Our Updated AI Trust Framework
+                  </p>
+                </Link>
+
                 <a
                   href="https://www.linkedin.com/company/cognisint"
                   target="_blank"
                   rel="noreferrer"
                   className="group block py-6"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">June 22, 2026</p>
-                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
-                    Connect with us on LinkedIn
+                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Connect With Us on LinkedIn!
                   </h2>
                 </a>
-
-                <Link href="/framework" className="group block py-6">
-                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
-                    Responsiveness is not optional.
-                  </h2>
-                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Read Our Updated AI Trust Framework
-                  </p>
-                </Link>
 
                 <Link href="/about" className="group block pt-6">
                   <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
