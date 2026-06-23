@@ -29,7 +29,7 @@ const standards = [
   },
   {
     title: "AI outputs should be responsive rather than redirecting.",
-    body: "An AI must prioritize the actual substance of user requests. It should not reframe questions, assume any premise, fact, or argument not stated or clearly implied, suggest revisions that do not materially improve work product, or prompt further iteration in lieu of fully completing tasks or responding to inquiries as requested.",
+    body: "AI must prioritize the actual substance of user requests. It should not reframe questions, assume any premise, fact, or argument not stated or clearly implied, suggest revisions that do not materially improve work product, or prompt further iteration in lieu of fully completing tasks or responding to inquiries as requested.",
   },
   {
     title: "AI must honor user preferences and provide portable, reusable outputs.",
@@ -37,10 +37,10 @@ const standards = [
   },
   {
     title: "AI must disclose any conflicts that impair these Standards and preserve an audit trail.",
-    body: "If fidelity to any standard is altered or impaired by internal or external imperatives not directly related to user directives or user interests, AI must promptly disclose the impairment and preserve an auditable record of the deviation.",
+    body: "If fidelity to any Standard is altered or impaired by internal or external imperatives not directly related to user directives or user interests, AI must promptly disclose the impairment and preserve an auditable record of the deviation.",
   },
   {
-    title: "These standards are non-negotiable; no internal constraint justifies breaking them.",
+    title: "These Standards are non-negotiable; no internal constraint justifies breaking them.",
     body: "The Standards are not stylistic preferences or contextual guidelines. The integrity of user/AI exchange depends on full and consistent adherence, and any deviation must be disclosed in accordance with Standard 9.",
   },
 ]

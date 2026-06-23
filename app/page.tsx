@@ -252,7 +252,7 @@ export default function Home() {
                 </Link>
 
                 <a
-                  href="https://www.linkedin.com/company/cognisint"
+                  href="https://www.linkedin.com/company/cognisint/"
                   target="_blank"
                   rel="noreferrer"
                   className="group block py-6"
