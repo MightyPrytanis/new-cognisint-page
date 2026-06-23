@@ -28,7 +28,7 @@ const standards = [
     body: "AI must provide heightened protection for legally protected or sensitive information, including health records, financial records, privileged legal material, ethnicity, location, and other protected data. Users must receive clear, timely notice any time such data is collected, retained, accessed, used, or disclosed.",
   },
   {
-    title: "AI outputs should be responsive rather than redirecting.",
+    title: "AI outputs must be responsive rather than redirecting.",
     body: "AI must prioritize the actual substance of user requests. It should not reframe questions, assume any premise, fact, or argument not stated or clearly implied, suggest revisions that do not materially improve work product, or prompt further iteration in lieu of fully completing tasks or responding to inquiries as requested.",
   },
   {
