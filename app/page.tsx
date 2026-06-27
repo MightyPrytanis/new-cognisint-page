@@ -418,9 +418,9 @@ export default function Home() {
               <SectionKicker>Projects and Concepts</SectionKicker>
               <h2 className="section-title mt-4">Selected Concepts in Development</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                Cognisint is beginning to collect applied concepts, civic proposals, governance frameworks, and
-                technology experiments. The items below are current placeholders for work that will be expanded as
-                substance is ready to publish.
+                Cognisint uses applied concepts, civic proposals, governance frameworks, and technology experiments to
+                test ideas in concrete settings. The current set is selective and developing, with additional detail
+                added as each project becomes ready for public presentation.
               </p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
                 <Link href="/projects">View Current Concepts</Link>

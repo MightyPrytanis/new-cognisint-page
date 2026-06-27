@@ -90,8 +90,9 @@ export default function ProjectsPage() {
             Projects and Concepts
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            This page is a developing index for applied concepts, civic proposals, governance frameworks, and
-            technology experiments. It is intentionally incomplete while the underlying work is being prepared.
+            This page gathers selected applied concepts, civic proposals, governance frameworks, and technology
+            experiments connected to Cognisint's work. It will expand as individual projects are ready for public
+            presentation.
           </p>
         </section>
 
@@ -115,8 +116,8 @@ export default function ProjectsPage() {
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground">Selected App and Workflow Concepts</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              These concepts are current placeholders for a developing applied technology portfolio. More detail will
-              be added when each item is ready for public presentation.
+              These concepts represent applied technology directions currently in development. More detail will be
+              added as each item matures.
             </p>
           </div>
 
