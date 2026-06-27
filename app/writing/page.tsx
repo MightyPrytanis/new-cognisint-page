@@ -4,28 +4,25 @@ import Link from "next/link"
 
 const categories = [
   {
-    label: "Frameworks",
+    label: "Published Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
   },
   {
-    label: "Analysis",
+    label: "Forthcoming",
     title: "Technology and Governance",
-    description:
-      "Forthcoming analysis on ethical technology adoption, institutional trust, governance design, and responsible modernization.",
+    description: "Analysis on ethical technology adoption, institutional trust, and governance design is in development.",
   },
   {
-    label: "Civic Proposals",
+    label: "Forthcoming",
     title: "Civic and Institutional Concepts",
-    description:
-      "In-development proposals and commentary on civic identity, public assets, economic development, and institutional design.",
+    description: "Proposals and commentary on civic identity, public assets, and institutional design will be added later.",
   },
   {
-    label: "Institutional Strategy",
+    label: "Forthcoming",
     title: "Modernization Without Legitimacy Loss",
-    description:
-      "Essays and notes on how institutions can improve capability while preserving judgment, accountability, and public confidence.",
+    description: "Essays on institutional modernization, judgment, accountability, and public confidence are being drafted.",
   },
 ]
 
@@ -46,8 +43,8 @@ export default function WritingPage() {
             Writing and Thought
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Essays, analysis, proposals, and commentary on technology, governance, institutions, economic development,
-            public trust, and responsible modernization.
+            This page will collect essays, analysis, proposals, and commentary as they are completed. For now, it
+            serves as a working index for the writing areas Cognisint is developing.
           </p>
         </section>
 
@@ -65,11 +62,11 @@ export default function WritingPage() {
         </section>
 
         <section className="mt-12 bg-[var(--ink)] p-8 text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Archive Status</p>
-          <h2 className="mt-4 text-2xl font-semibold">In Development</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Writing Status</p>
+          <h2 className="mt-4 text-2xl font-semibold">Developing Public Writing</h2>
           <p className="mt-4 max-w-3xl leading-7 text-slate-200">
-            This writing archive is under development. New essays, proposals, frameworks, and project materials will be
-            added on an ongoing basis.
+            Public writing is under development. New essays, proposals, frameworks, and project materials will be
+            added as they are ready for publication.
           </p>
         </section>
       </div>

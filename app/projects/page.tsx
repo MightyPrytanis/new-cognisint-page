@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Archive, ArrowLeft, Cpu, Landmark, Map } from "lucide-react"
+import { ArrowLeft, Cpu, FileText, Landmark, Map } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -17,7 +17,7 @@ const projectGroups = [
   {
     label: "Selected Concepts",
     title: "Civic and Institutional Proposals",
-    description: "Greenways, public spaces, civic identity, placemaking, and institutional design concepts.",
+    description: "Selected civic and institutional concepts will be added as they are prepared for publication.",
     icon: Landmark,
   },
   {
@@ -27,15 +27,15 @@ const projectGroups = [
     icon: Cpu,
   },
   {
-    label: "Framework Library",
+    label: "Published Framework",
     title: "Governance Frameworks",
-    description: "Standards, policies, and institutional trust frameworks for responsible modernization.",
-    icon: Archive,
+    description: "The AI/User Integrity Framework is the first public framework in this area.",
+    icon: FileText,
   },
   {
-    label: "Project Archive",
+    label: "Forthcoming",
     title: "Economic and Community Development",
-    description: "Concepts and analysis related to regional strategy, redevelopment, public assets, and community resilience.",
+    description: "Additional concepts and analysis will be added as the project record develops.",
     icon: Map,
   },
 ]
@@ -43,21 +43,21 @@ const projectGroups = [
 const technologyConcepts: TechnologyConcept[] = [
   {
     name: "Cyrano",
-    status: "MCP agent platform concept",
+    status: "MCP agent platform concept in development",
     src: "/cyrano-horizontal-lockup-approved.png",
     width: 280,
     height: 147,
   },
   {
     name: "LexFiat",
-    status: "Legal and workflow concept",
+    status: "Legal and workflow concept in development",
     src: "/lexfiat-wordmark-approved.png",
     width: 300,
     height: 114,
   },
   {
     name: "Arkiver",
-    status: "Knowledge architecture concept",
+    status: "Knowledge architecture concept in development",
     src: "/arkiver-wordmark-approved.png",
     width: 290,
     height: 68,
@@ -90,9 +90,8 @@ export default function ProjectsPage() {
             Projects and Concepts
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Cognisint develops and publishes applied concepts, civic proposals, governance frameworks, and technology
-            experiments. Some are speculative. Some are practical. All are intended to clarify how institutions can work
-            better.
+            This page is a developing index for applied concepts, civic proposals, governance frameworks, and
+            technology experiments. It is intentionally incomplete while the underlying work is being prepared.
           </p>
         </section>
 
@@ -116,7 +115,8 @@ export default function ProjectsPage() {
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground">Selected App and Workflow Concepts</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              These concepts are presented as placeholders for a developing applied technology portfolio.
+              These concepts are current placeholders for a developing applied technology portfolio. More detail will
+              be added when each item is ready for public presentation.
             </p>
           </div>
 

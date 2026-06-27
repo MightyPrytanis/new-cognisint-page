@@ -3,7 +3,6 @@ import Header from "@/components/header"
 import { Button } from "@/components/ui/button"
 import type React from "react"
 import {
-  Archive,
   ArrowRight,
   BookOpenText,
   BriefcaseBusiness,
@@ -13,7 +12,6 @@ import {
   FileText,
   Handshake,
   Landmark,
-  Map,
   PenTool,
   Scale,
   ShieldCheck,
@@ -98,51 +96,24 @@ const services = [
   },
 ]
 
-const projects = [
-  {
-    label: "Selected Concepts",
-    title: "Civic and Institutional Proposals",
-    description: "Greenways, public spaces, civic identity, placemaking, and institutional design concepts.",
-    icon: Landmark,
-  },
-  {
-    label: "In Development",
-    title: "Technology Concepts",
-    description: "Custom app solutions, workflow systems, AI-enabled tools, and applied software concepts in development.",
-    icon: Cpu,
-  },
-  {
-    label: "Framework Library",
-    title: "Governance Frameworks",
-    description: "Standards, policies, and institutional trust frameworks for responsible modernization.",
-    icon: Archive,
-  },
-  {
-    label: "Project Archive",
-    title: "Economic and Community Development",
-    description: "Concepts and analysis related to regional strategy, redevelopment, public assets, and community resilience.",
-    icon: Map,
-  },
-]
-
 const conceptLogos: ConceptLogo[] = [
   {
     name: "Cyrano",
-    status: "MCP agent platform concept",
+    status: "MCP agent platform concept in development",
     src: "/cyrano-horizontal-lockup-approved.png",
     width: 240,
     height: 126,
   },
   {
     name: "LexFiat",
-    status: "Legal and workflow concept",
+    status: "Legal and workflow concept in development",
     src: "/lexfiat-wordmark-approved.png",
     width: 260,
     height: 99,
   },
   {
     name: "Arkiver",
-    status: "Knowledge architecture concept",
+    status: "Knowledge architecture concept in development",
     src: "/arkiver-wordmark-approved.png",
     width: 250,
     height: 58,
@@ -166,16 +137,9 @@ const writing = [
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
   },
   {
-    label: "Analysis",
-    title: "Evidence, Grounding, and Responsible AI Claims",
-    description:
-      "Forthcoming notes on verification, source discipline, and the practical limits of certainty in high-stakes AI systems.",
-  },
-  {
-    label: "Civic Proposals",
-    title: "Modernization Without Legitimacy Loss",
-    description:
-      "In-development essays and proposals on public institutions, civic design, economic development, and human judgment under technological pressure.",
+    label: "Writing Status",
+    title: "Essays and Proposals in Development",
+    description: "Additional writing will be added as pieces are completed and ready for public release.",
   },
 ]
 
@@ -452,63 +416,50 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
             <div>
               <SectionKicker>Projects and Concepts</SectionKicker>
-              <h2 className="section-title mt-4">Projects and Concepts</h2>
+              <h2 className="section-title mt-4">Selected Concepts in Development</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                Cognisint develops and publishes applied concepts, civic proposals, governance frameworks, and
-                technology experiments. Some are speculative. Some are practical. All are intended to clarify how
-                institutions can work better.
+                Cognisint is beginning to collect applied concepts, civic proposals, governance frameworks, and
+                technology experiments. The items below are current placeholders for work that will be expanded as
+                substance is ready to publish.
               </p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
-                <Link href="/projects">View Project Archive</Link>
+                <Link href="/projects">View Current Concepts</Link>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {projects.map((project) => (
-                <article key={project.title} className="publication-card">
-                  <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
-                    <project.icon className="h-4 w-4" aria-hidden="true" />
-                    {project.label}
-                  </div>
-                  <h3 className="mt-4 text-xl font-semibold text-foreground">{project.title}</h3>
-                  <p className="mt-3 leading-7 text-muted-foreground">{project.description}</p>
-                </article>
-              ))}
+              {conceptLogos.map((concept) => {
+                const card = (
+                  <article className="package-card flex min-h-44 flex-col justify-between p-5 transition group-hover:border-[var(--blue)]">
+                    <div className="flex h-20 items-center">
+                      <Image
+                        src={concept.src}
+                        alt={`${concept.name} logo`}
+                        width={concept.width}
+                        height={concept.height}
+                        className="max-h-16 w-auto object-contain"
+                      />
+                    </div>
+                    <div className="mt-6 border-t border-border pt-4">
+                      <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
+                      {concept.linkLabel ? (
+                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
+                          {concept.linkLabel}
+                        </p>
+                      ) : null}
+                    </div>
+                  </article>
+                )
+
+                return concept.href ? (
+                  <a key={concept.name} href={concept.href} target="_blank" rel="noreferrer" className="group block">
+                    {card}
+                  </a>
+                ) : (
+                  <div key={concept.name}>{card}</div>
+                )
+              })}
             </div>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {conceptLogos.map((concept) => {
-              const card = (
-                <article className="package-card flex min-h-44 flex-col justify-between p-5 transition group-hover:border-[var(--blue)]">
-                  <div className="flex h-20 items-center">
-                    <Image
-                      src={concept.src}
-                      alt={`${concept.name} logo`}
-                      width={concept.width}
-                      height={concept.height}
-                      className="max-h-16 w-auto object-contain"
-                    />
-                  </div>
-                  <div className="mt-6 border-t border-border pt-4">
-                    <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
-                    {concept.linkLabel ? (
-                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
-                        {concept.linkLabel}
-                      </p>
-                    ) : null}
-                  </div>
-                </article>
-              )
-
-              return concept.href ? (
-                <a key={concept.name} href={concept.href} target="_blank" rel="noreferrer" className="group block">
-                  {card}
-                </a>
-              ) : (
-                <div key={concept.name}>{card}</div>
-              )
-            })}
           </div>
         </div>
       </section>
@@ -520,11 +471,11 @@ export default function Home() {
               <SectionKicker>Writing and Thought</SectionKicker>
               <h2 className="section-title mt-4">Writing and Thought</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                Essays, analysis, proposals, and commentary on technology, governance, institutions, economic
-                development, public trust, and responsible modernization.
+                Public writing is being developed gradually. For now, the framework is the principal published item,
+                with essays, proposals, and commentary to follow as they are completed.
               </p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
-                <Link href="/writing">View Writing Archive</Link>
+                <Link href="/writing">View Writing Notes</Link>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-5">
