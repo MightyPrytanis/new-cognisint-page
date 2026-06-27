@@ -341,7 +341,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <SectionKicker>Areas of Focus</SectionKicker>
-            <h2 className="section-title mt-4">Where the Work Concentrates</h2>
+            <h2 className="section-title mt-4">Current Questions. Big Ideas. Practical Details.</h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
             {focusAreas.map((area) => (
