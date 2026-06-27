@@ -120,7 +120,7 @@ const conceptLogos: ConceptLogo[] = [
   },
   {
     name: "MiCite",
-    status: "Michigan legal citation formatter coming soon",
+    status: "Michigan legal citation formatter in live beta testing",
     src: "/micite-wordmark-approved.png",
     width: 280,
     height: 158,

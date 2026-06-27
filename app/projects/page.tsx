@@ -64,7 +64,7 @@ const technologyConcepts: TechnologyConcept[] = [
   },
   {
     name: "MiCite",
-    status: "Michigan-specific legal citation formatting app coming soon",
+    status: "Michigan-specific legal citation formatting app in live beta testing",
     src: "/micite-wordmark-approved.png",
     width: 320,
     height: 180,
