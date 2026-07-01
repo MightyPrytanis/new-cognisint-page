@@ -94,7 +94,7 @@ export default function MichiganPublicSectorAiArticle() {
 
             <p>
               One wonders if the irony of this boldfaced, one-sided warning crossed the minds of whoever made the policy
-              or approved the posting-to say nothing of its probable inaccuracy. It is hard to believe that AI is
+              or approved the posting—to say nothing of its probable inaccuracy. It is hard to believe that AI is
               “prohibited in all areas of the selection process” by the department in question; in practice, it is more
               likely to be prohibited only for applicants. The human resources office, I would venture, is free to use at
               least some of the AI-supported tools available under the state&apos;s contract with Neogov.
@@ -129,9 +129,15 @@ export default function MichiganPublicSectorAiArticle() {
             <p>
               <em>
                 The author has been a licensed Michigan attorney since 2002, with professional experience in multiple
-                public sector roles. This is Part One of a three-part series on how Michigan&apos;s public sector is
-                responding to AI. Part Two will look at the legal profession-closely tied to the public sector, already
-                forced to wrestle with AI&apos;s impacts, and perhaps pointing the way to better policy approaches.
+                public sector roles.
+              </em>
+            </p>
+
+            <p>
+              <em>
+                This is Part One of a three-part series on how Michigan&apos;s public sector is responding to AI. Part Two
+                will look at the legal profession-closely tied to the public sector, already forced to wrestle with
+                AI&apos;s impacts, and perhaps pointing the way to better policy approaches.
               </em>
             </p>
 
