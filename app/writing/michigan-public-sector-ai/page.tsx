@@ -81,12 +81,12 @@ export default function MichiganPublicSectorAiArticle() {
 
             <blockquote>
               <p>
-                <em>
+                <strong>
                   The use of artificial intelligence (AI) software of any kind is prohibited in all areas of the
                   selection process; including, but not limited to, responses to application questions, and responses to
                   interview questions or exercises. Any applicant suspected of using AI software for any portion of the
                   selection process may be screened out.
-                </em>
+                </strong>
               </p>
             </blockquote>
 
