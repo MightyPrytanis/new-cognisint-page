@@ -205,9 +205,18 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Latest</p>
               <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
               <div className="divide-y divide-white/10">
-                <Link href="/framework" className="group block py-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">June 22, 2026</p>
+                <Link href="/writing/michigan-public-sector-ai" className="group block py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">July 6, 2026</p>
                   <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Michigan&apos;s Public Sector Is Getting AI Wrong
+                  </h2>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    An unwinnable game of whack-a-mole
+                  </p>
+                </Link>
+
+                <Link href="/framework" className="group block py-6">
+                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
                     AI Responsiveness Is a Must-Have
                   </h2>
                   <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
@@ -226,14 +235,6 @@ export default function Home() {
                   </h2>
                 </a>
 
-                <Link href="/about" className="group block pt-6">
-                  <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
-                    Behind the Curtain
-                  </h2>
-                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Founder Bio
-                  </p>
-                </Link>
               </div>
             </div>
           </div>

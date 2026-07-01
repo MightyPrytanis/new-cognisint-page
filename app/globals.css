@@ -218,6 +218,17 @@
     line-height: 1.7;
   }
 
+  .article-body blockquote {
+    border-left: 4px solid var(--forest);
+    background: color-mix(in srgb, var(--surface) 78%, white);
+    padding: 1.25rem 1.5rem;
+    color: var(--foreground);
+  }
+
+  .article-body em {
+    color: color-mix(in srgb, var(--foreground) 88%, var(--forest));
+  }
+
   .policy-page h2 {
     margin-top: 1.65rem;
     margin-bottom: 0.5rem;

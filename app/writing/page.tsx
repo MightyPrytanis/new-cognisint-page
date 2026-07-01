@@ -4,10 +4,17 @@ import Link from "next/link"
 
 const categories = [
   {
+    label: "Essay",
+    title: "Michigan's Public Sector Is Getting AI Wrong",
+    description: "An unwinnable game of whack-a-mole.",
+    href: "/writing/michigan-public-sector-ai",
+  },
+  {
     label: "Published Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
+    href: "/framework",
   },
   {
     label: "Forthcoming",
@@ -55,7 +62,15 @@ export default function WritingPage() {
                 <FileText className="h-4 w-4" aria-hidden="true" />
                 {category.label}
               </div>
-              <h2 className="mt-4 text-2xl font-semibold text-foreground">{category.title}</h2>
+              <h2 className="mt-4 text-2xl font-semibold text-foreground">
+                {"href" in category && category.href ? (
+                  <Link href={category.href} className="hover:text-[var(--blue)]">
+                    {category.title}
+                  </Link>
+                ) : (
+                  category.title
+                )}
+              </h2>
               <p className="mt-3 leading-7 text-muted-foreground">{category.description}</p>
             </article>
           ))}
