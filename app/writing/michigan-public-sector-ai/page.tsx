@@ -36,8 +36,8 @@ export default function MichiganPublicSectorAiArticle() {
           <div className="article-body mt-8 space-y-6 text-lg leading-8 text-foreground">
             <p>
               In early 2025, I encountered a high school English teacher at the dog park, someone I have known for many
-              years, who was lamenting the educational crisis of the moment: the rise of artificial intelligence (AI),
-              and an epidemic of students passing off AI-generated work as their own.
+              years, who was lamenting the educational crisis of the moment: artificial intelligence and the epidemic
+              of students passing off AI-generated work as their own.
             </p>
 
             <p>
