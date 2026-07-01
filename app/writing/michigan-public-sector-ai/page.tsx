@@ -114,9 +114,9 @@ export default function MichiganPublicSectorAiArticle() {
             </p>
 
             <p>
-              Nonetheless, it is hard to ignore the strategic value proposition of AI. Moreover, the likelihood that
-              multinational corporations (or foreign adversaries, or students, or job applicants) will unilaterally
-              disarm themselves is vanishingly small.
+              Nonetheless, it is hard to ignore the strategic value proposition of AI when it performs as advertised.
+              Moreover, the likelihood that multinational corporations (or foreign adversaries, or students, or job
+              applicants) will unilaterally disarm themselves is vanishingly small.
             </p>
 
             <p>
@@ -128,10 +128,10 @@ export default function MichiganPublicSectorAiArticle() {
 
             <p>
               <em>
-                The author has been a licensed attorney in Michigan since 2002. This is Part One of a three-part series
-                on how Michigan&apos;s public sector is responding to AI. Part Two will look at the legal profession-closely
-                tied to the public sector, already forced to wrestle with AI&apos;s impacts, and perhaps pointing the way to
-                better policy approaches.
+                The author has been a licensed Michigan attorney since 2002, with professional experience in multiple
+                public sector roles. This is Part One of a three-part series on how Michigan&apos;s public sector is
+                responding to AI. Part Two will look at the legal profession-closely tied to the public sector, already
+                forced to wrestle with AI&apos;s impacts, and perhaps pointing the way to better policy approaches.
               </em>
             </p>
 
