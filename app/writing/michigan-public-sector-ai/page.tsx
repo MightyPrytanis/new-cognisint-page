@@ -101,8 +101,8 @@ export default function MichiganPublicSectorAiArticle() {
             </p>
 
             <p>
-              Aside from being taken aback by the rather glaring hypocrisy, I had to wonder: why was this department-one
-              which has a major role to play in Michigan&apos;s legal and economic systems-so eager to play the unwinnable
+              Aside from being taken aback by the rather glaring hypocrisy, I had to wonder: why was this department—one
+              which has a major role to play in Michigan&apos;s legal and economic systems—so eager to play the unwinnable
               game of AI whack-a-mole that was burning out my teacher friend?
             </p>
 
