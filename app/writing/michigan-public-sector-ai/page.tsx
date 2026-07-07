@@ -82,7 +82,7 @@ export default function MichiganPublicSectorAiArticle() {
 
             <p>
               “These kids don&apos;t have any interest in learning anything,” she fumed. “Even ones who should know better.
-              They all tell me &apos;why bother, in a few years AI will just do it all anyway.&apos;” She seemed not just
+              They all tell me, &apos;Why bother? In a few years, AI will just do it all anyway.&apos;” She seemed not just
               aggravated, but despondent.
             </p>
 
@@ -113,7 +113,7 @@ export default function MichiganPublicSectorAiArticle() {
 
             <p>
               I was reminded of this conversation recently when looking at a State of Michigan job posting sent to me by
-              a colleague. I navigated to the state&apos;s talent acquisition portal hosted by Neogov, a vendor whose
+              a colleague. I navigated to the state&apos;s talent acquisition portal hosted by NEOGOV, a vendor whose
               homepage advertises its product as “AI-Enabled Government HR Software” and invites prospective clients to
               “Streamline everyday government HR processes with an AI-supported platform.” There, plastered prominently
               across the job posting was the following:
@@ -130,14 +130,14 @@ export default function MichiganPublicSectorAiArticle() {
               </p>
             </blockquote>
 
-            <p>(Emphasis in the original.)</p>
+            <p>(Emphasis in original.)</p>
 
             <p>
               One wonders if the irony of this boldfaced, one-sided warning crossed the minds of whoever made the policy
               or approved the posting—to say nothing of its probable inaccuracy. It is hard to believe that AI is
               “prohibited in all areas of the selection process” by the department in question; in practice, it is more
               likely to be prohibited only for applicants. The human resources office, I would venture, is free to use at
-              least some of the AI-supported tools available under the state&apos;s contract with Neogov.
+              least some of the AI-supported tools available under the state&apos;s contract with NEOGOV.
             </p>
 
             <p>
@@ -150,7 +150,7 @@ export default function MichiganPublicSectorAiArticle() {
               Narratives that treat AI&apos;s future omnipresence as a <em>fait accompli</em> are justifiably becoming
               unpopular outside of the tech world. I am sympathetic to those who have called for industry to stop treating
               every new AI advance as an inevitability, and start thinking about how it benefits society beyond
-              “enhancing shareholder value.” To ask, in other words, not only whether they can, but if they should.
+              “enhancing shareholder value.” To ask, in other words, not only whether they could, but if they should.
             </p>
 
             <p>
