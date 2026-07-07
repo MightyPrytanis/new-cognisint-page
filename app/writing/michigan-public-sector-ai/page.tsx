@@ -119,6 +119,12 @@ export default function MichiganPublicSectorAiArticle() {
               across the job posting was the following:
             </p>
 
+            <aside className="writing-article-pullquote my-10">
+              <p className="text-balance text-2xl font-semibold italic leading-snug">
+                Why is the state so eager to play the unwinnable game of AI whack-a-mole?
+              </p>
+            </aside>
+
             <blockquote>
               <p>
                 <strong>
@@ -146,12 +152,6 @@ export default function MichiganPublicSectorAiArticle() {
               game of AI whack-a-mole that was burning out my teacher friend?
             </p>
 
-            <aside className="writing-article-pullquote">
-              <p className="text-balance text-2xl font-semibold italic leading-snug">
-                Why is the state so eager to play the unwinnable game of AI whack-a-mole?
-              </p>
-            </aside>
-
             <p>
               Narratives that treat AI&apos;s future omnipresence as a <em>fait accompli</em> are justifiably becoming
               unpopular outside of the tech world. I am sympathetic to those who have called for industry to stop treating
@@ -172,7 +172,7 @@ export default function MichiganPublicSectorAiArticle() {
               for good, rather than as an end in itself.
             </p>
 
-            <aside className="writing-article-pullquote">
+            <aside className="writing-article-pullquote my-10">
               <p className="text-balance text-2xl font-semibold italic leading-snug">
                 Prohibition is not a strategy. It is temporary avoidance, a futile administrative burden, and a poor
                 substitute for clear, enforceable norms.
