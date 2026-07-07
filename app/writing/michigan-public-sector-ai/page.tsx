@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: "Trust, Integrity, and Strategy for the AI Age",
   openGraph: {
     title: "Michigan's Public Sector Is Getting AI Wrong",
-    description: "Institutional postures are often incoherent and serve no one's interest.",
+    description:
+      "Michigan public institutions need coherent AI strategies that protect accountability, public trust, and human judgment.",
     url: "/writing/michigan-public-sector-ai",
     siteName: "Cognisint",
     type: "article",
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Michigan's Public Sector Is Getting AI Wrong",
-    description: "Institutional postures are often incoherent and serve no one's interest.",
+    description:
+      "Michigan public institutions need coherent AI strategies that protect accountability, public trust, and human judgment.",
     images: ["/og-michigan-public-sector-ai-v2.png"],
   },
 }
