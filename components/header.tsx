@@ -5,6 +5,7 @@ import { Mail, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import ShareButton from "@/components/share-button"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,27 +25,28 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="#what-is-cognisint" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#what-is-cognisint" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
             </a>
-            <a href="#founder" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#founder" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Founder
             </a>
-            <a href="#framework" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#framework" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Framework
             </a>
-            <a href="#writing" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#writing" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Writing
             </a>
-            <a href="#projects" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#projects" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Projects
             </a>
-            <a href="#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services
             </a>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <ShareButton showLabel={false} className="size-10 p-0" />
             <Button
               asChild
               className="rounded-sm bg-primary text-primary-foreground hover:bg-primary/90"
@@ -68,24 +70,25 @@ export default function Header() {
 
         {isOpen && (
           <nav className="lg:hidden pb-4 space-y-3">
-            <a href="#what-is-cognisint" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#what-is-cognisint" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
             </a>
-            <a href="#founder" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#founder" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Founder
             </a>
-            <a href="#framework" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#framework" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Framework
             </a>
-            <a href="#writing" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#writing" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Writing
             </a>
-            <a href="#projects" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#projects" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Projects
             </a>
-            <a href="#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services
             </a>
+            <ShareButton className="w-full justify-center" />
             <Button
               asChild
               className="w-full rounded-sm bg-primary text-primary-foreground hover:bg-primary/90"

@@ -1,5 +1,3 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
 import { Button } from "@/components/ui/button"
 import type React from "react"
 import {
@@ -165,15 +163,13 @@ const collaborationGroups = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Header />
-
       <section id="top" className="relative overflow-hidden bg-[var(--ink)] text-[var(--paper)]">
         <div className="absolute inset-0 packaging-grid opacity-35" aria-hidden="true" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
         <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
           <div className="relative z-10 max-w-3xl">
             <h1 className="text-balance text-4xl font-semibold leading-[1.04] text-white sm:text-5xl lg:text-6xl">
-              Strategy, Integrity, and Trust for the AI Age
+              Trust, Integrity, and Strategy for the AI Age
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
               Cognisint is an ethically focused, technology-conscious platform for helping institutions modernize
@@ -206,7 +202,7 @@ export default function Home() {
               <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
               <div className="divide-y divide-white/10">
                 <Link href="/writing/michigan-public-sector-ai" className="group block py-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">July 6, 2026</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">July 7, 2026</p>
                   <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
                     Michigan&apos;s Public Sector Is Getting AI Wrong
                   </h2>
@@ -517,8 +513,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }

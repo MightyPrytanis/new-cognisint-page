@@ -27,7 +27,7 @@ export default function Footer() {
               className="h-auto w-52 brightness-0 invert"
             />
             <p className="mt-6 max-w-md text-sm leading-6 text-slate-300">
-              Strategy, Integrity, and Trust for the AI Age.
+              Trust, Integrity, and Strategy for the AI Age.
             </p>
             <p className="mt-4 text-sm font-semibold text-white">Real Intelligence. Real Judgment. Real Results.</p>
           </div>
@@ -66,8 +66,12 @@ export default function Footer() {
         <div className="mt-12 border-t border-white/10 pt-6 text-sm text-slate-400">
           <p>© 2026 Cognisint LLC</p>
           <p className="mt-4 max-w-4xl leading-6">
+            Original Cognisint writing is copyright Cognisint LLC and David Towne. It may be shared with attribution,
+            but it may not be presented as someone else&apos;s work or as Cognisint&apos;s endorsement.
+          </p>
+          <p className="mt-4 max-w-4xl leading-6">
             David Towne is an attorney licensed and in good standing with the State Bar of Michigan. Cognisint is not a
-            law firm and does not provide legal services; any engagement for legal services must be made separately.
+            law firm, does not provide legal services through this website, and site materials are not legal advice.
           </p>
         </div>
       </div>

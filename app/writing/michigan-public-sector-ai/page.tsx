@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button"
+import ShareButton from "@/components/share-button"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Michigan's Public Sector Is Getting AI Wrong | Cognisint",
-  description: "Institutional postures are often incoherent and serve no one's interest.",
+  description: "Trust, Integrity, and Strategy for the AI Age",
+  openGraph: {
+    title: "Michigan's Public Sector Is Getting AI Wrong",
+    description: "Institutional postures are often incoherent and serve no one's interest.",
+    type: "article",
+    publishedTime: "2026-07-07",
+    authors: ["David W. Towne"],
+  },
 }
 
 export default function MichiganPublicSectorAiArticle() {
@@ -31,6 +39,12 @@ export default function MichiganPublicSectorAiArticle() {
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--forest)]">
               By David W. Towne
             </p>
+            <div className="mt-6 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                Published July 7, 2026
+              </p>
+              <ShareButton title="Michigan's Public Sector Is Getting AI Wrong" className="w-full sm:w-auto" />
+            </div>
           </header>
 
           <div className="article-body mt-8 space-y-6 text-lg leading-8 text-foreground">
@@ -145,6 +159,17 @@ export default function MichiganPublicSectorAiArticle() {
               <em>Full disclosure: AI didn&apos;t write this piece, but it did help refine it.</em>
             </p>
           </div>
+
+          <footer className="mt-10 border-t border-[var(--border)] pt-6 text-sm leading-6 text-muted-foreground">
+            <p>
+              Copyright Cognisint LLC and David W. Towne. This article may be shared with attribution to Cognisint LLC
+              and David W. Towne, preferably with a link to the original.
+            </p>
+            <p className="mt-3">
+              This article is commentary and analysis. It is not legal advice and does not create an attorney-client
+              relationship.
+            </p>
+          </footer>
         </article>
       </div>
     </main>

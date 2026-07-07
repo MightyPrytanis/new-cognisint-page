@@ -1,26 +1,30 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
+import Footer from "@/components/footer"
+import Header from "@/components/header"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Cognisint | Strategy, Trust, and Integrity",
-  description:
-    "An ethically focused, technology-conscious platform for institutional strategy, governance frameworks, writing, advisory work, custom app concepts, and responsible modernization.",
-  generator: "v0.app",
+  title: "Cognisint | Trust, Integrity, and Strategy for the AI Age",
+  description: "Trust, Integrity, and Strategy for the AI Age",
   icons: {
     icon: [
       {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
         url: "/icon-light-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
         media: "(prefers-color-scheme: light)",
       },
       {
         url: "/icon-dark-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
         media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
       },
     ],
     apple: "/apple-icon.png",
@@ -35,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <Header />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>
