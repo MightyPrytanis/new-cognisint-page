@@ -221,10 +221,8 @@
   }
 
   .writing-article-page {
-    background:
-      linear-gradient(180deg, rgba(7, 21, 34, 0.9), rgba(38, 63, 60, 0.92)),
-      var(--forest-slate);
-    color: #ffffff;
+    background: #ffffff;
+    color: var(--foreground);
   }
 
   .writing-article-shell {
