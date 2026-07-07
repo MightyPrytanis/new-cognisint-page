@@ -87,8 +87,8 @@ export default function MichiganPublicSectorAiArticle() {
             </p>
 
             <p>
-              I knew this person to be an engaged, caring, thoughtful educator. Both of her parents were teachers; she
-              has an elite academic pedigree, professional IT expertise, and a wealth of hard-earned experience in the
+              I knew this person to be an engaged, caring, thoughtful educator. She has an elite academic pedigree,
+              professional IT expertise, and a wealth of hard-earned experience in the
               classroom. On the subject of AI, however, she was sounding as jaded and burned out as Springfield
               Elementary&apos;s Edna Krabappel (may she, and the actor who voiced her, rest in peace).
             </p>
