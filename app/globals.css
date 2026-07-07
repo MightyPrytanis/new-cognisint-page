@@ -271,8 +271,10 @@
 
   .writing-article-shell .article-body blockquote {
     border-left-color: var(--sapphire);
-    background: rgba(0, 33, 71, 0.38);
-    color: #ffffff;
+    background: #ffffff;
+    color: var(--foreground);
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--metal) 42%, white);
   }
 
   .writing-article-shell .article-body em {
