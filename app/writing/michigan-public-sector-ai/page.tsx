@@ -41,7 +41,7 @@ export default function MichiganPublicSectorAiArticle() {
         <Button
           asChild
           variant="outline"
-          className="mb-8 rounded-sm border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
+          className="mb-8 rounded-sm bg-transparent"
         >
           <Link href="/writing">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -49,8 +49,8 @@ export default function MichiganPublicSectorAiArticle() {
           </Link>
         </Button>
 
-        <article className="writing-article-shell p-6 sm:p-10 lg:p-12">
-          <header className="border-b border-white/20 pb-8">
+        <article className="writing-article-shell overflow-hidden">
+          <header className="writing-article-masthead border-b border-white/20 p-6 sm:p-10 lg:p-12">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--forest-light)]">Analysis</p>
             <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Michigan&apos;s Public Sector Is Getting AI Wrong
@@ -73,7 +73,7 @@ export default function MichiganPublicSectorAiArticle() {
             </div>
           </header>
 
-          <div className="article-body mt-8 space-y-6 text-lg leading-8">
+          <div className="article-body space-y-6 px-6 py-8 text-lg leading-8 sm:px-10 lg:px-12">
             <p>
               In early 2025, I encountered a high school English teacher at the dog park, someone I have known for many
               years, who was lamenting the educational crisis of the moment: artificial intelligence and the epidemic
@@ -146,6 +146,12 @@ export default function MichiganPublicSectorAiArticle() {
               game of AI whack-a-mole that was burning out my teacher friend?
             </p>
 
+            <aside className="writing-article-pullquote">
+              <p className="text-balance text-2xl font-semibold italic leading-snug">
+                Why is the state so eager to play the unwinnable game of AI whack-a-mole?
+              </p>
+            </aside>
+
             <p>
               Narratives that treat AI&apos;s future omnipresence as a <em>fait accompli</em> are justifiably becoming
               unpopular outside of the tech world. I am sympathetic to those who have called for industry to stop treating
@@ -165,6 +171,13 @@ export default function MichiganPublicSectorAiArticle() {
               approach for all of us, including government agencies, is to figure out how to use and enhance AI as a tool
               for good, rather than as an end in itself.
             </p>
+
+            <aside className="writing-article-pullquote">
+              <p className="text-balance text-2xl font-semibold italic leading-snug">
+                Prohibition is not a strategy. It is temporary avoidance, a futile administrative burden, and a poor
+                substitute for clear, enforceable norms.
+              </p>
+            </aside>
 
             <p>
               <em>
@@ -186,7 +199,7 @@ export default function MichiganPublicSectorAiArticle() {
             </p>
           </div>
 
-          <footer className="mt-10 border-t border-white/20 pt-6 text-sm leading-6 text-white/70">
+          <footer className="writing-article-endnote border-t border-white/20 p-6 text-sm leading-6 text-white/75 sm:p-10 lg:p-12">
             <p>
               Copyright Cognisint LLC and David W. Towne. This article may be shared with attribution to Cognisint LLC
               and David W. Towne, preferably with a link to the original.

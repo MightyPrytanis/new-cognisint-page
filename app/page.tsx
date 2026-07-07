@@ -129,10 +129,17 @@ const conceptLogos: ConceptLogo[] = [
 
 const writing = [
   {
+    label: "Essay",
+    title: "Michigan's Public Sector Is Getting AI Wrong",
+    description: "An essay on why public institutions need coherent AI strategies grounded in accountability and trust.",
+    href: "/writing/michigan-public-sector-ai",
+  },
+  {
     label: "Frameworks",
     title: "Cognisint AI/User Integrity Framework",
     description:
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
+    href: "/framework",
   },
   {
     label: "Writing Status",
@@ -482,7 +489,15 @@ export default function Home() {
                     <FileText className="h-4 w-4" aria-hidden="true" />
                     {item.label}
                   </div>
-                  <h3 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h3>
+                  <h3 className="mt-4 text-2xl font-semibold text-foreground">
+                    {"href" in item && item.href ? (
+                      <Link href={item.href} className="hover:text-[var(--blue)]">
+                        {item.title}
+                      </Link>
+                    ) : (
+                      item.title
+                    )}
+                  </h3>
                   <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
                 </article>
               ))}

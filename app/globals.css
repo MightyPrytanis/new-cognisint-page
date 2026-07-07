@@ -226,20 +226,36 @@
   }
 
   .writing-article-shell {
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-left: 5px solid var(--sapphire);
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
-      var(--forest-slate);
+    border: 1px solid color-mix(in srgb, var(--forest-slate) 22%, white);
+    background: #ffffff;
     box-shadow: 0 24px 70px rgba(7, 21, 34, 0.28);
   }
 
+  .writing-article-masthead,
+  .writing-article-endnote {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+      var(--forest-slate);
+    color: #ffffff;
+  }
+
   .writing-article-shell .article-body {
-    color: rgba(255, 255, 255, 0.92);
+    color: var(--foreground);
+    background: #ffffff;
+    border-left: 4px solid var(--forest);
   }
 
   .writing-article-shell .article-body p {
     max-width: 66ch;
+  }
+
+  .writing-article-pullquote {
+    border-left: 5px solid var(--sapphire);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      var(--forest-slate);
+    color: #ffffff;
+    padding: 1.4rem 1.6rem;
   }
 
   .article-body blockquote {
@@ -260,7 +276,12 @@
   }
 
   .writing-article-shell .article-body em {
-    color: rgba(255, 255, 255, 0.84);
+    color: color-mix(in srgb, var(--foreground) 88%, var(--forest));
+  }
+
+  .writing-article-shell .writing-article-pullquote em,
+  .writing-article-shell .writing-article-pullquote p {
+    color: #ffffff;
   }
 
   .policy-page h2 {
