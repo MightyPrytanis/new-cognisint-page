@@ -88,7 +88,7 @@ export default function ShareButton({
           <Linkedin className={cn("h-4 w-4", showLabel && "mr-2")} />
           {showLabel ? "LinkedIn" : null}
         </Button>
-      )}
+      ) : null}
     </div>
   )
 }
