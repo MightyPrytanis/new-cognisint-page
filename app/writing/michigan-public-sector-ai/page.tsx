@@ -10,9 +10,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description: "Institutional postures are often incoherent and serve no one's interest.",
+    url: "/writing/michigan-public-sector-ai",
+    siteName: "Cognisint",
     type: "article",
     publishedTime: "2026-07-07",
     authors: ["David W. Towne"],
+    images: [
+      {
+        url: "/og-michigan-public-sector-ai.png",
+        width: 1200,
+        height: 630,
+        alt: "Cognisint analysis card for Michigan's Public Sector Is Getting AI Wrong",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michigan's Public Sector Is Getting AI Wrong",
+    description: "Institutional postures are often incoherent and serve no one's interest.",
+    images: ["/og-michigan-public-sector-ai.png"],
   },
 }
 

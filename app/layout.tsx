@@ -6,6 +6,7 @@ import Header from "@/components/header"
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.cognisint.com"),
   title: "Cognisint | Trust, Integrity, and Strategy for the AI Age",
   description: "Trust, Integrity, and Strategy for the AI Age",
   icons: {
