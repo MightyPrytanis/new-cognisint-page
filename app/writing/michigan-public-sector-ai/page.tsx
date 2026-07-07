@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     authors: ["David W. Towne"],
     images: [
       {
-        url: "/og-michigan-public-sector-ai.png",
+        url: "/og-michigan-public-sector-ai-v2.png",
         width: 1200,
         height: 630,
         alt: "Cognisint analysis card for Michigan's Public Sector Is Getting AI Wrong",
@@ -28,42 +28,49 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description: "Institutional postures are often incoherent and serve no one's interest.",
-    images: ["/og-michigan-public-sector-ai.png"],
+    images: ["/og-michigan-public-sector-ai-v2.png"],
   },
 }
 
 export default function MichiganPublicSectorAiArticle() {
   return (
-    <main className="min-h-screen bg-background py-12">
+    <main className="writing-article-page min-h-screen py-12">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Button asChild variant="outline" className="mb-8 rounded-sm bg-transparent">
+        <Button
+          asChild
+          variant="outline"
+          className="mb-8 rounded-sm border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
+        >
           <Link href="/writing">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Writing
           </Link>
         </Button>
 
-        <article className="package-card bg-white p-6 sm:p-10 lg:p-12">
-          <header className="border-b border-[var(--border)] pb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Analysis</p>
-            <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
+        <article className="writing-article-shell p-6 sm:p-10 lg:p-12">
+          <header className="border-b border-white/20 pb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--forest-light)]">Analysis</p>
+            <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Michigan&apos;s Public Sector Is Getting AI Wrong
             </h1>
-            <p className="mt-5 text-2xl leading-snug text-muted-foreground">
+            <p className="mt-5 text-2xl leading-snug text-white/80">
               Institutional postures are often incoherent and serve no one&apos;s interest.
             </p>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--forest)]">
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--forest-light)]">
               By David W. Towne
             </p>
-            <div className="mt-6 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            <div className="mt-6 flex flex-col gap-4 border-t border-white/20 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
                 Published July 7, 2026
               </p>
-              <ShareButton title="Michigan's Public Sector Is Getting AI Wrong" className="w-full sm:w-auto" />
+              <ShareButton
+                title="Michigan's Public Sector Is Getting AI Wrong"
+                className="w-full border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+              />
             </div>
           </header>
 
-          <div className="article-body mt-8 space-y-6 text-lg leading-8 text-foreground">
+          <div className="article-body mt-8 space-y-6 text-lg leading-8">
             <p>
               In early 2025, I encountered a high school English teacher at the dog park, someone I have known for many
               years, who was lamenting the educational crisis of the moment: artificial intelligence and the epidemic
@@ -176,7 +183,7 @@ export default function MichiganPublicSectorAiArticle() {
             </p>
           </div>
 
-          <footer className="mt-10 border-t border-[var(--border)] pt-6 text-sm leading-6 text-muted-foreground">
+          <footer className="mt-10 border-t border-white/20 pt-6 text-sm leading-6 text-white/70">
             <p>
               Copyright Cognisint LLC and David W. Towne. This article may be shared with attribution to Cognisint LLC
               and David W. Towne, preferably with a link to the original.
