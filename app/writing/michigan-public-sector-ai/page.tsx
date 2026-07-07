@@ -159,6 +159,13 @@ export default function MichiganPublicSectorAiArticle() {
               “enhancing shareholder value.” To ask, in other words, not only whether they could, but if they should.
             </p>
 
+            <aside className="writing-article-pullquote my-10">
+              <p className="text-balance text-2xl font-semibold italic leading-snug">
+                Prohibition is not a strategy. It is temporary avoidance, a futile administrative burden, and a poor
+                substitute for clear, enforceable norms.
+              </p>
+            </aside>
+
             <p>
               Nonetheless, it is hard to ignore the strategic value proposition of AI when it performs as advertised.
               Moreover, the likelihood that multinational corporations (or foreign adversaries, or students, or job
@@ -171,13 +178,6 @@ export default function MichiganPublicSectorAiArticle() {
               approach for all of us, including government agencies, is to figure out how to use and enhance AI as a tool
               for good, rather than as an end in itself.
             </p>
-
-            <aside className="writing-article-pullquote my-10">
-              <p className="text-balance text-2xl font-semibold italic leading-snug">
-                Prohibition is not a strategy. It is temporary avoidance, a futile administrative burden, and a poor
-                substitute for clear, enforceable norms.
-              </p>
-            </aside>
 
             <p>
               <em>
