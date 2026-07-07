@@ -68,6 +68,7 @@ export default function MichiganPublicSectorAiArticle() {
               <ShareButton
                 title="Michigan's Public Sector Is Getting AI Wrong"
                 className="w-full border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                withLinkedIn
               />
             </div>
           </header>
