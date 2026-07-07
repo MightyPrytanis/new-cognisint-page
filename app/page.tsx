@@ -131,7 +131,8 @@ const writing = [
   {
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
-    description: "An essay on why public institutions need coherent AI strategies grounded in accountability and trust.",
+    description:
+      "Part 1 of 3. An essay on why public institutions need coherent AI strategies grounded in accountability and trust.",
     href: "/writing/michigan-public-sector-ai",
   },
   {
@@ -214,7 +215,7 @@ export default function Home() {
                     Michigan&apos;s Public Sector Is Getting AI Wrong
                   </h2>
                   <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    An unwinnable game of whack-a-mole
+                    Part 1 of 3: An unwinnable game of whack-a-mole
                   </p>
                 </Link>
 

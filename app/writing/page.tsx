@@ -6,11 +6,11 @@ const categories = [
   {
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
-    description: "An unwinnable game of whack-a-mole.",
+    description: "Part 1 of 3. An unwinnable game of whack-a-mole.",
     href: "/writing/michigan-public-sector-ai",
   },
   {
-    label: "Published Framework",
+    label: "Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
@@ -49,10 +49,6 @@ export default function WritingPage() {
           <h1 className="mt-4 text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
             Writing and Thought
           </h1>
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            This page will collect essays, analysis, proposals, and commentary as they are completed. For now, it
-            serves as a working index for the writing areas Cognisint is developing.
-          </p>
         </section>
 
         <section className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">

@@ -111,6 +111,12 @@ export default function MichiganPublicSectorAiArticle() {
               only adding to her irritation, so I let it drop.
             </p>
 
+            <aside className="writing-article-pullquote my-10">
+              <p className="text-balance text-2xl font-semibold italic leading-snug">
+                Why is the state so eager to play the unwinnable game of AI whack-a-mole?
+              </p>
+            </aside>
+
             <p>
               I was reminded of this conversation recently when looking at a State of Michigan job posting sent to me by
               a colleague. I navigated to the state&apos;s talent acquisition portal hosted by NEOGOV, a vendor whose
@@ -118,12 +124,6 @@ export default function MichiganPublicSectorAiArticle() {
               “Streamline everyday government HR processes with an AI-supported platform.” There, plastered prominently
               across the job posting was the following:
             </p>
-
-            <aside className="writing-article-pullquote my-10">
-              <p className="text-balance text-2xl font-semibold italic leading-snug">
-                Why is the state so eager to play the unwinnable game of AI whack-a-mole?
-              </p>
-            </aside>
 
             <blockquote>
               <p>
