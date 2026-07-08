@@ -43,6 +43,9 @@ export default function Header() {
             <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services
             </a>
+            <Link href="/payment" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Payment
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -88,6 +91,9 @@ export default function Header() {
             <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services
             </a>
+            <Link href="/payment" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Payment
+            </Link>
             <ShareButton className="w-full justify-center" />
             <Button
               asChild
