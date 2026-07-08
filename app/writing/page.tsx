@@ -17,19 +17,19 @@ const categories = [
     href: "/framework",
   },
   {
-    label: "Forthcoming",
+    label: "In Development",
     title: "Technology and Governance",
-    description: "Analysis on ethical technology adoption, institutional trust, and governance design is in development.",
+    description: "In development.",
   },
   {
-    label: "Forthcoming",
+    label: "In Development",
     title: "Civic and Institutional Concepts",
-    description: "Proposals and commentary on civic identity, public assets, and institutional design will be added later.",
+    description: "In development.",
   },
   {
-    label: "Forthcoming",
+    label: "In Development",
     title: "Modernization Without Legitimacy Loss",
-    description: "Essays on institutional modernization, judgment, accountability, and public confidence are being drafted.",
+    description: "In development.",
   },
 ]
 
@@ -74,11 +74,8 @@ export default function WritingPage() {
 
         <section className="mt-12 bg-[var(--ink)] p-8 text-white">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Writing Status</p>
-          <h2 className="mt-4 text-2xl font-semibold">Developing Public Writing</h2>
-          <p className="mt-4 max-w-3xl leading-7 text-slate-200">
-            Public writing is under development. New essays, proposals, frameworks, and project materials will be
-            added as they are ready for publication.
-          </p>
+          <h2 className="mt-4 text-2xl font-semibold">Public Writing in Development</h2>
+          <p className="mt-4 max-w-3xl leading-7 text-slate-200">Additional essays and proposals are in development.</p>
         </section>
       </div>
     </main>

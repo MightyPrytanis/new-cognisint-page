@@ -15,9 +15,9 @@ type TechnologyConcept = {
 
 const projectGroups = [
   {
-    label: "Selected Concepts",
+    label: "In Development",
     title: "Civic and Institutional Proposals",
-    description: "Selected civic and institutional concepts will be added as they are prepared for publication.",
+    description: "In development.",
     icon: Landmark,
   },
   {
@@ -33,9 +33,9 @@ const projectGroups = [
     icon: FileText,
   },
   {
-    label: "Forthcoming",
+    label: "In Development",
     title: "Economic and Community Development",
-    description: "Additional concepts and analysis will be added as the project record develops.",
+    description: "In development.",
     icon: Map,
   },
 ]
@@ -90,9 +90,8 @@ export default function ProjectsPage() {
             Projects and Concepts
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            This page gathers selected applied concepts, civic proposals, governance frameworks, and technology
-            experiments connected to Cognisint's work. It will expand as individual projects are ready for public
-            presentation.
+            Selected applied concepts, civic proposals, governance frameworks, and technology experiments connected to
+            Cognisint's work.
           </p>
         </section>
 
@@ -115,10 +114,7 @@ export default function ProjectsPage() {
               Technology Concepts
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground">Selected App and Workflow Concepts</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              These concepts represent applied technology directions currently in development. More detail will be
-              added as each item matures.
-            </p>
+            <p className="mt-4 leading-7 text-muted-foreground">Applied technology directions in development.</p>
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">

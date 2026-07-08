@@ -145,7 +145,7 @@ const writing = [
   {
     label: "Writing Status",
     title: "Essays and Proposals in Development",
-    description: "Additional writing will be added as pieces are completed and ready for public release.",
+    description: "In development.",
   },
 ]
 
@@ -289,24 +289,20 @@ export default function Home() {
             <h2 className="section-title mt-4">Founder and Principal</h2>
             <div className="mt-6 space-y-5 text-lg leading-8 text-muted-foreground">
               <p>
-                David Towne is a Michigan attorney, strategist, economic-development practitioner, and institutional
-                problem-solver.
+                David Towne is a Lansing-based consultant, economic development professional, and attorney with over 20
+                years of experience across public service, private practice, and institutional governance.
               </p>
               <p>
-                His background spans law, public infrastructure, governance, transportation, economic development,
-                nonprofit leadership, real estate, regulatory matters, and organizational strategy.
+                A former Assistant Attorney General and judicial clerk, he has handled civil litigation, real estate,
+                public infrastructure, land use, consumer protection, contracts, and nonprofit governance matters.
               </p>
               <p>
-                He has served courts, government agencies, nonprofit organizations, businesses, and public institutions
-                in legal, advisory, and governance-related capacities.
+                Through Cognisint LLC, he focuses on responsible legal technology, institutional trust, public-interest
+                governance, and practical modernization of legal and related workflows.
               </p>
               <p>
-                Cognisint is the platform through which David develops and shares work on technology, institutional
-                trust, public service, ethical modernization, and practical governance.
-              </p>
-              <p className="font-medium text-foreground">
-                His current work centers on a durable question: How can organizations benefit from technological change
-                without sacrificing legitimacy, accountability, public trust, or human judgment?
+                David is particularly interested in professional ethics, unauthorized practice of law, access to
+                justice, attorney well-being, and strengthening public confidence in the legal profession.
               </p>
             </div>
             <Button asChild className="mt-8 rounded-sm">
@@ -424,8 +420,7 @@ export default function Home() {
               <h2 className="section-title mt-4">Selected Concepts in Development</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
                 Cognisint uses applied concepts, civic proposals, governance frameworks, and technology experiments to
-                test ideas in concrete settings. The current set is selective and developing, with additional detail
-                added as each project becomes ready for public presentation.
+                test ideas in concrete settings. The current set is selective and in development.
               </p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
                 <Link href="/projects">View Current Concepts</Link>
@@ -475,12 +470,9 @@ export default function Home() {
             <div>
               <SectionKicker>Writing and Thought</SectionKicker>
               <h2 className="section-title mt-4">Writing and Thought</h2>
-              <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                Public writing is being developed gradually. For now, the framework is the principal published item,
-                with essays, proposals, and commentary to follow as they are completed.
-              </p>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">Essays, frameworks, and proposals from Cognisint.</p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
-                <Link href="/writing">View Writing Notes</Link>
+                <Link href="/writing">View Writing</Link>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-5">

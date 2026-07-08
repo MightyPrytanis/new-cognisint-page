@@ -24,6 +24,16 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-10 space-y-6 text-lg leading-8 text-muted-foreground">
+              <p className="font-medium text-foreground">
+                David Towne is a Lansing-based consultant, economic development professional, and attorney with over 20
+                years of experience across public service, private practice, and institutional governance. A former
+                Assistant Attorney General and judicial clerk, he has handled civil litigation, real estate, public
+                infrastructure, land use, consumer protection, contracts, and nonprofit governance matters. Through
+                Cognisint LLC, he focuses on responsible legal technology, institutional trust, public-interest
+                governance, and practical modernization of legal and related workflows. David is particularly interested
+                in professional ethics, unauthorized practice of law, access to justice, attorney well-being, and
+                strengthening public confidence in the legal profession.
+              </p>
               <p>
                 David Towne&apos;s professional path begins with Albion College, where a liberal arts foundation helped
                 shape his interest in civic life, institutions, language, public responsibility, and the practical
