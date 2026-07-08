@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Mail, Phone } from "lucide-react"
+import { ArrowLeft, CreditCard, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 import type React from "react"
 import { type ChangeEvent, type FormEvent, useState } from "react"
@@ -146,6 +146,10 @@ export default function ContactPage() {
                 <Mail className="h-4 w-4" />
                 info@cognisint.com
               </a>
+              <Link href="/payment" className="flex items-center gap-2 text-foreground hover:text-[var(--blue)]">
+                <CreditCard className="h-4 w-4" />
+                Make a payment
+              </Link>
             </div>
           </aside>
         </div>
