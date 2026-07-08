@@ -75,7 +75,7 @@ export default function AboutPage() {
                 losing identity or legitimacy.
               </p>
               <p className="font-medium text-foreground">
-                Cognisint grew from that combined experience. It is the platform through which David develops work on
+                Cognisint grew from that combined experience. It is the vehicle through which David develops work on
                 institutional strategy, trust, technology governance, applied tools, and public-interest modernization.
               </p>
             </div>

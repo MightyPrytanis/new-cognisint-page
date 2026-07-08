@@ -180,8 +180,8 @@ export default function Home() {
               Trust, Integrity, and Strategy for the AI Age
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
-              Cognisint is an ethically focused, technology-conscious platform for helping institutions modernize
-              responsibly without sacrificing legitimacy, judgment, accountability, or public trust.
+              Cognisint is an advisory and applied technology practice helping institutions modernize responsibly
+              without sacrificing legitimacy, judgment, accountability, or public trust.
             </p>
             <p className="mt-8 text-xl font-semibold text-white sm:text-2xl">
               Real Intelligence. Real Judgment. Real Results.
@@ -261,8 +261,8 @@ export default function Home() {
             <h2 className="section-title">What Is Cognisint?</h2>
             <div className="mt-6 space-y-5 text-lg leading-8 text-muted-foreground">
               <p>
-                Cognisint is a platform for institutional strategy, ethical technology adoption, applied governance, and
-                public-interest modernization.
+                Cognisint is a practice focused on institutional strategy, ethical technology adoption, applied
+                governance, and public-interest modernization.
               </p>
               <p>
                 It brings together writing, frameworks, advisory work, and developing technology concepts to help
