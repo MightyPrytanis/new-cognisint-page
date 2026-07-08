@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { ArrowLeft, CreditCard, Mail } from "lucide-react"
+import { ArrowLeft, CreditCard } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Make a payment to Cognisint LLC.",
 }
 
-const squarePaymentUrl = process.env.NEXT_PUBLIC_SQUARE_PAYMENT_URL
+const squarePaymentUrl = "https://square.link/u/Oju23WFR?src=embed"
 
 export default function PaymentPage() {
   return (
@@ -32,21 +32,12 @@ export default function PaymentPage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              {squarePaymentUrl ? (
-                <Button asChild size="lg" className="rounded-sm">
-                  <a href={squarePaymentUrl} target="_blank" rel="noreferrer">
-                    <CreditCard className="mr-2 h-4 w-4" />
-                    Pay with Square
-                  </a>
-                </Button>
-              ) : (
-                <Button asChild size="lg" className="rounded-sm">
-                  <a href="mailto:info@cognisint.com?subject=Cognisint%20payment%20link%20request">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Request Payment Link
-                  </a>
-                </Button>
-              )}
+              <Button asChild size="lg" className="rounded-sm">
+                <a href={squarePaymentUrl} target="_blank" rel="noreferrer">
+                  <CreditCard className="mr-2 h-4 w-4" />
+                  Pay with Square
+                </a>
+              </Button>
               <Button asChild size="lg" variant="outline" className="rounded-sm bg-transparent">
                 <Link href="/contact">Contact Cognisint</Link>
               </Button>
