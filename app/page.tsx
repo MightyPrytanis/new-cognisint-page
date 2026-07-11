@@ -136,7 +136,7 @@ export default function Home() {
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
               Institutions and organizations need to make sound, practical decisions about modernization, technology,
-              and governance. Cognisint can help. Its work connects clear values with practical solutions while
+              and governance. Cognisint can help. Its work turns clear values into workable solutions while
               protecting institutional legitimacy, professional judgment, accountability, and public trust.
             </p>
             <p className="mt-8 text-xl font-semibold text-white sm:text-2xl">
