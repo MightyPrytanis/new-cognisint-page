@@ -10,6 +10,7 @@ import {
   Landmark,
   Scale,
   ShieldCheck,
+  Sprout,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -48,7 +49,7 @@ const principles = [
         better tools, and more humane work.
       </>
     ),
-    icon: CircleCheck,
+    icon: Sprout,
     accent: "var(--blue)",
     tint: "color-mix(in srgb, var(--blue) 9%, white)",
   },
