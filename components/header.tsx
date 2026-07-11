@@ -34,8 +34,8 @@ export default function Header() {
             <Link href="/portfolio" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
             </Link>
-            <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Situations
+            <a href="/#expertise" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Expertise
             </a>
             <Link href="/payment" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Account
@@ -76,8 +76,8 @@ export default function Header() {
             <Link href="/portfolio" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
             </Link>
-            <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Situations
+            <a href="/#expertise" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Expertise
             </a>
             <Link href="/payment" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Account

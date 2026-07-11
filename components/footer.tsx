@@ -7,7 +7,7 @@ const links = [
   { label: "Bio", href: "/about" },
   { label: "Framework", href: "/framework" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Situations", href: "/#services" },
+  { label: "Expertise", href: "/#expertise" },
   { label: "Contact", href: "/contact" },
   { label: "Account", href: "/payment" },
   { label: "Terms & Privacy", href: "/terms" },
@@ -49,7 +49,6 @@ export default function Footer() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Contact</h2>
             <div className="mt-5 space-y-2 text-sm leading-6 text-slate-300">
               <p className="font-semibold text-white">Cognisint LLC</p>
-              <p>David Towne, Founder and Principal</p>
               <p>Lansing, MI 48910</p>
               <a href="tel:+15173914815" className="flex items-center gap-2 transition hover:text-white">
                 <Phone className="h-4 w-4" />

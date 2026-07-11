@@ -201,6 +201,38 @@
     padding: 1.5rem;
   }
 
+  .principles-band {
+    border-top: 1px solid color-mix(in srgb, var(--metal) 55%, white);
+    border-bottom: 1px solid color-mix(in srgb, var(--forest-light) 28%, white);
+    background:
+      linear-gradient(115deg, color-mix(in srgb, var(--navy) 6%, var(--paper)) 0%, transparent 38%),
+      linear-gradient(295deg, color-mix(in srgb, var(--forest-light) 12%, var(--paper)) 0%, transparent 42%),
+      var(--paper);
+  }
+
+  .principle-card {
+    min-height: 15rem;
+    border: 1px solid color-mix(in srgb, var(--principle-accent) 24%, var(--border));
+    border-top: 5px solid var(--principle-accent);
+    background:
+      linear-gradient(145deg, var(--principle-tint), rgba(255, 255, 255, 0.96) 44%),
+      #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 16px 36px color-mix(in srgb, var(--principle-accent) 9%, transparent);
+  }
+
+  .principle-icon {
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--principle-accent);
+    background: var(--principle-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--principle-accent) 18%, transparent);
+  }
+
   .selected-work-band {
     background:
       radial-gradient(circle at top right, rgba(2, 136, 209, 0.16), transparent 34%),

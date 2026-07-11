@@ -3,10 +3,8 @@ import type React from "react"
 import {
   ArrowRight,
   BriefcaseBusiness,
-  Building2,
   CircleCheck,
   Cpu,
-  FileText,
   Handshake,
   Landmark,
   Scale,
@@ -15,111 +13,70 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 
-type SelectedWork = {
-  label: string
-  title: string
-  description: string
-  href: string
-  linkLabel: string
-  src?: string
-  width?: number
-  height?: number
-  external?: boolean
-}
-
 const principles = [
   {
     title: "Service",
     description:
       "Good modernization should leave people, institutions, and communities with more capacity than it takes from them.",
     icon: Handshake,
+    accent: "var(--forest)",
+    tint: "color-mix(in srgb, var(--forest) 11%, white)",
   },
   {
     title: "Integrity",
     description:
       "Policies, tools, and strategies should be honest about tradeoffs, clear about limits, and accountable to human judgment.",
     icon: ShieldCheck,
+    accent: "var(--navy)",
+    tint: "color-mix(in srgb, var(--navy) 9%, white)",
   },
   {
     title: "Fairness",
     description:
       "Durable markets and institutions need transparent rules, meaningful access, and procedures people can recognize as legitimate.",
     icon: Scale,
+    accent: "var(--sapphire)",
+    tint: "color-mix(in srgb, var(--sapphire) 9%, white)",
   },
   {
     title: "Flourishing",
-    description:
-      "The aim is practical abundance: stronger places, healthier professions, better tools, and more humane work.",
+    description: (
+      <>
+        The aim is not growth or wealth as ends in and of themselves, but{" "}
+        <strong className="font-semibold text-foreground">abundance</strong>: stronger places, healthier professions,
+        better tools, and more humane work.
+      </>
+    ),
     icon: CircleCheck,
+    accent: "var(--blue)",
+    tint: "color-mix(in srgb, var(--blue) 9%, white)",
   },
 ]
 
-const usefulFor = [
+const expertiseAreas = [
   {
-    title: "Public and Civic Institutions",
+    title: "Institutional Strategy and Public Trust",
     description:
-      "For agencies, public bodies, and civic institutions modernizing services while protecting legitimacy, procurement discipline, and public trust.",
+      "Strategy for agencies, public bodies, and civic institutions modernizing services while protecting legitimacy, accountability, and public trust.",
     icon: Landmark,
   },
   {
-    title: "Legal and Professional Workflows",
+    title: "Legal and Professional Workflow Design",
     description:
-      "For teams that need better tools and documentation without weakening confidentiality, quality control, or professional judgment.",
+      "Better tools, documentation, and processes that preserve confidentiality, quality control, and professional judgment.",
     icon: BriefcaseBusiness,
   },
   {
-    title: "Teams Facing AI Pressure",
+    title: "Technology Governance and AI Policy",
     description:
-      "For leaders who need an AI posture they can defend: practical policy, procurement questions, workflow guidance, and clear communication.",
+      "Defensible policies, procurement questions, workflow guidance, and clear communication for responsible technology adoption.",
     icon: Cpu,
   },
   {
-    title: "Cross-Functional Problems",
+    title: "Cross-Functional Problem Solving",
     description:
-      "For problems that cross law, policy, technology, governance, communication, and implementation without belonging neatly to one department.",
+      "Work on problems that cross law, policy, technology, governance, communication, and implementation without fitting neatly into one department.",
     icon: CircleCheck,
-  },
-]
-
-const selectedWork: SelectedWork[] = [
-  {
-    label: "Essay",
-    title: "Michigan's Public Sector Is Getting AI Wrong",
-    description:
-      "Part 1 of 3. A public-sector AI essay about moving from scattered restrictions to coherent, accountable strategy.",
-    href: "/writing/michigan-public-sector-ai",
-    linkLabel: "Read the essay",
-  },
-  {
-    label: "Framework",
-    title: "Cognisint AI/User Integrity Framework",
-    description:
-      "A standards framework for evaluating AI-mediated interactions through transparency, accountability, user sovereignty, and trust.",
-    href: "/framework",
-    linkLabel: "Read the framework",
-  },
-  {
-    label: "Live Beta",
-    title: "MiCite",
-    description:
-      "A Michigan-specific legal citation formatter that reduces repetitive drafting friction. Its relevance is practical legal workflow design, not AI.",
-    href: "https://micite.online",
-    linkLabel: "Open MiCite",
-    src: "/micite-wordmark-approved.png",
-    width: 280,
-    height: 158,
-    external: true,
-  },
-  {
-    label: "Applied AI Workflow",
-    title: "Cyrano",
-    description:
-      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in professional settings.",
-    href: "/portfolio",
-    linkLabel: "View project notes",
-    src: "/cyrano-horizontal-lockup-approved.png",
-    width: 240,
-    height: 126,
   },
 ]
 
@@ -201,24 +158,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="what-is-cognisint" className="section-band relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.72fr] lg:px-8">
-          <div className="relative max-w-3xl">
-            <div className="mb-8 hidden lg:block">
-              <Image
-                src="/institutional-system-field.png"
-                alt=""
-                width={1254}
-                height={1254}
-                aria-hidden="true"
-                className="h-auto w-40 select-none xl:w-48"
-              />
-            </div>
+      <section id="what-is-cognisint" className="section-band relative scroll-mt-24 overflow-hidden">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.28fr_0.72fr] lg:items-start lg:gap-14 lg:px-8">
+          <div className="hidden lg:block lg:pt-2">
+            <Image
+              src="/institutional-system-field.png"
+              alt=""
+              width={1254}
+              height={1254}
+              aria-hidden="true"
+              className="h-auto w-full max-w-52 select-none"
+            />
+          </div>
+          <div className="max-w-3xl">
             <h2 className="section-title">What Is Cognisint?</h2>
             <div className="mt-6 space-y-5 text-lg leading-8 text-muted-foreground">
               <p>
-                Cognisint is an organizational advisory and applied technology practice for institutions facing real
-                governance, technology, and modernization problems.
+                Cognisint is an organizational advisory and applied technology practice for institutions facing
+                governance, technology, and modernization challenges.
               </p>
               <p>
                 It helps you clarify what is actually at stake, identify the constraints that matter, and choose a
@@ -234,33 +191,22 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <aside className="package-card h-fit p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">Founder</p>
-            <h3 className="mt-4 text-2xl font-semibold text-foreground">David Towne</h3>
-            <div className="mt-4 space-y-4 text-sm leading-6 text-muted-foreground">
-              <p>
-                Lansing-based consultant, economic development professional, and attorney with over 20 years of
-                experience across public service, private practice, and institutional governance.
-              </p>
-              <p>
-                Former Assistant Attorney General and judicial clerk, with experience in civil litigation, real estate,
-                public infrastructure, land use, consumer protection, contracts, and nonprofit governance.
-              </p>
-            </div>
-            <Button asChild variant="outline" className="mt-6 rounded-sm bg-transparent">
-              <Link href="/about">Read Bio</Link>
-            </Button>
-          </aside>
         </div>
       </section>
 
-      <section id="principles" className="section-band">
+      <section id="principles" className="principles-band section-band">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
               <SectionKicker>Issues and Principles</SectionKicker>
               <h2 className="section-title mt-4">What the Work Is About</h2>
+              <div className="mt-6 grid h-1.5 w-52 grid-cols-5" aria-hidden="true">
+                <span className="bg-[var(--navy)]" />
+                <span className="bg-[var(--sapphire)]" />
+                <span className="bg-[var(--blue)]" />
+                <span className="bg-[var(--forest)]" />
+                <span className="bg-[var(--forest-light)]" />
+              </div>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
                 The recurring issues are institutional trust, responsible modernization, fair systems, and the practical
                 conditions that let people and organizations do good work.
@@ -268,8 +214,19 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {principles.map((item) => (
-                <article key={item.title} className="disciplined-card">
-                  <item.icon className="h-6 w-6 text-[var(--forest)]" aria-hidden="true" />
+                <article
+                  key={item.title}
+                  className="principle-card"
+                  style={
+                    {
+                      "--principle-accent": item.accent,
+                      "--principle-tint": item.tint,
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className="principle-icon" aria-hidden="true">
+                    <item.icon className="h-6 w-6" />
+                  </div>
                   <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
                 </article>
@@ -279,93 +236,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="section-band bg-[var(--ink)] text-white">
+      <section id="expertise" className="section-band scroll-mt-24 bg-[var(--ink)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
             <div>
-              <SectionKicker>Useful Situations</SectionKicker>
+              <SectionKicker>Advisory and Applied Work</SectionKicker>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Where Cognisint Can Help
+                Areas of Expertise
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
-                When a problem is tangled across policy, technology, operations, and trust, the useful first step is
-                sharper framing: what is at stake, who is affected, what constraints matter, and what can responsibly
-                happen next.
+                Cognisint brings legal, policy, institutional, and applied technology experience to problems that do not
+                fit neatly within a single professional lane.
               </p>
               <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
                 <Link href="/contact">Start a Conversation</Link>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {usefulFor.map((item) => (
+              {expertiseAreas.map((item) => (
                 <article key={item.title} className="dark-package-card p-6">
                   <item.icon className="h-7 w-7 text-[var(--forest-light)]" aria-hidden="true" />
                   <h3 className="mt-7 text-xl font-semibold text-white">{item.title}</h3>
                   <p className="mt-3 leading-7 text-slate-300">{item.description}</p>
                 </article>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="section-band selected-work-band text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <SectionKicker>Portfolio</SectionKicker>
-              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Selected Work with Practical Stakes
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-200">
-                These examples show how Cognisint turns ideas into usable analysis, governance frameworks, legal
-                workflow tools, and applied AI concepts you can inspect.
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-8 rounded-sm border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              >
-                <Link href="/portfolio">View Portfolio</Link>
-              </Button>
-            </div>
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              {selectedWork.map((item) => {
-                const content = (
-                  <article className="selected-work-card flex h-full flex-col">
-                    {item.src && item.width && item.height ? (
-                      <div className="mb-5 flex h-20 items-center">
-                        <Image
-                          src={item.src}
-                          alt={`${item.title} logo`}
-                          width={item.width}
-                          height={item.height}
-                          className="max-h-16 w-auto object-contain"
-                        />
-                      </div>
-                    ) : null}
-                  <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
-                    <FileText className="h-4 w-4" aria-hidden="true" />
-                    {item.label}
-                  </div>
-                    <h3 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
-                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
-                      {item.linkLabel}
-                    </p>
-                  </article>
-                )
-
-                return item.external ? (
-                  <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="group block">
-                    {content}
-                  </a>
-                ) : (
-                  <Link key={item.title} href={item.href} className="group block">
-                    {content}
-                  </Link>
-                )
-              })}
             </div>
           </div>
         </div>
