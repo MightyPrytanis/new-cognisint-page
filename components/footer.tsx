@@ -1,4 +1,4 @@
-import { MailIcon, Phone } from "lucide-react"
+import { Linkedin, MailIcon, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -57,6 +57,15 @@ export default function Footer() {
               <a href="mailto:info&#64;cognisint&#46;com" className="flex items-center gap-2 transition hover:text-white">
                 <MailIcon className="h-4 w-4" />
                 info@cognisint.com
+              </a>
+              <a
+                href="https://www.linkedin.com/company/cognisint/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 transition hover:text-white"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
               </a>
             </div>
           </div>

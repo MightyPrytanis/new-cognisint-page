@@ -123,7 +123,7 @@ export default function Home() {
             <p className="mt-8 text-xl font-semibold text-white sm:text-2xl">
               Real Intelligence. Real Judgment. Real Results.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild size="lg" className="rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
                 <a href="#what-is-cognisint">Explore Cognisint</a>
               </Button>
@@ -137,6 +137,14 @@ export default function Home() {
                   Read Founder Bio
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-sm border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              >
+                <Link href="/portfolio">View Portfolio</Link>
               </Button>
             </div>
           </div>
@@ -272,9 +280,14 @@ export default function Home() {
                 Cognisint brings legal, policy, institutional, and applied technology experience to problems that do not
                 fit neatly within a single professional lane.
               </p>
-              <Button asChild className="mt-8 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90">
-                <a href="#fit-and-contact">Start a Conversation</a>
-              </Button>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild className="rounded-sm bg-primary text-primary-foreground hover:bg-primary/90">
+                  <a href="#fit-and-contact">Start a Conversation</a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-sm bg-transparent">
+                  <Link href="/portfolio">View Portfolio</Link>
+                </Button>
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {expertiseAreas.map((item) => (
@@ -294,7 +307,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <SectionKicker light>Fit and Next Steps</SectionKicker>
-            <h2 className="section-title mt-4 text-white">From Difficult Questions to Workable Next Steps</h2>
+            <h2 className="section-title mt-4 text-white">From Difficult Questions to Workable Solutions</h2>
             <p className="mt-6 text-lg leading-8 text-slate-200">
               Sound decisions begin with a clear understanding of the problem, the people affected, and the constraints
               that matter. If your organization is navigating change in governance, technology, infrastructure, or
