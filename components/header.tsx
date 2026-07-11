@@ -31,14 +31,8 @@ export default function Header() {
             <a href="/#founder" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Founder
             </a>
-            <a href="/#framework" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Framework
-            </a>
-            <a href="/#writing" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Writing
-            </a>
-            <a href="/#projects" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Projects
+            <a href="/#work" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Work
             </a>
             <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services
@@ -79,14 +73,8 @@ export default function Header() {
             <a href="/#founder" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Founder
             </a>
-            <a href="/#framework" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Framework
-            </a>
-            <a href="/#writing" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Writing
-            </a>
-            <a href="/#projects" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Projects
+            <a href="/#work" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Work
             </a>
             <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Services

@@ -16,21 +16,6 @@ const categories = [
       "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
     href: "/framework",
   },
-  {
-    label: "In Development",
-    title: "Technology and Governance",
-    description: "In development.",
-  },
-  {
-    label: "In Development",
-    title: "Civic and Institutional Concepts",
-    description: "In development.",
-  },
-  {
-    label: "In Development",
-    title: "Modernization Without Legitimacy Loss",
-    description: "In development.",
-  },
 ]
 
 export default function WritingPage() {
@@ -49,6 +34,9 @@ export default function WritingPage() {
           <h1 className="mt-4 text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
             Writing and Thought
           </h1>
+          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            Published essays and frameworks. Part 2 of the public-sector AI series is in development.
+          </p>
         </section>
 
         <section className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -72,11 +60,6 @@ export default function WritingPage() {
           ))}
         </section>
 
-        <section className="mt-12 bg-[var(--ink)] p-8 text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Writing Status</p>
-          <h2 className="mt-4 text-2xl font-semibold">Public Writing in Development</h2>
-          <p className="mt-4 max-w-3xl leading-7 text-slate-200">Additional essays and proposals are in development.</p>
-        </section>
       </div>
     </main>
   )

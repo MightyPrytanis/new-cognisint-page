@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import type React from "react"
 import {
   ArrowRight,
-  BookOpenText,
   BriefcaseBusiness,
   Building2,
   CircleCheck,
@@ -18,14 +17,16 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 
-type ConceptLogo = {
-  name: string
-  status: string
-  src: string
-  width: number
-  height: number
-  href?: string
-  linkLabel?: string
+type SelectedWork = {
+  label: string
+  title: string
+  description: string
+  href: string
+  linkLabel: string
+  src?: string
+  width?: number
+  height?: number
+  external?: boolean
 }
 
 const focusAreas = [
@@ -94,58 +95,45 @@ const services = [
   },
 ]
 
-const conceptLogos: ConceptLogo[] = [
-  {
-    name: "Cyrano",
-    status: "MCP agent platform concept in development",
-    src: "/cyrano-horizontal-lockup-approved.png",
-    width: 240,
-    height: 126,
-  },
-  {
-    name: "LexFiat",
-    status: "Legal and workflow concept in development",
-    src: "/lexfiat-wordmark-approved.png",
-    width: 260,
-    height: 99,
-  },
-  {
-    name: "Arkiver",
-    status: "Knowledge architecture concept in development",
-    src: "/arkiver-wordmark-approved.png",
-    width: 250,
-    height: 58,
-  },
-  {
-    name: "MiCite",
-    status: "Michigan legal citation formatter in live beta testing",
-    src: "/micite-wordmark-approved.png",
-    width: 280,
-    height: 158,
-    href: "https://micite.online",
-    linkLabel: "MiCite.online",
-  },
-]
-
-const writing = [
+const selectedWork: SelectedWork[] = [
   {
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description:
       "Part 1 of 3. An essay on why public institutions need coherent AI strategies grounded in accountability and trust.",
     href: "/writing/michigan-public-sector-ai",
+    linkLabel: "Read the essay",
   },
   {
-    label: "Frameworks",
+    label: "Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
-      "A developing statement of Standards of Trust for transparency, accountability, and user sovereignty in AI-mediated interactions.",
+      "A developing statement of Standards of Trust for transparency, accountability, user sovereignty, and responsible AI-mediated interaction.",
     href: "/framework",
+    linkLabel: "Read the framework",
   },
   {
-    label: "Writing Status",
-    title: "Essays and Proposals in Development",
-    description: "In development.",
+    label: "Live Beta",
+    title: "MiCite",
+    description:
+      "A Michigan-specific legal citation formatter built to reduce repetitive formatting friction. It is not an AI product; its relevance is practical legal workflow design.",
+    href: "https://micite.online",
+    linkLabel: "Open MiCite",
+    src: "/micite-wordmark-approved.png",
+    width: 280,
+    height: 158,
+    external: true,
+  },
+  {
+    label: "Applied AI Workflow",
+    title: "Cyrano",
+    description:
+      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in applied professional settings.",
+    href: "/projects",
+    linkLabel: "View project notes",
+    src: "/cyrano-horizontal-lockup-approved.png",
+    width: 240,
+    height: 126,
   },
 ]
 
@@ -224,7 +212,7 @@ export default function Home() {
                     AI Responsiveness Is a Must-Have
                   </h2>
                   <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Read Our Updated AI Trust Framework
+                    Read the Updated AI Trust Framework
                   </p>
                 </Link>
 
@@ -235,7 +223,7 @@ export default function Home() {
                   className="group block py-6"
                 >
                   <h2 className="text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
-                    Connect With Us on LinkedIn!
+                    Connect on LinkedIn
                   </h2>
                 </a>
 
@@ -265,13 +253,12 @@ export default function Home() {
                 governance, and public-interest modernization.
               </p>
               <p>
-                It brings together writing, frameworks, advisory work, and developing technology concepts to help
-                institutions think clearly about change.
+                If you are navigating institutional change, AI adoption, public trust, or workflow modernization,
+                Cognisint is designed to help you think clearly before you move quickly.
               </p>
               <p>
-                Some Cognisint work takes the form of essays, proposals, frameworks, and public analysis. Some takes the
-                form of advisory or consulting engagements. Some takes the form of custom app concepts and workflow
-                tools in development.
+                The work brings together writing, frameworks, advisory judgment, and practical technology experiments
+                so you can connect principle to implementation.
               </p>
               <p className="font-medium text-foreground">
                 The objective is not technology for its own sake. The objective is helping institutions become more
@@ -365,8 +352,9 @@ export default function Home() {
                 Services and Applied Work
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
-                Cognisint supports institutions through selected advisory, consulting, writing, research, and applied
-                technology work. Engagements are shaped around the problem, not around a prefabricated package.
+                If you need help making sense of governance, modernization, AI policy, institutional trust, or applied
+                workflow tools, Cognisint can help shape the question, clarify the risks, and identify a responsible
+                next step.
               </p>
               <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
                 <Link href="/contact">Start a Conversation</Link>
@@ -385,115 +373,57 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="framework" className="framework-hero bg-[var(--ink)] text-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Framework</p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">The Cognisint AI/User Integrity Framework</h2>
-          </div>
-          <div>
-            <div className="space-y-5 text-lg leading-8 text-slate-200">
-              <p>
-                The Cognisint AI/User Integrity Framework is a developing body of work exploring what trustworthy
-                human-AI interactions should look like.
-              </p>
-              <p>
-                Its purpose is to establish Standards of Trust for transparency, accountability, user sovereignty, and
-                responsible technological development.
-              </p>
-            </div>
-            <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
-              <Link href="/framework">
-                Read the Framework
-                <BookOpenText className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="section-band">
+      <section id="work" className="section-band bg-[var(--surface)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
             <div>
-              <SectionKicker>Projects and Concepts</SectionKicker>
-              <h2 className="section-title mt-4">Selected Concepts in Development</h2>
+              <SectionKicker>Selected Work</SectionKicker>
+              <h2 className="section-title mt-4">Concrete Examples, Not a Catalog of Possibilities</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                Cognisint uses applied concepts, civic proposals, governance frameworks, and technology experiments to
-                test ideas in concrete settings. The current set is selective and in development.
+                A focused set of published writing, applied tools, and in-progress systems that show how Cognisint
+                connects institutional judgment, responsible technology, and practical execution.
               </p>
               <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
-                <Link href="/projects">View Current Concepts</Link>
+                <Link href="/projects">View Project Notes</Link>
               </Button>
             </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {conceptLogos.map((concept) => {
-                const card = (
-                  <article className="package-card flex min-h-44 flex-col justify-between p-5 transition group-hover:border-[var(--blue)]">
-                    <div className="flex h-20 items-center">
-                      <Image
-                        src={concept.src}
-                        alt={`${concept.name} logo`}
-                        width={concept.width}
-                        height={concept.height}
-                        className="max-h-16 w-auto object-contain"
-                      />
-                    </div>
-                    <div className="mt-6 border-t border-border pt-4">
-                      <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
-                      {concept.linkLabel ? (
-                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
-                          {concept.linkLabel}
-                        </p>
-                      ) : null}
-                    </div>
-                  </article>
-                )
-
-                return concept.href ? (
-                  <a key={concept.name} href={concept.href} target="_blank" rel="noreferrer" className="group block">
-                    {card}
-                  </a>
-                ) : (
-                  <div key={concept.name}>{card}</div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="writing" className="section-band bg-[var(--surface)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <SectionKicker>Writing and Thought</SectionKicker>
-              <h2 className="section-title mt-4">Writing and Thought</h2>
-              <p className="mt-5 text-lg leading-8 text-muted-foreground">Essays, frameworks, and proposals from Cognisint.</p>
-              <Button asChild variant="outline" className="mt-8 rounded-sm bg-transparent">
-                <Link href="/writing">View Writing</Link>
-              </Button>
-            </div>
-            <div className="grid grid-cols-1 gap-5">
-              {writing.map((item) => (
-                <article key={item.title} className="publication-card">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {selectedWork.map((item) => {
+                const content = (
+                  <article className="publication-card flex h-full flex-col">
+                    {item.src && item.width && item.height ? (
+                      <div className="mb-5 flex h-20 items-center">
+                        <Image
+                          src={item.src}
+                          alt={`${item.title} logo`}
+                          width={item.width}
+                          height={item.height}
+                          className="max-h-16 w-auto object-contain"
+                        />
+                      </div>
+                    ) : null}
                   <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
                     <FileText className="h-4 w-4" aria-hidden="true" />
                     {item.label}
                   </div>
-                  <h3 className="mt-4 text-2xl font-semibold text-foreground">
-                    {"href" in item && item.href ? (
-                      <Link href={item.href} className="hover:text-[var(--blue)]">
-                        {item.title}
-                      </Link>
-                    ) : (
-                      item.title
-                    )}
-                  </h3>
+                    <h3 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
-                </article>
-              ))}
+                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
+                      {item.linkLabel}
+                    </p>
+                  </article>
+                )
+
+                return item.external ? (
+                  <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="group block">
+                    {content}
+                  </a>
+                ) : (
+                  <Link key={item.title} href={item.href} className="group block">
+                    {content}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Cpu, FileText, Landmark, Map } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
 type TechnologyConcept = {
   name: string
-  status: string
+  label: string
+  description: string
   src: string
   width: number
   height: number
@@ -13,58 +14,21 @@ type TechnologyConcept = {
   linkLabel?: string
 }
 
-const projectGroups = [
-  {
-    label: "In Development",
-    title: "Civic and Institutional Proposals",
-    description: "In development.",
-    icon: Landmark,
-  },
-  {
-    label: "In Development",
-    title: "Technology Concepts",
-    description: "Custom app solutions, workflow systems, AI-enabled tools, and applied software concepts in development.",
-    icon: Cpu,
-  },
-  {
-    label: "Published Framework",
-    title: "Governance Frameworks",
-    description: "The AI/User Integrity Framework is the first public framework in this area.",
-    icon: FileText,
-  },
-  {
-    label: "In Development",
-    title: "Economic and Community Development",
-    description: "In development.",
-    icon: Map,
-  },
-]
-
 const technologyConcepts: TechnologyConcept[] = [
   {
     name: "Cyrano",
-    status: "MCP agent platform concept in development",
+    label: "Applied AI Workflow",
+    description:
+      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in applied professional settings.",
     src: "/cyrano-horizontal-lockup-approved.png",
     width: 280,
     height: 147,
   },
   {
-    name: "LexFiat",
-    status: "Legal and workflow concept in development",
-    src: "/lexfiat-wordmark-approved.png",
-    width: 300,
-    height: 114,
-  },
-  {
-    name: "Arkiver",
-    status: "Knowledge architecture concept in development",
-    src: "/arkiver-wordmark-approved.png",
-    width: 290,
-    height: 68,
-  },
-  {
     name: "MiCite",
-    status: "Michigan-specific legal citation formatting app in live beta testing",
+    label: "Live Beta",
+    description:
+      "A Michigan-specific legal citation formatter built to reduce repetitive formatting friction. MiCite does not use AI; it is included here as practical legal technology rather than as an AI/User Integrity Framework example.",
     src: "/micite-wordmark-approved.png",
     width: 320,
     height: 180,
@@ -87,40 +51,26 @@ export default function ProjectsPage() {
         <section className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Projects</p>
           <h1 className="mt-4 text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-            Projects and Concepts
+            Selected Work
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Selected applied concepts, civic proposals, governance frameworks, and technology experiments connected to
-            Cognisint's work.
+            A focused set of applied tools and systems with enough substance to show the direction of the work without
+            padding the page with placeholders.
           </p>
         </section>
 
-        <section className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {projectGroups.map((project) => (
-            <article key={project.title} className="publication-card">
-              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
-                <project.icon className="h-4 w-4" aria-hidden="true" />
-                {project.label}
-              </div>
-              <h2 className="mt-4 text-2xl font-semibold text-foreground">{project.title}</h2>
-              <p className="mt-3 leading-7 text-muted-foreground">{project.description}</p>
-            </article>
-          ))}
-        </section>
-
-        <section className="mt-14">
+        <section className="mt-12">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">
-              Technology Concepts
+              Applied Work
             </p>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground">Selected App and Workflow Concepts</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">Applied technology directions in development.</p>
+            <h2 className="mt-4 text-3xl font-semibold text-foreground">Current Examples</h2>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
             {technologyConcepts.map((concept) => {
               const card = (
-                <article className="package-card flex min-h-48 flex-col justify-between p-5 transition group-hover:border-[var(--blue)]">
+                <article className="package-card flex min-h-64 flex-col justify-between p-6 transition group-hover:border-[var(--blue)]">
                   <div className="flex h-24 items-center">
                     <Image
                       src={concept.src}
@@ -131,8 +81,11 @@ export default function ProjectsPage() {
                     />
                   </div>
                   <div className="mt-6 border-t border-border pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
+                      {concept.label}
+                    </p>
                     <h3 className="text-lg font-semibold text-foreground">{concept.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{concept.status}</p>
+                    <p className="mt-3 leading-7 text-muted-foreground">{concept.description}</p>
                     {concept.linkLabel ? (
                       <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
                         {concept.linkLabel}
