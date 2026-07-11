@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import InquiryForm from "@/components/inquiry-form"
 import type React from "react"
 import {
   ArrowRight,
@@ -284,32 +285,59 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 border-t border-white/15 pt-10 md:grid-cols-2 md:gap-0">
-            <section className="md:pr-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest-light)]">
-                Potential Clients
-              </p>
-              <h3 className="mt-3 text-2xl font-semibold text-white">Organizations Cognisint Can Serve</h3>
-              <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--forest-light)]">
-                {potentialClients.map((client) => (
-                  <li key={client} className="pl-1">
-                    {client}
-                  </li>
-                ))}
-              </ul>
-            </section>
+        </div>
+      </section>
 
-            <section className="mt-10 border-t border-white/15 pt-10 md:mt-0 md:border-l md:border-t-0 md:pl-12 md:pt-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">Areas of Work</p>
-              <h3 className="mt-3 text-2xl font-semibold text-white">Subjects Cognisint Can Help Address</h3>
-              <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--blue)]">
-                {advisorySubjects.map((subject) => (
-                  <li key={subject} className="pl-1">
-                    {subject}
-                  </li>
-                ))}
-              </ul>
-            </section>
+      <section id="fit-and-contact" className="section-band scroll-mt-24 bg-[var(--surface)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <SectionKicker>Fit and Next Steps</SectionKicker>
+            <h2 className="section-title mt-4">From Difficult Questions to Workable Next Steps</h2>
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              Sound decisions begin with a clear understanding of the problem, the people affected, and the constraints
+              that matter. If your organization is navigating change in governance, technology, infrastructure, or
+              professional practice, Cognisint can help turn a difficult question into a workable next step. The goal is
+              progress that strengthens judgment, accountability, legitimacy, and trust.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.12fr_0.88fr]">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-0">
+              <section className="border-t-4 border-[var(--forest)] pt-6 sm:pr-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
+                  Potential Clients
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-foreground">Organizations Cognisint Can Serve</h3>
+                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-muted-foreground marker:text-[var(--forest)]">
+                  {potentialClients.map((client) => (
+                    <li key={client} className="pl-1">
+                      {client}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="border-t-4 border-[var(--sapphire)] pt-6 sm:border-l sm:border-t-[4px] sm:pl-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--sapphire)]">Areas of Work</p>
+                <h3 className="mt-3 text-2xl font-semibold text-foreground">Subjects Cognisint Can Help Address</h3>
+                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-muted-foreground marker:text-[var(--sapphire)]">
+                  {advisorySubjects.map((subject) => (
+                    <li key={subject} className="pl-1">
+                      {subject}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            <aside className="package-card h-fit p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">Contact</p>
+              <h3 className="mt-3 text-3xl font-semibold text-foreground">Start a Conversation</h3>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Share the question, opportunity, or institutional challenge you are working through.
+              </p>
+              <InquiryForm compact className="mt-6" />
+            </aside>
           </div>
         </div>
       </section>
