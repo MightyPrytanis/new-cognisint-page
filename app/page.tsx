@@ -80,6 +80,27 @@ const expertiseAreas = [
   },
 ]
 
+const potentialClients = [
+  "State and municipal governments",
+  "School districts and educational institutions",
+  "Transportation and infrastructure agencies",
+  "Public development authorities",
+  "Nonprofit and civic organizations",
+  "Law firms and legal departments",
+  "Businesses operating in regulated or public-facing environments",
+]
+
+const advisorySubjects = [
+  "Organizational governance and policy",
+  "Communications and public engagement",
+  "Technology adoption and integration",
+  "AI governance and responsible technology use",
+  "Legal and professional workflow modernization",
+  "Economic and community development",
+  "Infrastructure planning and finance",
+  "Public-private partnerships",
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -261,6 +282,34 @@ export default function Home() {
                 </article>
               ))}
             </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 border-t border-white/15 pt-10 md:grid-cols-2 md:gap-0">
+            <section className="md:pr-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest-light)]">
+                Potential Clients
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-white">Organizations Cognisint Can Serve</h3>
+              <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--forest-light)]">
+                {potentialClients.map((client) => (
+                  <li key={client} className="pl-1">
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="mt-10 border-t border-white/15 pt-10 md:mt-0 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">Areas of Work</p>
+              <h3 className="mt-3 text-2xl font-semibold text-white">Subjects Cognisint Can Help Address</h3>
+              <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--blue)]">
+                {advisorySubjects.map((subject) => (
+                  <li key={subject} className="pl-1">
+                    {subject}
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </div>
       </section>
