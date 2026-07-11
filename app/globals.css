@@ -202,12 +202,12 @@
   }
 
   .principles-band {
-    border-top: 1px solid color-mix(in srgb, var(--metal) 55%, white);
-    border-bottom: 1px solid color-mix(in srgb, var(--forest-light) 28%, white);
+    border-top: 1px solid color-mix(in srgb, var(--metal) 24%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--forest-light) 32%, transparent);
     background:
-      linear-gradient(115deg, color-mix(in srgb, var(--navy) 6%, var(--paper)) 0%, transparent 38%),
-      linear-gradient(295deg, color-mix(in srgb, var(--forest-light) 12%, var(--paper)) 0%, transparent 42%),
-      var(--paper);
+      linear-gradient(115deg, rgba(2, 136, 209, 0.09), transparent 38%),
+      linear-gradient(295deg, rgba(106, 165, 142, 0.13), transparent 44%),
+      var(--navy);
   }
 
   .principle-card {
@@ -231,6 +231,14 @@
     background: var(--principle-accent);
     color: #ffffff;
     box-shadow: 0 8px 18px color-mix(in srgb, var(--principle-accent) 18%, transparent);
+  }
+
+  .closing-band {
+    border-top: 1px solid color-mix(in srgb, var(--forest-light) 30%, transparent);
+    background:
+      linear-gradient(120deg, rgba(0, 33, 71, 0.34), transparent 44%),
+      linear-gradient(300deg, rgba(15, 110, 219, 0.1), transparent 48%),
+      var(--forest-slate);
   }
 
   .selected-work-band {

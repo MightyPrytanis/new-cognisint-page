@@ -216,12 +216,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="principles" className="principles-band section-band">
+      <section id="principles" className="principles-band section-band text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <SectionKicker>Issues and Principles</SectionKicker>
-              <h2 className="section-title mt-4">What the Work Is About</h2>
+              <SectionKicker light>Issues and Principles</SectionKicker>
+              <h2 className="section-title mt-4 text-white">What the Work Is About</h2>
               <div className="mt-6 grid h-1.5 w-52 grid-cols-5" aria-hidden="true">
                 <span className="bg-[var(--navy)]" />
                 <span className="bg-[var(--sapphire)]" />
@@ -229,7 +229,7 @@ export default function Home() {
                 <span className="bg-[var(--forest)]" />
                 <span className="bg-[var(--forest-light)]" />
               </div>
-              <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              <p className="mt-5 text-lg leading-8 text-slate-200">
                 The recurring issues are institutional trust, responsible modernization, fair systems, and the practical
                 conditions that let people and organizations do good work.
               </p>
@@ -258,20 +258,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="expertise" className="section-band scroll-mt-24 bg-[var(--ink)] text-white">
+      <section id="expertise" className="section-band scroll-mt-24 bg-[var(--paper)] text-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
             <div>
               <SectionKicker>Advisory and Applied Work</SectionKicker>
-              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
                 Areas of Expertise
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-200">
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">
                 Cognisint brings legal, policy, institutional, and applied technology experience to problems that do not
                 fit neatly within a single professional lane.
               </p>
-              <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
-                <Link href="/contact">Start a Conversation</Link>
+              <Button asChild className="mt-8 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90">
+                <a href="#fit-and-contact">Start a Conversation</a>
               </Button>
             </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -288,12 +288,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="fit-and-contact" className="section-band scroll-mt-24 bg-[var(--surface)]">
+      <section id="fit-and-contact" className="closing-band section-band scroll-mt-24 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <SectionKicker>Fit and Next Steps</SectionKicker>
-            <h2 className="section-title mt-4">From Difficult Questions to Workable Next Steps</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <SectionKicker light>Fit and Next Steps</SectionKicker>
+            <h2 className="section-title mt-4 text-white">From Difficult Questions to Workable Next Steps</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-200">
               Sound decisions begin with a clear understanding of the problem, the people affected, and the constraints
               that matter. If your organization is navigating change in governance, technology, infrastructure, or
               professional practice, Cognisint can help turn a difficult question into a workable next step. The goal is
@@ -304,11 +304,11 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.12fr_0.88fr]">
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-0">
               <section className="border-t-4 border-[var(--forest)] pt-6 sm:pr-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest-light)]">
                   Potential Clients
                 </p>
-                <h3 className="mt-3 text-2xl font-semibold text-foreground">Organizations Cognisint Can Serve</h3>
-                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-muted-foreground marker:text-[var(--forest)]">
+                <h3 className="mt-3 text-2xl font-semibold text-white">Organizations Cognisint Can Serve</h3>
+                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--forest-light)]">
                   {potentialClients.map((client) => (
                     <li key={client} className="pl-1">
                       {client}
@@ -319,8 +319,8 @@ export default function Home() {
 
               <section className="border-t-4 border-[var(--sapphire)] pt-6 sm:border-l sm:border-t-[4px] sm:pl-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--sapphire)]">Areas of Work</p>
-                <h3 className="mt-3 text-2xl font-semibold text-foreground">Subjects Cognisint Can Help Address</h3>
-                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-muted-foreground marker:text-[var(--sapphire)]">
+                <h3 className="mt-3 text-2xl font-semibold text-white">Subjects Cognisint Can Help Address</h3>
+                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-slate-200 marker:text-[var(--blue)]">
                   {advisorySubjects.map((subject) => (
                     <li key={subject} className="pl-1">
                       {subject}
@@ -346,6 +346,14 @@ export default function Home() {
   )
 }
 
-function SectionKicker({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">{children}</p>
+function SectionKicker({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  return (
+    <p
+      className={`text-xs font-semibold uppercase tracking-[0.28em] ${
+        light ? "text-[var(--forest-light)]" : "text-[var(--blue)]"
+      }`}
+    >
+      {children}
+    </p>
+  )
 }
