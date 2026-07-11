@@ -4,8 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Make a Payment | Cognisint",
-  description: "Make a payment to Cognisint LLC.",
+  title: "Account | Cognisint",
+  description: "Account and payment information for Cognisint LLC.",
 }
 
 const squarePaymentUrl = "https://square.link/u/Oju23WFR?src=embed"
@@ -23,9 +23,9 @@ export default function PaymentPage() {
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_0.72fr]">
           <section className="package-card p-6 sm:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Payment</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Account</p>
             <h1 className="mt-4 text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-              Make a Payment
+              Account and Payment
             </h1>
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
               Use this page to make a payment to Cognisint LLC for an invoice, engagement, or agreed project expense.
@@ -45,7 +45,7 @@ export default function PaymentPage() {
           </section>
 
           <aside className="package-card h-fit p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Payment Note</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Account Note</p>
             <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground">
               <p>
                 Payments should correspond to an existing invoice, written agreement, or other confirmed arrangement

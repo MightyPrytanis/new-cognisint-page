@@ -43,9 +43,9 @@ export default function MichiganPublicSectorAiArticle() {
           variant="outline"
           className="mb-8 rounded-sm bg-transparent"
         >
-          <Link href="/writing">
+          <Link href="/portfolio">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Writing
+            Back to Portfolio
           </Link>
         </Button>
 

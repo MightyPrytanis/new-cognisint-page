@@ -4,13 +4,13 @@ import Link from "next/link"
 
 const links = [
   { label: "About", href: "/#what-is-cognisint" },
-  { label: "Founder", href: "/about" },
+  { label: "Bio", href: "/about" },
   { label: "Framework", href: "/framework" },
-  { label: "Writing", href: "/writing" },
-  { label: "Projects", href: "/projects" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Situations", href: "/#services" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
-  { label: "Payment", href: "/payment" },
+  { label: "Account", href: "/payment" },
   { label: "Terms & Privacy", href: "/terms" },
 ]
 

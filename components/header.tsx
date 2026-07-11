@@ -28,17 +28,17 @@ export default function Header() {
             <a href="/#what-is-cognisint" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
             </a>
-            <a href="/#founder" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Founder
-            </a>
-            <a href="/#work" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Work
+            <Link href="/about" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Bio
+            </Link>
+            <a href="/#portfolio" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Portfolio
             </a>
             <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Services
+              Situations
             </a>
             <Link href="/payment" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Payment
+              Account
             </Link>
           </nav>
 
@@ -70,17 +70,17 @@ export default function Header() {
             <a href="/#what-is-cognisint" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
             </a>
-            <a href="/#founder" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Founder
-            </a>
-            <a href="/#work" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Work
+            <Link href="/about" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Bio
+            </Link>
+            <a href="/#portfolio" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+              Portfolio
             </a>
             <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Services
+              Situations
             </a>
             <Link href="/payment" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
-              Payment
+              Account
             </Link>
             <ShareButton className="w-full justify-center" />
             <Button
