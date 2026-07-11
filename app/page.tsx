@@ -87,6 +87,7 @@ const potentialClients = [
   "Transportation and infrastructure agencies",
   "Public development authorities",
   "Nonprofit and civic organizations",
+  "Professional and industry associations",
   "Law firms and legal departments",
   "Businesses operating in regulated or public-facing environments",
 ]
