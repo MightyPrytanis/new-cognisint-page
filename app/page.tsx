@@ -7,10 +7,10 @@ import {
   CircleCheck,
   Cpu,
   FileText,
+  Handshake,
   Landmark,
   Scale,
   ShieldCheck,
-  Wrench,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -29,28 +29,28 @@ type SelectedWork = {
 
 const principles = [
   {
-    title: "Technology Should Strengthen Judgment",
+    title: "Service",
     description:
-      "The useful question is not whether a tool is impressive. It is whether it helps people make better decisions with clearer accountability.",
+      "Do all the good you can. The work should help people, institutions, and communities become more capable, not merely more efficient.",
+    icon: Handshake,
+  },
+  {
+    title: "Integrity",
+    description:
+      "Tools, policies, and strategies should be honest about what they can do, clear about their limits, and accountable to human judgment.",
     icon: ShieldCheck,
   },
   {
-    title: "Legitimacy Is Operational",
+    title: "Fairness",
     description:
-      "Policy, process, communication, and execution all shape whether people trust an institution enough to follow its lead.",
+      "Only fair markets are truly free. Durable systems require transparent rules, meaningful access, and institutions people can trust.",
     icon: Scale,
   },
   {
-    title: "Modernization Needs a Public Reason",
+    title: "Flourishing",
     description:
-      "Change is easier to defend when people can see the problem being solved, the limits being respected, and the human judgment still in charge.",
-    icon: Building2,
-  },
-  {
-    title: "Practical Tools Beat Abstract Enthusiasm",
-    description:
-      "A working citation tool, a clear policy framework, or a disciplined workflow can reveal more than broad claims about innovation.",
-    icon: Wrench,
+      "Modernization should make room for compact abundance: stronger places, healthier professions, better tools, and more humane work.",
+    icon: CircleCheck,
   },
 ]
 
@@ -260,8 +260,8 @@ export default function Home() {
               <SectionKicker>Issues and Principles</SectionKicker>
               <h2 className="section-title mt-4">What the Work Is About</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                The recurring issues are trust, judgment, legitimacy, modernization, and the practical use of technology
-                in institutions that cannot afford shallow answers.
+                The recurring values are service, integrity, fairness, and flourishing. They shape how Cognisint thinks
+                about trust, judgment, modernization, and the practical use of technology.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
