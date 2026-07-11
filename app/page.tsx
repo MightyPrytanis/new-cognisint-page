@@ -135,8 +135,9 @@ export default function Home() {
               Trust, Integrity, and Strategy for the AI Age
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
-              Cognisint helps institutions, and related businesses, make practical decisions about modernization, AI,
-              governance, and workflow design without sacrificing legitimacy, judgment, accountability, or public trust.
+              Cognisint helps institutions make sound, practical decisions about AI and modernization. Its work connects
+              governance with workflow design while protecting institutional legitimacy, professional judgment,
+              accountability, and public trust. Cognisint also serves businesses facing similar challenges.
             </p>
             <p className="mt-8 text-xl font-semibold text-white sm:text-2xl">
               Real Intelligence. Real Judgment. Real Results.
