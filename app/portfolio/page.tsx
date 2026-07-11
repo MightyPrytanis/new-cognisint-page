@@ -18,7 +18,8 @@ type PortfolioItem = {
 
 export const metadata: Metadata = {
   title: "Portfolio | Cognisint",
-  description: "Selected Cognisint work in writing, governance, legal technology, and applied AI workflow design.",
+  description:
+    "Selected Cognisint work in public analysis, governance frameworks, legal workflow tools, and applied AI design.",
 }
 
 const portfolioItems: PortfolioItem[] = [
@@ -26,7 +27,7 @@ const portfolioItems: PortfolioItem[] = [
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description:
-      "Part 1 of 3. A public-sector AI essay about why institutions need coherent strategies grounded in accountability and trust.",
+      "Part 1 of 3. A public-sector AI essay about moving from scattered restrictions to coherent, accountable strategy.",
     href: "/writing/michigan-public-sector-ai",
     linkLabel: "Read the essay",
   },
@@ -34,7 +35,7 @@ const portfolioItems: PortfolioItem[] = [
     label: "Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
-      "A developing statement of Standards of Trust for transparency, accountability, user sovereignty, and responsible AI-mediated interaction.",
+      "A standards framework for evaluating AI-mediated interactions through transparency, accountability, user sovereignty, and trust.",
     href: "/framework",
     linkLabel: "Read the framework",
   },
@@ -42,7 +43,7 @@ const portfolioItems: PortfolioItem[] = [
     label: "Live Beta",
     title: "MiCite",
     description:
-      "A Michigan-specific legal citation formatter built to reduce repetitive formatting friction. MiCite does not use AI; it is included here as practical legal technology rather than as an AI framework example.",
+      "A Michigan-specific legal citation formatter that reduces repetitive drafting friction. MiCite does not use AI; it is included as practical legal workflow design.",
     href: "https://micite.online",
     linkLabel: "Open MiCite",
     src: "/micite-wordmark-approved.png",
@@ -54,7 +55,7 @@ const portfolioItems: PortfolioItem[] = [
     label: "Applied AI Workflow",
     title: "Cyrano",
     description:
-      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in applied professional settings.",
+      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in professional settings.",
     href: "/portfolio",
     linkLabel: "Project notes in development",
     src: "/cyrano-horizontal-lockup-approved.png",
@@ -78,11 +79,11 @@ export default function PortfolioPage() {
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--forest-light)]">Portfolio</p>
             <h1 className="mt-4 text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Work You Can Read, Test, or Evaluate
+              Selected Work with Practical Stakes
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-200">
-              Selected examples of public analysis, governance principles, applied legal technology, and emerging AI
-              workflow design.
+              A few current examples you can use to assess how Cognisint approaches real institutional problems:
+              public AI policy, trust frameworks, legal workflow friction, and applied AI coordination.
             </p>
           </div>
         </div>

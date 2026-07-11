@@ -8,7 +8,6 @@ const links = [
   { label: "Framework", href: "/framework" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Situations", href: "/#services" },
-  { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
   { label: "Account", href: "/payment" },
   { label: "Terms & Privacy", href: "/terms" },

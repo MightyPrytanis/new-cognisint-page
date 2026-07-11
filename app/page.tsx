@@ -31,25 +31,25 @@ const principles = [
   {
     title: "Service",
     description:
-      "Do all the good you can. The work should help people, institutions, and communities become more capable, not merely more efficient.",
+      "Good modernization should leave people, institutions, and communities with more capacity than it takes from them.",
     icon: Handshake,
   },
   {
     title: "Integrity",
     description:
-      "Tools, policies, and strategies should be honest about what they can do, clear about their limits, and accountable to human judgment.",
+      "Policies, tools, and strategies should be honest about tradeoffs, clear about limits, and accountable to human judgment.",
     icon: ShieldCheck,
   },
   {
     title: "Fairness",
     description:
-      "Only fair markets are truly free. Durable systems require transparent rules, meaningful access, and institutions people can trust.",
+      "Durable markets and institutions need transparent rules, meaningful access, and procedures people can recognize as legitimate.",
     icon: Scale,
   },
   {
     title: "Flourishing",
     description:
-      "Modernization should make room for compact abundance: stronger places, healthier professions, better tools, and more humane work.",
+      "The aim is practical abundance: stronger places, healthier professions, better tools, and more humane work.",
     icon: CircleCheck,
   },
 ]
@@ -58,25 +58,25 @@ const usefulFor = [
   {
     title: "Public and Civic Institutions",
     description:
-      "Useful when modernization, public trust, procurement, policy, and operational legitimacy all have to be considered at once.",
+      "For agencies, public bodies, and civic institutions modernizing services while protecting legitimacy, procurement discipline, and public trust.",
     icon: Landmark,
   },
   {
     title: "Legal and Professional Workflows",
     description:
-      "Useful when routine friction, ethical boundaries, documentation, or quality control are slowing down work that still requires professional judgment.",
+      "For teams that need better tools and documentation without weakening confidentiality, quality control, or professional judgment.",
     icon: BriefcaseBusiness,
   },
   {
     title: "Teams Facing AI Pressure",
     description:
-      "Useful when leaders need a grounded way to respond to AI without falling into hype, panic, prohibition, or vague policy theater.",
+      "For leaders who need an AI posture they can defend: practical policy, procurement questions, workflow guidance, and clear communication.",
     icon: Cpu,
   },
   {
-    title: "Organizations Needing a Strategic Generalist",
+    title: "Cross-Functional Problems",
     description:
-      "Useful when the problem crosses law, policy, technology, governance, communication, and implementation rather than staying in one neat lane.",
+      "For problems that cross law, policy, technology, governance, communication, and implementation without belonging neatly to one department.",
     icon: CircleCheck,
   },
 ]
@@ -86,7 +86,7 @@ const selectedWork: SelectedWork[] = [
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description:
-      "Part 1 of 3. An essay on why public institutions need coherent AI strategies grounded in accountability and trust.",
+      "Part 1 of 3. A public-sector AI essay about moving from scattered restrictions to coherent, accountable strategy.",
     href: "/writing/michigan-public-sector-ai",
     linkLabel: "Read the essay",
   },
@@ -94,7 +94,7 @@ const selectedWork: SelectedWork[] = [
     label: "Framework",
     title: "Cognisint AI/User Integrity Framework",
     description:
-      "A developing statement of Standards of Trust for transparency, accountability, user sovereignty, and responsible AI-mediated interaction.",
+      "A standards framework for evaluating AI-mediated interactions through transparency, accountability, user sovereignty, and trust.",
     href: "/framework",
     linkLabel: "Read the framework",
   },
@@ -102,7 +102,7 @@ const selectedWork: SelectedWork[] = [
     label: "Live Beta",
     title: "MiCite",
     description:
-      "A Michigan-specific legal citation formatter built to reduce repetitive formatting friction. It is not an AI product; its relevance is practical legal workflow design.",
+      "A Michigan-specific legal citation formatter that reduces repetitive drafting friction. Its relevance is practical legal workflow design, not AI.",
     href: "https://micite.online",
     linkLabel: "Open MiCite",
     src: "/micite-wordmark-approved.png",
@@ -114,7 +114,7 @@ const selectedWork: SelectedWork[] = [
     label: "Applied AI Workflow",
     title: "Cyrano",
     description:
-      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in applied professional settings.",
+      "An in-progress agent-workflow system for coordinating specialized tools, structured work, and human review in professional settings.",
     href: "/portfolio",
     linkLabel: "View project notes",
     src: "/cyrano-horizontal-lockup-approved.png",
@@ -135,9 +135,8 @@ export default function Home() {
               Trust, Integrity, and Strategy for the AI Age
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
-              Cognisint is an organizational advisory and applied technology practice helping institutions, along with
-              related businesses, modernize responsibly without sacrificing legitimacy, judgment, accountability, or
-              public trust.
+              Cognisint helps institutions, and related businesses, make practical decisions about modernization, AI,
+              governance, and workflow design without sacrificing legitimacy, judgment, accountability, or public trust.
             </p>
             <p className="mt-8 text-xl font-semibold text-white sm:text-2xl">
               Real Intelligence. Real Judgment. Real Results.
@@ -204,31 +203,33 @@ export default function Home() {
       <section id="what-is-cognisint" className="section-band relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.72fr] lg:px-8">
           <div className="relative max-w-3xl">
-            <Image
-              src="/institutional-system-field.png"
-              alt=""
-              width={1254}
-              height={1254}
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-36 top-10 hidden h-auto w-[16rem] max-w-none select-none opacity-100 lg:block xl:-left-44 xl:w-[20rem]"
-            />
+            <div className="mb-8 hidden lg:block">
+              <Image
+                src="/institutional-system-field.png"
+                alt=""
+                width={1254}
+                height={1254}
+                aria-hidden="true"
+                className="h-auto w-40 select-none xl:w-48"
+              />
+            </div>
             <h2 className="section-title">What Is Cognisint?</h2>
             <div className="mt-6 space-y-5 text-lg leading-8 text-muted-foreground">
               <p>
-                Cognisint is an organizational advisory and applied technology practice focused on institutional
-                strategy, ethical technology adoption, applied governance, and public-interest modernization.
+                Cognisint is an organizational advisory and applied technology practice for institutions facing real
+                governance, technology, and modernization problems.
               </p>
               <p>
-                If you are navigating institutional change, AI adoption, public trust, or workflow modernization,
-                Cognisint is designed to help you think clearly before you move quickly.
+                It helps you clarify what is actually at stake, identify the constraints that matter, and choose a
+                responsible next step before urgency turns into improvisation.
               </p>
               <p>
-                It brings together writing, frameworks, advisory judgment, and practical technology experiments so you
-                can connect principle to implementation.
+                The work combines legal and policy judgment, public-sector experience, applied technology, and original
+                writing so strategy can become something usable.
               </p>
               <p className="font-medium text-foreground">
-                The point is not technology for its own sake. The point is helping institutions become more effective,
-                trustworthy, resilient, and capable.
+                The goal is durable improvement: better decisions, fairer systems, more trustworthy institutions, and
+                work that leaves people with more capacity than it consumes.
               </p>
             </div>
           </div>
@@ -260,8 +261,8 @@ export default function Home() {
               <SectionKicker>Issues and Principles</SectionKicker>
               <h2 className="section-title mt-4">What the Work Is About</h2>
               <p className="mt-5 text-lg leading-8 text-muted-foreground">
-                The recurring values are service, integrity, fairness, and flourishing. They shape how Cognisint thinks
-                about trust, judgment, modernization, and the practical use of technology.
+                The recurring issues are institutional trust, responsible modernization, fair systems, and the practical
+                conditions that let people and organizations do good work.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -286,8 +287,9 @@ export default function Home() {
                 Where Cognisint Can Help
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
-                If you are trying to modernize responsibly, evaluate AI, improve a workflow, or explain a complicated
-                institutional problem, the first value may be sharper judgment about what should happen next.
+                When a problem is tangled across policy, technology, operations, and trust, the useful first step is
+                sharper framing: what is at stake, who is affected, what constraints matter, and what can responsibly
+                happen next.
               </p>
               <Button asChild className="mt-8 rounded-sm bg-white text-[var(--ink)] hover:bg-slate-100">
                 <Link href="/contact">Start a Conversation</Link>
@@ -312,11 +314,11 @@ export default function Home() {
             <div>
               <SectionKicker>Portfolio</SectionKicker>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Work You Can Read, Test, or Evaluate
+                Selected Work with Practical Stakes
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
-                These examples show how the work moves between public analysis, governance principles, applied tools,
-                and emerging AI workflows.
+                These examples show how Cognisint turns ideas into usable analysis, governance frameworks, legal
+                workflow tools, and applied AI concepts you can inspect.
               </p>
               <Button
                 asChild

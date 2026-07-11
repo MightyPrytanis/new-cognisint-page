@@ -31,9 +31,9 @@ export default function Header() {
             <Link href="/about" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Bio
             </Link>
-            <a href="/#portfolio" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/portfolio" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
-            </a>
+            </Link>
             <a href="/#services" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Situations
             </a>
@@ -73,9 +73,9 @@ export default function Header() {
             <Link href="/about" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Bio
             </Link>
-            <a href="/#portfolio" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/portfolio" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
-            </a>
+            </Link>
             <a href="/#services" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Situations
             </a>

@@ -75,8 +75,9 @@ export default function AboutPage() {
                 losing identity or legitimacy.
               </p>
               <p className="font-medium text-foreground">
-                Cognisint grew from that combined experience and focuses on institutional strategy, trust, technology
-                governance, applied tools, and public-interest modernization.
+                Cognisint applies that background to institutional strategy, trust, technology governance, applied
+                tools, and public-interest modernization for organizations that need practical judgment across more
+                than one lane.
               </p>
             </div>
           </article>
