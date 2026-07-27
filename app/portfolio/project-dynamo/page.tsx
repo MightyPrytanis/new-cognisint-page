@@ -283,11 +283,12 @@ export default function ProjectDynamoPage() {
             <p>
               It also creates a hedge against volatility. Consumers can lean harder on electricity when liquid
               fuel becomes expensive and retain onboard generation when charging access fails to keep pace.
-              The automaker can change the factory mix between PE and BEV as policy, incentives, fuel prices,
-              infrastructure, and demand shift—without abandoning the vehicle family.
+              The automaker can change the factory mix between petro-electric (PE) and battery-electric (BEV)
+              models as policy, incentives, fuel prices, infrastructure, and demand shift—without abandoning the
+              vehicle family.
             </p>
             <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
-              If this were a real 2027 lineup, you would know where the company was going.
+              This isn&apos;t a real 2027 vehicle lineup—but it should be.
             </blockquote>
             <p className="font-medium text-white">
               The relevant unit of comparison is therefore not one PE sedan against one hybrid sedan. It is the
