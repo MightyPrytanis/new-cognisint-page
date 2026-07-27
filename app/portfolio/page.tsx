@@ -125,6 +125,7 @@ export default function PortfolioPage() {
                       width={item.width}
                       height={item.height}
                       sizes={item.featured ? "(min-width: 768px) 52vw, 100vw" : "320px"}
+                      loading={item.featured ? "eager" : "lazy"}
                       className={
                         item.featured
                           ? "h-full min-h-64 w-full object-cover"
