@@ -14,6 +14,7 @@ type PortfolioItem = {
   width?: number
   height?: number
   external?: boolean
+  featured?: boolean
 }
 
 export const metadata: Metadata = {
@@ -23,6 +24,18 @@ export const metadata: Metadata = {
 }
 
 const portfolioItems: PortfolioItem[] = [
+  {
+    label: "Regional Planning Concept",
+    title: "Capital Region Eastern Greenway",
+    description:
+      "A portfolio white paper proposing an integrated mobility, conservation, and development framework for the eastern edge of Greater Lansing.",
+    href: "/portfolio/capital-region-eastern-greenway",
+    linkLabel: "Explore the case study",
+    src: "/projects/capital-region-eastern-greenway/aerial-overview.png",
+    width: 1672,
+    height: 941,
+    featured: true,
+  },
   {
     label: "Essay",
     title: "Michigan's Public Sector Is Getting AI Wrong",
@@ -83,7 +96,7 @@ export default function PortfolioPage() {
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-200">
               A few current examples you can use to assess how Cognisint approaches real institutional problems:
-              public AI policy, trust frameworks, legal workflow friction, and applied AI coordination.
+              regional planning, public AI policy, trust frameworks, legal workflow friction, and applied technology.
             </p>
           </div>
         </div>
@@ -93,36 +106,63 @@ export default function PortfolioPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           {portfolioItems.map((item) => {
             const card = (
-              <article className="selected-work-card flex h-full flex-col">
+              <article
+                className={`selected-work-card flex h-full flex-col ${
+                  item.featured ? "md:grid md:grid-cols-[1.15fr_0.85fr] md:gap-8" : ""
+                }`}
+              >
                 {item.src && item.width && item.height ? (
-                  <div className="mb-5 flex h-20 items-center">
+                  <div
+                    className={
+                      item.featured
+                        ? "mb-6 overflow-hidden border border-border bg-[var(--surface)] md:mb-0"
+                        : "mb-5 flex h-20 items-center"
+                    }
+                  >
                     <Image
                       src={item.src}
-                      alt={`${item.title} logo`}
+                      alt={item.featured ? `${item.title} conceptual aerial overview` : `${item.title} logo`}
                       width={item.width}
                       height={item.height}
-                      className="max-h-16 w-auto object-contain"
+                      sizes={item.featured ? "(min-width: 768px) 52vw, 100vw" : "320px"}
+                      className={
+                        item.featured
+                          ? "h-full min-h-64 w-full object-cover"
+                          : "max-h-16 w-auto object-contain"
+                      }
                     />
                   </div>
                 ) : null}
-                <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
-                  <FileText className="h-4 w-4" aria-hidden="true" />
-                  {item.label}
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue)]">
+                    <FileText className="h-4 w-4" aria-hidden="true" />
+                    {item.label}
+                  </div>
+                  <h2 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h2>
+                  <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
+                    {item.linkLabel}
+                  </p>
                 </div>
-                <h2 className="mt-4 text-2xl font-semibold text-foreground">{item.title}</h2>
-                <p className="mt-3 leading-7 text-muted-foreground">{item.description}</p>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">
-                  {item.linkLabel}
-                </p>
               </article>
             )
 
             return item.external ? (
-              <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="group block">
+              <a
+                key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className={`group block ${item.featured ? "md:col-span-2" : ""}`}
+              >
                 {card}
               </a>
             ) : (
-              <Link key={item.title} href={item.href} className="group block">
+              <Link
+                key={item.title}
+                href={item.href}
+                className={`group block ${item.featured ? "md:col-span-2" : ""}`}
+              >
                 {card}
               </Link>
             )

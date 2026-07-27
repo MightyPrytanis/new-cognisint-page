@@ -25,18 +25,18 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="/#what-is-cognisint" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/#what-is-cognisint" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
-            </a>
+            </Link>
             <Link href="/about" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Bio
             </Link>
             <Link href="/portfolio" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
             </Link>
-            <a href="/#expertise" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/#expertise" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Expertise
-            </a>
+            </Link>
             <Link href="/payment" className="text-sm text-foreground hover:text-[#0288D1] transition rounded-sm">
               Account
             </Link>
@@ -67,18 +67,18 @@ export default function Header() {
 
         {isOpen && (
           <nav className="lg:hidden pb-4 space-y-3">
-            <a href="/#what-is-cognisint" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/#what-is-cognisint" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               About
-            </a>
+            </Link>
             <Link href="/about" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Bio
             </Link>
             <Link href="/portfolio" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Portfolio
             </Link>
-            <a href="/#expertise" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
+            <Link href="/#expertise" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Expertise
-            </a>
+            </Link>
             <Link href="/payment" className="block text-foreground hover:text-[#0288D1] transition rounded-sm">
               Account
             </Link>
