@@ -154,6 +154,18 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--blue)]">Latest</p>
               <div className="mt-6 h-px bg-gradient-to-r from-transparent via-[var(--metal)] to-transparent" />
               <div className="divide-y divide-white/10">
+                <Link href="/portfolio/project-dynamo" className="group block py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    Future Vehicle Concept
+                  </p>
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-white group-hover:text-[var(--blue)]">
+                    Project Dynamo
+                  </h2>
+                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+                    Nine specialized models. One electric-drive platform.
+                  </p>
+                </Link>
+
                 <Link href="/portfolio/capital-region-eastern-greenway" className="group block py-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Regional Planning Concept
