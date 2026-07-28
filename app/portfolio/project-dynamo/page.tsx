@@ -18,14 +18,15 @@ import {
 export const metadata: Metadata = {
   title: "Project Dynamo | Future Vehicle Concept | Cognisint",
   description:
-    "An independent future-vehicle concept for a North American global automaker: seven specialized bodies, one electric-drive platform, and battery-electric or generator-extended energy strategies.",
+    "An independent future-vehicle concept for a North American global automaker: nine specialized models, one electric-drive platform, and battery-electric or generator-extended energy strategies.",
 }
 
 const assetRoot = "/projects/project-dynamo"
 
 const vehicles = [
   {
-    name: "Dynamo Sedan",
+    slug: "captain",
+    name: "Dynamo Captain",
     role: "Compact sedan",
     profile: "Low",
     src: `${assetRoot}/sedan.png`,
@@ -40,6 +41,7 @@ const vehicles = [
     speed: "118 / 75 mph",
   },
   {
+    slug: "fastback",
     name: "Dynamo Fastback",
     role: "Five-door hatch",
     profile: "Low",
@@ -55,6 +57,7 @@ const vehicles = [
     speed: "116 / 75 mph",
   },
   {
+    slug: "estate",
     name: "Dynamo Estate",
     role: "Compact wagon",
     profile: "Low",
@@ -70,22 +73,24 @@ const vehicles = [
     speed: "115 / 75 mph",
   },
   {
-    name: "Dynamo Utility",
+    slug: "xtour",
+    name: "Dynamo XTour",
     role: "Compact crossover",
     profile: "Medium",
     src: `${assetRoot}/crossover.png`,
     length: "178.8 in",
     width: "73.4 in",
-    weight: "3,880 / 3,940 lb",
+    weight: "3,940 / 4,000 lb",
     torque: "335 lb-ft",
     batteries: "38 / 78 kWh",
     generator: "90 kW",
-    fuel: "35 mpg",
+    fuel: "34 mpg",
     acceleration: "6.2 sec",
     speed: "112 / 75 mph",
   },
   {
-    name: "Dynamo Touring",
+    slug: "highroad",
+    name: "Dynamo Highroad",
     role: "Three-row SUV",
     profile: "High",
     src: `${assetRoot}/suv.png`,
@@ -100,8 +105,9 @@ const vehicles = [
     speed: "112 / 70 mph",
   },
   {
+    slug: "constellation",
     name: "Dynamo Constellation",
-    role: "CityVan",
+    role: "Passenger CityVan",
     profile: "High",
     src: `${assetRoot}/cityvan.png`,
     length: "196.5 in",
@@ -115,18 +121,51 @@ const vehicles = [
     speed: "105 / 70 mph",
   },
   {
-    name: "Dynamo Pickup",
-    role: "Compact four-door pickup",
+    slug: "cityvan",
+    name: "Dynamo CityVan",
+    role: "Commercial panel van",
     profile: "High",
+    src: `${assetRoot}/cityvan-commercial.png`,
+    length: "196.5 in",
+    width: "76.5 in",
+    weight: "4,260 / 4,340 lb",
+    torque: "360 lb-ft",
+    batteries: "42 / 95 kWh",
+    generator: "105 kW",
+    fuel: "32 mpg",
+    acceleration: "7.3 sec",
+    speed: "105 / 70 mph",
+  },
+  {
+    slug: "foreman",
+    name: "Dynamo Foreman",
+    role: "Medium-profile four-door pickup",
+    profile: "Medium",
     src: `${assetRoot}/pickup.png`,
     length: "200.5 in",
     width: "76.8 in",
-    weight: "4,650 / 4,760 lb",
-    torque: "500 lb-ft",
-    batteries: "45 / 100 kWh",
-    generator: "120 kW",
-    fuel: "27 mpg",
-    acceleration: "5.9 sec",
+    weight: "4,450 / 4,560 lb",
+    torque: "420 lb-ft",
+    batteries: "42 / 90 kWh",
+    generator: "105 kW",
+    fuel: "30 mpg",
+    acceleration: "6.3 sec",
+    speed: "110 / 70 mph",
+  },
+  {
+    slug: "ranch",
+    name: "Dynamo Ranch",
+    role: "High-profile four-door pickup",
+    profile: "High",
+    src: `${assetRoot}/ranch.png`,
+    length: "204.2 in",
+    width: "78.0 in",
+    weight: "4,890 / 5,020 lb",
+    torque: "520 lb-ft",
+    batteries: "48 / 110 kWh",
+    generator: "125 kW",
+    fuel: "26 mpg",
+    acceleration: "5.8 sec",
     speed: "110 / 70 mph",
   },
 ]
@@ -211,7 +250,7 @@ export default function ProjectDynamoPage() {
       <section className="relative min-h-[calc(100svh-81px)] overflow-hidden">
         <Image
           src={`${assetRoot}/family.png`}
-          alt="The seven-vehicle Clark Project Dynamo family"
+          alt="The nine-model Clark Project Dynamo family"
           fill
           priority
           sizes="100vw"
@@ -230,7 +269,7 @@ export default function ProjectDynamoPage() {
               Project Dynamo
             </h1>
             <p className="mt-7 max-w-2xl text-xl leading-8 text-slate-100 sm:text-2xl sm:leading-9">
-              Seven specialized vehicles. One electric-drive platform. Two energy strategies.
+              Nine specialized models. One electric-drive platform. Two energy strategies.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -270,8 +309,8 @@ export default function ProjectDynamoPage() {
           <div className="space-y-6 text-lg leading-8 text-slate-200">
             <p>
               Everything does not need to become the same crossover. A sedan, hatch, wagon, crossover, SUV,
-              CityVan, and pickup can each serve a different life while sharing the expensive systems customers
-              never see.
+              passenger van, commercial van, and two pickup heights can each serve a different life while sharing
+              the expensive systems customers never see.
             </p>
             <p>
               Project Dynamo concentrates complexity in a common battery structure, electric drive units,
@@ -291,10 +330,10 @@ export default function ProjectDynamoPage() {
               This isn&apos;t a real 2027 vehicle lineup—but it should be.
             </blockquote>
             <p className="font-medium text-white">
-              The relevant unit of comparison is therefore not one PE sedan against one hybrid sedan. It is the
-              economics and resilience of the complete platform: seven bodies, two energy strategies, shared
-              capital investment, shared service knowledge, and a production mix that can move without restarting
-              the product program.
+              The relevant unit of comparison is therefore not one PE Captain against one hybrid sedan. It is the
+              economics and resilience of the complete platform: nine market-facing models, seven core body
+              architectures, two energy strategies, shared capital investment, shared service knowledge, and a
+              production mix that can move without restarting the product program.
             </p>
           </div>
         </div>
@@ -331,7 +370,7 @@ export default function ProjectDynamoPage() {
           </div>
           <p className="mt-8 max-w-4xl text-lg leading-8 text-slate-200">
             The objective is not to make every body wear the same skin. It is to reduce unique part numbers,
-            tooling, training, and inventory while preserving the sedan&apos;s elegance, the wagon&apos;s utility,
+            tooling, training, and inventory while preserving the Captain&apos;s elegance, the Estate&apos;s utility,
             and the taller vehicles&apos; distinct proportions.
           </p>
         </div>
@@ -342,7 +381,7 @@ export default function ProjectDynamoPage() {
           <article className="group relative min-h-[72vh] overflow-hidden">
             <Image
               src={`${assetRoot}/sedan.png`}
-              alt="Copper Dynamo Sedan"
+              alt="Copper Dynamo Captain compact sedan"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover transition duration-700 group-hover:scale-[1.02]"
@@ -350,7 +389,7 @@ export default function ProjectDynamoPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ef6654]">Design anchor</p>
-              <h2 className="mt-3 text-4xl font-semibold">Dynamo Sedan</h2>
+              <h2 className="mt-3 text-4xl font-semibold">Dynamo Captain</h2>
               <p className="mt-3 max-w-lg text-lg leading-7 text-slate-200">
                 Low, long-wheelbase composure and quiet American confidence.
               </p>
@@ -376,31 +415,36 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="bg-[#0a1725] py-16 sm:py-24">
+      <section id="family" className="scroll-mt-24 bg-[#0a1725] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, seven answers</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, nine answers</p>
           <div className="mt-4 grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
               Different forms. Familiar bones.
             </h2>
             <p className="text-lg leading-8 text-slate-300">
-              The crossover remains car-like. The SUV, pickup, and CityVan rise on visibly taller bodies with
-              higher seating, greater clearance, and more upright, distinctly American greenhouses.
+              The XTour and Foreman establish a true medium profile above the Estate. Highroad, Ranch,
+              Constellation, and CityVan rise again with higher seating, greater clearance or cargo height, and
+              more upright, distinctly American greenhouses.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {vehicles.map((vehicle, index) => (
-              <article key={vehicle.name} className={index === 0 || index === 1 ? "md:col-span-1" : ""}>
+            {vehicles.map((vehicle) => (
+              <Link
+                key={vehicle.name}
+                href={`/portfolio/project-dynamo/${vehicle.slug}`}
+                className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#72b49a]"
+              >
                 <div className="relative aspect-[16/9] overflow-hidden bg-black">
                   <Image
                     src={vehicle.src}
                     alt={`${vehicle.name}, ${vehicle.role}`}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-500 group-hover:scale-[1.025]"
                   />
                 </div>
-                <div className="border-x border-b border-white/10 bg-white/[0.03] p-5">
+                <div className="border-x border-b border-white/10 bg-white/[0.03] p-5 transition group-hover:border-white/25 group-hover:bg-white/[0.07]">
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">
@@ -412,9 +456,40 @@ export default function ProjectDynamoPage() {
                       {vehicle.profile} profile
                     </span>
                   </div>
+                  <p className="mt-4 inline-flex items-center text-sm font-semibold text-slate-200">
+                    View model portfolio
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </p>
                 </div>
-              </article>
+              </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative min-h-[82vh] overflow-hidden">
+        <Image
+          src={`${assetRoot}/performance-low.png`}
+          alt="Performance-tuned Dynamo Fastback, Captain, and Estate on a wet proving ground"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/10 to-black/20" />
+        <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-end px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">
+              Specialization without retooling
+            </p>
+            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-6xl">
+              Room for the vehicles enthusiasts thought the market had forgotten.
+            </h2>
+            <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-100">
+              Higher-output drive units, brakes, suspension tuning, cooling, wheels, and software create credible
+              performance Captain, Fastback, and Estate derivatives. The body hard points, battery structure,
+              electronics, shared components, and fundamental assembly sequence remain intact—making low-volume
+              specialties possible without breaking the production logic.
+            </p>
           </div>
         </div>
       </section>
@@ -422,7 +497,7 @@ export default function ProjectDynamoPage() {
       <section className="relative min-h-[80vh] overflow-hidden">
         <Image
           src={`${assetRoot}/suv.png`}
-          alt="Midnight-navy Dynamo Touring three-row SUV"
+          alt="Midnight-navy Dynamo Highroad three-row SUV"
           fill
           sizes="100vw"
           className="object-cover"
@@ -431,10 +506,10 @@ export default function ProjectDynamoPage() {
         <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-end px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">High-profile flagship</p>
-            <h2 className="mt-4 text-5xl font-semibold">Dynamo Touring</h2>
+            <h2 className="mt-4 text-5xl font-semibold">Dynamo Highroad</h2>
             <p className="mt-5 text-xl leading-8 text-slate-100">
-              Three-row space, a higher sightline, and a useful squared greenhouse—without abandoning the family’s
-              calm surfaces or electric-first proportions.
+              A higher hood dome, 21-inch wheel family, wider track, 225 mm target clearance, and long-travel
+              suspension give the three-row flagship real capability without changing the family fascia.
             </p>
           </div>
         </div>
@@ -445,7 +520,7 @@ export default function ProjectDynamoPage() {
           <div className="relative min-h-[65vh]">
             <Image
               src={`${assetRoot}/cityvan.png`}
-              alt="Champagne-gold Dynamo Constellation CityVan"
+              alt="Champagne-gold Dynamo Constellation passenger van"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
@@ -453,14 +528,16 @@ export default function ProjectDynamoPage() {
           </div>
           <div className="flex items-center bg-[#111d29] p-8 sm:p-12 lg:p-16">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">A new category</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+                Passenger configuration
+              </p>
               <h2 className="mt-4 text-balance text-4xl font-semibold sm:text-5xl">
-                CityVan utility. Constellation hospitality.
+                Dynamo Constellation
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                More upright and space-efficient than a conventional minivan; more refined, passenger-friendly,
-                and garageable than a full commercial delivery van. Passenger, family, shuttle, trades, and
-                last-mile configurations share the same tall body and flat electric floor.
+                Full glazing, richer finishes, acoustic insulation, three-row seating, and a power liftgate turn
+                the shared van architecture toward family, hospitality, executive shuttle, and accessible
+                passenger use.
               </p>
               <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8">
                 A worthy successor to the Clark Constellation.
@@ -468,19 +545,101 @@ export default function ProjectDynamoPage() {
             </div>
           </div>
         </div>
-        <div className="relative min-h-[75vh]">
-          <Image
-            src={`${assetRoot}/cityvan-interior.png`}
-            alt="Flexible flat-floor interior of the Dynamo Constellation CityVan"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <p className="absolute bottom-7 left-7 max-w-xl text-lg leading-7 text-slate-100 sm:bottom-10 sm:left-10">
-            Dual sliding doors, a low step-in height, removable seating, integrated floor tracks, and a durable
-            load deck turn one body into a family vehicle, urban shuttle, mobile workspace, or compact delivery van.
+        <div className="grid lg:grid-cols-2">
+          {[
+            {
+              src: `${assetRoot}/constellation-liftgate.png`,
+              alt: "Dynamo Constellation with its rear liftgate raised",
+              text: "A one-piece power liftgate, full rear glazing, premium trim, and useful—rather than imaginary—cargo space behind the upright third row.",
+            },
+            {
+              src: `${assetRoot}/cityvan-interior.png`,
+              alt: "Dynamo Constellation passenger compartment viewed through a realistic sliding-door opening",
+              text: "Two removable second-row captain’s chairs ride on common floor tracks ahead of one coherent three-place rear bench.",
+            },
+          ].map((item) => (
+            <figure key={item.src} className="relative min-h-[65vh] overflow-hidden">
+              <Image src={item.src} alt={item.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
+                {item.text}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#0a1725] py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+            Commercial configuration
           </p>
+          <div className="mt-4 grid gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">Dynamo CityVan</h2>
+            <p className="text-lg leading-8 text-slate-300">
+              The same windshield, front doors, fascia, lighting, e-drives, floor structure, sliding-door
+              aperture, and service logic—recast with panel quarters, durable finishes, load-rated wheels, and
+              side-by-side French rear cargo doors.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <figure className="relative min-h-[58vh] overflow-hidden">
+              <Image
+                src={`${assetRoot}/cityvan-commercial.png`}
+                alt="Blue Dynamo CityVan commercial panel van"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </figure>
+            <figure className="relative min-h-[58vh] overflow-hidden">
+              <Image
+                src={`${assetRoot}/cityvan-french-doors.png`}
+                alt="Dynamo CityVan with side-by-side French rear cargo doors open"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">One van. Real work.</p>
+          <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            Delivery, trade service, and small-business logistics.
+          </h2>
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {[
+              {
+                src: `${assetRoot}/cityvan-delivery.png`,
+                title: "Last-mile delivery",
+                text: "A low step, one credible sliding aperture, and modular parcel shelving for frequent curbside stops.",
+              },
+              {
+                src: `${assetRoot}/cityvan-inclusive-trade.png`,
+                title: "Skilled trades",
+                text: "Organized tools, credible access, and a durable load floor serve the people whose skill turns a van into a livelihood.",
+              },
+              {
+                src: `${assetRoot}/cityvan-market.png`,
+                title: "Mobile enterprise",
+                text: "Washable modules, refrigeration, power export, and tie-downs support small businesses beyond parcel work.",
+              },
+            ].map((use) => (
+              <article key={use.title} className="border border-white/10 bg-white/[0.03]">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image src={use.src} alt={use.title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">{use.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-300">{use.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -488,7 +647,7 @@ export default function ProjectDynamoPage() {
         <div className="relative min-h-[65vh]">
           <Image
             src={`${assetRoot}/sedan-interior.png`}
-            alt="Project Dynamo sedan interior"
+            alt="Dynamo Captain sedan interior"
             fill
             sizes="(min-width: 1024px) 56vw, 100vw"
             className="object-cover"
@@ -544,7 +703,7 @@ export default function ProjectDynamoPage() {
                   Brake-by-wire blending prioritizes energy recovery, then adds conventional friction braking for
                   hard stops, low speeds, stability control, thermal limits, or a battery that cannot accept more
                   charge. Simulated peak recovery targets range from approximately 140 kW in the passenger cars to
-                  220 kW in the SUV and pickup.
+                  220 kW in Highroad and Ranch.
                 </p>
               </div>
             </div>
@@ -587,7 +746,7 @@ export default function ProjectDynamoPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 [Factory, "Manufacturing", "One body and assembly logic supports both energy strategies instead of parallel vehicle programs."],
-                [Boxes, "Parts commonality", "E-drives, electronics, battery structure, controls, mirrors, switches, latches, seat hardware, and a partially recessed fixed-grip door handle repeat across seven useful bodies."],
+                [Boxes, "Parts commonality", "E-drives, electronics, battery structure, controls, mirrors, switches, latches, seat hardware, and a partially recessed fixed-grip door handle repeat across nine useful models."],
                 [ShieldCheck, "Crash and packaging", "Battery, module bay, cooling paths, and structure are designed together instead of negotiated after the fact."],
                 [Gauge, "Proportions", "Long wheelbases, short overhangs, flat floors, and usable cabins are architecture—not styling corrections."],
                 [Wrench, "Energy recovery", "Shared e-drives and blended brake controls recover deceleration energy in every PE and BEV body while reducing friction-brake wear."],
@@ -784,6 +943,41 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
+      <section className="bg-[#071522] py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+              The value a platform preserves
+            </p>
+            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+              A durable product strategy protects more than invested capital.
+            </h2>
+          </div>
+          <div className="space-y-6 text-lg leading-8 text-slate-200">
+            <p>
+              Policy, fuel prices, charging access, and customer confidence can change faster than a vehicle
+              program. Dynamo lets an established manufacturer change the source of onboard energy without
+              discarding the electric-drive architecture, the factory knowledge, the supplier relationships, or
+              the service system built around it.
+            </p>
+            <p>
+              That continuity preserves skilled work, dealer and technician competence, useful products for
+              households and small businesses, and the trust earned when a company supports what it builds. It
+              also leaves room for thoughtful details—the hidden badge beneath a liftgate, a real physical
+              control, a lower loading height—that tell customers cost discipline did not become indifference.
+            </p>
+            <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
+              Engineered to a price. Never engineered down to one.
+            </blockquote>
+            <p>
+              Shareholder value is one kind of corporate value. It is not the only kind, nor the source from which
+              all the others flow. A resilient platform can create financial value precisely because it also
+              protects human, productive, institutional, and civic value over time.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#111d29] py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
@@ -896,7 +1090,7 @@ export default function ProjectDynamoPage() {
       <section className="border-b-8 border-[#9c2826] bg-[#050d17] py-16">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <p className="text-balance text-3xl font-semibold leading-tight sm:text-5xl">
-            “We found Clark for the twenty-first century—in a flash of imagination and creative engineering.”
+            “This isn&apos;t a real 2027 vehicle lineup—but it should be.”
           </p>
           <p className="mx-auto mt-10 max-w-4xl text-xs leading-6 text-slate-400">
             Independent concept study. Clark Motor Company is fictional and its red trapezoid logo is used as a
