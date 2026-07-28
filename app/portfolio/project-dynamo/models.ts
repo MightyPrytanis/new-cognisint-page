@@ -77,6 +77,10 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/estate-family.png`,
         caption: "A real family, a real liftgate, and useful cargo space: versatility without inflated proportions.",
       },
+      {
+        src: `${root}/estate-interior.png`,
+        caption: "Oxblood bolsters, durable woven inserts, real controls, and a low seating position give the Estate sport wagon warmth without visual clutter.",
+      },
       ...montage(`${root}/estate-portfolio.png`, [
         "Long-roof elegance and a useful liftgate belong in the same vehicle.",
         "A coherent cargo bay handles family life without pretending occupied rows disappear.",
@@ -95,6 +99,14 @@ export const dynamoModels: DynamoModel[] = [
     hero: `${root}/crossover.png`,
     photos: [
       { src: `${root}/crossover.png`, caption: "A raised hip point and 190 mm target clearance establish a true middle height." },
+      {
+        src: `${root}/xtour-interior.png`,
+        caption: "A higher hip point and upright glasshouse distinguish the XTour CUV while the controls, materials, and display logic remain recognizably Dynamo.",
+      },
+      {
+        src: `${root}/xtour-cabin-comfort.png`,
+        caption: "Cabin Comfort can prepare the XTour CUV intelligently as its occupants return from the trail.",
+      },
       ...montage(`${root}/xtour-portfolio.png`, [
         "XTour’s taller greenhouse preserves the family’s calm surfaces.",
         "The liftgate and two-row cargo bay fit everyday equipment without SUV bulk.",
@@ -116,6 +128,14 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/highroad-locomotive-cogx.png`,
         caption:
           "Beside a modern diesel-electric locomotive, the analogy becomes physical: a prime mover makes electricity; traction motors do the propelling.",
+      },
+      {
+        src: `${root}/highroad-interior.png`,
+        caption: "Three usable rows, warm durable materials, and familiar physical controls make the Highroad SUV substantial without becoming lumbering.",
+      },
+      {
+        src: `${root}/highroad-rain-guard.png`,
+        caption: "Rain Guard watches the weather when the Highroad SUV sits unattended at the lake.",
       },
       ...montage(`${root}/highroad-portfolio.png`, [
         "Highroad wears black especially well: formal, capable, and unforced.",
@@ -139,12 +159,14 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/constellation-liftgate.png`,
         caption: "The liftgate reveals a hidden Clark badge—and a useful but finite cargo well behind the occupied third row.",
       },
-      ...montage(`${root}/constellation-portfolio.png`, [
-        "Constellation can arrive with the presence of a much more expensive vehicle.",
-        "The power liftgate and full glazing separate it clearly from CityVan.",
-        "The shared architecture accommodates ordinary family travel without apology.",
-        "Passenger trim also supports a refined executive-shuttle configuration.",
-      ]).filter((photo) => photo.crop !== "top-right"),
+      {
+        src: `${root}/constellation-mountain.png`,
+        caption: "The shared architecture accommodates ordinary family travel without apology.",
+      },
+      {
+        src: `${root}/constellation-executive.png`,
+        caption: "A fully retracting sliding door and all-leather passenger trim support a refined executive-shuttle configuration.",
+      },
     ],
   },
   {
@@ -168,9 +190,9 @@ export const dynamoModels: DynamoModel[] = [
   {
     slug: "foreman",
     name: "Dynamo Foreman",
-    role: "Medium-profile pickup",
+    role: "Mid-size pickup",
     profile: "Medium profile",
-    thesis: "The Foreman pickup offers a useful bed, attainable load height, and jobsite ability without high-profile excess.",
+    thesis: "The Foreman mid-size pickup offers a useful bed, attainable load height, and jobsite ability without high-profile excess.",
     hero: `${root}/foreman-v2.png`,
     photos: [
       {
@@ -188,15 +210,19 @@ export const dynamoModels: DynamoModel[] = [
   {
     slug: "ranch",
     name: "Dynamo Ranch",
-    role: "High-profile pickup",
+    role: "Full-size pickup",
     profile: "High profile",
-    thesis: "The Ranch pickup adds a longer crew cab and bed, Highroad SUV hood dome, greater clearance, and added thermal capacity.",
+    thesis: "The Ranch full-size pickup is a working truck for ranchers, builders, engineers, supervisors, and other people whose office changes with the job.",
     hero: `${root}/ranch-v2.png`,
     photos: [
       {
         src: `${root}/ranch-v2.png`,
         caption:
           "Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points and a distinctive two-tone finish.",
+      },
+      {
+        src: `${root}/ranch-interior.png`,
+        caption: "Luxury-grade finishes do not change the mission: a powered fold-flat workstation, rugged laptop, cupholders, and AC outlet support real field work.",
       },
       ...montage(`${root}/ranch-portfolio.png`, [
         "The high-profile pickup carries its size with calm, deliberate surfaces.",

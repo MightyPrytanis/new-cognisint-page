@@ -139,7 +139,7 @@ const vehicles = [
   {
     slug: "foreman",
     name: "Dynamo Foreman",
-    role: "Medium-profile four-door pickup",
+    role: "Mid-size four-door pickup",
     profile: "Medium",
     src: `${assetRoot}/foreman-v2.png`,
     length: "200.5 in",
@@ -155,7 +155,7 @@ const vehicles = [
   {
     slug: "ranch",
     name: "Dynamo Ranch",
-    role: "High-profile four-door pickup",
+    role: "Full-size four-door pickup",
     profile: "High",
     src: `${assetRoot}/ranch-v2.png`,
     length: "211.0 in",
@@ -244,30 +244,52 @@ const comparison = [
   },
 ]
 
+const particleStreams = [
+  {
+    color: "#0288D1",
+    particles: Array.from({ length: 230 }, (_, index) => {
+      const x = -20 + index * (1240 / 229)
+      const envelope = 0.48 + 0.52 * Math.sin((index / 229) * Math.PI)
+      const y = 178 + Math.sin(index * 0.092) * 76 * envelope + Math.sin(index * 0.027) * 18
+      return { x, y, radius: 0.8 + (index % 9 === 0 ? 1.15 : index % 4 === 0 ? 0.45 : 0), opacity: 0.24 + envelope * 0.58 }
+    }),
+  },
+  {
+    color: "#6AA58E",
+    particles: Array.from({ length: 210 }, (_, index) => {
+      const x = -20 + index * (1240 / 209)
+      const envelope = 0.38 + 0.62 * Math.sin((index / 209) * Math.PI)
+      const y = 208 + Math.sin(index * 0.071 + 1.4) * 48 * envelope + Math.cos(index * 0.021) * 14
+      return { x, y, radius: 0.7 + (index % 11 === 0 ? 0.9 : index % 5 === 0 ? 0.35 : 0), opacity: 0.18 + envelope * 0.48 }
+    }),
+  },
+  {
+    color: "#0F6EDB",
+    particles: Array.from({ length: 190 }, (_, index) => {
+      const x = -20 + index * (1240 / 189)
+      const envelope = 0.32 + 0.68 * Math.sin((index / 189) * Math.PI)
+      const y = 155 + Math.sin(index * 0.112 + 2.2) * 28 * envelope + Math.cos(index * 0.037) * 10
+      return { x, y, radius: 0.6 + (index % 13 === 0 ? 0.85 : 0), opacity: 0.14 + envelope * 0.4 }
+    }),
+  },
+]
+
 function ParticleWaveform({ className = "" }: { className?: string }) {
   return (
     <div aria-hidden="true" className={`pointer-events-none absolute overflow-hidden opacity-20 ${className}`}>
       <svg viewBox="0 0 1200 360" fill="none" preserveAspectRatio="none" className="h-full w-full">
-        <path
-          d="M-20 205 C90 205 100 205 150 205 C195 205 198 92 245 92 C292 92 294 275 344 275 C394 275 397 144 448 144 C499 144 503 224 554 224 C604 224 608 118 660 118 C712 118 714 245 766 245 C818 245 821 178 874 178 C927 178 930 205 982 205 C1034 205 1080 205 1220 205"
-          stroke="#0288D1"
-          strokeWidth="3"
-          vectorEffect="non-scaling-stroke"
-        />
-        <path
-          d="M-20 238 C120 238 138 238 191 238 C244 238 247 163 300 163 C353 163 356 252 409 252 C462 252 465 192 518 192 C571 192 574 225 627 225 C680 225 683 152 736 152 C789 152 792 238 845 238 C898 238 915 238 1220 238"
-          stroke="#6AA58E"
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-        />
-        {[150, 245, 344, 448, 554, 660, 766, 874, 982].map((cx, index) => (
-          <circle
-            key={cx}
-            cx={cx}
-            cy={[205, 92, 275, 144, 224, 118, 245, 178, 205][index]}
-            r="5"
-            fill={index % 2 === 0 ? "#0F6EDB" : "#3A6B5C"}
-          />
+        {particleStreams.map((stream) => (
+          <g key={stream.color} fill={stream.color}>
+            {stream.particles.map((particle, index) => (
+              <circle
+                key={index}
+                cx={particle.x}
+                cy={particle.y}
+                r={particle.radius}
+                opacity={particle.opacity}
+              />
+            ))}
+          </g>
         ))}
       </svg>
     </div>
@@ -279,7 +301,7 @@ export default function ProjectDynamoPage() {
     <main className="min-h-screen bg-[#050d17] text-white">
       <section className="relative min-h-[calc(100svh-81px)] overflow-hidden">
         <Image
-          src={`${assetRoot}/family.png`}
+          src={`${assetRoot}/family-v2.png`}
           alt="The nine-model Clark Project Dynamo family"
           fill
           priority
@@ -329,7 +351,7 @@ export default function ProjectDynamoPage() {
       </section>
 
       <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-16 sm:py-24">
-        <ParticleWaveform className="-right-24 top-8 h-64 w-[75rem]" />
+        <ParticleWaveform className="inset-x-0 top-3 h-72 w-full" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
@@ -453,7 +475,7 @@ export default function ProjectDynamoPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, nine answers</p>
           <div className="mt-4 grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Different forms. Strong DNA.
+              Legendary family. Strong DNA.
             </h2>
             <p className="text-lg leading-8 text-slate-300">
               The XTour CUV and Foreman pickup establish a true medium profile above the Estate sport wagon. The
@@ -496,6 +518,98 @@ export default function ProjectDynamoPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#071522]">
+        <div className="relative min-h-[78vh]">
+          <Image
+            src={`${assetRoot}/captain-cabin-safe.png`}
+            alt="Dog resting safely in a copper Dynamo Captain sedan while its owner returns with treats"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050d17]/96 via-[#050d17]/45 to-transparent" />
+          <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">
+                Dynamo Cabin Intelligence
+              </p>
+              <h2 className="mt-4 text-balance text-5xl font-semibold leading-tight sm:text-6xl">
+                The vehicle keeps thinking after you park.
+              </h2>
+              <p className="mt-6 text-xl leading-8 text-slate-100">
+                One shared sensing and decision framework can protect someone left inside, prepare an empty vehicle
+                for your return, or close forgotten windows when the weather changes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <div className="grid gap-5 lg:grid-cols-3">
+            {[
+              {
+                src: `${assetRoot}/captain-cabin-safe.png`,
+                alt: "Dog comfortable inside a copper Captain sedan while its owner returns from a bakery",
+                title: "Cabin Safe",
+                vehicle: "Captain sedan",
+                text: "A dog waits safely in a climate-controlled copper Captain sedan while his owner buys treats. Cabin Safe detects living occupants and makes their actual thermal risk—not a timer—the governing priority.",
+              },
+              {
+                src: `${assetRoot}/xtour-cabin-comfort.png`,
+                alt: "Hikers returning from the Carolina woods to their pre-cooled arctic-blue XTour CUV",
+                title: "Cabin Comfort",
+                vehicle: "XTour CUV",
+                text: "Hot hikers return from the Carolina woods to a pre-cooled arctic-blue XTour CUV, ready for a relaxed drive back to Charlotte. Cabin Comfort prepares the vehicle around real conditions and return time.",
+              },
+              {
+                src: `${assetRoot}/highroad-rain-guard.png`,
+                alt: "Blue Highroad SUV closing its own windows during a sudden cloudburst at a lake cabin",
+                title: "Rain Guard",
+                vehicle: "Highroad SUV",
+                text: "At the lake, a Highroad SUV takes care of its own windows during a sudden cloudburst while everyone seeks cover in the cabin. Rain Guard verifies every closure and reports any obstruction or fault.",
+              },
+            ].map((feature) => (
+              <article key={feature.title} className="border border-white/12 bg-white/[0.04]">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src={feature.src} alt={feature.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">{feature.vehicle}</p>
+                  <h3 className="mt-2 text-2xl font-semibold">{feature.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-300">{feature.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 border border-white/12 bg-[#0a1725] p-6 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#72b49a]">
+              Sense → Understand → Protect
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <p className="border-l-2 border-[#0288D1] pl-4 text-slate-300">
+                Occupants, movement, temperature, humidity, sunlight, rain, air quality, time, location, battery,
+                and vehicle status.
+              </p>
+              <p className="border-l-2 border-[#6AA58E] pl-4 text-slate-300">
+                Onboard AI combines signals, detects contradictions, estimates risk, and predicts what is likely
+                to happen next.
+              </p>
+              <p className="border-l-2 border-[#ef6654] pl-4 text-slate-300">
+                A safety-certified controller selects bounded actions: monitor, heat, cool, close or open, notify,
+                unlock, or request help.
+              </p>
+            </div>
+            <blockquote className="mt-8 border-l-4 border-[#ef6654] pl-5 text-xl font-medium">
+              AI interprets the situation. Safety-certified controls govern the response.
+            </blockquote>
+            <p className="mt-6 text-xs leading-5 text-slate-400">
+              Dynamo Cabin Intelligence is a technology concept combining capabilities in varying stages of
+              development and testing. Individual functions, sensing methods, and intervention strategies would
+              require vehicle-specific validation and safety certification.
+            </p>
           </div>
         </div>
       </section>
@@ -704,6 +818,9 @@ export default function ProjectDynamoPage() {
           <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
             The energy module changes. The propulsion system does not.
           </h2>
+          <p className="mt-5 text-2xl font-medium italic text-[#3A6B5C]">
+            Technological innovation that fairly crackles with electricity.
+          </p>
           <figure className="mt-10 overflow-hidden border border-black/15 bg-[#071522]">
             <Image
               src={`${assetRoot}/architecture.png`}
@@ -817,29 +934,42 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0d2632] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">A hedge against volatility</p>
+      <section className="relative overflow-hidden border-y border-white/10 bg-[#0d2632] py-16 sm:py-24">
+        <ParticleWaveform className="inset-x-0 top-0 h-80 w-full opacity-25" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+            The core value proposition
+          </p>
           <h2 className="mt-4 max-w-5xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Do not let one policy reversal—or one fuel-price shock—send the whole program back to the drawing board.
+            Competitive products for customers. A resilient product system for the company.
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <article className="border border-white/12 bg-white/[0.04] p-7">
-              <h3 className="text-2xl font-semibold">Protection for consumers</h3>
-              <p className="mt-4 text-lg leading-8 text-slate-300">
-                Plug in more when gasoline or diesel prices rise. Use onboard generation when public charging is
-                sparse, unreliable, expensive, or politically neglected. The electric driving experience remains
-                the same while the household can shift its energy mix.
-              </p>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <article className="border border-white/14 bg-[#071522]/85 p-7 sm:p-9">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#55a9d6]">Value to consumers</p>
+              <h3 className="mt-3 text-3xl font-semibold">Choose the energy strategy. Keep the electric drive.</h3>
+              <ul className="mt-6 space-y-4 text-lg leading-8 text-slate-300">
+                <li>Petro-Electric series-hybrid and battery-electric versions target competitive performance, cost, utility, and ownership burden.</li>
+                <li>Every PE vehicle can plug in for routine electric miles, then refuel quickly when distance or charging access demands it.</li>
+                <li>BEV versions remove the prime mover entirely for the lowest energy use and scheduled maintenance.</li>
+                <li>Both retain instant electric torque, all-wheel drive, traction control, regenerative braking, and the same familiar vehicle character.</li>
+              </ul>
             </article>
-            <article className="border border-white/12 bg-white/[0.04] p-7">
-              <h3 className="text-2xl font-semibold">Protection for the automaker</h3>
-              <p className="mt-4 text-lg leading-8 text-slate-300">
-                Adjust PE and BEV production as incentives, emissions rules, fuel costs, charging investment, and
-                consumer sentiment change. The bodies, e-drives, software, plants, suppliers, service training,
-                and much of the capital investment remain useful.
-              </p>
+            <article className="border border-white/14 bg-[#071522]/85 p-7 sm:p-9">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#72b49a]">Value to the company</p>
+              <h3 className="mt-3 text-3xl font-semibold">Change the mix without restarting the program.</h3>
+              <ul className="mt-6 space-y-4 text-lg leading-8 text-slate-300">
+                <li>The electric-first architecture is designed around battery, e-drives, crash structure, cooling, and assembly—not retrofitted from ICE.</li>
+                <li>Shared hard points, electronics, software, tooling, parts, service knowledge, and suppliers support nine profiled models and additional derivatives.</li>
+                <li>Production can rebalance between PE and BEV as customer preference, incentives, regulations, fuel prices, charging access, and market conditions move.</li>
+                <li>Specialty bodies and performance versions can be added without abandoning the manufacturing and service logic beneath them.</li>
+              </ul>
             </article>
+          </div>
+          <div className="mt-7 border-y border-white/12 py-6 text-center">
+            <p className="text-lg font-semibold tracking-wide text-white">
+              1 electric-drive core <span className="text-[#55a9d6]">→</span> 2 energy strategies{" "}
+              <span className="text-[#72b49a]">→</span> 9+ specialized models
+            </p>
           </div>
           <p className="mt-6 text-sm leading-6 text-slate-400">
             Platform flexibility occurs in engineering and production. Project Dynamo does not assume that an
@@ -995,7 +1125,7 @@ export default function ProjectDynamoPage() {
       </section>
 
       <section className="relative overflow-hidden bg-[#071522] py-16 sm:py-24">
-        <ParticleWaveform className="-left-40 bottom-4 h-72 w-[78rem]" />
+        <ParticleWaveform className="inset-x-0 bottom-0 h-72 w-full" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
@@ -1054,7 +1184,7 @@ export default function ProjectDynamoPage() {
       </section>
 
       <section className="relative overflow-hidden bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
-        <ParticleWaveform className="-right-48 bottom-0 h-72 w-[82rem] opacity-15" />
+        <ParticleWaveform className="inset-x-0 bottom-0 h-72 w-full opacity-15" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
@@ -1101,7 +1231,7 @@ export default function ProjectDynamoPage() {
 
       <section className="relative min-h-[72vh] overflow-hidden">
         <Image
-          src={`${assetRoot}/family.png`}
+          src={`${assetRoot}/family-v2.png`}
           alt="Project Dynamo vehicle family at an auto-show pavilion"
           fill
           loading="eager"
@@ -1144,6 +1274,9 @@ export default function ProjectDynamoPage() {
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <p className="text-balance text-3xl font-semibold leading-tight sm:text-5xl">
             “This isn&apos;t a real 2027 vehicle lineup—but it should be.”
+          </p>
+          <p className="mt-7 text-xl font-medium italic text-[#ef6654]">
+            Time after time, you&apos;ll have everything you need in a Clark.
           </p>
           <p className="mx-auto mt-10 max-w-4xl text-xs leading-6 text-slate-400">
             Independent concept study. Clark Motor Company is fictional and its red trapezoid logo is used as a
