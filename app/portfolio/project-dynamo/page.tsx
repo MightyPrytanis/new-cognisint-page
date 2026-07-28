@@ -107,7 +107,7 @@ const vehicles = [
   {
     slug: "constellation",
     name: "Dynamo Constellation",
-    role: "Passenger CityVan",
+    role: "Passenger minivan",
     profile: "High",
     src: `${assetRoot}/cityvan.png`,
     length: "196.5 in",
@@ -141,7 +141,7 @@ const vehicles = [
     name: "Dynamo Foreman",
     role: "Medium-profile four-door pickup",
     profile: "Medium",
-    src: `${assetRoot}/pickup.png`,
+    src: `${assetRoot}/foreman-v2.png`,
     length: "200.5 in",
     width: "76.8 in",
     weight: "4,450 / 4,560 lb",
@@ -157,15 +157,15 @@ const vehicles = [
     name: "Dynamo Ranch",
     role: "High-profile four-door pickup",
     profile: "High",
-    src: `${assetRoot}/ranch.png`,
-    length: "204.2 in",
-    width: "78.0 in",
-    weight: "4,890 / 5,020 lb",
-    torque: "520 lb-ft",
-    batteries: "48 / 110 kWh",
-    generator: "125 kW",
-    fuel: "26 mpg",
-    acceleration: "5.8 sec",
+    src: `${assetRoot}/ranch-v2.png`,
+    length: "211.0 in",
+    width: "79.2 in",
+    weight: "5,060 / 5,200 lb",
+    torque: "540 lb-ft",
+    batteries: "52 / 115 kWh",
+    generator: "130 kW",
+    fuel: "25 mpg",
+    acceleration: "5.9 sec",
     speed: "110 / 70 mph",
   },
 ]
@@ -187,7 +187,7 @@ const architectureTypes = [
     title: "Dynamo petro-electric",
     path: "Fuel → Dynamo Module → electricity → battery/motor → wheels",
     description:
-      "Only electric traction drives the wheels. One matched gasoline-, diesel-, biodiesel-, or future-energy module is engineered for each vehicle configuration.",
+      "Project Dynamo’s product term for a series hybrid. A matched prime mover generates electricity, but only the traction motors drive the wheels.",
   },
   {
     title: "Battery electric",
@@ -322,7 +322,7 @@ export default function ProjectDynamoPage() {
             <p>
               It also creates a hedge against volatility. Consumers can lean harder on electricity when liquid
               fuel becomes expensive and retain onboard generation when charging access fails to keep pace.
-              The automaker can change the factory mix between petro-electric (PE) and battery-electric (BEV)
+              The automaker can change the factory mix between Petro-Electric (PE) and battery-electric (BEV)
               models as policy, incentives, fuel prices, infrastructure, and demand shift—without abandoning the
               vehicle family.
             </p>
@@ -540,7 +540,7 @@ export default function ProjectDynamoPage() {
                 passenger use.
               </p>
               <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8">
-                A worthy successor to the Clark Constellation.
+                A worthy successor to the North American passenger minivan.
               </p>
             </div>
           </div>
@@ -553,7 +553,7 @@ export default function ProjectDynamoPage() {
               text: "A one-piece power liftgate, full rear glazing, premium trim, and useful—rather than imaginary—cargo space behind the upright third row.",
             },
             {
-              src: `${assetRoot}/cityvan-interior.png`,
+              src: `${assetRoot}/cityvan-interior-v2.png`,
               alt: "Dynamo Constellation passenger compartment viewed through a realistic sliding-door opening",
               text: "Two removable second-row captain’s chairs ride on common floor tracks ahead of one coherent three-place rear bench.",
             },
@@ -688,18 +688,34 @@ export default function ProjectDynamoPage() {
               mover turning a generator, with no mechanical connection to the wheels.
             </p>
             <p>
-              “Petro-electric” names the architecture, not a multi-fuel vehicle. Gasoline-electric,
+              Project Dynamo uses “Petro-Electric” as its product term for a series hybrid. It names the
+              architecture, not a multi-fuel vehicle. Gasoline-electric,
               diesel/biodiesel-electric, hydrogen-electric, or future-energy versions require separately engineered
               modules, storage, safety, thermal, emissions, and certification systems.
+            </p>
+          </div>
+          <div className="mt-8 border border-slate-200 bg-[#f6f4ee] p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9c2826]">
+              The locomotive comparison
+            </p>
+            <p className="mt-3 max-w-5xl text-lg leading-8 text-slate-700">
+              Conceptually, Dynamo follows the diesel-electric locomotives used across North America on
+              non-electrified rail lines: a liquid-fueled prime mover turns a generator, an electrical bus carries
+              the power, and traction motors provide propulsion. The road vehicle adds a plug-in traction battery
+              to buffer power, recover braking energy, and cover routine miles without running the prime mover.
             </p>
           </div>
           <div className="mt-8 border-l-4 border-[var(--forest)] bg-white p-6">
             <div className="flex items-start gap-4">
               <BatteryCharging className="mt-1 h-7 w-7 shrink-0 text-[var(--forest)]" />
               <div>
-                <h3 className="text-2xl font-semibold">Regenerative braking is common to every Dynamo.</h3>
+                <h3 className="text-2xl font-semibold">
+                  All-wheel drive, traction control, and regenerative braking are common to every Dynamo.
+                </h3>
                 <p className="mt-3 text-lg leading-8 text-slate-700">
-                  During deceleration, the traction motor becomes a generator and returns motion to the battery.
+                  Front and rear electric drive units provide electronically managed all-wheel drive, while
+                  traction and stability controls continuously allocate wheel torque. During deceleration, the
+                  traction motors become generators and return motion to the battery.
                   Brake-by-wire blending prioritizes energy recovery, then adds conventional friction braking for
                   hard stops, low speeds, stability control, thermal limits, or a battery that cannot accept more
                   charge. Simulated peak recovery targets range from approximately 140 kW in the passenger cars to
@@ -749,7 +765,7 @@ export default function ProjectDynamoPage() {
                 [Boxes, "Parts commonality", "E-drives, electronics, battery structure, controls, mirrors, switches, latches, seat hardware, and a partially recessed fixed-grip door handle repeat across nine useful models."],
                 [ShieldCheck, "Crash and packaging", "Battery, module bay, cooling paths, and structure are designed together instead of negotiated after the fact."],
                 [Gauge, "Proportions", "Long wheelbases, short overhangs, flat floors, and usable cabins are architecture—not styling corrections."],
-                [Wrench, "Energy recovery", "Shared e-drives and blended brake controls recover deceleration energy in every PE and BEV body while reducing friction-brake wear."],
+                [Wrench, "AWD and energy recovery", "Shared front and rear e-drives provide all-wheel drive, traction control, and regenerative braking in every PE and BEV body."],
                 [Zap, "Volatility protection", "Policy reversals, fuel-price shocks, charging delays, or demand changes alter the PE/BEV factory mix rather than invalidating the vehicle program."],
               ].map(([Icon, title, text]) => {
                 const IconComponent = Icon as typeof Factory
@@ -770,7 +786,7 @@ export default function ProjectDynamoPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">A hedge against volatility</p>
           <h2 className="mt-4 max-w-5xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Do not make one policy reversal—or one fuel-price shock—obsolete the whole program.
+            Do not let one policy reversal—or one fuel-price shock—send the whole program back to the drawing board.
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <article className="border border-white/12 bg-white/[0.04] p-7">
@@ -803,7 +819,7 @@ export default function ProjectDynamoPage() {
             Simulated 2027 design targets
           </p>
           <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Plausible enough to interrogate. Not precise enough to pretend.
+            Simulated dimensions and performance. Grounded enough to evaluate.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
             These figures are concept-level estimates derived from current comparable vehicles, package arithmetic,
@@ -967,7 +983,7 @@ export default function ProjectDynamoPage() {
               control, a lower loading height—that tell customers cost discipline did not become indifference.
             </p>
             <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
-              Engineered to a price. Never engineered down to one.
+              Engineered to benchmarks, not down to a price point.
             </blockquote>
             <p>
               Shareholder value is one kind of corporate value. It is not the only kind, nor the source from which

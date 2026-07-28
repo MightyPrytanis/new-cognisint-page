@@ -70,7 +70,7 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
                   <div
                     role="img"
                     aria-label={photo.caption}
-                    className="aspect-[4/3] bg-cover bg-no-repeat"
+                    className="aspect-[16/9] bg-cover bg-no-repeat"
                     style={{
                       backgroundImage: `url(${photo.src})`,
                       backgroundPosition: cropPosition[photo.crop],
@@ -78,7 +78,7 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
                     }}
                   />
                 ) : (
-                  <div className={`relative overflow-hidden ${index === 0 ? "aspect-[16/8]" : "aspect-[4/3]"}`}>
+                  <div className={`relative overflow-hidden ${index === 0 ? "aspect-[16/8]" : "aspect-[16/9]"}`}>
                     <Image src={photo.src} alt={photo.caption} fill sizes={index === 0 ? "100vw" : "50vw"} className="object-cover" />
                   </div>
                 )}

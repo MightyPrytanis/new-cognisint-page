@@ -112,6 +112,11 @@ export const dynamoModels: DynamoModel[] = [
     hero: `${root}/suv.png`,
     photos: [
       { src: `${root}/suv.png`, caption: "A raised hood dome and larger wheel family add stature without changing the fascia." },
+      {
+        src: `${root}/highroad-locomotive.png`,
+        caption:
+          "Beside a modern diesel-electric locomotive, the analogy becomes physical: a prime mover makes electricity; traction motors do the propelling.",
+      },
       ...montage(`${root}/highroad-portfolio.png`, [
         "Highroad wears black especially well: formal, capable, and unforced.",
         "Three rows remain honest about luggage space and passenger packaging.",
@@ -125,18 +130,21 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Constellation",
     role: "Passenger van",
     profile: "High profile",
-    thesis: "Hospitality, family utility, and the quiet dignity of a worthy Constellation successor.",
+    thesis: "A worthy successor to the North American passenger minivan—quiet, gracious, and genuinely useful.",
     hero: `${root}/cityvan.png`,
     photos: [
       { src: `${root}/cityvan.png`, caption: "Full glazing, champagne clearcoat, and richer trim distinguish the passenger model." },
-      { src: `${root}/cityvan-interior.png`, caption: "Two removable captain’s chairs and one coherent three-place rear bench." },
-      { src: `${root}/constellation-liftgate.png`, caption: "The liftgate reveals a hidden Clark badge—and realistic cargo depth behind the third row." },
+      { src: `${root}/cityvan-interior-v2.png`, caption: "Two track-mounted captain’s chairs and one coherent three-place rear bench." },
+      {
+        src: `${root}/constellation-liftgate.png`,
+        caption: "The liftgate reveals a hidden Clark badge—and a useful but finite cargo well behind the occupied third row.",
+      },
       ...montage(`${root}/constellation-portfolio.png`, [
         "Constellation can arrive with the presence of a much more expensive vehicle.",
         "The power liftgate and full glazing separate it clearly from CityVan.",
         "The shared architecture accommodates ordinary family travel without apology.",
         "Passenger trim also supports a refined executive-shuttle configuration.",
-      ]).slice(0, 3),
+      ]).filter((photo) => photo.crop !== "top-right"),
     ],
   },
   {
@@ -144,7 +152,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo CityVan",
     role: "Commercial panel van",
     profile: "High profile",
-    thesis: "The Constellation body-in-white redirected toward delivery, trades, and mobile enterprise.",
+    thesis: "A worthy successor to the compact commercial van—configured for delivery, trades, and mobile enterprise.",
     hero: `${root}/cityvan-commercial.png`,
     photos: [
       { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters and durable trim define the commercial configuration." },
@@ -163,9 +171,12 @@ export const dynamoModels: DynamoModel[] = [
     role: "Medium-profile pickup",
     profile: "Medium profile",
     thesis: "A useful bed, attainable load height, and jobsite ability without high-profile excess.",
-    hero: `${root}/pickup.png`,
+    hero: `${root}/foreman-v2.png`,
     photos: [
-      { src: `${root}/pickup.png`, caption: "Foreman shares the pickup cab and bed logic while keeping a road-friendly stance." },
+      {
+        src: `${root}/foreman-v2.png`,
+        caption: "Foreman keeps a road-friendly stance and the same modular bed-rail hard points used by Ranch.",
+      },
       ...montage(`${root}/foreman-portfolio.png`, [
         "The medium-profile truck looks at home outside a workshop, not only on a trail.",
         "A lower load floor makes tools and materials easier to handle all day.",
@@ -179,10 +190,14 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Ranch",
     role: "High-profile pickup",
     profile: "High profile",
-    thesis: "The Highroad’s clearance, wheels, hood dome, and thermal capacity applied to a working pickup.",
-    hero: `${root}/ranch.png`,
+    thesis: "A longer crew cab and bed, Highroad hood dome, greater clearance, and added thermal capacity.",
+    hero: `${root}/ranch-v2.png`,
     photos: [
-      { src: `${root}/ranch.png`, caption: "Ranch makes the Highroad relationship explicit without becoming a styling caricature." },
+      {
+        src: `${root}/ranch-v2.png`,
+        caption:
+          "Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points and a distinctive two-tone finish.",
+      },
       ...montage(`${root}/ranch-portfolio.png`, [
         "The high-profile pickup carries its size with calm, deliberate surfaces.",
         "Bed height, payload, tie-downs, and access remain production considerations.",
