@@ -29,7 +29,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Captain",
     role: "Compact sedan",
     profile: "Low profile",
-    thesis: "The design leader: composed, attainable, and quietly proud of every detail.",
+    thesis: "The Captain sedan is the design leader: composed, attainable, and quietly proud of every detail.",
     hero: `${root}/sedan.png`,
     photos: [
       { src: `${root}/sedan.png`, caption: "Captain establishes the family’s low, long-wheelbase stance." },
@@ -51,7 +51,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Fastback",
     role: "Five-door hatch",
     profile: "Low profile",
-    thesis: "A younger, more kinetic expression of the Captain’s fundamentals.",
+    thesis: "The lighter, quicker Fastback five-door hatch is a younger, more kinetic expression of the Captain sedan’s fundamentals.",
     hero: `${root}/fastback.png`,
     photos: [
       { src: `${root}/fastback.png`, caption: "A true five-door hatch with its own roofline and lighting character." },
@@ -61,7 +61,7 @@ export const dynamoModels: DynamoModel[] = [
         "Compact dimensions and instant electric response suit the city after dark.",
         "The shared performance package creates a credible specialty derivative.",
       ]),
-      { src: `${root}/performance-low.png`, caption: "Fastback joins Captain and Estate in a restrained factory performance study." },
+      { src: `${root}/performance-low-photoreal.png`, caption: "Fastback joins Captain and Estate in a restrained factory performance study." },
     ],
   },
   {
@@ -69,7 +69,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Estate",
     role: "Compact sport wagon",
     profile: "Low profile",
-    thesis: "European sport-wagon confidence interpreted through a restrained North American design language.",
+    thesis: "The Estate sport wagon interprets European long-roof confidence through a restrained North American design language.",
     hero: `${root}/estate.png`,
     photos: [
       { src: `${root}/estate.png`, caption: "Utility without surrendering to crossover proportions." },
@@ -83,7 +83,7 @@ export const dynamoModels: DynamoModel[] = [
         "Low center of gravity and electric all-wheel drive imply sure-footed winter travel.",
         "The performance Estate preserves space while sharpening the chassis and thermal package.",
       ]).slice(0, 3),
-      { src: `${root}/performance-low.png`, caption: "The low-profile trio demonstrates specialization on shared hard points." },
+      { src: `${root}/performance-low-photoreal.png`, caption: "The low-profile trio demonstrates specialization on shared hard points." },
     ],
   },
   {
@@ -91,7 +91,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo XTour",
     role: "Compact crossover",
     profile: "Medium profile",
-    thesis: "Clearly taller than Estate, clearly more carlike than Highroad.",
+    thesis: "The XTour CUV is clearly taller than the Estate sport wagon and clearly more carlike than the Highroad SUV.",
     hero: `${root}/crossover.png`,
     photos: [
       { src: `${root}/crossover.png`, caption: "A raised hip point and 190 mm target clearance establish a true middle height." },
@@ -108,12 +108,12 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Highroad",
     role: "Three-row SUV",
     profile: "High profile",
-    thesis: "The platform’s full-size expression: greater clearance, thermal capacity, towing ability, and room.",
+    thesis: "The Highroad SUV is the platform’s full-size expression: greater clearance, thermal capacity, towing ability, and room.",
     hero: `${root}/suv.png`,
     photos: [
       { src: `${root}/suv.png`, caption: "A raised hood dome and larger wheel family add stature without changing the fascia." },
       {
-        src: `${root}/highroad-locomotive.png`,
+        src: `${root}/highroad-locomotive-cogx.png`,
         caption:
           "Beside a modern diesel-electric locomotive, the analogy becomes physical: a prime mover makes electricity; traction motors do the propelling.",
       },
@@ -130,7 +130,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Constellation",
     role: "Passenger van",
     profile: "High profile",
-    thesis: "A worthy successor to the North American passenger minivan—quiet, gracious, and genuinely useful.",
+    thesis: "The Constellation passenger van is a worthy successor to the North American minivan—quiet, gracious, and genuinely useful.",
     hero: `${root}/cityvan.png`,
     photos: [
       { src: `${root}/cityvan.png`, caption: "Full glazing, champagne clearcoat, and richer trim distinguish the passenger model." },
@@ -152,7 +152,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo CityVan",
     role: "Commercial panel van",
     profile: "High profile",
-    thesis: "A worthy successor to the compact commercial van—configured for delivery, trades, and mobile enterprise.",
+    thesis: "The CityVan commercial van is a worthy successor to the compact commercial van—configured for delivery, trades, and mobile enterprise.",
     hero: `${root}/cityvan-commercial.png`,
     photos: [
       { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters and durable trim define the commercial configuration." },
@@ -170,7 +170,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Foreman",
     role: "Medium-profile pickup",
     profile: "Medium profile",
-    thesis: "A useful bed, attainable load height, and jobsite ability without high-profile excess.",
+    thesis: "The Foreman pickup offers a useful bed, attainable load height, and jobsite ability without high-profile excess.",
     hero: `${root}/foreman-v2.png`,
     photos: [
       {
@@ -190,7 +190,7 @@ export const dynamoModels: DynamoModel[] = [
     name: "Dynamo Ranch",
     role: "High-profile pickup",
     profile: "High profile",
-    thesis: "A longer crew cab and bed, Highroad hood dome, greater clearance, and added thermal capacity.",
+    thesis: "The Ranch pickup adds a longer crew cab and bed, Highroad SUV hood dome, greater clearance, and added thermal capacity.",
     hero: `${root}/ranch-v2.png`,
     photos: [
       {

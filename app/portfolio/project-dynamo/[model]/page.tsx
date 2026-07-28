@@ -70,7 +70,7 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
                   <div
                     role="img"
                     aria-label={photo.caption}
-                    className="aspect-[16/9] bg-cover bg-no-repeat"
+                    className="aspect-square bg-cover bg-no-repeat"
                     style={{
                       backgroundImage: `url(${photo.src})`,
                       backgroundPosition: cropPosition[photo.crop],

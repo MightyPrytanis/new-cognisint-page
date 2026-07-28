@@ -48,13 +48,13 @@ const vehicles = [
     src: `${assetRoot}/fastback.png`,
     length: "179.5 in",
     width: "72.4 in",
-    weight: "3,630 / 3,710 lb",
-    torque: "295 lb-ft",
+    weight: "3,520 / 3,600 lb",
+    torque: "310 lb-ft",
     batteries: "32 / 72 kWh",
     generator: "80 kW",
     fuel: "38 mpg",
-    acceleration: "6.2 sec",
-    speed: "116 / 75 mph",
+    acceleration: "5.7 sec",
+    speed: "120 / 75 mph",
   },
   {
     slug: "estate",
@@ -187,7 +187,7 @@ const architectureTypes = [
     title: "Dynamo petro-electric",
     path: "Fuel → Dynamo Module → electricity → battery/motor → wheels",
     description:
-      "Project Dynamo’s product term for a series hybrid. A matched prime mover generates electricity, but only the traction motors drive the wheels.",
+      "Project Dynamo’s product term for a plug-in series hybrid. Grid energy or a matched prime mover charges the battery, but only the traction motors drive the wheels.",
   },
   {
     title: "Battery electric",
@@ -244,6 +244,36 @@ const comparison = [
   },
 ]
 
+function ParticleWaveform({ className = "" }: { className?: string }) {
+  return (
+    <div aria-hidden="true" className={`pointer-events-none absolute overflow-hidden opacity-20 ${className}`}>
+      <svg viewBox="0 0 1200 360" fill="none" preserveAspectRatio="none" className="h-full w-full">
+        <path
+          d="M-20 205 C90 205 100 205 150 205 C195 205 198 92 245 92 C292 92 294 275 344 275 C394 275 397 144 448 144 C499 144 503 224 554 224 C604 224 608 118 660 118 C712 118 714 245 766 245 C818 245 821 178 874 178 C927 178 930 205 982 205 C1034 205 1080 205 1220 205"
+          stroke="#0288D1"
+          strokeWidth="3"
+          vectorEffect="non-scaling-stroke"
+        />
+        <path
+          d="M-20 238 C120 238 138 238 191 238 C244 238 247 163 300 163 C353 163 356 252 409 252 C462 252 465 192 518 192 C571 192 574 225 627 225 C680 225 683 152 736 152 C789 152 792 238 845 238 C898 238 915 238 1220 238"
+          stroke="#6AA58E"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+        />
+        {[150, 245, 344, 448, 554, 660, 766, 874, 982].map((cx, index) => (
+          <circle
+            key={cx}
+            cx={cx}
+            cy={[205, 92, 275, 144, 224, 118, 245, 178, 205][index]}
+            r="5"
+            fill={index % 2 === 0 ? "#0F6EDB" : "#3A6B5C"}
+          />
+        ))}
+      </svg>
+    </div>
+  )
+}
+
 export default function ProjectDynamoPage() {
   return (
     <main className="min-h-screen bg-[#050d17] text-white">
@@ -298,8 +328,9 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#071522] py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+      <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-16 sm:py-24">
+        <ParticleWaveform className="-right-24 top-8 h-64 w-[75rem]" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
@@ -322,18 +353,20 @@ export default function ProjectDynamoPage() {
             <p>
               It also creates a hedge against volatility. Consumers can lean harder on electricity when liquid
               fuel becomes expensive and retain onboard generation when charging access fails to keep pace.
-              The automaker can change the factory mix between Petro-Electric (PE) and battery-electric (BEV)
-              models as policy, incentives, fuel prices, infrastructure, and demand shift—without abandoning the
-              vehicle family.
+              Every Petro-Electric (PE) Dynamo is also plug-in rechargeable: routine trips can use stored grid
+              energy, while the onboard prime mover extends range when needed. The automaker can change the factory
+              mix between PE and battery-electric (BEV) models as policy, incentives, fuel prices, infrastructure,
+              and demand shift—without abandoning the vehicle family.
             </p>
             <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
               This isn&apos;t a real 2027 vehicle lineup—but it should be.
             </blockquote>
             <p className="font-medium text-white">
-              The relevant unit of comparison is therefore not one PE Captain against one hybrid sedan. It is the
-              economics and resilience of the complete platform: nine market-facing models, seven core body
-              architectures, two energy strategies, shared capital investment, shared service knowledge, and a
-              production mix that can move without restarting the product program.
+              The relevant unit of comparison is therefore not one Petro-Electric Captain sedan against one
+              conventional hybrid sedan. It is the economics and resilience of the complete platform: nine
+              market-facing models, seven core body architectures, two energy strategies, shared capital
+              investment, shared service knowledge, and a production mix that can move without restarting the
+              product program.
             </p>
           </div>
         </div>
@@ -370,8 +403,8 @@ export default function ProjectDynamoPage() {
           </div>
           <p className="mt-8 max-w-4xl text-lg leading-8 text-slate-200">
             The objective is not to make every body wear the same skin. It is to reduce unique part numbers,
-            tooling, training, and inventory while preserving the Captain&apos;s elegance, the Estate&apos;s utility,
-            and the taller vehicles&apos; distinct proportions.
+            tooling, training, and inventory while preserving the Captain sedan&apos;s elegance, the Estate sport
+            wagon&apos;s utility, and the taller vehicles&apos; distinct proportions.
           </p>
         </div>
       </section>
@@ -420,12 +453,12 @@ export default function ProjectDynamoPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, nine answers</p>
           <div className="mt-4 grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Different forms. Familiar bones.
+              Different forms. Strong DNA.
             </h2>
             <p className="text-lg leading-8 text-slate-300">
-              The XTour and Foreman establish a true medium profile above the Estate. Highroad, Ranch,
-              Constellation, and CityVan rise again with higher seating, greater clearance or cargo height, and
-              more upright, distinctly American greenhouses.
+              The XTour CUV and Foreman pickup establish a true medium profile above the Estate sport wagon. The
+              Highroad SUV, Ranch pickup, Constellation passenger van, and CityVan commercial van rise again with
+              higher seating, greater clearance or cargo height, and more upright, distinctly American greenhouses.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -469,7 +502,7 @@ export default function ProjectDynamoPage() {
 
       <section className="relative min-h-[82vh] overflow-hidden">
         <Image
-          src={`${assetRoot}/performance-low.png`}
+          src={`${assetRoot}/performance-low-photoreal.png`}
           alt="Performance-tuned Dynamo Fastback, Captain, and Estate on a wet proving ground"
           fill
           sizes="100vw"
@@ -486,9 +519,9 @@ export default function ProjectDynamoPage() {
             </h2>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-100">
               Higher-output drive units, brakes, suspension tuning, cooling, wheels, and software create credible
-              performance Captain, Fastback, and Estate derivatives. The body hard points, battery structure,
-              electronics, shared components, and fundamental assembly sequence remain intact—making low-volume
-              specialties possible without breaking the production logic.
+              performance derivatives of the Captain sedan, Fastback five-door hatch, and Estate sport wagon. The
+              body hard points, battery structure, electronics, shared components, and fundamental assembly
+              sequence remain intact—making low-volume specialties possible without breaking the production logic.
             </p>
           </div>
         </div>
@@ -509,7 +542,7 @@ export default function ProjectDynamoPage() {
             <h2 className="mt-4 text-5xl font-semibold">Dynamo Highroad</h2>
             <p className="mt-5 text-xl leading-8 text-slate-100">
               A higher hood dome, 21-inch wheel family, wider track, 225 mm target clearance, and long-travel
-              suspension give the three-row flagship real capability without changing the family fascia.
+              suspension give the three-row Highroad SUV real capability without changing the family fascia.
             </p>
           </div>
         </div>
@@ -536,7 +569,7 @@ export default function ProjectDynamoPage() {
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Full glazing, richer finishes, acoustic insulation, three-row seating, and a power liftgate turn
-                the shared van architecture toward family, hospitality, executive shuttle, and accessible
+                the Constellation passenger van toward family, hospitality, executive shuttle, and accessible
                 passenger use.
               </p>
               <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8">
@@ -577,9 +610,9 @@ export default function ProjectDynamoPage() {
           <div className="mt-4 grid gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">Dynamo CityVan</h2>
             <p className="text-lg leading-8 text-slate-300">
-              The same windshield, front doors, fascia, lighting, e-drives, floor structure, sliding-door
-              aperture, and service logic—recast with panel quarters, durable finishes, load-rated wheels, and
-              side-by-side French rear cargo doors.
+              The CityVan commercial van uses the same windshield, front doors, fascia, lighting, e-drives, floor
+              structure, sliding-door aperture, and service logic—recast with panel quarters, durable finishes,
+              load-rated wheels, and side-by-side French rear cargo doors.
             </p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
@@ -684,8 +717,9 @@ export default function ProjectDynamoPage() {
           <div className="mt-8 grid gap-6 text-lg leading-8 text-slate-700 lg:grid-cols-2">
             <p>
               Battery-electric models devote the available package and mass budget to stored electricity.
-              Petro-electric models carry a smaller traction battery plus a vehicle-specific Dynamo Module: a prime
-              mover turning a generator, with no mechanical connection to the wheels.
+              Petro-Electric models carry a smaller plug-in traction battery plus a vehicle-specific Dynamo Module:
+              a prime mover turning a generator, with no mechanical connection to the wheels. Grid recharging can
+              supply routine electric travel in either energy strategy.
             </p>
             <p>
               Project Dynamo uses “Petro-Electric” as its product term for a series hybrid. It names the
@@ -701,8 +735,9 @@ export default function ProjectDynamoPage() {
             <p className="mt-3 max-w-5xl text-lg leading-8 text-slate-700">
               Conceptually, Dynamo follows the diesel-electric locomotives used across North America on
               non-electrified rail lines: a liquid-fueled prime mover turns a generator, an electrical bus carries
-              the power, and traction motors provide propulsion. The road vehicle adds a plug-in traction battery
-              to buffer power, recover braking energy, and cover routine miles without running the prime mover.
+              the power, and traction motors provide propulsion. Every Petro-Electric Dynamo is a plug-in series
+              hybrid: its traction battery can recharge from the grid, buffer power, recover braking energy, and
+              cover routine miles without running the prime mover.
             </p>
           </div>
           <div className="mt-8 border-l-4 border-[var(--forest)] bg-white p-6">
@@ -719,7 +754,7 @@ export default function ProjectDynamoPage() {
                   Brake-by-wire blending prioritizes energy recovery, then adds conventional friction braking for
                   hard stops, low speeds, stability control, thermal limits, or a battery that cannot accept more
                   charge. Simulated peak recovery targets range from approximately 140 kW in the passenger cars to
-                  220 kW in Highroad and Ranch.
+                  220 kW in the Highroad SUV and Ranch pickup.
                 </p>
               </div>
             </div>
@@ -883,9 +918,9 @@ export default function ProjectDynamoPage() {
             Competitive across the whole use case.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
-            Generator-mode mpg is only one operating condition. When the PE sedan is plugged in often enough to
-            cover 70% of its annual mileage electrically, its modeled energy cost falls between the full EV and a
-            49-mpg mechanical hybrid—while retaining rapid liquid-fuel refueling.
+            Generator-mode mpg is only one operating condition. When the Petro-Electric Captain sedan is plugged in
+            often enough to cover 70% of its annual mileage electrically, its modeled energy cost falls between the
+            full EV and a 49-mpg mechanical hybrid—while retaining rapid liquid-fuel refueling.
           </p>
           <div className="mt-10 overflow-x-auto border border-slate-200">
             <table className="min-w-[1050px] w-full border-collapse text-left text-sm">
@@ -935,8 +970,8 @@ export default function ProjectDynamoPage() {
             <article className="border-t-4 border-[var(--forest)] bg-[#f6f4ee] p-6">
               <h3 className="text-xl font-semibold">Where PE becomes competitive</h3>
               <p className="mt-3 leading-7 text-slate-650">
-                At the stated energy prices, the PE sedan beats the 49-mpg hybrid’s annual energy cost when more
-                than approximately 48% of its miles are plugged-in electric.
+                At the stated energy prices, the Petro-Electric Captain sedan beats the 49-mpg hybrid’s annual
+                energy cost when more than approximately 48% of its miles are plugged-in electric.
               </p>
             </article>
           </div>
@@ -959,8 +994,9 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="bg-[#071522] py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+      <section className="relative overflow-hidden bg-[#071522] py-16 sm:py-24">
+        <ParticleWaveform className="-left-40 bottom-4 h-72 w-[78rem]" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
               The value a platform preserves
@@ -1017,8 +1053,9 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="relative overflow-hidden bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
+        <ParticleWaveform className="-right-48 bottom-0 h-72 w-[82rem] opacity-15" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
               Two factual Ford precedents
@@ -1112,9 +1149,9 @@ export default function ProjectDynamoPage() {
             Independent concept study. Clark Motor Company is fictional and its red trapezoid logo is used as a
             stand-in. Ford Motor Company is named only as a factual precedent and point of comparison. This work was
             not created for, commissioned by, sponsored by, reviewed by, or endorsed by Ford or any other
-            manufacturer. All Clark specifications, performance, costs, and efficiency figures are simulated design
-            targets, not tested or certified claims. Vehicle and schematic imagery were produced with generative
-            tools under human creative direction.
+            manufacturer. All Project Dynamo specifications, performance, costs, and efficiency figures are
+            simulated design targets, not tested or certified claims. Vehicle and schematic imagery were produced
+            with generative tools under human creative direction.
           </p>
         </div>
       </section>
