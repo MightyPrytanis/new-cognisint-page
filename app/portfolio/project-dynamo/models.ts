@@ -155,8 +155,8 @@ export const dynamoModels: DynamoModel[] = [
     photos: [
       { src: `${root}/cityvan.png`, caption: "Full glazing, champagne clearcoat, and richer trim distinguish the passenger model." },
       {
-        src: `${root}/constellation-removable-seat-v7.png`,
-        caption: "A low floor and quick-release track mounts make the lightweight captain’s chairs a genuinely flexible one-person proposition.",
+        src: `${root}/constellation-removable-seat-v8.png`,
+        caption: "A low floor, integrated restraints, and rearward-release track mounts make the captain’s chairs a genuinely flexible one-person proposition.",
       },
       {
         src: `${root}/constellation-liftgate-v2.png`,
