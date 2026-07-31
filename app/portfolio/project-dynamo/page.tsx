@@ -801,7 +801,7 @@ export default function ProjectDynamoPage() {
               insetLabel: "Third row stows nearly flush",
             },
             {
-              src: `${assetRoot}/constellation-removable-seat-v9.png`,
+              src: `${assetRoot}/constellation-removable-seat-v10.png`,
               alt: "A woman lifting a removable Dynamo Constellation captain’s chair from its floor tracks",
               text: "A low floor, seat-integrated restraints, and rearward-release track mounts make reconfiguration an ordinary one-person task.",
               insetSrc: null,
