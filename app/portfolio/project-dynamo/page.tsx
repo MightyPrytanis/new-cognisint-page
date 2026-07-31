@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { ImageLightbox } from "@/components/image-lightbox"
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -573,9 +574,14 @@ export default function ProjectDynamoPage() {
               },
             ].map((feature) => (
               <article key={feature.title} className="border border-white/12 bg-white/[0.04]">
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <ImageLightbox
+                  src={feature.src}
+                  alt={feature.alt}
+                  caption={`${feature.title} · ${feature.vehicle}`}
+                  className="aspect-[16/10] overflow-hidden"
+                >
                   <Image src={feature.src} alt={feature.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
-                </div>
+                </ImageLightbox>
                 <div className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">{feature.vehicle}</p>
                   <h3 className="mt-2 text-2xl font-semibold">{feature.title}</h3>
@@ -822,14 +828,20 @@ export default function ProjectDynamoPage() {
             Technological innovation that fairly crackles with electricity.
           </p>
           <figure className="mt-10 overflow-hidden border border-black/15 bg-[#071522]">
-            <Image
+            <ImageLightbox
               src={`${assetRoot}/architecture.png`}
               alt="Project Dynamo battery-electric and petro-electric architecture"
-              width={1672}
-              height={941}
-              loading="eager"
-              className="h-auto w-full"
-            />
+              caption="Project Dynamo battery-electric and petro-electric architecture"
+            >
+              <Image
+                src={`${assetRoot}/architecture.png`}
+                alt="Project Dynamo battery-electric and petro-electric architecture"
+                width={1672}
+                height={941}
+                loading="eager"
+                className="h-auto w-full"
+              />
+            </ImageLightbox>
           </figure>
           <div className="mt-8 grid gap-6 text-lg leading-8 text-slate-700 lg:grid-cols-2">
             <p>

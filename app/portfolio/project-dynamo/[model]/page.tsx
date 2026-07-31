@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
+import { ImageLightbox } from "@/components/image-lightbox"
 import { dynamoModelBySlug, dynamoModels } from "../models"
 
 const cropPosition = {
@@ -67,20 +68,27 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
                 className={index === 0 ? "md:col-span-2" : ""}
               >
                 {photo.crop ? (
-                  <div
-                    role="img"
-                    aria-label={photo.caption}
-                    className="aspect-square bg-cover bg-no-repeat"
-                    style={{
-                      backgroundImage: `url(${photo.src})`,
-                      backgroundPosition: cropPosition[photo.crop],
-                      backgroundSize: "200% 200%",
-                    }}
-                  />
+                  <ImageLightbox src={photo.src} alt={photo.caption} caption={photo.caption} className="aspect-square overflow-hidden">
+                    <div
+                      role="img"
+                      aria-label={photo.caption}
+                      className="aspect-square bg-cover bg-no-repeat"
+                      style={{
+                        backgroundImage: `url(${photo.src})`,
+                        backgroundPosition: cropPosition[photo.crop],
+                        backgroundSize: "200% 200%",
+                      }}
+                    />
+                  </ImageLightbox>
                 ) : (
-                  <div className={`relative overflow-hidden ${index === 0 ? "aspect-[16/8]" : "aspect-[16/9]"}`}>
+                  <ImageLightbox
+                    src={photo.src}
+                    alt={photo.caption}
+                    caption={photo.caption}
+                    className={`overflow-hidden ${index === 0 ? "aspect-[16/8]" : "aspect-[16/9]"}`}
+                  >
                     <Image src={photo.src} alt={photo.caption} fill sizes={index === 0 ? "100vw" : "50vw"} className="object-cover" />
-                  </div>
+                  </ImageLightbox>
                 )}
                 <figcaption className="border-x border-b border-white/10 bg-white/[0.03] p-5 leading-7 text-slate-300">
                   {photo.caption}
