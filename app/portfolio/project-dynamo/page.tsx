@@ -60,7 +60,7 @@ const vehicles = [
   {
     slug: "estate",
     name: "Dynamo Estate",
-    role: "Compact wagon",
+    role: "Compact sport wagon",
     profile: "Low",
     src: `${assetRoot}/estate.png`,
     length: "186.2 in",
@@ -124,7 +124,7 @@ const vehicles = [
   {
     slug: "cityvan",
     name: "Dynamo CityVan",
-    role: "Commercial panel van",
+    role: "Mid-size commercial van",
     profile: "High",
     src: `${assetRoot}/cityvan-commercial.png`,
     length: "196.5 in",
@@ -454,7 +454,7 @@ export default function ProjectDynamoPage() {
           <article className="group relative min-h-[72vh] overflow-hidden">
             <Image
               src={`${assetRoot}/estate.png`}
-              alt="Burgundy Dynamo Estate wagon"
+              alt="Burgundy Dynamo Estate sport wagon"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover transition duration-700 group-hover:scale-[1.02]"
@@ -486,40 +486,127 @@ export default function ProjectDynamoPage() {
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {vehicles.map((vehicle) => (
-              <Link
-                key={vehicle.name}
-                href={`/portfolio/project-dynamo/${vehicle.slug}`}
-                className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#72b49a]"
-              >
-                <div className="relative aspect-[16/9] overflow-hidden bg-black">
-                  <Image
-                    src={vehicle.src}
-                    alt={`${vehicle.name}, ${vehicle.role}`}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.025]"
-                  />
-                </div>
-                <div className="border-x border-b border-white/10 bg-white/[0.03] p-5 transition group-hover:border-white/25 group-hover:bg-white/[0.07]">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">
-                        {vehicle.role}
-                      </p>
-                      <h3 className="mt-2 text-2xl font-semibold">{vehicle.name}</h3>
-                    </div>
-                    <span className="border border-white/15 px-3 py-1 text-xs uppercase tracking-[0.16em] text-slate-300">
-                      {vehicle.profile} profile
-                    </span>
+              <article key={vehicle.name} className="relative">
+                <Link
+                  href={`/portfolio/project-dynamo/${vehicle.slug}`}
+                  className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#72b49a]"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-black">
+                    <Image
+                      src={vehicle.src}
+                      alt={`${vehicle.name}, ${vehicle.role}`}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition duration-500 group-hover:scale-[1.025]"
+                    />
                   </div>
-                  <p className="mt-4 inline-flex items-center text-sm font-semibold text-slate-200">
-                    View model portfolio
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </p>
-                </div>
-              </Link>
+                  <div className="border-x border-b border-white/10 bg-white/[0.03] p-5 transition group-hover:border-white/25 group-hover:bg-white/[0.07]">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">
+                          {vehicle.role}
+                        </p>
+                        <h3 className="mt-2 text-2xl font-semibold">{vehicle.name}</h3>
+                      </div>
+                      <span className="border border-white/15 px-3 py-1 text-xs uppercase tracking-[0.16em] text-slate-300">
+                        {vehicle.profile} profile
+                      </span>
+                    </div>
+                    <p className="mt-4 inline-flex items-center text-sm font-semibold text-slate-200">
+                      View model portfolio
+                      <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </p>
+                  </div>
+                </Link>
+                <ImageLightbox
+                  src={vehicle.src}
+                  alt={`${vehicle.name}, ${vehicle.role}`}
+                  caption={`${vehicle.name} · ${vehicle.role}`}
+                  trigger="icon"
+                  className="absolute right-3 top-3 z-20"
+                />
+              </article>
             ))}
           </div>
+          <div className="mt-12 border-t border-white/12 pt-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+              Three kinds of versatility
+            </p>
+            <h3 className="mt-3 max-w-3xl text-balance text-3xl font-semibold">
+              No vehicle should have to be all things to all people.
+            </h3>
+            <div className="mt-7 grid gap-5 lg:grid-cols-3">
+              {[
+                {
+                  name: "XTour",
+                  promise: "Compact adaptability",
+                  text: "Sedan-friendly dimensions, a higher hip point, a liftgate, and a flat-folding second row add useful cargo flexibility without SUV bulk.",
+                },
+                {
+                  name: "Constellation / CityVan",
+                  promise: "Maximum enclosed flexibility",
+                  text: "A boxier body, low floor, removable second-row chairs, and a stowable third row prioritize passenger access, cargo volume, and reconfiguration.",
+                },
+                {
+                  name: "Highroad",
+                  promise: "Capability first",
+                  text: "Greater clearance, suspension travel, thermal capacity, towing ability, and three-row space trade some packaging efficiency for ruggedness and reach.",
+                },
+              ].map((choice) => (
+                <article key={choice.name} className="border border-white/12 bg-white/[0.04] p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ef6654]">{choice.name}</p>
+                  <h4 className="mt-2 text-xl font-semibold">{choice.promise}</h4>
+                  <p className="mt-3 leading-7 text-slate-300">{choice.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
+                One platform. Many possible markets.
+              </p>
+              <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+                A starting lineup, not a closed catalog.
+              </h2>
+            </div>
+            <div className="space-y-4 text-lg leading-8 text-slate-700">
+              <p>
+                Project Dynamo begins with a balanced, North American-oriented nine-model family. A truly global
+                automaker could choose a different mix for different markets while retaining shared platform hard
+                points, propulsion, electronics, production logic, and service knowledge.
+              </p>
+              <p>
+                These design studies suggest only a few branches—a city car, compact crossover, roadster, and
+                rugged 4×4. They are possibilities, not announced products or a complete roadmap. The unfilled
+                space is part of the platform&apos;s value.
+              </p>
+            </div>
+          </div>
+          <figure className="mt-10 overflow-hidden border border-black/15 bg-[#071522]">
+            <ImageLightbox
+              src={`${assetRoot}/dynamo-global-possibilities-v2.png`}
+              alt="Four exploratory global-market Dynamo vehicle studies in an automotive design studio"
+              caption="Illustrative platform possibilities · not announced products"
+            >
+              <Image
+                src={`${assetRoot}/dynamo-global-possibilities-v2.png`}
+                alt="Four exploratory global-market Dynamo vehicle studies in an automotive design studio"
+                width={1672}
+                height={941}
+                className="h-auto w-full"
+              />
+            </ImageLightbox>
+            <figcaption className="border-t border-white/10 px-5 py-4 text-sm leading-6 text-slate-300">
+              Exploratory studies only. Different regions could emphasize different bodies without redefining the
+              platform beneath them.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -670,7 +757,12 @@ export default function ProjectDynamoPage() {
 
       <section className="bg-black">
         <div className="grid lg:grid-cols-2">
-          <div className="relative min-h-[65vh]">
+          <ImageLightbox
+            src={`${assetRoot}/cityvan.png`}
+            alt="Champagne-gold Dynamo Constellation passenger van"
+            caption="Dynamo Constellation · passenger configuration"
+            className="relative min-h-[65vh]"
+          >
             <Image
               src={`${assetRoot}/cityvan.png`}
               alt="Champagne-gold Dynamo Constellation passenger van"
@@ -678,7 +770,7 @@ export default function ProjectDynamoPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
+          </ImageLightbox>
           <div className="flex items-center bg-[#111d29] p-8 sm:p-12 lg:p-16">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
@@ -701,20 +793,43 @@ export default function ProjectDynamoPage() {
         <div className="grid lg:grid-cols-2">
           {[
             {
-              src: `${assetRoot}/constellation-liftgate.png`,
+              src: `${assetRoot}/constellation-liftgate-v2.png`,
               alt: "Dynamo Constellation with its rear liftgate raised",
-              text: "A one-piece power liftgate, full rear glazing, premium trim, and useful—rather than imaginary—cargo space behind the upright third row.",
+              text: "A one-piece power liftgate, low load floor, and meaningful cargo depth behind a fully upright third row.",
+              insetSrc: `${assetRoot}/constellation-third-row-inset.png`,
+              insetAlt: "Dynamo Constellation cargo deck with the third row folded into the floor",
+              insetLabel: "Third row stows nearly flush",
             },
             {
-              src: `${assetRoot}/cityvan-interior-v2.png`,
-              alt: "Dynamo Constellation passenger compartment viewed through a realistic sliding-door opening",
-              text: "Two removable second-row captain’s chairs ride on common floor tracks ahead of one coherent three-place rear bench.",
+              src: `${assetRoot}/constellation-removable-seat-v4.png`,
+              alt: "A woman lifting a removable Dynamo Constellation captain’s chair from its floor tracks",
+              text: "A low floor, quick-release track mounts, and a manageable captain’s chair make reconfiguration an ordinary one-person task.",
+              insetSrc: null,
+              insetAlt: null,
+              insetLabel: null,
             },
           ].map((item) => (
             <figure key={item.src} className="relative min-h-[65vh] overflow-hidden">
-              <Image src={item.src} alt={item.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
-              <figcaption className="absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
+              <ImageLightbox src={item.src} alt={item.alt} caption={item.text} className="relative min-h-[65vh]">
+                <Image src={item.src} alt={item.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              </ImageLightbox>
+              {item.insetSrc && item.insetAlt && item.insetLabel && (
+                <div className="absolute right-4 top-4 z-30 w-[44%] min-w-44 border border-white/25 bg-[#071522] p-2 shadow-2xl sm:right-6 sm:top-6 sm:w-[38%]">
+                  <ImageLightbox
+                    src={item.insetSrc}
+                    alt={item.insetAlt}
+                    caption={item.insetLabel}
+                    className="relative aspect-[16/10] overflow-hidden"
+                  >
+                    <Image src={item.insetSrc} alt={item.insetAlt} fill sizes="20vw" className="object-cover" />
+                  </ImageLightbox>
+                  <p className="px-1 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-200">
+                    {item.insetLabel}
+                  </p>
+                </div>
+              )}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
                 {item.text}
               </figcaption>
             </figure>
@@ -736,7 +851,12 @@ export default function ProjectDynamoPage() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            <figure className="relative min-h-[58vh] overflow-hidden">
+            <ImageLightbox
+              src={`${assetRoot}/cityvan-commercial.png`}
+              alt="Blue Dynamo CityVan commercial panel van"
+              caption="Dynamo CityVan · commercial panel configuration"
+              className="relative min-h-[58vh] overflow-hidden"
+            >
               <Image
                 src={`${assetRoot}/cityvan-commercial.png`}
                 alt="Blue Dynamo CityVan commercial panel van"
@@ -744,8 +864,13 @@ export default function ProjectDynamoPage() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
-            </figure>
-            <figure className="relative min-h-[58vh] overflow-hidden">
+            </ImageLightbox>
+            <ImageLightbox
+              src={`${assetRoot}/cityvan-french-doors.png`}
+              alt="Dynamo CityVan with side-by-side French rear cargo doors open"
+              caption="Dynamo CityVan · full-height French rear cargo doors"
+              className="relative min-h-[58vh] overflow-hidden"
+            >
               <Image
                 src={`${assetRoot}/cityvan-french-doors.png`}
                 alt="Dynamo CityVan with side-by-side French rear cargo doors open"
@@ -753,7 +878,7 @@ export default function ProjectDynamoPage() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
-            </figure>
+            </ImageLightbox>
           </div>
         </div>
       </section>
@@ -783,9 +908,14 @@ export default function ProjectDynamoPage() {
               },
             ].map((use) => (
               <article key={use.title} className="border border-white/10 bg-white/[0.03]">
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <ImageLightbox
+                  src={use.src}
+                  alt={use.title}
+                  caption={`Dynamo CityVan · ${use.title}`}
+                  className="relative aspect-[4/3] overflow-hidden"
+                >
                   <Image src={use.src} alt={use.title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
-                </div>
+                </ImageLightbox>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold">{use.title}</h3>
                   <p className="mt-3 leading-7 text-slate-300">{use.text}</p>
@@ -797,15 +927,20 @@ export default function ProjectDynamoPage() {
       </section>
 
       <section className="grid bg-[#071522] lg:grid-cols-[1.12fr_0.88fr]">
-        <div className="relative min-h-[65vh]">
+        <ImageLightbox
+          src={`${assetRoot}/sedan-interior-v2.png`}
+          alt="Dynamo Captain sedan interior"
+          caption="Dynamo Captain interior"
+          className="relative min-h-[65vh]"
+        >
           <Image
-            src={`${assetRoot}/sedan-interior.png`}
+            src={`${assetRoot}/sedan-interior-v2.png`}
             alt="Dynamo Captain sedan interior"
             fill
             sizes="(min-width: 1024px) 56vw, 100vw"
             className="object-cover"
           />
-        </div>
+        </ImageLightbox>
         <div className="flex items-center p-8 sm:p-12 lg:p-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">Inside Dynamo</p>

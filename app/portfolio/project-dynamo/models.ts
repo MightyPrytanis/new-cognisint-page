@@ -37,9 +37,9 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/captain-couple.png`,
         caption: "An attainable sedan can still feel like an occasion—and belong naturally to the people who choose it.",
       },
-      { src: `${root}/sedan-interior.png`, caption: "Simple and plush: useful controls, warm materials, and technology that recedes." },
+      { src: `${root}/sedan-interior-v2.png`, caption: "Simple and plush: useful controls, generous airflow, warm materials, and technology that recedes." },
       ...montage(`${root}/captain-portfolio.png`, [
-        "A formal rear three-quarter view reveals the Captain’s clean tail and planted stance.",
+        "A formal rear three-quarter view reveals the Captain’s clean stern and planted stance.",
         "Electric traction gives the attainable sedan effortless highway composure.",
         "A real trunk and practical opening keep elegance from becoming precious.",
         "A low-volume performance tune changes wheels, brakes, suspension, and thermal capacity—not the platform logic.",
@@ -82,9 +82,9 @@ export const dynamoModels: DynamoModel[] = [
         caption: "Oxblood bolsters, durable woven inserts, real controls, and a low seating position give the Estate sport wagon warmth without visual clutter.",
       },
       ...montage(`${root}/estate-portfolio.png`, [
-        "Long-roof elegance and a useful liftgate belong in the same vehicle.",
+        "Long, fine lines and a cleanly resolved stern give the Estate sport wagon its own identity while preserving unmistakable Captain DNA.",
         "A coherent cargo bay handles family life without pretending occupied rows disappear.",
-        "Low center of gravity and electric all-wheel drive imply sure-footed winter travel.",
+        "A low center of gravity and electric all-wheel drive provide sure-footed winter travel.",
         "The performance Estate preserves space while sharpening the chassis and thermal package.",
       ]).slice(0, 3),
       { src: `${root}/performance-low-photoreal.png`, caption: "The low-profile trio demonstrates specialization on shared hard points." },
@@ -154,10 +154,17 @@ export const dynamoModels: DynamoModel[] = [
     hero: `${root}/cityvan.png`,
     photos: [
       { src: `${root}/cityvan.png`, caption: "Full glazing, champagne clearcoat, and richer trim distinguish the passenger model." },
-      { src: `${root}/cityvan-interior-v2.png`, caption: "Two track-mounted captain’s chairs and one coherent three-place rear bench." },
       {
-        src: `${root}/constellation-liftgate.png`,
-        caption: "The liftgate reveals a hidden Clark badge—and a useful but finite cargo well behind the occupied third row.",
+        src: `${root}/constellation-removable-seat-v4.png`,
+        caption: "A low floor and quick-release track mounts make the lightweight captain’s chairs a genuinely flexible one-person proposition.",
+      },
+      {
+        src: `${root}/constellation-liftgate-v2.png`,
+        caption: "The liftgate reveals meaningful cargo depth behind a fully occupied third row without turning Constellation into a full-size van.",
+      },
+      {
+        src: `${root}/constellation-third-row-inset.png`,
+        caption: "The complete third row stows into its floor well to create a flat or nearly flat cargo deck.",
       },
       {
         src: `${root}/constellation-mountain.png`,
@@ -172,9 +179,9 @@ export const dynamoModels: DynamoModel[] = [
   {
     slug: "cityvan",
     name: "Dynamo CityVan",
-    role: "Commercial panel van",
+    role: "Mid-size commercial van",
     profile: "High profile",
-    thesis: "The CityVan commercial van is a worthy successor to the compact commercial van—configured for delivery, trades, and mobile enterprise.",
+    thesis: "The CityVan is a mid-size commercial van—more capacious than a compact urban van and more maneuverable than a full-size high-roof van—configured for delivery, trades, and mobile enterprise.",
     hero: `${root}/cityvan-commercial.png`,
     photos: [
       { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters and durable trim define the commercial configuration." },
