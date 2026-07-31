@@ -68,18 +68,16 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
                 className={index === 0 ? "md:col-span-2" : ""}
               >
                 {photo.crop ? (
-                  <ImageLightbox src={photo.src} alt={photo.caption} caption={photo.caption} className="aspect-square overflow-hidden">
-                    <div
-                      role="img"
-                      aria-label={photo.caption}
-                      className="aspect-square bg-cover bg-no-repeat"
-                      style={{
-                        backgroundImage: `url(${photo.src})`,
-                        backgroundPosition: cropPosition[photo.crop],
-                        backgroundSize: "200% 200%",
-                      }}
-                    />
-                  </ImageLightbox>
+                  <div
+                    role="img"
+                    aria-label={photo.caption}
+                    className="aspect-square bg-cover bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${photo.src})`,
+                      backgroundPosition: cropPosition[photo.crop],
+                      backgroundSize: "200% 200%",
+                    }}
+                  />
                 ) : (
                   <ImageLightbox
                     src={photo.src}
