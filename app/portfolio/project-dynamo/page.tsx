@@ -366,7 +366,7 @@ export default function ProjectDynamoPage() {
               passenger vans, work vans, and pickups that serve genuinely different lives. The hard part is
               giving people that choice without over-specializing, creating a new platform for every body,
               retooling every facility, and then throwing it all away when energy prices, tax credits, or
-              regulatory policy changes.
+              regulatory policies change.
             </p>
             <p>
               Consumers face the same uncertainty from the other side. They want to buy confidently, but it is
