@@ -821,6 +821,10 @@ export default function ProjectDynamoPage() {
                 the Constellation passenger van toward family, hospitality, executive shuttle, and accessible
                 passenger use.
               </p>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                With the third row in use, either second-row captain&apos;s chair can fold into a level work surface:
+                a personal zone for a teenager&apos;s drink, snacks, headphones, or a handheld game.
+              </p>
               <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8">
                 A worthy successor to the North American passenger minivan.
               </p>
