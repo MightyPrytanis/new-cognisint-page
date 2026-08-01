@@ -168,7 +168,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/constellation-third-row-inset-v3.png`,
-        caption: "The installed second-row captain’s chairs fold into work surfaces with molded cupholders, while the third-row bench stows horizontally just above the structural battery floor.",
+        caption: "With the third row occupied, one or both installed second-row captain’s chairs fold into work surfaces with molded cupholders; the third-row bench stows horizontally just above the structural battery floor.",
       },
       {
         src: `${root}/constellation-mountain.png`,
