@@ -129,7 +129,7 @@ export const dynamoModels: DynamoModel[] = [
     photos: [
       { src: `${root}/suv.png`, caption: "A raised hood dome and larger wheel family add stature without changing the fascia." },
       {
-        src: `${root}/highroad-locomotive-cogx.png`,
+        src: `${root}/highroad-locomotive.png`,
         caption:
           "Beside a modern diesel-electric locomotive, the analogy becomes physical: a prime mover makes electricity; traction motors do the propelling.",
       },

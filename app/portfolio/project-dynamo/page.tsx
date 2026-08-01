@@ -682,7 +682,7 @@ export default function ProjectDynamoPage() {
                 alt: "Hikers returning from the Carolina woods to their pre-cooled arctic-blue XTour CUV",
                 title: "Cabin Comfort",
                 vehicle: "XTour CUV",
-                text: "Hot hikers return from the Carolina woods to a pre-cooled arctic-blue XTour CUV, ready for a relaxed drive back to Charlotte. Cabin Comfort prepares the vehicle around real conditions and return time.",
+                text: "Tired hikers return from the Carolina woods to a pre-cooled arctic-blue XTour CUV, ready for a relaxed drive back to Charlotte. Cabin Comfort prepares the vehicle around real conditions and return time.",
               },
               {
                 src: `${assetRoot}/highroad-rain-guard.png`,
