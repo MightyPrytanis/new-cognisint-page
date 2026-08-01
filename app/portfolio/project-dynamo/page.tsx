@@ -503,45 +503,6 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="bg-black">
-        <div className="grid lg:grid-cols-2">
-          <article className="group relative min-h-[72vh] overflow-hidden">
-            <Image
-              src={`${assetRoot}/sedan.png`}
-              alt="Copper Dynamo Captain compact sedan"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.02]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/10 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ef6654]">Design anchor</p>
-              <h2 className="mt-3 text-4xl font-semibold">Dynamo Captain</h2>
-              <p className="mt-3 max-w-lg text-lg leading-7 text-slate-200">
-                Low, long-wheelbase composure and quiet American confidence.
-              </p>
-            </div>
-          </article>
-          <article className="group relative min-h-[72vh] overflow-hidden">
-            <Image
-              src={`${assetRoot}/estate.png`}
-              alt="Burgundy Dynamo Estate sport wagon"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.02]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/10 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ef6654]">Emotional center</p>
-              <h2 className="mt-3 text-4xl font-semibold">Dynamo Estate</h2>
-              <p className="mt-3 max-w-lg text-lg leading-7 text-slate-200">
-                Proof that utility does not require crossover proportions.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section id="family" className="scroll-mt-24 bg-[#0a1725] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, nine answers</p>
@@ -805,166 +766,99 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="relative min-h-[80vh] overflow-hidden">
-        <Image
-          src={`${assetRoot}/suv.png`}
-          alt="Midnight-navy Dynamo Highroad three-row SUV"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/45 to-transparent" />
-        <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-end px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">High-profile flagship</p>
-            <h2 className="mt-4 text-5xl font-semibold">Dynamo Highroad</h2>
-            <p className="mt-5 text-xl leading-8 text-slate-100">
-              A higher hood dome, 21-inch wheel family, wider track, 225 mm target clearance, and long-travel
-              suspension give the three-row Highroad SUV real capability without changing the family fascia.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black">
-        <div className="grid lg:grid-cols-2">
-          <ImageLightbox
-            src={`${assetRoot}/cityvan.png`}
-            alt="Champagne-gold Dynamo Constellation passenger van"
-            caption="Dynamo Constellation · passenger configuration"
-            className="relative min-h-[65vh]"
-          >
-            <Image
-              src={`${assetRoot}/cityvan.png`}
-              alt="Champagne-gold Dynamo Constellation passenger van"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </ImageLightbox>
-          <div className="flex items-center bg-[#111d29] p-8 sm:p-12 lg:p-16">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
-                Passenger configuration
-              </p>
-              <h2 className="mt-4 text-balance text-4xl font-semibold sm:text-5xl">
-                Dynamo Constellation
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Full glazing, richer finishes, acoustic insulation, three-row seating, and a power liftgate turn
-                the Constellation passenger van toward family, hospitality, executive shuttle, and accessible
-                passenger use.
-              </p>
-              <p className="mt-5 text-lg leading-8 text-slate-300">
-                With the third row in use, one or both second-row captain&apos;s chairs can fold into level work
-                surfaces with molded cupholders—giving teens their own zones for drinks, snacks, headphones, or a
-                handheld game.
-              </p>
-              <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8">
-                A worthy successor to the North American passenger minivan.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="grid lg:grid-cols-2">
-          {[
-            {
-              src: `${assetRoot}/constellation-liftgate-v2.png`,
-              alt: "Dynamo Constellation with its rear liftgate raised",
-              text: "A one-piece power liftgate, low load floor, and meaningful cargo depth behind a fully upright third row.",
-              insetSrc: `${assetRoot}/constellation-third-row-inset-v3.png`,
-              insetAlt: "Dynamo Constellation cargo deck with its third-row bench raised slightly above the battery floor and second-row captain’s chairs stowed as work surfaces",
-              insetLabel: "Third row stows above the battery floor",
-            },
-            {
-              src: `${assetRoot}/constellation-removable-seat-v11.png`,
-              alt: "A woman lifting a removable Dynamo Constellation captain’s chair from its floor tracks",
-              text: "A low floor, seat-integrated restraints, and rearward-release track mounts make reconfiguration an ordinary one-person task.",
-              insetSrc: null,
-              insetAlt: null,
-              insetLabel: null,
-            },
-          ].map((item) => (
-            <figure key={item.src} className="relative min-h-[65vh] overflow-hidden">
-              <ImageLightbox src={item.src} alt={item.alt} caption={item.text} className="relative min-h-[65vh]">
-                <Image src={item.src} alt={item.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-              </ImageLightbox>
-              {item.insetSrc && item.insetAlt && item.insetLabel && (
-                <div className="absolute right-4 top-4 z-30 w-[44%] min-w-44 border border-white/25 bg-[#071522] p-2 shadow-2xl sm:right-6 sm:top-6 sm:w-[38%]">
-                  <ImageLightbox
-                    src={item.insetSrc}
-                    alt={item.insetAlt}
-                    caption={item.insetLabel}
-                    className="relative aspect-[16/10] overflow-hidden"
-                  >
-                    <Image src={item.insetSrc} alt={item.insetAlt} fill sizes="20vw" className="object-cover" />
-                  </ImageLightbox>
-                  <p className="px-1 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-200">
-                    {item.insetLabel}
-                  </p>
-                </div>
-              )}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
-                {item.text}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
       <section className="bg-[#0a1725] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
-            Commercial configuration
+            Utility without uniformity
           </p>
-          <div className="mt-4 grid gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-            <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">Dynamo CityVan</h2>
+          <div className="mt-4 grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+            <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+              Shared architecture does not mean one shape fits all.
+            </h2>
             <p className="text-lg leading-8 text-slate-300">
-              The CityVan commercial van uses the same windshield, front doors, fascia, lighting, e-drives, floor
-              structure, sliding-door aperture, and service logic—recast with panel quarters, durable finishes,
-              load-rated wheels, and side-by-side French rear cargo doors.
+              A taller van body can use Dynamo&apos;s low floor and common structural battery to prioritize passenger
+              room, cargo volume, and reconfiguration. The propulsion, controls, thermal systems, and service logic
+              remain familiar—even when the vehicle above them is designed for maximum utility rather than another
+              variation on the same crossover silhouette.
             </p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            <ImageLightbox
-              src={`${assetRoot}/cityvan-commercial.png`}
-              alt="Blue Dynamo CityVan commercial panel van"
-              caption="Dynamo CityVan · commercial panel configuration"
-              className="relative min-h-[58vh] overflow-hidden"
-            >
-              <Image
-                src={`${assetRoot}/cityvan-commercial.png`}
-                alt="Blue Dynamo CityVan commercial panel van"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </ImageLightbox>
-            <ImageLightbox
-              src={`${assetRoot}/cityvan-french-doors.png`}
-              alt="Dynamo CityVan with side-by-side French rear cargo doors open"
-              caption="Dynamo CityVan · full-height French rear cargo doors"
-              className="relative min-h-[58vh] overflow-hidden"
-            >
-              <Image
-                src={`${assetRoot}/cityvan-french-doors.png`}
-                alt="Dynamo CityVan with side-by-side French rear cargo doors open"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </ImageLightbox>
+            <figure className="relative min-h-[65vh] overflow-hidden">
+              <ImageLightbox
+                src={`${assetRoot}/constellation-liftgate-v2.png`}
+                alt="Passenger van cargo area with its rear liftgate raised"
+                caption="A low load floor and meaningful cargo depth behind a fully upright third row"
+                className="relative min-h-[65vh]"
+              >
+                <Image
+                  src={`${assetRoot}/constellation-liftgate-v2.png`}
+                  alt="Passenger van cargo area with its rear liftgate raised"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </ImageLightbox>
+              <div className="absolute right-4 top-4 z-30 w-[44%] min-w-44 border border-white/25 bg-[#071522] p-2 shadow-2xl sm:right-6 sm:top-6 sm:w-[38%]">
+                <ImageLightbox
+                  src={`${assetRoot}/constellation-third-row-inset-v3.png`}
+                  alt="Cargo deck with the third-row bench raised slightly above the battery floor and second-row captain’s chairs stowed as work surfaces"
+                  caption="Third row stows above the battery floor"
+                  className="relative aspect-[16/10] overflow-hidden"
+                >
+                  <Image
+                    src={`${assetRoot}/constellation-third-row-inset-v3.png`}
+                    alt="Cargo deck with the third-row bench raised slightly above the battery floor and second-row captain’s chairs stowed as work surfaces"
+                    fill
+                    sizes="20vw"
+                    className="object-cover"
+                  />
+                </ImageLightbox>
+                <p className="px-1 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-200">
+                  Third row stows above the battery floor
+                </p>
+              </div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
+                A low load floor and meaningful cargo depth behind a fully upright third row.
+              </figcaption>
+            </figure>
+            <figure className="relative min-h-[65vh] overflow-hidden">
+              <ImageLightbox
+                src={`${assetRoot}/constellation-removable-seat-v11.png`}
+                alt="A woman lifting a removable captain’s chair from a passenger van’s floor tracks"
+                caption="Reconfigurable seating turns generous passenger space into useful cargo space"
+                className="relative min-h-[65vh]"
+              >
+                <Image
+                  src={`${assetRoot}/constellation-removable-seat-v11.png`}
+                  alt="A woman lifting a removable captain’s chair from a passenger van’s floor tracks"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </ImageLightbox>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-7 text-lg leading-7 text-slate-100 sm:p-10">
+                Folding work surfaces and removable second-row seating make flexibility part of ordinary use.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">One van. Real work.</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">
+            One architecture. Different work.
+          </p>
           <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Delivery, trade service, and small-business logistics.
+            From last-mile delivery to skilled trades and mobile enterprise.
           </h2>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Shared structure and systems do not require identical outcomes. Modular cargo equipment, power export,
+            durable finishes, and task-specific storage let a common Dynamo van architecture support very different
+            businesses without creating a different vehicle program for each one.
+          </p>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {[
               {
@@ -987,7 +881,7 @@ export default function ProjectDynamoPage() {
                 <ImageLightbox
                   src={use.src}
                   alt={use.title}
-                  caption={`Dynamo CityVan · ${use.title}`}
+                  caption={`Dynamo platform flexibility · ${use.title}`}
                   className="relative aspect-[4/3] overflow-hidden"
                 >
                   <Image src={use.src} alt={use.title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
