@@ -385,6 +385,20 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
+      <section className="relative aspect-[16/9] max-h-[52rem] min-h-[24rem] overflow-hidden bg-[#07131d]">
+        <Image
+          src={`${assetRoot}/highroad-locomotive.png`}
+          alt="Dynamo Highroad SUV beside a locomotive at a working intermodal yard"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07131d]/80 via-transparent to-transparent" />
+        <p className="absolute bottom-0 left-0 max-w-2xl p-6 text-lg font-medium leading-7 text-white sm:p-10 sm:text-2xl sm:leading-9">
+          One platform can scale from everyday mobility to serious work.
+        </p>
+      </section>
+
       <section className="bg-[#0a1d28] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
