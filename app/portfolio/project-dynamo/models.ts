@@ -37,6 +37,10 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/captain-couple.png`,
         caption: "An attainable sedan can still feel like an occasion—and belong naturally to the people who choose it.",
       },
+      {
+        src: `${root}/captain-cabin-safe.png`,
+        caption: "Cabin Safe keeps a companion comfortable while a dog dad brings home treats from The Barkery.",
+      },
       { src: `${root}/sedan-interior-v2.png`, caption: "Simple and plush: useful controls, generous airflow, warm materials, and technology that recedes." },
       ...montage(`${root}/captain-portfolio.png`, [
         "A formal rear three-quarter view reveals the Captain’s clean stern and planted stance.",
@@ -104,7 +108,7 @@ export const dynamoModels: DynamoModel[] = [
         caption: "A higher hip point and upright glasshouse distinguish the XTour CUV while the controls, materials, and display logic remain recognizably Dynamo.",
       },
       {
-        src: `${root}/xtour-cabin-comfort.png`,
+        src: `${root}/xtour-cabin-comfort-v2.png`,
         caption: "Cabin Comfort can prepare the XTour CUV intelligently as its occupants return from the trail.",
       },
       ...montage(`${root}/xtour-portfolio.png`, [
@@ -163,8 +167,8 @@ export const dynamoModels: DynamoModel[] = [
         caption: "The liftgate reveals meaningful cargo depth behind a fully occupied third row without turning Constellation into a full-size van.",
       },
       {
-        src: `${root}/constellation-third-row-inset.png`,
-        caption: "The complete third row stows into its floor well to create a flat or nearly flat cargo deck.",
+        src: `${root}/constellation-third-row-inset-v2.png`,
+        caption: "The three-place third-row bench stows into its floor well while the second-row captain’s chairs remain installed on their tracks.",
       },
       {
         src: `${root}/constellation-mountain.png`,

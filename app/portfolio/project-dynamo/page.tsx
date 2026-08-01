@@ -353,44 +353,89 @@ export default function ProjectDynamoPage() {
 
       <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-16 sm:py-24">
         <ParticleWaveform className="inset-x-0 top-3 h-72 w-full" />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Specialization without fragmentation.
-            </h2>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="overflow-hidden border border-white/10 bg-[#020812] shadow-2xl">
+            <Image
+              src={`${assetRoot}/clark-trapezoid-hero.png`}
+              alt="Polished red and chrome Clark trapezoid emblem"
+              width={1536}
+              height={1024}
+              className="h-auto w-full object-cover"
+            />
           </div>
-          <div className="space-y-6 text-lg leading-8 text-slate-200">
-            <p>
-              Everything does not need to become the same crossover. A sedan, hatch, wagon, crossover, SUV,
-              passenger van, commercial van, and two pickup heights can each serve a different life while sharing
-              the expensive systems customers never see.
+          <div className="mt-14 grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
+              <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+                Not every vehicle needs to be shaped like an expensive basketball shoe.
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg leading-8 text-slate-200">
+              <p>
+                There is room for more choice in the market: sedans, hatches, sport wagons, crossovers, SUVs,
+                passenger vans, work vans, and pickups that serve genuinely different lives. The hard part is
+                giving people that choice without over-specializing, creating a new platform for every body,
+                retooling every facility, and then throwing it all away when energy prices, tax credits, or
+                regulatory policy changes.
+              </p>
+              <p>
+                Consumers face the same uncertainty from the other side. They want to buy confidently, but it is
+                difficult to know what energy will cost, which incentives will remain, and what charging or
+                fueling infrastructure will be available over the life of a vehicle.
+              </p>
+              <p>
+                Project Dynamo answers with specialization without fragmentation: one electric-drive platform
+                that can support distinct bodies, shared systems, and two energy strategies without asking the
+                automaker or the customer to bet everything on one forecast.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#0a1d28] py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">Two energy strategies</p>
+            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+              Same Dynamo fundamentals. PE series hybrid or fully electric BEV.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Every Dynamo model is designed around the same solid-state battery structure, electric drive units,
+              controls, cooling, and safety architecture. The front module changes: a compact generator extends a
+              Petro-Electric model when charging access is uncertain; a battery-electric model uses that space for
+              additional stored energy and power electronics.
             </p>
-            <p>
-              Project Dynamo concentrates complexity in a common battery structure, electric drive units,
-              electronics, controls, thermal backbone, software, and service logic. Visible components repeat,
-              too: mirrors, switchgear, charging doors, latches, seat hardware, and a partially recessed
-              fixed-grip door-handle cartridge. The result is a lineup with genuine variety without creating a
-              parts and maintenance headache.
-            </p>
-            <p>
-              It also creates a hedge against volatility. Consumers can lean harder on electricity when liquid
-              fuel becomes expensive and retain onboard generation when charging access fails to keep pace.
-              Every Petro-Electric (PE) Dynamo is also plug-in rechargeable: routine trips can use stored grid
-              energy, while the onboard prime mover extends range when needed. The automaker can change the factory
-              mix between PE and battery-electric (BEV) models as policy, incentives, fuel prices, infrastructure,
-              and demand shift—without abandoning the vehicle family.
-            </p>
-            <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
-              This isn&apos;t a real 2027 vehicle lineup—but it should be.
-            </blockquote>
-            <p className="font-medium text-white">
-              The relevant unit of comparison is therefore not one Petro-Electric Captain sedan against one
-              conventional hybrid sedan. It is the economics and resilience of the complete platform: nine
-              market-facing models, seven core body architectures, two energy strategies, shared capital
-              investment, shared service knowledge, and a production mix that can move without restarting the
-              product program.
-            </p>
+          </div>
+          <ImageLightbox
+            src={`${assetRoot}/dynamo-pe-bev-architecture.png`}
+            alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
+            caption="A shared electric-drive architecture supports both PE series-hybrid and BEV Captains."
+            className="relative mt-10 aspect-[16/9] overflow-hidden border border-white/10"
+          >
+            <Image
+              src={`${assetRoot}/dynamo-pe-bev-architecture.png`}
+              alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </ImageLightbox>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <article className="border border-white/10 bg-white/[0.04] p-6">
+              <h3 className="text-xl font-semibold">PE · Petro-Electric series hybrid</h3>
+              <p className="mt-3 leading-7 text-slate-300">
+                Plug in for routine driving. When needed, a matched onboard generator makes electricity for the
+                battery and motors; only the electric motors drive the wheels.
+              </p>
+            </article>
+            <article className="border border-white/10 bg-white/[0.04] p-6">
+              <h3 className="text-xl font-semibold">BEV · Battery electric</h3>
+              <p className="mt-3 leading-7 text-slate-300">
+                The same body, controls, thermal backbone, and electric drive use the front module for additional
+                battery and power electronics, with no onboard prime mover.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -796,9 +841,9 @@ export default function ProjectDynamoPage() {
               src: `${assetRoot}/constellation-liftgate-v2.png`,
               alt: "Dynamo Constellation with its rear liftgate raised",
               text: "A one-piece power liftgate, low load floor, and meaningful cargo depth behind a fully upright third row.",
-              insetSrc: `${assetRoot}/constellation-third-row-inset.png`,
-              insetAlt: "Dynamo Constellation cargo deck with the third row folded into the floor",
-              insetLabel: "Third row stows nearly flush",
+              insetSrc: `${assetRoot}/constellation-third-row-inset-v2.png`,
+              insetAlt: "Dynamo Constellation cargo deck with its third-row bench stowed and second-row captain’s chairs still installed",
+              insetLabel: "Third row stows; captain’s chairs remain",
             },
             {
               src: `${assetRoot}/constellation-removable-seat-v10.png`,
