@@ -393,10 +393,18 @@ export default function ProjectDynamoPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07131d]/80 via-transparent to-transparent" />
-        <p className="absolute bottom-0 left-0 max-w-2xl p-6 text-lg font-medium leading-7 text-white sm:p-10 sm:text-2xl sm:leading-9">
-          One platform can scale from everyday mobility to serious work.
-        </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07131d]/95 via-[#07131d]/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 max-w-4xl p-6 text-white sm:p-10">
+          <p className="text-lg font-medium leading-7 sm:text-2xl sm:leading-9">
+            One platform can scale from everyday mobility to serious work.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
+            Beside a modern diesel-electric locomotive, the principle becomes immediately legible: both it and a
+            Petro-Electric Dynamo use an onboard liquid-fuel prime mover to generate electricity for electric
+            traction motors. The Highroad adds a plug-in battery for routine battery-only driving, regenerative
+            braking, and power buffering; its generator starts only when needed.
+          </p>
+        </div>
       </section>
 
       <section className="bg-[#0a1d28] py-16 sm:py-24">
