@@ -388,15 +388,26 @@ export default function ProjectDynamoPage() {
       <section className="bg-[#0a1d28] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">Two energy strategies</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
+              Two energy strategies, one platform architecture, endless possibilities
+            </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Same Dynamo fundamentals. PE series hybrid or fully electric BEV.
+              Same Dynamo fundamentals: PE series hybrid or fully electric BEV.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               Every Dynamo model is designed around the same solid-state battery structure, electric drive units,
-              controls, cooling, and safety architecture. The front module changes: a compact generator extends a
-              Petro-Electric model when charging access is uncertain; a battery-electric model uses that space for
-              additional stored energy and power electronics.
+              controls, cooling, and safety architecture. Any model can be built with one of two optional energy
+              strategies: a series hybrid—what we call Petro-Electric, or PE—and a 100% battery-electric option, or
+              BEV.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              The front module changes, but the rest of the vehicle architecture stays the same. A compact,
+              low-emission gasoline- or diesel-electric generator can effectively double a Petro-Electric model&apos;s
+              usable range when rapid charging access is uncertain or limited; a fully battery-electric model uses
+              that physical space for additional stored energy capacity instead.
+            </p>
+            <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8 text-white">
+              Consumer choice, enterprise flexibility.
             </p>
           </div>
           <ImageLightbox
@@ -417,8 +428,9 @@ export default function ProjectDynamoPage() {
             <article className="border border-white/10 bg-white/[0.04] p-6">
               <h3 className="text-xl font-semibold">PE · Petro-Electric series hybrid</h3>
               <p className="mt-3 leading-7 text-slate-300">
-                Plug in for routine driving. When needed, a matched onboard generator makes electricity for the
-                battery and motors; only the electric motors drive the wheels.
+                The PE can run fully on stored battery energy for routine driving. When needed, a matched onboard
+                generator starts and makes electricity for the battery and motors; only the electric motors drive
+                the wheels.
               </p>
             </article>
             <article className="border border-white/10 bg-white/[0.04] p-6">
