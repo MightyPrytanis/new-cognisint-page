@@ -167,8 +167,8 @@ export const dynamoModels: DynamoModel[] = [
         caption: "The liftgate reveals meaningful cargo depth behind a fully occupied third row without turning Constellation into a full-size van.",
       },
       {
-        src: `${root}/constellation-third-row-inset-v2.png`,
-        caption: "The three-place third-row bench stows into its floor well while the second-row captain’s chairs remain installed on their tracks.",
+        src: `${root}/constellation-third-row-inset-v3.png`,
+        caption: "The installed second-row captain’s chairs fold into work surfaces with molded cupholders, while the third-row bench stows horizontally just above the structural battery floor.",
       },
       {
         src: `${root}/constellation-mountain.png`,

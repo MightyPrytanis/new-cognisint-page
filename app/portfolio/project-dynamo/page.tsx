@@ -353,42 +353,34 @@ export default function ProjectDynamoPage() {
 
       <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-16 sm:py-24">
         <ParticleWaveform className="inset-x-0 top-3 h-72 w-full" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden border border-white/10 bg-[#020812] shadow-2xl">
-            <Image
-              src={`${assetRoot}/clark-trapezoid-hero.png`}
-              alt="Polished red and chrome Clark trapezoid emblem"
-              width={1536}
-              height={1024}
-              className="h-auto w-full object-cover"
-            />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
+            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+              Not every vehicle needs to be shaped like an expensive basketball shoe.
+            </h2>
           </div>
-          <div className="mt-14 grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
-              <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-                Not every vehicle needs to be shaped like an expensive basketball shoe.
-              </h2>
-            </div>
-            <div className="space-y-6 text-lg leading-8 text-slate-200">
-              <p>
-                There is room for more choice in the market: sedans, hatches, sport wagons, crossovers, SUVs,
-                passenger vans, work vans, and pickups that serve genuinely different lives. The hard part is
-                giving people that choice without over-specializing, creating a new platform for every body,
-                retooling every facility, and then throwing it all away when energy prices, tax credits, or
-                regulatory policy changes.
-              </p>
-              <p>
-                Consumers face the same uncertainty from the other side. They want to buy confidently, but it is
-                difficult to know what energy will cost, which incentives will remain, and what charging or
-                fueling infrastructure will be available over the life of a vehicle.
-              </p>
-              <p>
-                Project Dynamo answers with specialization without fragmentation: one electric-drive platform
-                that can support distinct bodies, shared systems, and two energy strategies without asking the
-                automaker or the customer to bet everything on one forecast.
-              </p>
-            </div>
+          <div className="space-y-6 text-lg leading-8 text-slate-200">
+            <p>
+              There is room for more choice in the market: sedans, hatches, sport wagons, crossovers, SUVs,
+              passenger vans, work vans, and pickups that serve genuinely different lives. The hard part is
+              giving people that choice without over-specializing, creating a new platform for every body,
+              retooling every facility, and then throwing it all away when energy prices, tax credits, or
+              regulatory policy changes.
+            </p>
+            <p>
+              Consumers face the same uncertainty from the other side. They want to buy confidently, but it is
+              difficult to know what energy will cost, which incentives will remain, and what charging or fueling
+              infrastructure will be available over the life of a vehicle.
+            </p>
+            <p>
+              Project Dynamo answers with specialization without fragmentation: one electric-drive platform that
+              can support distinct bodies, shared systems, and two energy strategies without asking the automaker
+              or the customer to bet everything on one forecast.
+            </p>
+            <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
+              This isn&apos;t a real 2027 vehicle lineup—but it should be.
+            </blockquote>
           </div>
         </div>
       </section>
@@ -408,13 +400,13 @@ export default function ProjectDynamoPage() {
             </p>
           </div>
           <ImageLightbox
-            src={`${assetRoot}/dynamo-pe-bev-architecture.png`}
+            src={`${assetRoot}/dynamo-pe-bev-architecture-v3.png`}
             alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
             caption="A shared electric-drive architecture supports both PE series-hybrid and BEV Captains."
             className="relative mt-10 aspect-[16/9] overflow-hidden border border-white/10"
           >
             <Image
-              src={`${assetRoot}/dynamo-pe-bev-architecture.png`}
+              src={`${assetRoot}/dynamo-pe-bev-architecture-v3.png`}
               alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
               fill
               sizes="100vw"
@@ -841,9 +833,9 @@ export default function ProjectDynamoPage() {
               src: `${assetRoot}/constellation-liftgate-v2.png`,
               alt: "Dynamo Constellation with its rear liftgate raised",
               text: "A one-piece power liftgate, low load floor, and meaningful cargo depth behind a fully upright third row.",
-              insetSrc: `${assetRoot}/constellation-third-row-inset-v2.png`,
-              insetAlt: "Dynamo Constellation cargo deck with its third-row bench stowed and second-row captain’s chairs still installed",
-              insetLabel: "Third row stows; captain’s chairs remain",
+              insetSrc: `${assetRoot}/constellation-third-row-inset-v3.png`,
+              insetAlt: "Dynamo Constellation cargo deck with its third-row bench raised slightly above the battery floor and second-row captain’s chairs stowed as work surfaces",
+              insetLabel: "Third row stows above the battery floor",
             },
             {
               src: `${assetRoot}/constellation-removable-seat-v10.png`,
@@ -1464,19 +1456,23 @@ export default function ProjectDynamoPage() {
 
       <section className="border-b-8 border-[#9c2826] bg-[#050d17] py-16">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
-          <p className="text-balance text-3xl font-semibold leading-tight sm:text-5xl">
-            “This isn&apos;t a real 2027 vehicle lineup—but it should be.”
-          </p>
+          <Image
+            src={`${assetRoot}/authentic-clark-badge.png`}
+            alt="Red and chrome Clark Trapezoid badge"
+            width={1536}
+            height={1024}
+            className="mx-auto mb-8 w-full max-w-3xl object-contain"
+          />
           <p className="mt-7 text-xl font-medium italic text-[#ef6654]">
             Time after time, you&apos;ll have everything you need in a Clark.
           </p>
           <p className="mx-auto mt-10 max-w-4xl text-xs leading-6 text-slate-400">
-            Independent concept study. Clark Motor Company is fictional and its red trapezoid logo is used as a
-            stand-in. Ford Motor Company is named only as a factual precedent and point of comparison. This work was
-            not created for, commissioned by, sponsored by, reviewed by, or endorsed by Ford or any other
-            manufacturer. All Project Dynamo specifications, performance, costs, and efficiency figures are
-            simulated design targets, not tested or certified claims. Vehicle and schematic imagery were produced
-            with generative tools under human creative direction.
+            Independent concept study. The fictional Clark Motor Company and its Red Trapezoid badge are the
+            intellectual property of Cognisint LLC, copyright 2026. Ford Motor Company is named only as a factual
+            precedent and point of comparison. This work was not created for, commissioned by, sponsored by,
+            reviewed by, or endorsed by Ford or any other manufacturer. All Project Dynamo specifications,
+            performance, costs, and efficiency figures are simulated design targets, not tested or certified claims.
+            Vehicle and schematic imagery were produced with generative tools under human creative direction.
           </p>
         </div>
       </section>
