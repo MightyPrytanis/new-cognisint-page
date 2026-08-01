@@ -869,7 +869,7 @@ export default function ProjectDynamoPage() {
               insetLabel: "Third row stows above the battery floor",
             },
             {
-              src: `${assetRoot}/constellation-removable-seat-v10.png`,
+              src: `${assetRoot}/constellation-removable-seat-v11.png`,
               alt: "A woman lifting a removable Dynamo Constellation captain’s chair from its floor tracks",
               text: "A low floor, seat-integrated restraints, and rearward-release track mounts make reconfiguration an ordinary one-person task.",
               insetSrc: null,
@@ -1488,11 +1488,11 @@ export default function ProjectDynamoPage() {
       <section className="border-b-8 border-[#9c2826] bg-[#050d17] py-16">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <Image
-            src={`${assetRoot}/authentic-clark-badge.png`}
+            src={`${assetRoot}/clark-trapezoid-floating.png`}
             alt="Red and chrome Clark Trapezoid badge"
             width={1536}
             height={1024}
-            className="mx-auto mb-8 w-full max-w-3xl object-contain"
+            className="mx-auto mb-8 w-full max-w-2xl object-contain drop-shadow-[0_22px_30px_rgba(0,0,0,0.32)]"
           />
           <p className="mt-7 text-xl font-medium italic text-[#ef6654]">
             Time after time, you&apos;ll have everything you need in a Clark.
