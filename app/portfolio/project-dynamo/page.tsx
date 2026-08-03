@@ -395,16 +395,17 @@ export default function ProjectDynamoPage() {
               Same Dynamo fundamentals: PE series hybrid or fully electric BEV.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              Every Dynamo model is designed around the same solid-state battery structure, electric drive units,
-              controls, cooling, and safety architecture. Any model can be built with one of two optional energy
-              strategies: a series hybrid—what we call Petro-Electric, or PE—and a 100% battery-electric option, or
-              BEV.
+              Every Dynamo model is designed around the same chemistry-flexible structural battery enclosure,
+              electric drive units, controls, thermal backbone, and safety interfaces. The concept anticipates
+              solid-state cells as they mature without making the vehicle architecture depend on one battery
+              chemistry. Any model can be built as a Petro-Electric series hybrid, or PE, or as a fully
+              battery-electric vehicle, or BEV.
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              The front module changes, but the rest of the vehicle architecture stays the same. A compact,
-              low-emission gasoline- or diesel-electric generator can effectively double a Petro-Electric model&apos;s
-              usable range when rapid charging access is uncertain or limited; a fully battery-electric model uses
-              that physical space for additional stored energy capacity instead.
+              The Forward Energy Bay receives either a compact generator cassette or supplemental BEV battery and
+              power electronics. A protected Amidships Energy Bay adds liquid-fuel storage in a PE or
+              vehicle-specific battery capacity in a BEV. Most of the vehicle architecture remains common while
+              each body keeps the package, cooling, crash structure, and capacity its mission requires.
             </p>
             <p className="mt-6 border-l-4 border-[#ef6654] pl-5 text-xl font-medium leading-8 text-white">
               Consumer choice, enterprise flexibility.
@@ -436,15 +437,15 @@ export default function ProjectDynamoPage() {
             <article className="border border-white/10 bg-white/[0.04] p-6">
               <h3 className="text-xl font-semibold">BEV · Battery electric</h3>
               <p className="mt-3 leading-7 text-slate-300">
-                The same body, controls, thermal backbone, and electric drive use the front module for additional
-                battery and power electronics, with no onboard prime mover.
+                The same body, controls, thermal backbone, and electric drive use the Forward and Amidships Energy
+                Bays for supplemental battery capacity and power electronics, with no onboard prime mover.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="relative aspect-[16/9] max-h-[52rem] min-h-[24rem] overflow-hidden bg-[#07131d]">
+      <section className="relative min-h-[34rem] w-full overflow-hidden bg-[#07131d] sm:aspect-[16/9] sm:max-h-[52rem] sm:min-h-[24rem]">
         <Image
           src={`${assetRoot}/highroad-locomotive.png`}
           alt="Dynamo Highroad SUV beside a locomotive at a working intermodal yard"
@@ -917,7 +918,13 @@ export default function ProjectDynamoPage() {
             <h2 className="mt-4 text-balance text-4xl font-semibold">Technology that knows when to disappear.</h2>
             <p className="mt-6 text-lg leading-8 text-slate-300">
               A low horizontal dashboard, clear instruments, useful storage, durable woven materials, and physical
-              controls for frequent tasks. Digital where it helps; tactile where memory matters.
+              controls for frequent tasks. Anthracite forms the glare-resistant lower structure and mechanical
+              housings; Sandstone provides a warm, easy-care light foundation; Nantucket Fog keeps headliners,
+              pillars, and upper trim calm and airy.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Brushed Aluminum marks switches and touchpoints without the fingerprints or glare of broad piano-black
+              surfaces. Digital where it helps; tactile where memory matters.
             </p>
           </div>
         </div>
@@ -961,6 +968,39 @@ export default function ProjectDynamoPage() {
               diesel/biodiesel-electric, hydrogen-electric, or future-energy versions require separately engineered
               modules, storage, safety, thermal, emissions, and certification systems.
             </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {[
+              [
+                Boxes,
+                "Two energy bays",
+                "The Forward Energy Bay accepts the generator cassette or supplemental BEV battery and power electronics. The Amidships Energy Bay, protected ahead of the rear axle and below the second-row cushion line, carries PE fuel storage or vehicle-specific BEV battery capacity while preserving the rear drive and suspension zone.",
+              ],
+              [
+                Zap,
+                "One electrical handshake",
+                "A regulated high-voltage junction gives either front module the same connection to the traction bus. The battery remains the immediate power buffer, so only the electric drive units propel the wheels.",
+              ],
+              [
+                Gauge,
+                "Separate thermal jobs",
+                "The PE cassette uses its own high-temperature engine circuit. Battery, inverter, and drive-unit loops remain independently controlled at the lower temperatures those components require.",
+              ],
+              [
+                Wrench,
+                "Condition-aware operation",
+                "A sealed fuel system and software-supervised maintenance cycles address long battery-only intervals. Route preview can preserve charge before grades, while staged generator loading aims to make sound and response feel intentional rather than disconnected.",
+              ],
+            ].map(([Icon, title, text]) => {
+              const IconComponent = Icon as typeof Boxes
+              return (
+                <article key={title as string} className="border border-black/10 bg-[#f6f4ee] p-6">
+                  <IconComponent className="h-7 w-7 text-[#3A6B5C]" />
+                  <h3 className="mt-4 text-xl font-semibold">{title as string}</h3>
+                  <p className="mt-3 leading-7 text-slate-700">{text as string}</p>
+                </article>
+              )
+            })}
           </div>
           <div className="mt-8 border border-slate-200 bg-[#f6f4ee] p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9c2826]">
@@ -1030,9 +1070,9 @@ export default function ProjectDynamoPage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                [Factory, "Manufacturing", "One body and assembly logic supports both energy strategies instead of parallel vehicle programs."],
+                [Factory, "Manufacturing", "Common interfaces and assembly logic support both energy strategies instead of two unrelated vehicle programs."],
                 [Boxes, "Parts commonality", "E-drives, electronics, battery structure, controls, mirrors, switches, latches, seat hardware, and a partially recessed fixed-grip door handle repeat across nine useful models."],
-                [ShieldCheck, "Crash and packaging", "Battery, module bay, cooling paths, and structure are designed together instead of negotiated after the fact."],
+                [ShieldCheck, "Crash and packaging", "The structural battery, Forward and Amidships Energy Bays, cooling paths, and crash structure are designed together instead of negotiated after the fact."],
                 [Gauge, "Proportions", "Long wheelbases, short overhangs, flat floors, and usable cabins are architecture—not styling corrections."],
                 [Wrench, "AWD and energy recovery", "Shared front and rear e-drives provide all-wheel drive, traction control, and regenerative braking in every PE and BEV body."],
                 [Zap, "Volatility protection", "Policy reversals, fuel-price shocks, charging delays, or demand changes alter the PE/BEV factory mix rather than invalidating the vehicle program."],
@@ -1288,8 +1328,8 @@ export default function ProjectDynamoPage() {
               "A PE vehicle remains more complex and maintenance-intensive than a pure BEV.",
               "The generator, fuel, exhaust, cooling, and battery can erase weight savings if the module is not aggressively optimized.",
               "Sustained towing and mountain-grade performance depend on generator output, battery buffer, and thermal capacity.",
-              "Occasional engine operation creates fuel-aging, catalyst-temperature, noise, vibration, and emissions challenges.",
-              "A modular bay does not mean a literal one-for-one volume swap; crash, cooling, plumbing, and structure still differ.",
+              "Occasional engine operation creates fuel-aging, oil-conditioning, catalyst-temperature, noise, vibration, and emissions challenges that require condition-based controls and validation.",
+              "Common Forward and Amidships Energy Bay interfaces do not mean a literal one-for-one volume swap; crash, cooling, plumbing, capacity, and structure still differ by model and energy strategy.",
               "Cost, durability, repairability, certification, and real-world efficiency require full engineering validation.",
             ].map((item) => (
               <p key={item} className="border border-white/12 bg-white/[0.04] p-5 leading-7 text-slate-200">

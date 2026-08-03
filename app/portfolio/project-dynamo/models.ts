@@ -41,7 +41,7 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/captain-cabin-safe.png`,
         caption: "Cabin Safe keeps a companion comfortable while a dog dad brings home treats from The Barkery.",
       },
-      { src: `${root}/sedan-interior-v2.png`, caption: "Simple and plush: useful controls, generous airflow, warm materials, and technology that recedes." },
+      { src: `${root}/sedan-interior-v2.png`, caption: "Anthracite foundations, warm woven surfaces, Brushed Aluminum touchpoints, generous airflow, and technology that recedes." },
       ...montage(`${root}/captain-portfolio.png`, [
         "A formal rear three-quarter view reveals the Captain’s clean stern and planted stance.",
         "Electric traction gives the attainable sedan effortless highway composure.",
@@ -83,7 +83,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/estate-interior.png`,
-        caption: "Oxblood bolsters, durable woven inserts, real controls, and a low seating position give the Estate sport wagon warmth without visual clutter.",
+        caption: "Oxblood bolsters, durable woven inserts, Anthracite foundations, and real controls give the Estate sport wagon warmth without visual clutter.",
       },
       ...montage(`${root}/estate-portfolio.png`, [
         "Long, fine lines and a cleanly resolved stern give the Estate sport wagon its own identity while preserving unmistakable Captain DNA.",
@@ -109,7 +109,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/xtour-cabin-comfort-v2.png`,
-        caption: "Cabin Comfort can prepare the XTour CUV intelligently as its occupants return from the trail.",
+        caption: "Glacier Blue Clearcoat sets the visual temperature while Cabin Comfort prepares the XTour CUV as tired hikers return from the trail.",
       },
       ...montage(`${root}/xtour-portfolio.png`, [
         "XTour’s taller greenhouse preserves the family’s calm surfaces.",
@@ -142,7 +142,7 @@ export const dynamoModels: DynamoModel[] = [
         caption: "Rain Guard watches the weather when the Highroad SUV sits unattended at the lake.",
       },
       ...montage(`${root}/highroad-portfolio.png`, [
-        "Highroad wears black especially well: formal, capable, and unforced.",
+        "After Six Black suits the Highroad: formal, capable, and unforced.",
         "Three rows remain honest about luggage space and passenger packaging.",
         "A higher-output generator and thermal system support sustained towing targets.",
         "Clearance and suspension travel serve real access roads rather than an image.",
@@ -157,7 +157,7 @@ export const dynamoModels: DynamoModel[] = [
     thesis: "The Constellation passenger van is a worthy successor to the North American minivan—quiet, gracious, and genuinely useful.",
     hero: `${root}/cityvan.png`,
     photos: [
-      { src: `${root}/cityvan.png`, caption: "Full glazing, champagne clearcoat, and richer trim distinguish the passenger model." },
+      { src: `${root}/cityvan.png`, caption: "Full glazing and Champagne Clearcoat Metallic distinguish the passenger model without changing its practical proportions." },
       {
         src: `${root}/constellation-removable-seat-v11.png`,
         caption: "A low floor, integrated restraints, and rearward-release track mounts make the captain’s chairs a genuinely flexible one-person proposition.",
@@ -176,7 +176,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/constellation-executive.png`,
-        caption: "A fully retracting sliding door and all-leather passenger trim support a refined executive-shuttle configuration.",
+        caption: "Sandstone foundations, Nantucket Fog upper trim, and tactile Travertine upholstery support a quiet executive-shuttle configuration built around passenger comfort.",
       },
     ],
   },
@@ -188,7 +188,7 @@ export const dynamoModels: DynamoModel[] = [
     thesis: "The CityVan is a mid-size commercial van—more capacious than a compact urban van and more maneuverable than a full-size high-roof van—configured for delivery, trades, and mobile enterprise.",
     hero: `${root}/cityvan-commercial.png`,
     photos: [
-      { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters and durable trim define the commercial configuration." },
+      { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters, Anthracite working surfaces, and dark-anodized touchpoints define the commercial configuration." },
       { src: `${root}/cityvan-french-doors.png`, caption: "Side-by-side French doors create a square, low commercial load opening." },
       { src: `${root}/cityvan-delivery.png`, caption: "A realistic sliding aperture and modular shelving support last-mile delivery." },
       {
@@ -233,7 +233,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/ranch-interior.png`,
-        caption: "Luxury-grade finishes do not change the mission: a powered fold-flat workstation, rugged laptop, cupholders, and AC outlet support real field work.",
+        caption: "Warm, durable finishes do not change the mission: a powered fold-flat workstation, rugged laptop, cupholders, and AC outlet support real field work.",
       },
       ...montage(`${root}/ranch-portfolio.png`, [
         "The high-profile pickup carries its size with calm, deliberate surfaces.",
