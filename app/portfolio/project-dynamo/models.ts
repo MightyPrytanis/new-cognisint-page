@@ -32,7 +32,10 @@ export const dynamoModels: DynamoModel[] = [
     thesis: "The Captain sedan is the design leader: composed, attainable, and quietly proud of every detail.",
     hero: `${root}/sedan.png`,
     photos: [
-      { src: `${root}/sedan.png`, caption: "Captain establishes the family’s low, long-wheelbase stance." },
+      {
+        src: `${root}/sedan.png`,
+        caption: "Pictured in Copperclad Metallic, Captain establishes the family’s low, long-wheelbase stance.",
+      },
       {
         src: `${root}/captain-couple.png`,
         caption: "An attainable sedan can still feel like an occasion—and belong naturally to the people who choose it.",
@@ -58,7 +61,10 @@ export const dynamoModels: DynamoModel[] = [
     thesis: "The lighter, quicker Fastback five-door hatch is a younger, more kinetic expression of the Captain sedan’s fundamentals.",
     hero: `${root}/fastback.png`,
     photos: [
-      { src: `${root}/fastback.png`, caption: "A true five-door hatch with its own roofline and lighting character." },
+      {
+        src: `${root}/fastback.png`,
+        caption: "Pictured in Quicksilver, the true five-door hatch has its own roofline and lighting character.",
+      },
       ...montage(`${root}/fastback-portfolio.png`, [
         "The fast roof and short tail distinguish Fastback without breaking the family face.",
         "The hatch opening and folding rear seat make the shape genuinely useful.",
@@ -76,7 +82,10 @@ export const dynamoModels: DynamoModel[] = [
     thesis: "The Estate sport wagon interprets European long-roof confidence through a restrained North American design language.",
     hero: `${root}/estate.png`,
     photos: [
-      { src: `${root}/estate.png`, caption: "Utility without surrendering to crossover proportions." },
+      {
+        src: `${root}/estate.png`,
+        caption: "Pictured in Cherry Royal metallic, the Estate sport wagon offers utility without surrendering to crossover proportions.",
+      },
       {
         src: `${root}/estate-family.png`,
         caption: "A real family, a real liftgate, and useful cargo space: versatility without inflated proportions.",
@@ -131,7 +140,7 @@ export const dynamoModels: DynamoModel[] = [
       {
         src: `${root}/highroad-locomotive.png`,
         caption:
-          "Beside a modern diesel-electric locomotive, the analogy becomes physical: a prime mover makes electricity; traction motors do the propelling.",
+          "Pictured in Midnight Blue metallic beside a modern diesel-electric locomotive, the Highroad makes the analogy physical: a prime mover makes electricity; traction motors do the propelling.",
       },
       {
         src: `${root}/highroad-interior.png`,
@@ -229,7 +238,7 @@ export const dynamoModels: DynamoModel[] = [
       {
         src: `${root}/ranch-v2.png`,
         caption:
-          "Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points and a distinctive two-tone finish.",
+          "Pictured in Canyon Red with a Platinum Mist roof, Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points.",
       },
       {
         src: `${root}/ranch-interior.png`,

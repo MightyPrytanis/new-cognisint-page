@@ -398,8 +398,8 @@ export default function ProjectDynamoPage() {
               Every Dynamo model is designed around the same chemistry-flexible structural battery enclosure,
               electric drive units, controls, thermal backbone, and safety interfaces. The concept anticipates
               solid-state cells as they mature without making the vehicle architecture depend on one battery
-              chemistry. Any model can be built as a Petro-Electric series hybrid, or PE, or as a fully
-              battery-electric vehicle, or BEV.
+              chemistry. Any model can be built as a Petro-Electric (PE) plug-in series hybrid or as a fully
+              battery-electric vehicle (BEV).
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               The Forward Energy Bay receives either a compact generator cassette or supplemental BEV battery and
@@ -414,7 +414,7 @@ export default function ProjectDynamoPage() {
           <ImageLightbox
             src={`${assetRoot}/dynamo-pe-bev-architecture-v3.png`}
             alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
-            caption="A shared electric-drive architecture supports both PE series-hybrid and BEV Captains."
+            caption="A shared electric-drive architecture supports both PE plug-in series hybrid and BEV Captains."
             className="relative mt-10 aspect-[16/9] overflow-hidden border border-white/10"
           >
             <Image
@@ -427,7 +427,7 @@ export default function ProjectDynamoPage() {
           </ImageLightbox>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <article className="border border-white/10 bg-white/[0.04] p-6">
-              <h3 className="text-xl font-semibold">PE · Petro-Electric series hybrid</h3>
+              <h3 className="text-xl font-semibold">PE · Petro-Electric plug-in series hybrid</h3>
               <p className="mt-3 leading-7 text-slate-300">
                 The PE can run fully on stored battery energy for routine driving. When needed, a matched onboard
                 generator starts and makes electricity for the battery and motors; only the electric motors drive
@@ -435,12 +435,21 @@ export default function ProjectDynamoPage() {
               </p>
             </article>
             <article className="border border-white/10 bg-white/[0.04] p-6">
-              <h3 className="text-xl font-semibold">BEV · Battery electric</h3>
+              <h3 className="text-xl font-semibold">BEV · Battery-electric vehicle</h3>
               <p className="mt-3 leading-7 text-slate-300">
                 The same body, controls, thermal backbone, and electric drive use the Forward and Amidships Energy
                 Bays for supplemental battery capacity and power electronics, with no onboard prime mover.
               </p>
             </article>
+          </div>
+          <div className="mt-12 max-w-5xl border-l-4 border-[#ef6654] pl-6">
+            <h2 className="text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl">
+              Petro-Electric: an idea whose time has come &ndash; again.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-300">
+              Project Dynamo calls its plug-in series hybrid architecture Petro-Electric (PE): an onboard prime
+              mover generates electricity, while electric traction motors alone drive the wheels.
+            </p>
           </div>
         </div>
       </section>
@@ -459,10 +468,15 @@ export default function ProjectDynamoPage() {
             One platform can scale from everyday mobility to serious work.
           </p>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
-            Beside a modern diesel-electric locomotive, the principle becomes immediately legible: both it and a
-            Petro-Electric Dynamo use an onboard liquid-fuel prime mover to generate electricity for electric
-            traction motors. The Highroad adds a plug-in battery for routine battery-only driving, regenerative
-            braking, and power buffering; its generator starts only when needed.
+            Beside a modern diesel-electric locomotive, the principle becomes immediately legible. A conventional
+            diesel-electric locomotive generates its traction electricity onboard from diesel fuel: its diesel
+            engine drives an alternator, and electric traction motors turn the wheels.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
+            The Highroad&mdash;pictured in Midnight Blue metallic&mdash;and other Dynamo PE vehicles add a plug-in
+            traction battery for routine battery-only driving, regenerative braking, and power buffering. The
+            onboard generator can therefore remain off during ordinary trips, starting only when additional energy
+            or system conditioning requires it.
           </p>
         </div>
       </section>
@@ -1105,7 +1119,7 @@ export default function ProjectDynamoPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#55a9d6]">Value to consumers</p>
               <h3 className="mt-3 text-3xl font-semibold">Choose the energy strategy. Keep the electric drive.</h3>
               <ul className="mt-6 space-y-4 text-lg leading-8 text-slate-300">
-                <li>Petro-Electric series-hybrid and battery-electric versions target competitive performance, cost, utility, and ownership burden.</li>
+                <li>Petro-Electric series hybrid and battery-electric versions target competitive performance, cost, utility, and ownership burden.</li>
                 <li>Every PE vehicle can plug in for routine electric miles, then refuel quickly when distance or charging access demands it.</li>
                 <li>BEV versions remove the prime mover entirely for the lowest energy use and scheduled maintenance.</li>
                 <li>Both retain instant electric torque, all-wheel drive, traction control, regenerative braking, and the same familiar vehicle character.</li>
@@ -1353,7 +1367,7 @@ export default function ProjectDynamoPage() {
             <p>
               Ford’s 2019 Transit Custom and Tourneo Custom Plug-In Hybrids drove their front wheels exclusively
               with an electric motor. A 1.0-liter gasoline engine acted solely as a range extender, with no physical
-              connection to the wheels. That series-hybrid architecture stayed within the Transit Custom family.
+              connection to the wheels. That series hybrid architecture stayed within the Transit Custom family.
             </p>
             <p>
               Ford’s announced Universal EV Platform applies ground-up electric architecture and new assembly logic

@@ -56,7 +56,7 @@ export default async function DynamoModelPage({ params }: { params: Promise<{ mo
             <h1 className="mt-4 text-balance text-5xl font-semibold leading-none sm:text-7xl">{model.name}</h1>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-100">{model.thesis}</p>
             <p className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
-              Available as a Petro-Electric vehicle (PEV) series hybrid or battery-electric (BEV)
+              Available as a Petro-Electric (PE) plug-in series hybrid or battery-electric vehicle (BEV)
             </p>
           </div>
         </div>

@@ -1,5 +1,14 @@
 # Project Dynamo publication ledger
 
+## 2026-08-05 — Petro-Electric explanation and signature colors
+
+- **Engineering nomenclature:** Standardized the public model choice as PE / BEV. PE now expands to Petro-Electric (PE) plug-in series hybrid; PEV is not used because it conventionally denotes the broader plug-in electric vehicle category.
+- **Early explanation:** Added a prominent definition immediately above the locomotive comparison: an onboard prime mover generates electricity while electric traction motors alone drive the wheels.
+- **Locomotive comparison:** Distinguished a conventional diesel-electric locomotive from Dynamo PE vehicles by explaining the Highroad's plug-in traction battery, routine battery-only driving, regenerative braking, power buffering, and generator-off operation.
+- **Exterior colors:** Restored Copperclad Metallic for the Captain hero, identified the Fastback in Quicksilver, the Highroad in Midnight Blue metallic, the Estate sport wagon in Cherry Royal metallic, and the two-tone Ranch in Canyon Red with a Platinum Mist roof. Retained the existing selective use of Glacier Blue Clearcoat, After Six Black, and Champagne Clearcoat Metallic rather than converting the galleries into an order guide.
+- **Interior colors and materials:** Preserved the established judicious references to Anthracite, Sandstone, Nantucket Fog, Brushed Aluminum, Oxblood, and Travertine where the adjacent imagery makes them meaningful.
+- **Brochure:** The static PDF remains an earlier, separately authored edition. This release updates the public website and publication contract but does not claim that the brochure has been regenerated or synchronized.
+
 ## 2026-08-02 — Energy-bay architecture and cabin material vocabulary
 
 - **Website architecture:** Replaced literal solid-state and one-module-swap language with a chemistry-flexible structural battery enclosure, a Forward Energy Bay, and an Amidships Energy Bay. Added concise explanations of the shared high-voltage interface, separate thermal circuits, condition-aware maintenance logic, route preview, and staged generator loading.
