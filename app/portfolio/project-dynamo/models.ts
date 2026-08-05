@@ -164,9 +164,9 @@ export const dynamoModels: DynamoModel[] = [
     role: "Passenger van",
     profile: "High profile",
     thesis: "The Constellation passenger van is a worthy successor to the North American minivan—quiet, gracious, and genuinely useful.",
-    hero: `${root}/cityvan.png`,
+    hero: `${root}/constellation.png`,
     photos: [
-      { src: `${root}/cityvan.png`, caption: "Full glazing and Champagne Clearcoat Metallic distinguish the passenger model without changing its practical proportions." },
+      { src: `${root}/constellation.png`, caption: "Full glazing and Champagne Clearcoat Metallic distinguish the passenger model without changing its practical proportions." },
       {
         src: `${root}/constellation-removable-seat-v11.png`,
         caption: "A low floor, integrated restraints, and rearward-release track mounts make the captain’s chairs a genuinely flexible one-person proposition.",
@@ -190,21 +190,21 @@ export const dynamoModels: DynamoModel[] = [
     ],
   },
   {
-    slug: "cityvan",
-    name: "Dynamo CityVan",
+    slug: "taskvan",
+    name: "Dynamo TaskVan",
     role: "Mid-size commercial van",
     profile: "High profile",
-    thesis: "The CityVan is a mid-size commercial van—more capacious than a compact urban van and more maneuverable than a full-size high-roof van—configured for delivery, trades, and mobile enterprise.",
-    hero: `${root}/cityvan-commercial.png`,
+    thesis: "The TaskVan is a mid-size commercial van—more capacious than a compact urban van and more maneuverable than a full-size high-roof van—configured for delivery, trades, and mobile enterprise.",
+    hero: `${root}/taskvan-commercial.png`,
     photos: [
-      { src: `${root}/cityvan-commercial.png`, caption: "Panel quarters, Anthracite working surfaces, and dark-anodized touchpoints define the commercial configuration." },
-      { src: `${root}/cityvan-french-doors.png`, caption: "Side-by-side French doors create a square, low commercial load opening." },
-      { src: `${root}/cityvan-delivery.png`, caption: "A realistic sliding aperture and modular shelving support last-mile delivery." },
+      { src: `${root}/taskvan-commercial.png`, caption: "Pictured in Blue Order clearcoat, with panel quarters, Anthracite working surfaces, and dark-anodized touchpoints defining the commercial configuration." },
+      { src: `${root}/taskvan-french-doors.png`, caption: "Side-by-side French doors create a square, low commercial load opening." },
+      { src: `${root}/taskvan-delivery.png`, caption: "A realistic sliding aperture and modular shelving support last-mile delivery." },
       {
-        src: `${root}/cityvan-inclusive-trade.png`,
+        src: `${root}/taskvan-inclusive-trade.png`,
         caption: "The commercial brief begins with the dignity, competence, and everyday needs of the people doing the work.",
       },
-      { src: `${root}/cityvan-market.png`, caption: "Power, refrigeration, and washable modules enable small-business logistics." },
+      { src: `${root}/taskvan-market.png`, caption: "Power, refrigeration, and washable modules enable small-business logistics." },
     ],
   },
   {

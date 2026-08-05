@@ -1,5 +1,11 @@
 # Project Dynamo publication ledger
 
+## 2026-08-05 — TaskVan identity
+
+- **Shared vehicle name:** Renamed the commercial van Dynamo TaskVan across public copy, model data, its route slug, and asset identifiers. The new name describes the vehicle's working purpose without implying that its usefulness ends at the city limits.
+- **Exterior finish:** The TaskVan model-profile spotlight identifies the vehicle as pictured in Blue Order clearcoat.
+- **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
+
 ## 2026-08-05 — Petro-Electric explanation and signature colors
 
 - **Engineering nomenclature:** Standardized the public model choice as PE / BEV. PE now expands to Petro-Electric (PE) plug-in series hybrid; PEV is not used because it conventionally denotes the broader plug-in electric vehicle category.

@@ -110,7 +110,7 @@ const vehicles = [
     name: "Dynamo Constellation",
     role: "Passenger minivan",
     profile: "High",
-    src: `${assetRoot}/cityvan.png`,
+    src: `${assetRoot}/constellation.png`,
     length: "196.5 in",
     width: "76.5 in",
     weight: "4,480 / 4,560 lb",
@@ -122,11 +122,11 @@ const vehicles = [
     speed: "105 / 70 mph",
   },
   {
-    slug: "cityvan",
-    name: "Dynamo CityVan",
+    slug: "taskvan",
+    name: "Dynamo TaskVan",
     role: "Mid-size commercial van",
     profile: "High",
-    src: `${assetRoot}/cityvan-commercial.png`,
+    src: `${assetRoot}/taskvan-commercial.png`,
     length: "196.5 in",
     width: "76.5 in",
     weight: "4,260 / 4,340 lb",
@@ -527,7 +527,7 @@ export default function ProjectDynamoPage() {
             </h2>
             <p className="text-lg leading-8 text-slate-300">
               The XTour CUV and Foreman pickup establish a true medium profile above the Estate sport wagon. The
-              Highroad SUV, Ranch pickup, Constellation passenger van, and CityVan commercial van rise again with
+              Highroad SUV, Ranch pickup, Constellation passenger van, and TaskVan commercial van rise again with
               higher seating, greater clearance or cargo height, and more upright, distinctly American greenhouses.
             </p>
           </div>
@@ -590,7 +590,7 @@ export default function ProjectDynamoPage() {
                   text: "Sedan-friendly dimensions, a higher hip point, a liftgate, and a flat-folding second row add useful cargo flexibility without SUV bulk.",
                 },
                 {
-                  name: "Constellation / CityVan",
+                  name: "Constellation / TaskVan",
                   promise: "Maximum enclosed flexibility",
                   text: "A boxier body, low floor, removable second-row chairs, and a stowable third row prioritize passenger access, cargo volume, and reconfiguration.",
                 },
@@ -877,17 +877,17 @@ export default function ProjectDynamoPage() {
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {[
               {
-                src: `${assetRoot}/cityvan-delivery.png`,
+                src: `${assetRoot}/taskvan-delivery.png`,
                 title: "Last-mile delivery",
                 text: "A low step, one credible sliding aperture, and modular parcel shelving for frequent curbside stops.",
               },
               {
-                src: `${assetRoot}/cityvan-inclusive-trade.png`,
+                src: `${assetRoot}/taskvan-inclusive-trade.png`,
                 title: "Skilled trades",
                 text: "Organized tools, credible access, and a durable load floor serve the people whose skill turns a van into a livelihood.",
               },
               {
-                src: `${assetRoot}/cityvan-market.png`,
+                src: `${assetRoot}/taskvan-market.png`,
                 title: "Mobile enterprise",
                 text: "Washable modules, refrigeration, power export, and tie-downs support small businesses beyond parcel work.",
               },
