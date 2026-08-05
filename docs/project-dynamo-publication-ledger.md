@@ -1,5 +1,15 @@
 # Project Dynamo publication ledger
 
+## 2026-08-05 — Foreman exterior color
+
+- **Exterior finish:** The Foreman model-profile spotlight identifies the pickup as pictured in T.R. Green without asserting an unconfirmed clearcoat or metallic finish.
+- **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
+
+## 2026-08-05 — Ranch mobile workstation
+
+- **Interior description:** The Ranch profile identifies its interior as Oxblood and Nantucket Fog and describes the fold-flat workstation as providing room for a laptop, coffee, and documents. In-cab AC power connections support field work without implying that a laptop is included with the vehicle.
+- **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
+
 ## 2026-08-05 — TaskVan identity
 
 - **Shared vehicle name:** Renamed the commercial van Dynamo TaskVan across public copy, model data, its route slug, and asset identifiers. The new name describes the vehicle's working purpose without implying that its usefulness ends at the city limits.

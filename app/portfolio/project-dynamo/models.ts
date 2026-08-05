@@ -217,7 +217,7 @@ export const dynamoModels: DynamoModel[] = [
     photos: [
       {
         src: `${root}/foreman-v2.png`,
-        caption: "Foreman keeps a road-friendly stance and the same modular bed-rail hard points used by Ranch.",
+        caption: "Pictured in T.R. Green, Foreman keeps a road-friendly stance and the same modular bed-rail hard points used by Ranch.",
       },
       ...montage(`${root}/foreman-portfolio.png`, [
         "The medium-profile truck looks at home outside a workshop, not only on a trail.",
@@ -242,7 +242,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/ranch-interior.png`,
-        caption: "Warm, durable finishes do not change the mission: a powered fold-flat workstation, rugged laptop, cupholders, and AC outlet support real field work.",
+        caption: "Oxblood and Nantucket Fog warm the working interior. The fold-flat workstation provides room for a laptop, coffee, and documents, while in-cab AC power connections make it easy to stay connected in the field.",
       },
       ...montage(`${root}/ranch-portfolio.png`, [
         "The high-profile pickup carries its size with calm, deliberate surfaces.",
