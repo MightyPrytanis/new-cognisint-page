@@ -940,6 +940,13 @@ export default function ProjectDynamoPage() {
               Brushed Aluminum marks switches and touchpoints without the fingerprints or glare of broad piano-black
               surfaces. Digital where it helps; tactile where memory matters.
             </p>
+            <Link
+              href="/portfolio/project-dynamo/colors-materials"
+              className="mt-8 inline-flex items-center gap-2 border border-white/25 px-5 py-3 font-semibold text-white transition hover:border-white/60 hover:bg-white/10"
+            >
+              Explore colors and materials
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

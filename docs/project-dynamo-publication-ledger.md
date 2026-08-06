@@ -1,5 +1,12 @@
 # Project Dynamo publication ledger
 
+## 2026-08-05 — Colors and materials page
+
+- **Website presentation:** Added a dedicated Colors and Materials page with thirteen exterior paint chips and six cabin color and material swatches. The page is explicitly a working design palette, not a configurator or order sheet.
+- **New exterior colors:** Added Lake Effect White clearcoat and Dreadnought Gray clearcoat to the canonical web palette.
+- **Structured source:** Centralized the palette names, descriptions, and digital swatch treatments in `app/portfolio/project-dynamo/palette.ts`.
+- **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
+
 ## 2026-08-05 — Foreman exterior color
 
 - **Exterior finish:** The Foreman model-profile spotlight identifies the pickup as pictured in T.R. Green without asserting an unconfirmed clearcoat or metallic finish.
