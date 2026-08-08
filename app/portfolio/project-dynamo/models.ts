@@ -44,7 +44,7 @@ export const dynamoModels: DynamoModel[] = [
         src: `${root}/captain-cabin-safe.png`,
         caption: "Cabin Safe keeps a companion comfortable while a dog dad brings home treats from The Barkery.",
       },
-      { src: `${root}/sedan-interior-v2.png`, caption: "Anthracite foundations, warm woven surfaces, Brushed Aluminum touchpoints, generous airflow, and technology that recedes." },
+      { src: `${root}/sedan-interior-v2.png`, caption: "Anthracite appears across smooth and finely pebbled surfaces; Travertine carries the dash band and bolsters into an Anthracite/Travertine weave, with Brushed Aluminum at frequent touchpoints." },
       ...montage(`${root}/captain-portfolio.png`, [
         "A formal rear three-quarter view reveals the Captain’s clean stern and planted stance.",
         "Electric traction gives the attainable sedan effortless highway composure.",

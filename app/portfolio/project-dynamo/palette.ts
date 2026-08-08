@@ -2,6 +2,7 @@ export type DynamoPaletteEntry = {
   name: string
   description: string
   background: string
+  secondaryBackground?: string
   finish?: "clearcoat" | "clearcoat-metallic"
 }
 
@@ -102,14 +103,18 @@ export const exteriorPaints: DynamoPaletteEntry[] = [
 export const cabinMaterials: DynamoPaletteEntry[] = [
   {
     name: "Anthracite",
-    description: "Finely grained molded polymer, flooring, and structural foundations.",
+    description: "Deep charcoal across smooth and finely pebbled surfaces, flooring, and woven blends.",
     background:
-      "repeating-linear-gradient(25deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px), linear-gradient(145deg, #17191a, #35383a)",
+      "radial-gradient(circle at 2px 2px, rgba(255,255,255,.055) 0 .7px, transparent 1px) right top / 50% 100% repeat, linear-gradient(145deg, #17191a, #35383a)",
+    secondaryBackground:
+      "repeating-linear-gradient(30deg, rgba(189,108,62,.46) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(224,158,104,.22) 0 1px, transparent 1px 7px), #242426",
   },
   {
     name: "Oxblood",
     description: "Deep red-brown woven upholstery and durable bolsters.",
     background:
+      "radial-gradient(circle at 28% 15%, rgba(255,255,255,.16), transparent 28%), linear-gradient(145deg, #351315, #6d292a 52%, #431719)",
+    secondaryBackground:
       "repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 5px), repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 1px, transparent 1px 5px), #5b2423",
   },
   {
@@ -117,13 +122,36 @@ export const cabinMaterials: DynamoPaletteEntry[] = [
     description: "A warm, light foundation for durable molded interior surfaces.",
     background:
       "radial-gradient(circle at 2px 2px, rgba(72,56,41,.14) 0 1px, transparent 1.4px), linear-gradient(145deg, #a99478, #d1c1aa)",
+    secondaryBackground:
+      "repeating-linear-gradient(30deg, rgba(255,255,255,.13) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(77,59,40,.11) 0 1px, transparent 1px 6px), #bfac91",
   },
   {
     name: "Nantucket Fog",
     description: "Pale warm gray for headliners, pillars, upper trim, and upholstery.",
     background:
+      "radial-gradient(circle at 2px 2px, rgba(70,67,61,.08) 0 .8px, transparent 1.2px), linear-gradient(145deg, #aaa79f, #d2cfc7)",
+    secondaryBackground:
       "repeating-linear-gradient(0deg, rgba(255,255,255,.18) 0 1px, transparent 1px 4px), repeating-linear-gradient(90deg, rgba(65,62,57,.08) 0 1px, transparent 1px 4px), #c9c6be",
   },
+  {
+    name: "Thalassic",
+    description: "Deep ocean blue for upholstery, molded accents, and cabin contrast.",
+    background:
+      "radial-gradient(circle at 26% 15%, rgba(105,154,190,.2), transparent 28%), linear-gradient(145deg, #06172a 0%, #153a5a 48%, #081d32 100%)",
+    secondaryBackground:
+      "repeating-linear-gradient(30deg, rgba(93,133,164,.13) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(3,15,29,.22) 0 1px, transparent 1px 6px), linear-gradient(145deg, #06172a 0%, #153a5a 48%, #081d32 100%)",
+  },
+  {
+    name: "Travertine",
+    description: "A variegated warm brown carried across smooth surfaces and woven textiles.",
+    background:
+      "radial-gradient(ellipse 42% 10% at 24% 24%, rgba(78,42,24,.38), transparent 72%), radial-gradient(ellipse 50% 12% at 78% 68%, rgba(71,38,23,.3), transparent 72%), radial-gradient(ellipse 30% 8% at 44% 88%, rgba(235,177,123,.24), transparent 74%), linear-gradient(145deg, #704029 0%, #b66f40 46%, #7c472d 100%)",
+    secondaryBackground:
+      "repeating-linear-gradient(30deg, rgba(189,108,62,.46) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(224,158,104,.22) 0 1px, transparent 1px 7px), #242426",
+  },
+]
+
+export const hardwareFinishes: DynamoPaletteEntry[] = [
   {
     name: "Brushed Aluminum",
     description: "Satin linear grain for switches, controls, and frequent touchpoints.",
@@ -131,9 +159,15 @@ export const cabinMaterials: DynamoPaletteEntry[] = [
       "repeating-linear-gradient(0deg, rgba(255,255,255,.16) 0 1px, rgba(54,61,65,.08) 1px 3px), linear-gradient(90deg, #858b8e, #c7cbcc 48%, #8e9497)",
   },
   {
-    name: "Travertine",
-    description: "Variegated warm stone tones with a restrained tactile weave.",
+    name: "Black Chrome",
+    description: "A deep reflective finish reserved for select trim and jewelry-like details.",
     background:
-      "repeating-linear-gradient(30deg, rgba(255,255,255,.07) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(55,37,25,.11) 0 1px, transparent 1px 6px), radial-gradient(ellipse 42% 10% at 24% 24%, rgba(73,48,31,.42), transparent 72%), radial-gradient(ellipse 50% 12% at 78% 68%, rgba(66,43,29,.34), transparent 72%), radial-gradient(ellipse 30% 8% at 44% 88%, rgba(232,215,184,.28), transparent 74%), linear-gradient(145deg, #756049 0%, #b6a080 46%, #806a51 100%)",
+      "linear-gradient(110deg, #080a0c 0%, #343a40 22%, #0b0e11 40%, #666d72 53%, #15191d 67%, #030405 100%)",
+  },
+  {
+    name: "Dark Anodized Aluminum",
+    description: "A bead-blasted, low-glare finish for controls and touchpoints in working vehicles.",
+    background:
+      "radial-gradient(circle at 2px 2px, rgba(255,255,255,.13) 0 .7px, transparent 1px), linear-gradient(145deg, #1b2023 0%, #41484b 48%, #202629 100%)",
   },
 ]

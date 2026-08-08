@@ -4,11 +4,12 @@
 
 - **Page framing:** Replaced the procedural order-sheet disclaimer with “Abundant character, thoughtfully contained,” tying the palette to Dynamo’s compact abundance philosophy.
 - **Color names:** The Colors and Materials page now presents each exterior color by its proper name without visible clearcoat or metallic qualifiers.
-- **Finish behavior:** Metallic colors use a restrained fleck treatment; clearcoat colors use a smooth lacquered highlight. Cherry Royal is now treated as a clearcoat, while Canyon and Platinum Mist receive metallic depth.
+- **Finish behavior:** Metallic colors use sparse, irregular flecks rather than a repeating dot grid; clearcoat colors use a smooth lacquered highlight. Cherry Royal is now treated as a clearcoat, while Canyon and Platinum Mist receive metallic depth.
 - **Vehicle alignment:** Darkened Glacier, brightened Blue Order, moved Canyon toward maroon, warmed Platinum Mist, and made Gridiron slightly more vivid to match the vehicle studies more closely.
 - **Evocative names:** Removed redundant color words from Glacier, After Six, Gridiron, Canyon, Lake Effect, and Dreadnought. Retained Midnight Blue and Blue Order intact because the color word belongs to each musical allusion.
 - **Foreman:** Renamed its green exterior Gridiron across the palette and model profile.
-- **Cabin materials:** Added concise language describing flexible combinations of vegan leather alternatives, real leather, durable textiles, and mixed-material interiors. Deepened Travertine with irregular darker bands and pores so it remains visibly distinct from Sandstone without reading as marble.
+- **Cabin materials:** Framed the system as flexible material and color variation within a defined architecture, including vegan leather alternatives, real leather, durable textiles, and mixed-material interiors. Each cabin chip is divided horizontally to show its color across a smooth upper surface and woven lower textile, with deliberately varied contrast. The Captain now identifies smooth and pebbled Anthracite, a Travertine dash band and bolsters, and their shared Anthracite/Travertine weave. Added Thalassic as the dark blue cabin color.
+- **Hardware finishes:** Moved Brushed Aluminum out of the cabin color grid and into a dedicated hardware section with Black Chrome and bead-blasted Dark Anodized Aluminum.
 - **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
 
 ## 2026-08-05 — Colors and materials page
