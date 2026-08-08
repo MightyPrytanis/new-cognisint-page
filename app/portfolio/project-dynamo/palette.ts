@@ -132,8 +132,8 @@ export const cabinMaterials: DynamoPaletteEntry[] = [
   },
   {
     name: "Travertine",
-    description: "Warm stone-toned upholstery with a restrained tactile weave.",
+    description: "Variegated warm stone tones with a restrained tactile weave.",
     background:
-      "repeating-linear-gradient(30deg, rgba(255,255,255,.09) 0 2px, transparent 2px 6px), repeating-linear-gradient(120deg, rgba(74,54,38,.08) 0 1px, transparent 1px 5px), #ac9a80",
+      "repeating-linear-gradient(30deg, rgba(255,255,255,.07) 0 1px, transparent 1px 5px), repeating-linear-gradient(120deg, rgba(55,37,25,.11) 0 1px, transparent 1px 6px), radial-gradient(ellipse 42% 10% at 24% 24%, rgba(73,48,31,.42), transparent 72%), radial-gradient(ellipse 50% 12% at 78% 68%, rgba(66,43,29,.34), transparent 72%), radial-gradient(ellipse 30% 8% at 44% 88%, rgba(232,215,184,.28), transparent 74%), linear-gradient(145deg, #756049 0%, #b6a080 46%, #806a51 100%)",
   },
 ]

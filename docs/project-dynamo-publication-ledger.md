@@ -8,7 +8,7 @@
 - **Vehicle alignment:** Darkened Glacier, brightened Blue Order, moved Canyon toward maroon, warmed Platinum Mist, and made Gridiron slightly more vivid to match the vehicle studies more closely.
 - **Evocative names:** Removed redundant color words from Glacier, After Six, Gridiron, Canyon, Lake Effect, and Dreadnought. Retained Midnight Blue and Blue Order intact because the color word belongs to each musical allusion.
 - **Foreman:** Renamed its green exterior Gridiron across the palette and model profile.
-- **Cabin materials:** Added concise language describing flexible combinations of vegan leather alternatives, real leather, durable textiles, and mixed-material interiors.
+- **Cabin materials:** Added concise language describing flexible combinations of vegan leather alternatives, real leather, durable textiles, and mixed-material interiors. Deepened Travertine with irregular darker bands and pores so it remains visibly distinct from Sandstone without reading as marble.
 - **Brochure:** The static PDF remains an earlier, separately authored edition. This website update does not claim that the brochure has been regenerated or synchronized.
 
 ## 2026-08-05 — Colors and materials page
