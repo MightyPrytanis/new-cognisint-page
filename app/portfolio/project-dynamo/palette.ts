@@ -2,84 +2,98 @@ export type DynamoPaletteEntry = {
   name: string
   description: string
   background: string
+  finish?: "clearcoat" | "clearcoat-metallic"
 }
 
 export const exteriorPaints: DynamoPaletteEntry[] = [
   {
-    name: "Copperclad Metallic",
-    description: "Burnished copper with a restrained metallic lift.",
+    name: "Copperclad",
+    description: "Burnished copper with a restrained lift in direct light.",
+    finish: "clearcoat-metallic",
     background:
       "radial-gradient(circle at 24% 18%, rgba(255,255,255,.38), transparent 22%), linear-gradient(145deg, #6f3829 0%, #b66e46 46%, #7d412f 100%)",
   },
   {
     name: "Quicksilver",
     description: "A clean, kinetic silver that sharpens reflected light.",
+    finish: "clearcoat-metallic",
     background:
       "radial-gradient(circle at 28% 12%, rgba(255,255,255,.82), transparent 24%), linear-gradient(145deg, #747b82 0%, #d7dbdd 48%, #8d9499 100%)",
   },
   {
-    name: "Cherry Royal metallic",
-    description: "Deep sweet cherry red with a dark metallic undertone.",
+    name: "Cherry Royal",
+    description: "Deep sweet cherry red with a dark, glassy undertone.",
+    finish: "clearcoat",
     background:
       "radial-gradient(circle at 26% 15%, rgba(255,220,220,.4), transparent 22%), linear-gradient(145deg, #3a0710 0%, #8d1530 48%, #4b0916 100%)",
   },
   {
-    name: "Glacier Blue Clearcoat",
-    description: "A pale, cold blue that stays crisp in winter light.",
+    name: "Glacier",
+    description: "A cool slate blue that stays crisp in winter light.",
+    finish: "clearcoat",
     background:
-      "radial-gradient(circle at 30% 12%, rgba(255,255,255,.62), transparent 25%), linear-gradient(145deg, #8eb8cf 0%, #c7e0ea 48%, #78a5bd 100%)",
+      "radial-gradient(circle at 30% 12%, rgba(255,255,255,.38), transparent 28%), linear-gradient(145deg, #2f516b 0%, #6689a4 48%, #29485f 100%)",
   },
   {
-    name: "Midnight Blue metallic",
-    description: "Near-black blue with a measured metallic depth.",
+    name: "Midnight Blue",
+    description: "Near-black blue with measured depth.",
+    finish: "clearcoat-metallic",
     background:
       "radial-gradient(circle at 25% 12%, rgba(92,134,176,.52), transparent 24%), linear-gradient(145deg, #050d19 0%, #173555 50%, #071321 100%)",
   },
   {
-    name: "After Six Black",
+    name: "After Six",
     description: "Formal black with just enough warmth to avoid severity.",
+    finish: "clearcoat",
     background:
       "radial-gradient(circle at 28% 12%, rgba(255,255,255,.18), transparent 24%), linear-gradient(145deg, #050505 0%, #202124 48%, #08090a 100%)",
   },
   {
-    name: "Champagne Clearcoat Metallic",
-    description: "A warm, quiet metallic between silver and soft gold.",
+    name: "Champagne",
+    description: "A warm, quiet color between silver and soft gold.",
+    finish: "clearcoat-metallic",
     background:
       "radial-gradient(circle at 30% 10%, rgba(255,255,255,.58), transparent 24%), linear-gradient(145deg, #8e8169 0%, #d6c7a9 50%, #9f9177 100%)",
   },
   {
-    name: "Blue Order clearcoat",
+    name: "Blue Order",
     description: "A smooth, saturated blue suited to purposeful work.",
+    finish: "clearcoat",
     background:
-      "radial-gradient(circle at 30% 10%, rgba(177,216,255,.48), transparent 24%), linear-gradient(145deg, #0b3e80 0%, #176ec1 48%, #092f65 100%)",
+      "radial-gradient(circle at 30% 10%, rgba(198,228,255,.42), transparent 28%), linear-gradient(145deg, #0752b5 0%, #1688ed 48%, #07439a 100%)",
   },
   {
-    name: "T.R. Green",
-    description: "A forest green with an outdoorsman’s reserve.",
+    name: "Gridiron",
+    description: "A vivid but disciplined green with unmistakably American character.",
+    finish: "clearcoat",
     background:
-      "radial-gradient(circle at 30% 12%, rgba(188,210,184,.28), transparent 24%), linear-gradient(145deg, #152d24 0%, #3d5b42 48%, #1a352a 100%)",
+      "radial-gradient(circle at 30% 12%, rgba(190,221,191,.28), transparent 27%), linear-gradient(145deg, #102f23 0%, #356447 48%, #143a2b 100%)",
   },
   {
-    name: "Canyon Red",
-    description: "A strong earthen red for the working pickup body.",
+    name: "Canyon",
+    description: "A deep maroon-red for the working pickup body.",
+    finish: "clearcoat-metallic",
     background:
-      "radial-gradient(circle at 28% 12%, rgba(255,207,196,.34), transparent 24%), linear-gradient(145deg, #51131a 0%, #8a2930 50%, #55161b 100%)",
+      "radial-gradient(circle at 28% 12%, rgba(255,205,205,.28), transparent 26%), linear-gradient(145deg, #35101b 0%, #681c35 50%, #42101f 100%)",
   },
   {
     name: "Platinum Mist",
-    description: "A pale platinum contrast with a soft atmospheric cast.",
+    description: "A warm platinum contrast with a soft atmospheric cast.",
+    finish: "clearcoat-metallic",
     background:
-      "radial-gradient(circle at 28% 12%, rgba(255,255,255,.82), transparent 24%), linear-gradient(145deg, #a7a7a1 0%, #deddd5 50%, #aaa9a2 100%)",
+      "radial-gradient(circle at 28% 12%, rgba(255,255,255,.68), transparent 26%), linear-gradient(145deg, #9f9588 0%, #d8cdbd 50%, #aaa093 100%)",
   },
   {
-    name: "Lake Effect White clearcoat",
+    name: "Lake Effect",
     description: "A crisp white with the faint cool cast of fresh lake snow.",
+    finish: "clearcoat",
     background:
       "radial-gradient(circle at 30% 12%, #ffffff, transparent 25%), linear-gradient(145deg, #dce4e6 0%, #fbfcfa 52%, #d6dfe1 100%)",
   },
   {
-    name: "Dreadnought Gray clearcoat",
+    name: "Dreadnought",
     description: "A warm, historical gray with quiet industrial weight.",
+    finish: "clearcoat",
     background:
       "radial-gradient(circle at 30% 12%, rgba(255,255,255,.36), transparent 24%), linear-gradient(145deg, #4d4c47 0%, #77766e 50%, #53524d 100%)",
   },

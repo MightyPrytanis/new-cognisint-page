@@ -84,7 +84,7 @@ export const dynamoModels: DynamoModel[] = [
     photos: [
       {
         src: `${root}/estate.png`,
-        caption: "Pictured in Cherry Royal metallic, the Estate sport wagon offers utility without surrendering to crossover proportions.",
+        caption: "Pictured in Cherry Royal clearcoat, the Estate sport wagon offers utility without surrendering to crossover proportions.",
       },
       {
         src: `${root}/estate-family.png`,
@@ -118,7 +118,7 @@ export const dynamoModels: DynamoModel[] = [
       },
       {
         src: `${root}/xtour-cabin-comfort-v2.png`,
-        caption: "Glacier Blue Clearcoat sets the visual temperature while Cabin Comfort prepares the XTour CUV as tired hikers return from the trail.",
+        caption: "Glacier clearcoat sets the visual temperature while Cabin Comfort prepares the XTour CUV as tired hikers return from the trail.",
       },
       ...montage(`${root}/xtour-portfolio.png`, [
         "XTour’s taller greenhouse preserves the family’s calm surfaces.",
@@ -151,7 +151,7 @@ export const dynamoModels: DynamoModel[] = [
         caption: "Rain Guard watches the weather when the Highroad SUV sits unattended at the lake.",
       },
       ...montage(`${root}/highroad-portfolio.png`, [
-        "After Six Black suits the Highroad: formal, capable, and unforced.",
+        "After Six suits the Highroad: formal, capable, and unforced.",
         "Three rows remain honest about luggage space and passenger packaging.",
         "A higher-output generator and thermal system support sustained towing targets.",
         "Clearance and suspension travel serve real access roads rather than an image.",
@@ -217,7 +217,7 @@ export const dynamoModels: DynamoModel[] = [
     photos: [
       {
         src: `${root}/foreman-v2.png`,
-        caption: "Pictured in T.R. Green, Foreman keeps a road-friendly stance and the same modular bed-rail hard points used by Ranch.",
+        caption: "Pictured in Gridiron, Foreman keeps a road-friendly stance and the same modular bed-rail hard points used by Ranch.",
       },
       ...montage(`${root}/foreman-portfolio.png`, [
         "The medium-profile truck looks at home outside a workshop, not only on a trail.",
@@ -238,7 +238,7 @@ export const dynamoModels: DynamoModel[] = [
       {
         src: `${root}/ranch-v2.png`,
         caption:
-          "Pictured in Canyon Red with a Platinum Mist roof, Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points.",
+          "Pictured in Canyon with a Platinum Mist roof, Ranch is visibly longer, taller, and wider than Foreman, with shared bed-rail hard points.",
       },
       {
         src: `${root}/ranch-interior.png`,

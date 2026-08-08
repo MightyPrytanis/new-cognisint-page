@@ -10,16 +10,40 @@ export const metadata: Metadata = {
 }
 
 function Swatch({ entry, material = false }: { entry: DynamoPaletteEntry; material?: boolean }) {
+  const metallic = !material && entry.finish === "clearcoat-metallic"
+
   return (
     <article>
       <div
         aria-label={`${entry.name} ${material ? "material" : "paint"} sample`}
         role="img"
-        className={`border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] ${
+        className={`relative overflow-hidden border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] ${
           material ? "aspect-[5/3]" : "aspect-[12/5]"
         }`}
         style={{ background: entry.background }}
-      />
+      >
+        {!material && (
+          <span
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={
+              metallic
+                ? {
+                    backgroundImage:
+                      "radial-gradient(circle, rgba(255,255,255,.72) 0 .65px, transparent .9px), radial-gradient(circle, rgba(215,228,235,.48) 0 .55px, transparent .85px)",
+                    backgroundPosition: "0 0, 5px 7px",
+                    backgroundSize: "11px 13px, 17px 19px",
+                    mixBlendMode: "screen",
+                    opacity: 0.34,
+                  }
+                : {
+                    background:
+                      "linear-gradient(112deg, transparent 8%, rgba(255,255,255,.2) 34%, rgba(255,255,255,.06) 48%, transparent 68%)",
+                  }
+            }
+          />
+        )}
+      </div>
       <h3 className="mt-4 text-xl font-semibold text-white">{entry.name}</h3>
       <p className="mt-2 max-w-md leading-7 text-slate-400">{entry.description}</p>
     </article>
@@ -41,7 +65,7 @@ export default function DynamoColorsMaterialsPage() {
           <h1 className="mt-10 max-w-5xl text-balance text-5xl font-semibold leading-none sm:text-7xl">
             Colors and materials
           </h1>
-          <p className="mt-6 text-2xl text-slate-300">A working palette, not an order sheet.</p>
+          <p className="mt-6 text-2xl text-slate-300">Abundant character, thoughtfully contained.</p>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
             Naming a finish is part description, part allusion, and part character. These colors and materials give
             the Dynamo family a shared vocabulary while leaving room for each vehicle to have a distinct life.
@@ -70,6 +94,10 @@ export default function DynamoColorsMaterialsPage() {
           <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
             Durable, tactile materials chosen for real use, long service, and interiors that remain warm without
             becoming precious.
+          </p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+            The interior studies suggest a flexible mix of vegan leather alternatives, real leather, durable
+            textiles, and combinations of them, matched to each vehicle and its use.
           </p>
           <div className="mt-12 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {cabinMaterials.map((entry) => (
