@@ -4,18 +4,23 @@
   "state_file": ".website-brochure-state.json",
   "website": {
     "source_globs": [
+      "app/portfolio/project-dynamo/**/*.ts",
       "app/portfolio/project-dynamo/**/*.tsx",
       "components/image-lightbox.tsx"
     ],
     "url": "https://www.cognisint.com/portfolio/project-dynamo"
   },
   "brochure": {
-    "source_globs": [],
+    "source_globs": [
+      "brochure/project-dynamo/**/*"
+    ],
     "output": "public/projects/project-dynamo/project-dynamo-auto-show-brochure.pdf",
-    "build_command": null
+    "build_command": "python3 brochure/project-dynamo/build.py"
   },
   "shared": {
-    "source_globs": [],
+    "source_globs": [
+      "content/project-dynamo/publication.json"
+    ],
     "asset_globs": [
       "public/projects/project-dynamo/*.png"
     ],
@@ -28,15 +33,86 @@
         ]
       },
       {
+        "text": "Nine specialized models.",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Dynamo is a scalable electric-drive architecture",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Petro-Electric (PE)",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "TaskVan",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Forward Energy Bay",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Amidships Energy Bay",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Tired hikers",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Anthracite",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Rivian R2 and R3",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Time after time, you'll have everything you need in a Clark.",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
         "text": "Not every vehicle needs to be shaped like an expensive basketball shoe.",
         "in": [
           "website"
         ]
       },
       {
-        "text": "Available as a Petro-Electric (PE) plug-in series hybrid or battery-electric vehicle (BEV)",
+        "text": "Blue Order",
         "in": [
-          "website"
+          "website",
+          "brochure"
         ]
       }
     ]

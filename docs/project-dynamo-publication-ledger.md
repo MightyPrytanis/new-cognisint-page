@@ -1,5 +1,17 @@
 # Project Dynamo publication ledger
 
+## 2026-08-10 — Synchronized website and auto show brochure
+
+- **Recovered baseline:** Began from the published `origin/main` state and preserved all approved vehicle imagery, model identities, colors, materials, specifications, disclaimers, and Clark language. No image asset was generated, edited, recolored, cropped, or replaced.
+- **Website narrative:** Reordered the principal page from the proposition through the two energy strategies and locomotive explanation into the Forward and Amidships Energy Bay cutaway, propulsion paths, production logic, and then the nine-model family. Moved future possibilities to an epilogue after use cases, technical evidence, honest engineering, and external context.
+- **Architecture definition:** Defined Dynamo once as a scalable electric-drive architecture comprising shared hard points, interfaces, component families, energy bays, controls, production logic, and service knowledge. Clarified that “platform” is shorthand and that Dynamo is not one invariant floorpan stretched from Captain to Ranch.
+- **Production claim:** Replaced “Specialization without retooling” with “Specialization without restarting the architecture.” Derivatives and PE / BEV production-mix changes retain the shared system while body-specific tooling, crash structure, cooling, plumbing, packaging, and capacity remain separately engineered.
+- **Precedent and calibration:** Replaced the Ford-only firstness claim with seven linked manufacturer or primary-source precedents spanning series-electric propulsion and scalable or energy-flexible electric architecture. The page expressly recognizes that Scout and STLA Frame already combine BEV and range-extended configurations and identifies Dynamo’s narrower distinction as applying PE / BEV flexibility to a specialized nine-model system. Public performance calibration remains internal to Dynamo with explicit Concept status and Simulated design target basis.
+- **Brochure source:** Added a maintainable ReportLab generator under `brochure/project-dynamo/` and rebuilt the existing 20-page auto show PDF in place. The brochure follows the same broad logic as the site with medium-specific pacing rather than reproducing the webpage.
+- **Brochure corrections:** Replaced stale CityVan and “hot hikers” references, updated the PE and locomotive explanation, moved the energy-bay architecture forward, preserved the Ranch laptop boundary, added current colors, cabin materials, and hardware finishes, replaced the outdated precedent claim, and retained the Clark closing.
+- **Synchronization contract:** Updated `.website-brochure.json` to declare the brochure source, build command, shared publication data, approved image assets, and meaningful cross-medium phrases. Recorded the synchronized baseline only after the website build, lint, PDF text and metadata checks, all-page visual inspection, responsive hierarchy checks, interaction checks, brochure-link verification, and strict pair audit passed.
+- **Intentional medium differences:** The website retains interactive model profiles, full target tables, and a separate Colors and Materials page. The brochure condenses those subjects into a cinematic 20-page auto show viewbook while preserving the shared facts and publication invariants.
+
 ## 2026-08-08 — Palette finish, color alignment, and cabin flexibility
 
 - **Page framing:** Replaced the procedural order-sheet disclaimer with “Abundant character, thoughtfully contained,” tying the palette to Dynamo’s compact abundance philosophy.
