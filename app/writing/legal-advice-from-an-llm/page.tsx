@@ -313,6 +313,10 @@ export default function LegalAdviceFromAnLlmArticle() {
               professional work. It cannot become the professional. And when it forgets that, someone with a J.D.—preferably
               one who has read the cases—still needs to be in the room.
             </p>
+
+            <p>
+              <em>Part Three will lay out a practical path forward for public institutions and agencies.</em>
+            </p>
           </div>
 
           <footer className="writing-article-endnote border-t border-white/20 p-6 text-sm leading-6 text-white/75 sm:p-10 lg:p-12">
