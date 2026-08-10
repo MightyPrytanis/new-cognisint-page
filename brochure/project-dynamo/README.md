@@ -17,7 +17,9 @@ python3 brochure/project-dynamo/build.py
 ```
 
 The builder reads shared facts, names, sources, and disclaimers from
-`content/project-dynamo/publication.json`. It reuses approved images under
+`content/project-dynamo/publication.json`. Its vector paint, cabin material,
+and hardware swatches mirror the finish treatments defined in
+`app/portfolio/project-dynamo/palette.ts`. It reuses approved images under
 `public/projects/project-dynamo/` without modifying those assets.
 
 The generated file replaces

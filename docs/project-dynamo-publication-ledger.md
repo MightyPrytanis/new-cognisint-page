@@ -1,5 +1,14 @@
 # Project Dynamo publication ledger
 
+## 2026-08-10 — Corrected brochure covers, photography, and material finishes
+
+- **Cover and badge:** Replaced the photographic front cover with an unnumbered deep navy to Clark red vector gradient, centered “Project Dynamo” typography, and the approved free-floating Clark Red Trapezoid badge. Removed the champagne sheetmetal badge from the brochure generator entirely.
+- **Photo legibility:** Rebuilt the affected photographic layouts with substantially lighter translucent reading panels. Moved image card captions below their photographs wherever the page structure allowed, so caption backgrounds no longer cover vehicle, cabin, or use case imagery.
+- **Passenger and work pacing:** Restored three clearly visible Constellation photographs on the passenger space page. Removed the separate Foreman and Ranch image spotlights from the work use page and retained their roles in a compact family level explanation.
+- **Colors and materials:** Replaced the brochure's flat color blocks and generic diagonal cabin lines with vector swatches matching the website's established finish logic: smooth clearcoat highlights, sparse irregular metallic flecks only on metallic paints, distinct smooth and woven halves for each cabin family, and differentiated Brushed Aluminum, Black Chrome, and Dark Anodized Aluminum treatments.
+- **Back cover:** Added an unnumbered back cover with the free-floating Clark Red Trapezoid badge and the centered “Time after time” Clark slogan. The revised auto show viewbook now contains 21 pages while replacing the same public PDF.
+- **Synchronization and QA:** Added the website palette source to the shared publication contract. Rebuilt the PDF, checked its metadata and extracted text, visually inspected all 21 rendered pages, rechecked the brochure link in source and the production website build, and recorded a new synchronized baseline only after the strict pair audit passed.
+
 ## 2026-08-10 — Synchronized website and auto show brochure
 
 - **Recovered baseline:** Began from the published `origin/main` state and preserved all approved vehicle imagery, model identities, colors, materials, specifications, disclaimers, and Clark language. No image asset was generated, edited, recolored, cropped, or replaced.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the 20-page Project Dynamo auto show brochure."""
+"""Build the 21-page Project Dynamo auto show brochure."""
 
 from __future__ import annotations
 
@@ -170,6 +170,40 @@ def translucent_rect(c: canvas.Canvas, x: float, y: float, w: float, h: float, c
     c.restoreState()
 
 
+def gradient_rect(
+    c: canvas.Canvas,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    stops: list[str],
+    *,
+    diagonal: bool = True,
+    radius: float = 0,
+) -> None:
+    """Draw a vector gradient, optionally clipped to a rounded rectangle."""
+    c.saveState()
+    if radius:
+        clip = c.beginPath()
+        clip.roundRect(x, y, w, h, radius)
+        c.clipPath(clip, stroke=0, fill=0)
+    x1, y1 = (x + w, y + h) if diagonal else (x + w, y)
+    c.linearGradient(x, y, x1, y1, [HexColor(stop) for stop in stops])
+    c.restoreState()
+
+
+def gloss(c: canvas.Canvas, x: float, y: float, w: float, h: float, alpha: float = 0.18) -> None:
+    """Add the smooth, non-repeating clearcoat highlight used by the website."""
+    c.saveState()
+    clip = c.beginPath()
+    clip.roundRect(x, y, w, h, 4)
+    c.clipPath(clip, stroke=0, fill=0)
+    c.setFillColor(WHITE)
+    c.setFillAlpha(alpha)
+    c.ellipse(x - w * 0.16, y + h * 0.47, x + w * 0.62, y + h * 1.38, stroke=0, fill=1)
+    c.restoreState()
+
+
 def label(c: canvas.Canvas, text: str, x: float, y: float, color: Color = RED, size: float = 8.2) -> None:
     c.setFillColor(color)
     c.setFont("Helvetica-Bold", size)
@@ -233,33 +267,43 @@ def image_card(
     focus_x: float = 0.5,
     focus_y: float = 0.5,
 ) -> None:
-    cover_image(c, asset(image_name), x, y, w, h, focus_x, focus_y)
-    translucent_rect(c, x, y, w, 58, NAVY, 0.9)
+    # Keep every caption outside the image area so it cannot obscure the photography.
+    caption_h = 58
+    card(c, x, y, w, h, NAVY_2, HexColor("#28404f"))
+    cover_image(c, asset(image_name), x, y + caption_h, w, h - caption_h, focus_x, focus_y)
     label(c, title, x + 12, y + 39, GREEN, 7.2)
     para(c, caption, x + 12, y + 31, w - 24, 26, paragraph_style("caption", 7.2, 9.2, WHITE, "Helvetica"))
 
 
 def page_1(c: canvas.Canvas) -> None:
-    cover_image(c, asset("family-v2.png"), focus_y=0.54)
-    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.52)
-    translucent_rect(c, 0, 0, 360, PAGE_H, NAVY, 0.66)
-    c.drawImage(image_reader(asset("authentic-clark-badge.png")), 30, 528, 84, 49, preserveAspectRatio=True, mask="auto")
-    label(c, "2027 future vehicle concept", 34, 505)
-    heading(c, "PROJECT\nDYNAMO", 32, 474, 290, 42, WHITE)
-    rule(c, 34, 330, 90, RED, 3)
-    body(c, DATA["hero_line"], 34, 312, 300, 88, WHITE, 14)
-    para(c, "AN INDEPENDENT COGNISINT DESIGN AND PRODUCT STRATEGY STUDY", 34, 62, 310, 28, paragraph_style("cover footer", 7, 9, SLATE, "Helvetica-Bold"))
+    # Color and typography only: no vehicle photo and no page number.
+    gradient_rect(c, 0, 0, PAGE_W, PAGE_H, ["#03101b", "#0a2634", "#3b1720"])
+    c.drawImage(
+        image_reader(asset("clark-trapezoid-floating.png")),
+        PAGE_W / 2 - 112,
+        376,
+        224,
+        150,
+        preserveAspectRatio=True,
+        anchor="c",
+        mask="auto",
+    )
+    para(c, "Project Dynamo", 96, 340, 600, 60, paragraph_style("cover title", 36, 40, WHITE, "Helvetica-Bold", TA_CENTER))
+    rule(c, PAGE_W / 2 - 56, 294, 112, RED, 3)
+    para(c, DATA["hero_line"], 126, 270, 540, 54, paragraph_style("cover proposition", 13, 17, SLATE, "Helvetica", TA_CENTER))
+    para(c, "2027 FUTURE VEHICLE CONCEPT", 126, 190, 540, 20, paragraph_style("cover label", 8, 10, RED, "Helvetica-Bold", TA_CENTER))
+    para(c, "AN INDEPENDENT COGNISINT DESIGN AND PRODUCT STRATEGY STUDY", 126, 74, 540, 20, paragraph_style("cover footer", 7, 9, SLATE, "Helvetica-Bold", TA_CENTER))
 
 
 def page_2(c: canvas.Canvas) -> None:
     cover_image(c, asset("sedan.png"), 0, 0, PAGE_W, PAGE_H, 0.64, 0.48)
-    translucent_rect(c, 0, 0, 470, PAGE_H, NAVY, 0.88)
+    translucent_rect(c, 0, 0, 458, PAGE_H, NAVY, 0.62)
     label(c, "The proposition", 38, 552, GREEN)
     h = heading(c, "SPECIALIZATION WITHOUT FRAGMENTATION.", 38, 525, 385, 29, WHITE)
     top = 514 - h
     top -= body(c, DATA["platform_definition"], 38, top, 380, 140, SLATE, 11.2) + 17
     body(c, "Platform is readable shorthand. Dynamo does not claim that one invariant floorpan stretches from Captain to Ranch.", 38, top, 380, 72, WHITE, 10.8)
-    translucent_rect(c, 38, 88, 382, 88, NAVY_2, 0.93)
+    translucent_rect(c, 38, 88, 382, 88, NAVY_2, 0.60)
     rule(c, 38, 176, 382, RED, 3)
     body(c, DATA["specialization_claim"], 52, 160, 352, 66, SLATE, 8.8)
     footer(c, 2)
@@ -267,8 +311,8 @@ def page_2(c: canvas.Canvas) -> None:
 
 def page_3(c: canvas.Canvas) -> None:
     cover_image(c, asset("highroad-locomotive.png"), focus_x=0.55, focus_y=0.48)
-    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.34)
-    translucent_rect(c, 0, 0, 405, PAGE_H, NAVY, 0.78)
+    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.08)
+    translucent_rect(c, 0, 0, 395, PAGE_H, NAVY, 0.56)
     label(c, "PE explanation and locomotive", 38, 552)
     h = heading(c, "ELECTRIC TRACTION. FROM RAIL TO ROAD.", 38, 523, 335, 28, WHITE)
     top = 506 - h
@@ -359,7 +403,7 @@ def page_7(c: canvas.Canvas) -> None:
         x = 28 + col * 250
         y = 346 - row * 158
         cover_image(c, asset(model["image"]), x, y, card_w, card_h, 0.5, 0.5)
-        translucent_rect(c, x, y, card_w, 40, NAVY, 0.9)
+        translucent_rect(c, x, y, card_w, 40, NAVY, 0.58)
         label(c, model["short_name"], x + 9, y + 25, WHITE, 7.2)
         c.setFont("Helvetica", 6.2)
         c.setFillColor(GREEN)
@@ -374,18 +418,18 @@ def page_8(c: canvas.Canvas) -> None:
     c.setFillColor(NAVY)
     c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
     label(c, "Passenger space", 28, 566, RED)
-    heading(c, "DISTINCT BODIES FOR DISTINCT LIVES.", 28, 542, 710, 25, WHITE)
-    image_card(c, "estate-family.png", 28, 265, 238, 236, "ESTATE", "A low sport wagon keeps a real liftgate and useful cargo space.", 0.5, 0.55)
-    image_card(c, "constellation-liftgate-v2.png", 277, 265, 238, 236, "CONSTELLATION", "Meaningful cargo depth remains behind a fully occupied third row.", 0.5, 0.52)
-    image_card(c, "constellation-removable-seat-v11.png", 526, 265, 238, 236, "RECONFIGURATION", "Track-mounted captain's chairs make flexibility part of ordinary use.", 0.5, 0.5)
-    card(c, 28, 66, 736, 162, NAVY_2, HexColor("#28404f"))
+    heading(c, "SPACE THAT CHANGES WITH THE DAY.", 28, 542, 710, 25, WHITE)
+    image_card(c, "constellation-liftgate-v2.png", 28, 307, 238, 192, "CARGO DEPTH", "Useful room remains behind a fully occupied third row.", 0.5, 0.52)
+    image_card(c, "constellation-interior-v2.png", 277, 307, 238, 192, "THREE-ROW COMFORT", "Track-mounted captain's chairs support ordinary passenger use.", 0.5, 0.5)
+    image_card(c, "constellation-third-row-inset-v3.png", 526, 307, 238, 192, "HORIZONTAL STOWAGE", "The third-row bench folds into a level, useful cargo surface.", 0.5, 0.5)
+    card(c, 28, 66, 736, 200, NAVY_2, HexColor("#28404f"))
     body(
         c,
         "The Constellation passenger van does not pretend that occupied rows disappear. Its low floor, removable second-row chairs, folding work surfaces, and horizontally stowing third-row bench support passenger comfort and practical cargo use. The Estate and XTour answer different needs with lower and medium profiles. No vehicle has to be all things to all people.",
         48,
-        205,
+        243,
         696,
-        116,
+        136,
         SLATE,
         10.2,
     )
@@ -397,11 +441,21 @@ def page_9(c: canvas.Canvas) -> None:
     c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
     label(c, "Work use cases", 28, 566, RED)
     heading(c, "FROM LAST-MILE DELIVERY TO FIELD WORK.", 28, 542, 720, 25, WHITE)
-    image_card(c, "taskvan-delivery.png", 28, 285, 238, 214, "TASKVAN DELIVERY", "A credible sliding aperture, low step, and modular parcel shelving.")
-    image_card(c, "taskvan-inclusive-trade.png", 277, 285, 238, 214, "SKILLED TRADES", "Organized tools and durable access serve the people doing the work.")
-    image_card(c, "taskvan-market.png", 526, 285, 238, 214, "MOBILE ENTERPRISE", "Washable modules, refrigeration, tie-downs, and power export.")
-    image_card(c, "foreman-v2.png", 28, 67, 357, 180, "FOREMAN", "Mid-size utility with Gridiron character and an attainable load height.")
-    image_card(c, "ranch-interior.png", 407, 67, 357, 180, "RANCH", "Oxblood and Nantucket Fog surround a fold-flat surface with room for a laptop, coffee, and documents; the vehicle supplies AC connections, not a laptop.")
+    image_card(c, "taskvan-delivery.png", 28, 307, 238, 192, "TASKVAN DELIVERY", "A credible sliding aperture, low step, and modular parcel shelving.")
+    image_card(c, "taskvan-inclusive-trade.png", 277, 307, 238, 192, "SKILLED TRADES", "Organized tools and durable access serve the people doing the work.")
+    image_card(c, "taskvan-market.png", 526, 307, 238, 192, "MOBILE ENTERPRISE", "Washable modules, refrigeration, tie-downs, and power export.")
+    card(c, 28, 67, 736, 200, NAVY_2, HexColor("#28404f"))
+    label(c, "One work architecture, three distinct missions", 48, 237, GREEN, 7.2)
+    body(
+        c,
+        "TaskVan handles enclosed delivery and trade work, Foreman adds a mid-size open bed, and Ranch supports full-size towing, hauling, and field work. Each retains body-specific engineering while drawing on shared controls, component families, service logic, and power export. Ranch's fold-flat work surface leaves room for a laptop, coffee, and documents; AC connections are supplied, not a laptop.",
+        48,
+        215,
+        696,
+        116,
+        SLATE,
+        9.2,
+    )
     footer(c, 9)
 
 
@@ -417,44 +471,152 @@ def page_10(c: canvas.Canvas) -> None:
     footer(c, 10)
 
 
-PAINT_COLORS = {
-    "Copperclad": "#a96141",
-    "Quicksilver": "#b9bdc0",
-    "Cherry Royal": "#7f1730",
-    "Glacier": "#5e819b",
-    "Midnight Blue": "#102b47",
-    "After Six": "#18191b",
-    "Champagne": "#c8b99d",
-    "Blue Order": "#0878d7",
-    "Gridiron": "#315d43",
-    "Canyon": "#5d1930",
-    "Platinum Mist": "#c5baaa",
-    "Lake Effect": "#edf2f2",
-    "Dreadnought": "#716f68",
+PAINT_STYLES = {
+    "Copperclad": (["#6f3829", "#b66e46", "#7d412f"], True),
+    "Quicksilver": (["#747b82", "#d7dbdd", "#8d9499"], True),
+    "Cherry Royal": (["#3a0710", "#8d1530", "#4b0916"], False),
+    "Glacier": (["#2f516b", "#6689a4", "#29485f"], False),
+    "Midnight Blue": (["#050d19", "#173555", "#071321"], True),
+    "After Six": (["#050505", "#202124", "#08090a"], False),
+    "Champagne": (["#8e8169", "#d6c7a9", "#9f9177"], True),
+    "Blue Order": (["#0752b5", "#1688ed", "#07439a"], False),
+    "Gridiron": (["#102f23", "#356447", "#143a2b"], False),
+    "Canyon": (["#35101b", "#681c35", "#42101f"], True),
+    "Platinum Mist": (["#9f9588", "#d8cdbd", "#aaa093"], True),
+    "Lake Effect": (["#dce4e6", "#fbfcfa", "#d6dfe1"], False),
+    "Dreadnought": (["#4d4c47", "#77766e", "#53524d"], False),
 }
 
-CABIN_COLORS = {
-    "Anthracite": "#27292a",
-    "Oxblood": "#5d2526",
-    "Sandstone": "#c2af95",
-    "Nantucket Fog": "#c8c5bd",
-    "Thalassic": "#123553",
-    "Travertine": "#9b5c38",
+CABIN_STYLES = {
+    "Anthracite": (["#17191a", "#35383a"], "#242426", "warm-weave"),
+    "Oxblood": (["#351315", "#6d292a", "#431719"], "#5b2423", "square-weave"),
+    "Sandstone": (["#a99478", "#d1c1aa"], "#bfac91", "light-weave"),
+    "Nantucket Fog": (["#aaa79f", "#d2cfc7"], "#c9c6be", "quiet-grid"),
+    "Thalassic": (["#06172a", "#153a5a", "#081d32"], "#0d2b45", "ocean-weave"),
+    "Travertine": (["#704029", "#b66f40", "#7c472d"], "#242426", "warm-weave"),
 }
 
-HARDWARE_COLORS = {
-    "Brushed Aluminum": "#a8adaf",
-    "Black Chrome": "#24282c",
-    "Dark Anodized Aluminum": "#343b3e",
+HARDWARE_STYLES = {
+    "Brushed Aluminum": (["#858b8e", "#c7cbcc", "#8e9497"], "brushed"),
+    "Black Chrome": (["#080a0c", "#343a40", "#0b0e11", "#666d72", "#15191d", "#030405"], "reflective"),
+    "Dark Anodized Aluminum": (["#1b2023", "#41484b", "#202629"], "bead-blasted"),
 }
 
+IRREGULAR_POINTS = [
+    (0.08, 0.22, 0.6),
+    (0.17, 0.64, 0.9),
+    (0.29, 0.36, 0.55),
+    (0.38, 0.78, 0.72),
+    (0.46, 0.16, 0.85),
+    (0.55, 0.56, 0.5),
+    (0.63, 0.83, 0.8),
+    (0.72, 0.29, 0.62),
+    (0.81, 0.68, 0.92),
+    (0.91, 0.42, 0.58),
+    (0.24, 0.9, 0.5),
+    (0.68, 0.08, 0.55),
+    (0.95, 0.84, 0.7),
+]
 
-def palette_chip(c: canvas.Canvas, name: str, color: str, x: float, y: float, w: float, h: float, light_text: bool = False) -> None:
-    c.setFillColor(HexColor(color))
-    c.roundRect(x, y, w, h, 4, stroke=0, fill=1)
-    c.setFont("Helvetica-Bold", 6.6)
-    c.setFillColor(WHITE if light_text else INK)
-    c.drawString(x + 7, y + 8, name.upper())
+
+def sparse_texture(c: canvas.Canvas, x: float, y: float, w: float, h: float, color: Color, alpha: float, scale: float = 1) -> None:
+    c.saveState()
+    c.setFillColor(color)
+    c.setFillAlpha(alpha)
+    for px, py, radius in IRREGULAR_POINTS:
+        c.circle(x + px * w, y + py * h, radius * scale, stroke=0, fill=1)
+    c.restoreState()
+
+
+def swatch_outline(c: canvas.Canvas, x: float, y: float, w: float, h: float) -> None:
+    c.saveState()
+    c.setStrokeColor(HexColor("#c4c0b7"))
+    c.setLineWidth(0.55)
+    c.roundRect(x, y, w, h, 4, stroke=1, fill=0)
+    c.restoreState()
+
+
+def swatch_name(c: canvas.Canvas, name: str, x: float, y: float, w: float) -> None:
+    c.setFont("Helvetica-Bold", 6.2)
+    c.setFillColor(INK)
+    c.drawCentredString(x + w / 2, y, name.upper())
+
+
+def paint_swatch(c: canvas.Canvas, name: str, x: float, y: float, w: float, h: float) -> None:
+    stops, metallic = PAINT_STYLES[name]
+    gradient_rect(c, x, y, w, h, stops, radius=4)
+    gloss(c, x, y, w, h, 0.30 if name in {"Quicksilver", "Champagne", "Platinum Mist", "Lake Effect"} else 0.18)
+    if metallic:
+        sparse_texture(c, x + 4, y + 3, w - 8, h - 6, WHITE, 0.42, 0.62)
+    swatch_outline(c, x, y, w, h)
+
+
+def cabin_swatch(c: canvas.Canvas, name: str, x: float, y: float, w: float, h: float) -> None:
+    upper_stops, lower_color, pattern = CABIN_STYLES[name]
+    split = y + h / 2
+    c.saveState()
+    clip = c.beginPath()
+    clip.roundRect(x, y, w, h, 4)
+    c.clipPath(clip, stroke=0, fill=0)
+    gradient_rect(c, x, split, w, h / 2, upper_stops)
+    c.setFillColor(HexColor(lower_color))
+    c.rect(x, y, w, h / 2, stroke=0, fill=1)
+
+    if name in {"Anthracite", "Sandstone", "Nantucket Fog"}:
+        sparse_texture(c, x + 2, split + 1, w - 4, h / 2 - 2, WHITE if name == "Anthracite" else INK, 0.11, 0.48)
+    if name in {"Oxblood", "Thalassic"}:
+        gloss(c, x, split, w, h / 2, 0.14)
+    if name == "Travertine":
+        c.saveState()
+        c.setFillColor(HexColor("#4e2a18"))
+        c.setFillAlpha(0.26)
+        c.ellipse(x + 8, split + 12, x + 52, split + 20, stroke=0, fill=1)
+        c.ellipse(x + 62, split + 3, x + 104, split + 10, stroke=0, fill=1)
+        c.restoreState()
+
+    c.saveState()
+    c.setLineWidth(0.55)
+    if pattern in {"warm-weave", "light-weave", "ocean-weave"}:
+        first = HexColor("#bd6c3e") if pattern == "warm-weave" else WHITE if pattern == "light-weave" else HexColor("#5d85a4")
+        second = HexColor("#e09e68") if pattern == "warm-weave" else HexColor("#4d3b28") if pattern == "light-weave" else HexColor("#03101d")
+        c.setStrokeColor(first)
+        c.setStrokeAlpha(0.42 if pattern == "warm-weave" else 0.16)
+        for offset in range(-20, int(w) + 20, 8):
+            c.line(x + offset, y, x + offset + 18, split)
+        c.setStrokeColor(second)
+        c.setStrokeAlpha(0.22 if pattern != "light-weave" else 0.12)
+        for offset in range(-15, int(w) + 20, 10):
+            c.line(x + offset, split, x + offset + 18, y)
+    else:
+        light = WHITE if pattern in {"square-weave", "quiet-grid"} else HexColor("#5d85a4")
+        dark = HexColor("#111111")
+        for offset in range(4, int(w), 7 if pattern == "square-weave" else 6):
+            c.setStrokeColor(light)
+            c.setStrokeAlpha(0.10 if pattern == "square-weave" else 0.18)
+            c.line(x + offset, y, x + offset, split)
+        for offset in range(4, int(h / 2), 6):
+            c.setStrokeColor(dark)
+            c.setStrokeAlpha(0.12 if pattern == "square-weave" else 0.08)
+            c.line(x, y + offset, x + w, y + offset)
+    c.restoreState()
+    c.restoreState()
+    swatch_outline(c, x, y, w, h)
+
+
+def hardware_swatch(c: canvas.Canvas, name: str, x: float, y: float, w: float, h: float) -> None:
+    stops, finish = HARDWARE_STYLES[name]
+    gradient_rect(c, x, y, w, h, stops, diagonal=finish != "brushed", radius=4)
+    if finish == "brushed":
+        c.saveState()
+        c.setStrokeColor(WHITE)
+        c.setStrokeAlpha(0.16)
+        c.setLineWidth(0.45)
+        for offset in range(3, int(h), 3):
+            c.line(x + 2, y + offset, x + w - 2, y + offset)
+        c.restoreState()
+    elif finish == "bead-blasted":
+        sparse_texture(c, x + 3, y + 2, w - 6, h - 4, WHITE, 0.13, 0.55)
+    swatch_outline(c, x, y, w, h)
 
 
 def page_11(c: canvas.Canvas) -> None:
@@ -467,27 +629,20 @@ def page_11(c: canvas.Canvas) -> None:
     for index, name in enumerate(exterior):
         row, col = divmod(index, 7)
         x = 28 + col * 105
-        y = 392 - row * 75
-        light = name in {"Midnight Blue", "After Six", "Gridiron", "Canyon", "Dreadnought"}
-        palette_chip(c, name, PAINT_COLORS[name], x, y, 94, 58, light)
-    label(c, "Cabin colors and material families", 28, 304, DEEP_GREEN, 7.2)
+        y = 414 - row * 76
+        paint_swatch(c, name, x, y, 94, 46)
+        swatch_name(c, name, x, y - 12, 94)
+    label(c, "Cabin colors and material families", 28, 302, DEEP_GREEN, 7.2)
     for index, name in enumerate(DATA["palette"]["cabin"]):
         x = 28 + index * 122
-        palette_chip(c, name, CABIN_COLORS[name], x, 225, 110, 60, name in {"Anthracite", "Oxblood", "Thalassic"})
-        c.saveState()
-        clip = c.beginPath()
-        clip.rect(x, 225, 110, 60)
-        c.clipPath(clip, stroke=0, fill=0)
-        c.setStrokeColor(WHITE if name in {"Anthracite", "Oxblood", "Thalassic"} else INK)
-        c.setLineWidth(0.6)
-        for line_x in range(int(x + 8), int(x + 104), 8):
-            c.line(line_x, 228, line_x + 18, 282)
-        c.restoreState()
-    label(c, "Hardware finishes", 28, 193, DEEP_GREEN, 7.2)
+        cabin_swatch(c, name, x, 228, 110, 52)
+        swatch_name(c, name, x, 214, 110)
+    label(c, "Hardware finishes", 28, 185, DEEP_GREEN, 7.2)
     for index, name in enumerate(DATA["palette"]["hardware"]):
         x = 28 + index * 244
-        palette_chip(c, name, HARDWARE_COLORS[name], x, 121, 226, 54, name != "Brushed Aluminum")
-    body(c, DATA["palette"]["material_note"], 28, 97, 736, 50, MUTED, 8.4)
+        hardware_swatch(c, name, x, 130, 226, 38)
+        swatch_name(c, name, x, 116, 226)
+    body(c, DATA["palette"]["material_note"], 28, 93, 736, 46, MUTED, 8.1)
     footer(c, 11, light=False)
 
 
@@ -672,8 +827,8 @@ def page_18(c: canvas.Canvas) -> None:
 
 def page_19(c: canvas.Canvas) -> None:
     cover_image(c, asset("dynamo-global-possibilities-v2.png"), focus_x=0.5, focus_y=0.5)
-    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.38)
-    translucent_rect(c, 0, 0, 330, PAGE_H, NAVY, 0.82)
+    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.08)
+    translucent_rect(c, 0, 0, 320, PAGE_H, NAVY, 0.56)
     label(c, "Future possibilities", 34, 552, GREEN)
     h = heading(c, "A STARTING LINEUP, NOT A CLOSED CATALOG.", 34, 525, 260, 28, WHITE)
     top = 506 - h
@@ -684,15 +839,35 @@ def page_19(c: canvas.Canvas) -> None:
 
 def page_20(c: canvas.Canvas) -> None:
     cover_image(c, asset("family-v2.png"), focus_x=0.5, focus_y=0.52)
-    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.72)
-    c.drawImage(image_reader(asset("clark-trapezoid-floating.png")), 500, 344, 260, 180, preserveAspectRatio=True, mask="auto")
+    translucent_rect(c, 0, 0, PAGE_W, PAGE_H, NAVY, 0.08)
+    translucent_rect(c, 0, 0, 474, PAGE_H, NAVY, 0.58)
+    c.drawImage(image_reader(asset("clark-trapezoid-floating.png")), 522, 366, 225, 150, preserveAspectRatio=True, mask="auto")
     label(c, "Independent strategy, systems, and design study", 34, 552, GREEN)
     heading(c, "ENGINEERED TO BENCHMARKS, NOT DOWN TO A PRICE POINT.", 34, 522, 420, 27, WHITE)
     body(c, "A durable architecture preserves more than invested capital: skilled work, supplier capability, service knowledge, useful products, and the trust earned when a company supports what it builds.", 34, 422, 410, 105, SLATE, 11)
-    rule(c, 34, 285, 110, RED, 3)
-    para(c, DATA["closing"], 34, 264, 430, 56, paragraph_style("closing", 16, 19, RED, "Helvetica-Oblique"))
-    body(c, DATA["disclaimer"], 34, 176, 710, 135, HexColor("#aeb8c0"), 6.5)
+    rule(c, 34, 298, 110, RED, 3)
+    translucent_rect(c, 34, 86, 724, 142, NAVY_2, 0.58)
+    label(c, "Independent concept study", 50, 204, RED, 6.8)
+    body(c, DATA["disclaimer"], 50, 186, 692, 88, HexColor("#c1cad1"), 6.6)
     footer(c, 20)
+
+
+def page_21(c: canvas.Canvas) -> None:
+    # Back cover: a quiet Clark coda with no page number.
+    gradient_rect(c, 0, 0, PAGE_W, PAGE_H, ["#071522", "#24131a", "#071522"], diagonal=False)
+    c.drawImage(
+        image_reader(asset("clark-trapezoid-floating.png")),
+        PAGE_W / 2 - 128,
+        318,
+        256,
+        170,
+        preserveAspectRatio=True,
+        anchor="c",
+        mask="auto",
+    )
+    rule(c, PAGE_W / 2 - 60, 285, 120, RED, 3)
+    para(c, DATA["closing"], 96, 250, 600, 72, paragraph_style("back cover slogan", 17, 22, WHITE, "Helvetica-Oblique", TA_CENTER))
+    para(c, "PROJECT DYNAMO", 96, 112, 600, 18, paragraph_style("back cover title", 7, 9, SLATE, "Helvetica-Bold", TA_CENTER))
 
 
 PAGES = [
@@ -716,20 +891,20 @@ PAGES = [
     page_18,
     page_19,
     page_20,
+    page_21,
 ]
 
 
 def validate_assets() -> None:
     names: set[str] = {
         "architecture.png",
-        "authentic-clark-badge.png",
         "captain-cabin-safe.png",
         "clark-trapezoid-floating.png",
         "constellation-executive.png",
+        "constellation-interior-v2.png",
         "constellation-liftgate-v2.png",
-        "constellation-removable-seat-v11.png",
+        "constellation-third-row-inset-v3.png",
         "dynamo-global-possibilities-v2.png",
-        "estate-family.png",
         "estate-interior.png",
         "family.png",
         "family-v2.png",
@@ -737,7 +912,6 @@ def validate_assets() -> None:
         "highroad-locomotive.png",
         "highroad-rain-guard.png",
         "performance-low-photoreal.png",
-        "ranch-interior.png",
         "sedan-interior-v2.png",
         "sedan.png",
         "taskvan-delivery.png",

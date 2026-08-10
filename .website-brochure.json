@@ -19,7 +19,8 @@
   },
   "shared": {
     "source_globs": [
-      "content/project-dynamo/publication.json"
+      "content/project-dynamo/publication.json",
+      "app/portfolio/project-dynamo/palette.ts"
     ],
     "asset_globs": [
       "public/projects/project-dynamo/*.png"
