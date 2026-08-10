@@ -188,9 +188,12 @@ export default function MichiganPublicSectorAiArticle() {
 
             <p>
               <em>
-                This is Part One of a three-part series on how Michigan&apos;s public sector is responding to AI. Part Two
-                will look at the legal profession—closely tied to the public sector, already forced to wrestle with
-                AI&apos;s impacts, and perhaps pointing the way to better policy approaches.
+                This is Part One of a three-part series on how Michigan&apos;s public sector is responding to AI.{" "}
+                <Link href="/writing/legal-advice-from-an-llm" className="underline underline-offset-4">
+                  Part Two
+                </Link>{" "}
+                looks at the legal profession—closely tied to the public sector, already forced to wrestle with AI&apos;s
+                impacts, and perhaps pointing the way to better policy approaches.
               </em>
             </p>
 

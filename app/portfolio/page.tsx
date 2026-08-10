@@ -48,7 +48,15 @@ const portfolioItems: PortfolioItem[] = [
     height: 941,
   },
   {
-    label: "Essay",
+    label: "Essay · August 9, 2026",
+    title: "Legal Advice From an LLM? Better Call a J.D.",
+    description:
+      "Part 2 of 3. Why AI-assisted work still needs human judgment, verification, and accountability.",
+    href: "/writing/legal-advice-from-an-llm",
+    linkLabel: "Read the essay",
+  },
+  {
+    label: "Essay · July 7, 2026",
     title: "Michigan's Public Sector Is Getting AI Wrong",
     description:
       "Part 1 of 3. A public-sector AI essay about moving from scattered restrictions to coherent, accountable strategy.",
