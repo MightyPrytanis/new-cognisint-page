@@ -145,9 +145,9 @@ export default function LegalAdviceFromAnLlmArticle() {
                 unlicensed persons
               </a>{" "}
               from holding themselves out as entitled to practice, or furnishing legal advice in a way that crosses
-              into the practice of law. The point of those restrictions is not to protect lawyers’ famously delicate
-              egos. It is to protect the public from untrained legal counsel, unreliable legal advice, and confusion
-              about who is actually accountable for the advice being given.
+              into the practice of law. The point of those restrictions is not to pad lawyers’ hourly billing; it is to
+              protect the public from untrained legal counsel, unreliable legal advice, and confusion about who is
+              actually accountable for the advice being given.
             </p>
 
             <p>
@@ -200,9 +200,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              That is the easy case. Fake cases are fake cases. A competent lawyer should catch them. A court does not
-              need a new philosophical framework to sanction an attorney who files invented authorities, then responds
-              to the problem with more invented authorities.
+              That is the easier scenario. Fake cases are fake cases. A competent lawyer should catch them. A court does
+              not need a new philosophical framework to sanction an attorney who files invented authorities, then
+              responds to the problem with more invented authorities.
             </p>
 
             <p>The harder problem is what happens when the AI does not hallucinate.</p>
