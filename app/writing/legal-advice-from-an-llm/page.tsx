@@ -243,9 +243,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              Prohibition and panic are self-defeating. The answer is not “never use AI.” Nor is it “confess that AI
-              touched the document.” The answer is that AI-assisted work remains the responsibility of the human
-              professional who uses it.
+              Perhaps the best question is not “did AI touch this?” but “who owns the final work, and what process makes
+              that ownership meaningful?” Law’s emerging answer is not that AI can never be used. It is that AI-assisted
+              work must still be owned by someone with actual duties, actual judgment, and actual accountability.
             </p>
 
             <p>
@@ -319,9 +319,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              Perhaps the best question is not “did AI touch this?” but “who owns the final work, and what process makes
-              that ownership meaningful?” Law’s emerging answer is not that AI can never be used. It is that AI-assisted
-              work must still be owned by someone with actual duties, actual judgment, and actual accountability.
+              Prohibition and panic are self-defeating. The answer is not “never use AI.” Nor is it “confess that AI
+              touched the document.” The answer is that AI-assisted work remains the responsibility of the human
+              professional who uses it.
             </p>
 
             <p>
