@@ -2,27 +2,37 @@ import { Button } from "@/components/ui/button"
 import ShareButton from "@/components/share-button"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Legal Advice From an LLM? Better Call a J.D. | Cognisint",
   description:
-    "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+    "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
   openGraph: {
     title: "Legal Advice From an LLM? Better Call a J.D.",
     description:
-      "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+      "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
     url: "/writing/legal-advice-from-an-llm",
     siteName: "Cognisint",
     type: "article",
     publishedTime: "2026-08-09",
     authors: ["David W. Towne"],
+    images: [
+      {
+        url: "/og-legal-advice-from-llm.png",
+        width: 1200,
+        height: 630,
+        alt: "An illustrated divide between a stone path to legal institutions and a glowing AI-generated path.",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Legal Advice From an LLM? Better Call a J.D.",
     description:
-      "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+      "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
+    images: ["/og-legal-advice-from-llm.png"],
   },
 }
 
@@ -69,6 +79,17 @@ export default function LegalAdviceFromAnLlmArticle() {
               />
             </div>
           </header>
+
+          <figure className="border-b border-slate-200 bg-[var(--ink)]">
+            <Image
+              src="/legal-advice-from-llm-hero.png"
+              alt="An illustrated divide between a stone path to legal institutions and a glowing AI-generated path."
+              width={1448}
+              height={1086}
+              priority
+              className="h-auto w-full"
+            />
+          </figure>
 
           <div className="article-body space-y-6 px-6 py-8 text-lg leading-8 sm:px-10 lg:px-12">
             <p>
