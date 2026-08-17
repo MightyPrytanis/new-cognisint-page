@@ -310,11 +310,6 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              The legal profession points toward a better question: not “did AI touch this?” but “who owns the final
-              work, and what process makes that ownership meaningful?”
-            </p>
-
-            <p>
               For lawyers, ownership means professional judgment, verification, candor, confidentiality, and
               accountability. For government agencies, it should mean transparent rules, human review, clear lines of
               responsibility, and a meaningful ability to challenge automated or AI-assisted outcomes. For schools in
@@ -324,8 +319,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              Law’s emerging answer is not that AI can never be used. It is that AI-assisted work must still be owned by
-              someone with actual duties, actual judgment, and actual accountability.
+              Perhaps the best question is not “did AI touch this?” but “who owns the final work, and what process makes
+              that ownership meaningful?” Law’s emerging answer is not that AI can never be used. It is that AI-assisted
+              work must still be owned by someone with actual duties, actual judgment, and actual accountability.
             </p>
 
             <p>
@@ -337,8 +333,9 @@ export default function LegalAdviceFromAnLlmArticle() {
 
             <p>
               <em>
-                Part Three will lay out a practical path forward for public institutions and agencies. Illustration
-                created by the author with the assistance of generative AI.
+                This essay was edited for clarity after initial publication. Part Three will lay out a practical path
+                forward for public institutions and agencies. Illustration created by the author with the assistance of
+                generative AI.
               </em>
             </p>
           </div>
