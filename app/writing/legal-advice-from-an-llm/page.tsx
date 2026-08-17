@@ -336,7 +336,10 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              <em>Part Three will lay out a practical path forward for public institutions and agencies.</em>
+              <em>
+                Part Three will lay out a practical path forward for public institutions and agencies. Illustration
+                created by the author with the assistance of generative AI.
+              </em>
             </p>
           </div>
 
