@@ -243,9 +243,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              The legal profession’s emerging response to this problem is not especially glamorous, but it is much
-              better than panic. The answer is not “never use AI.” Nor is it “confess that AI touched the document.” The
-              answer is that AI-assisted work remains the responsibility of the human professional who uses it.
+              Prohibition and panic are self-defeating. The answer is not “never use AI.” Nor is it “confess that AI
+              touched the document.” The answer is that AI-assisted work remains the responsibility of the human
+              professional who uses it.
             </p>
 
             <p>
