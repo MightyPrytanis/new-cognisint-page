@@ -174,28 +174,28 @@ const vehicles = [
 
 const architectureTypes = [
   {
-    title: "Traditional internal combustion",
-    path: "Fuel → engine → transmission and final drive → wheels",
+    title: "Conventional ICE",
+    path: "Fuel → engine → transmission → wheels",
     description:
-      "Fuel powers the engine. The engine mechanically turns the wheels through a transmission and final drive.",
+      "The engine must operate across changing speeds and loads, and a multispeed transmission keeps it within a usable range.",
   },
   {
     title: "Conventional hybrid",
-    path: "Fuel → engine ↘  transmission or power-split device → wheels  ↖ battery → motor",
+    path: "Fuel + battery → engine/motor/transmission → wheels",
     description:
-      "The engine and electric motor can both contribute wheel torque. In a representative parallel or power-split hybrid, the engine retains a mechanical path to the wheels.",
+      "Efficient and proven, but it retains a mechanical engine-to-wheel path while adding motors, power electronics, and a battery.",
+  },
+  {
+    title: "Dynamo petro-electric",
+    path: "Fuel → Dynamo Module → electricity → battery/motor → wheels",
+    description:
+      "Project Dynamo’s product term for a plug-in series hybrid. Grid energy or a matched prime mover charges the battery, but only the traction motors drive the wheels.",
   },
   {
     title: "Battery electric",
-    path: "Grid → battery → inverter → motor → reduction gear → wheels",
+    path: "Grid → battery → motor → wheels",
     description:
-      "Stored electricity powers the motor through an inverter. The motor turns the wheels through a reduction gear; there is no engine or onboard generator.",
-  },
-  {
-    title: "Dynamo Petro-Electric series hybrid",
-    path: "Grid or fuel → battery or engine-driven generator → inverter → motor → wheels",
-    description:
-      "The traction battery powers the motor, and only the motor turns the wheels. The battery receives energy from the grid or from the engine-driven generator in the Power Cassette.",
+      "The simplest propulsion system and lowest scheduled maintenance, but every trip depends on stored battery energy and charging access.",
   },
 ]
 
@@ -280,66 +280,18 @@ function ParticleWaveform({ className = "" }: { className?: string }) {
   )
 }
 
-function BasketballShoeSilhouette({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 330 180"
-      className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M18 30C30 17 62 11 104 11h172c28 0 45 10 44 25-1 13-19 20-46 22l-55 4c-21 5-38 18-53 34l-31 36-6 33H82l-13-60-32-24C20 68 10 48 18 30Z"
-        fill="#071522"
-      />
-      <path d="M86 132 144 117M82 113l69-17M79 94l82-18M24 31h289" stroke="#f6f4ee" strokeWidth="4" />
-    </svg>
-  )
-}
-
-function PropulsionComparison() {
-  return (
-    <section className="bg-white py-16 text-[#071522] sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">Propulsion compared</p>
-        <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-          Four ways energy becomes motion.
-        </h2>
-        <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
-          Each diagram follows energy to the wheels. The comparison shows what converts the energy and whether an
-          engine has a mechanical connection to the wheels.
-        </p>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {architectureTypes.map((item, index) => (
-            <article key={item.title} className="border border-slate-200 bg-[#f6f4ee] p-7 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9c2826]">0{index + 1}</p>
-              <h3 className="mt-3 text-2xl font-semibold">{item.title}</h3>
-              <p className="mt-5 border-y border-black/10 py-4 font-mono text-sm leading-7 text-[var(--blue)]">
-                {item.path}
-              </p>
-              <p className="mt-5 text-base leading-7 text-slate-600">{item.description}</p>
-            </article>
-          ))}
-        </div>
-        <p className="mt-6 max-w-4xl text-sm leading-6 text-slate-600">
-          Hybrid layouts vary. Plug-in parallel and power-split hybrids add external charging and a larger battery,
-          while retaining a mechanical engine-to-wheel path in normal operation.
-        </p>
-      </div>
-    </section>
-  )
-}
-
 function ArchitectureSequence() {
   return (
     <>
       <section id="architecture" className="bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">Energy Bays and Power Cassette</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">The architecture</p>
           <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            The energy bays make flexibility physical.
+            The energy module changes. The propulsion system does not.
           </h2>
+          <p className="mt-5 text-2xl font-medium italic text-[#3A6B5C]">
+            Technological innovation that fairly crackles with electricity.
+          </p>
           <figure className="mt-10 overflow-hidden border border-black/15 bg-[#071522]">
             <ImageLightbox
               src={`${assetRoot}/architecture.png`}
@@ -359,14 +311,15 @@ function ArchitectureSequence() {
           <div className="mt-8 grid gap-6 text-lg leading-8 text-slate-700 lg:grid-cols-2">
             <p>
               Battery-electric models devote the available package and mass budget to stored electricity.
-              Petro-Electric models carry a smaller plug-in traction battery plus a vehicle-specific Dynamo Module.
-              The orange module shown in the cutaway is the PE Power Cassette: a prime mover turning a generator,
-              with no mechanical connection to the wheels. Grid recharging can supply routine electric travel in
-              either energy strategy.
+              Petro-Electric models carry a smaller plug-in traction battery plus a vehicle-specific Dynamo Module:
+              a prime mover turning a generator, with no mechanical connection to the wheels. Grid recharging can
+              supply routine electric travel in either energy strategy.
             </p>
             <p>
-              {publication.power_cassette_definition} “Cassette” describes a standardized production and service
-              module. Owners are not expected to swap it, and each vehicle receives a cassette sized for its mission.
+              Project Dynamo uses “Petro-Electric” as its product term for a series hybrid. It names the
+              architecture, not a multi-fuel vehicle. Gasoline-electric,
+              diesel/biodiesel-electric, hydrogen-electric, or future-energy versions require separately engineered
+              modules, storage, safety, thermal, emissions, and certification systems.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -374,7 +327,7 @@ function ArchitectureSequence() {
               [
                 Boxes,
                 "Two energy bays",
-                "The Forward Energy Bay accepts the Power Cassette or supplemental BEV battery and power electronics. The Midship Energy Bay, protected ahead of the rear axle and below the second-row cushion line, carries PE fuel storage or vehicle-specific BEV battery capacity while preserving the rear drive and suspension zone.",
+                "The Forward Energy Bay accepts the generator cassette or supplemental BEV battery and power electronics. The Amidships Energy Bay, protected ahead of the rear axle and below the second-row cushion line, carries PE fuel storage or vehicle-specific BEV battery capacity while preserving the rear drive and suspension zone.",
               ],
               [
                 Zap,
@@ -402,6 +355,18 @@ function ArchitectureSequence() {
               )
             })}
           </div>
+          <div className="mt-8 border border-slate-200 bg-[#f6f4ee] p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9c2826]">
+              The locomotive comparison
+            </p>
+            <p className="mt-3 max-w-5xl text-lg leading-8 text-slate-700">
+              Conceptually, Dynamo follows the diesel-electric locomotives used across North America on
+              non-electrified rail lines: a liquid-fueled prime mover turns a generator, an electrical bus carries
+              the power, and traction motors provide propulsion. Every Petro-Electric Dynamo is a plug-in series
+              hybrid: its traction battery can recharge from the grid, buffer power, recover braking energy, and
+              cover routine miles without running the prime mover.
+            </p>
+          </div>
           <div className="mt-8 border-l-4 border-[var(--forest)] bg-white p-6">
             <div className="flex items-start gap-4">
               <BatteryCharging className="mt-1 h-7 w-7 shrink-0 text-[var(--forest)]" />
@@ -424,28 +389,46 @@ function ArchitectureSequence() {
         </div>
       </section>
 
+      <section className="bg-white py-16 text-[#071522] sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">
+            Four ways to move a car
+          </p>
+          <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            The difference is not the fuel. It is the path to the wheels.
+          </h2>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {architectureTypes.map((item, index) => (
+              <article key={item.title} className="border border-slate-200 bg-[#f6f4ee] p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9c2826]">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold">{item.title}</h3>
+                <p className="mt-4 font-mono text-sm leading-6 text-[var(--blue)]">{item.path}</p>
+                <p className="mt-4 leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#071522] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">Electric-native packaging</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">Why ground-up wins</p>
               <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight">
-                Dynamo begins with the battery, electric drive units, energy bays, crash structure, and passenger space.
+                Stop asking an ICE platform to pretend it was born electric.
               </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                Neither PE nor BEV sends engine torque through a longitudinal transmission or driveshaft. That
-                permits a flatter cabin floor, removes the need to package a conventional drivetrain tunnel, and
-                gives each body more freedom in seating, footwells, aisles, cargo depth, and step-in height.
-              </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                [Gauge, "A flatter floor", "Compact electric drive units near the axles leave the cabin free of a conventional longitudinal transmission and driveshaft tunnel."],
-                [Boxes, "More usable space", "Seating, footwells, aisles, cargo floors, and step-in heights can be designed around people and payload rather than an engine-to-wheel driveline."],
-                [Factory, "One production logic", "Common interfaces and assembly knowledge support both energy strategies while each body retains the tooling and engineering its mission requires."],
-                [ShieldCheck, "Designed together", "The structural battery, Forward and Midship Energy Bays, cooling paths, and crash structure are resolved as one electric-native package."],
-                [Wrench, "Common road character", "Shared front and rear electric drive units provide all-wheel drive, traction control, regenerative braking, and consistent response in PE and BEV form."],
-                [Zap, "Two ways to respond", "The manufacturer can change the body mix and the PE/BEV mix as demand, policy, fuel prices, and charging access move."],
+                [Factory, "Manufacturing", "Common interfaces and assembly logic support both energy strategies instead of two unrelated vehicle programs."],
+                [Boxes, "Parts commonality", "E-drives, electronics, battery structure, controls, mirrors, switches, latches, seat hardware, and a partially recessed fixed-grip door handle repeat across nine useful models."],
+                [ShieldCheck, "Crash and packaging", "The structural battery, Forward and Amidships Energy Bays, cooling paths, and crash structure are designed together instead of negotiated after the fact."],
+                [Gauge, "Proportions", "Long wheelbases, short overhangs, flat floors, and usable cabins are architecture—not styling corrections."],
+                [Wrench, "AWD and energy recovery", "Shared front and rear e-drives provide all-wheel drive, traction control, and regenerative braking in every PE and BEV body."],
+                [Zap, "Volatility protection", "Policy reversals, fuel-price shocks, charging delays, or demand changes alter the PE/BEV factory mix rather than invalidating the vehicle program."],
               ].map(([Icon, title, text]) => {
                 const IconComponent = Icon as typeof Factory
                 return (
@@ -471,10 +454,10 @@ function FuturePossibilitiesSection() {
         <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
-              Future possibilities
+              One platform. Many possible markets.
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              The architecture leaves room for more.
+              A starting lineup, not a closed catalog.
             </h2>
           </div>
           <div className="space-y-4 text-lg leading-8 text-slate-700">
@@ -513,39 +496,13 @@ function FuturePossibilitiesSection() {
   )
 }
 
-function PrecedentGrid({ items }: { items: typeof publication.precedents }) {
-  return (
-    <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {items.map((precedent) => (
-        <article key={precedent.name} className="flex h-full flex-col border border-black/12 bg-white p-6">
-          <div className="flex flex-wrap gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em]">
-            <span className="bg-[#071522] px-2.5 py-1 text-white">{precedent.category}</span>
-            <span className="border border-black/15 px-2.5 py-1 text-slate-600">{precedent.status}</span>
-          </div>
-          <h3 className="mt-5 text-xl font-semibold">{precedent.name}</h3>
-          <p className="mt-3 flex-1 leading-7 text-slate-700">{precedent.summary}</p>
-          <a
-            href={precedent.source_url}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex items-center text-sm font-semibold text-[var(--blue)] underline underline-offset-4"
-          >
-            {precedent.source_label}
-            <ArrowUpRight className="ml-1.5 h-4 w-4" />
-          </a>
-        </article>
-      ))}
-    </div>
-  )
-}
-
 export default function ProjectDynamoPage() {
   return (
     <main className="min-h-screen bg-[#050d17] text-white">
       <section className="relative min-h-[calc(100svh-81px)] overflow-hidden">
         <Image
           src={`${assetRoot}/family-v2.png`}
-          alt="The nine-model Project Dynamo family"
+          alt="The nine-model Clark Project Dynamo family"
           fill
           priority
           sizes="100vw"
@@ -586,69 +543,41 @@ export default function ProjectDynamoPage() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="flex min-h-[calc(100svh-81px)] items-center justify-center bg-[#f6f4ee] py-24 text-[#071522] sm:py-32">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-8 sm:px-12 lg:px-16">
-          <p className="max-w-3xl text-justify text-[0.95rem] leading-7 text-slate-700 sm:text-xl sm:leading-10">
-            {publication.intro_note}
+          <p className="max-w-3xl text-xs leading-5 text-slate-400">
+            Self-initiated, independent concept. The fictional Clark Motor Company and its distinctive red
+            trapezoid logo are visual stand-ins for an established North American-based global automaker.
           </p>
-          <Image
-            src={`${assetRoot}/clark-trapezoid-floating.png`}
-            alt="Red and chrome trapezoid badge"
-            width={1536}
-            height={1024}
-            className="mt-14 w-full max-w-xs object-contain drop-shadow-[0_20px_26px_rgba(7,21,34,0.22)] sm:max-w-sm"
-          />
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-20 sm:py-28">
+      <section className="relative overflow-hidden border-y border-white/10 bg-[#071522] py-16 sm:py-24">
         <ParticleWaveform className="inset-x-0 top-3 h-72 w-full" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The question</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The product thesis</p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              {publication.question_headline}
+              Not every vehicle needs to be shaped like an expensive basketball shoe.
             </h2>
           </div>
-          <p className="max-w-3xl text-xl leading-9 text-slate-200">{publication.question_copy}</p>
-        </div>
-      </section>
-
-      <section className="bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
-          <div className="flex min-h-[24rem] items-center justify-center border border-black/10 bg-[#f6f4ee] p-8 sm:p-12">
-            <BasketballShoeSilhouette className="h-auto w-full max-w-xl" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">The product problem</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              {publication.shoe_headline}
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-700">{publication.shoe_copy}</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative min-h-[42rem] overflow-hidden bg-[#071522]">
-        <Image
-          src={`${assetRoot}/roller-coaster-sandy-torchon-pexels.jpg`}
-          alt="A roller-coaster train plunging down a steep track"
-          fill
-          sizes="100vw"
-          className="object-cover object-[50%_62%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/30" />
-        <div className="relative mx-auto flex min-h-[42rem] max-w-7xl items-center justify-end px-4 py-16 sm:px-6 lg:px-8">
-          <div className="w-full max-w-xl border-t-4 border-[#ef6654] bg-[#071522] p-8 shadow-2xl sm:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The market problem</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              {publication.swing_headline}
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-200">{publication.swing_copy}</p>
-            <p className="mt-6 text-xs leading-5 text-slate-400">Photograph: Sandy Torchon / Pexels.</p>
+          <div className="space-y-6 text-lg leading-8 text-slate-200">
+            <p>
+              There is room for more choice in the market: sedans, hatches, sport wagons, crossovers, SUVs,
+              passenger vans, work vans, and pickups that serve genuinely different lives. The hard part is
+              giving people that choice without over-specializing, creating a new platform for every body,
+              retooling every facility, and then throwing it all away when energy prices, tax credits, or
+              regulatory policies change.
+            </p>
+            <p>
+              Consumers face the same uncertainty from the other side. They want to buy confidently, but it is
+              difficult to know what energy will cost, which incentives will remain, and what charging or fueling
+              infrastructure will be available over the life of a vehicle.
+            </p>
+            <p>
+              {publication.platform_definition}
+            </p>
+            <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
+              This isn&apos;t a real 2027 vehicle lineup—but it should be.
+            </blockquote>
           </div>
         </div>
       </section>
@@ -657,10 +586,10 @@ export default function ProjectDynamoPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
-              Dynamo&apos;s two energy strategies
+              Two energy strategies, one platform architecture, endless possibilities
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Choose how the vehicle carries energy. Keep electric drive at the wheels.
+              Same Dynamo fundamentals: PE series hybrid or fully electric BEV.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               Every Dynamo model is designed around the same chemistry-flexible structural battery enclosure,
@@ -670,8 +599,8 @@ export default function ProjectDynamoPage() {
               battery-electric vehicle (BEV).
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              The Forward Energy Bay receives either the PE Power Cassette or supplemental BEV battery and power
-              electronics. A protected Midship Energy Bay adds liquid-fuel storage in a PE or
+              The Forward Energy Bay receives either a compact generator cassette or supplemental BEV battery and
+              power electronics. A protected Amidships Energy Bay adds liquid-fuel storage in a PE or
               vehicle-specific battery capacity in a BEV. Most of the vehicle architecture remains common while
               each body keeps the package, cooling, crash structure, and capacity its mission requires.
             </p>
@@ -681,13 +610,13 @@ export default function ProjectDynamoPage() {
           </div>
           <ImageLightbox
             src={`${assetRoot}/dynamo-pe-bev-architecture-v3.png`}
-            alt="Two Dynamo Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
+            alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
             caption="A shared electric-drive architecture supports both PE plug-in series hybrid and BEV Captains."
             className="relative mt-10 aspect-[16/9] overflow-hidden border border-white/10"
           >
             <Image
               src={`${assetRoot}/dynamo-pe-bev-architecture-v3.png`}
-              alt="Two Dynamo Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
+              alt="Two Clark Captain sedans with their hoods open, comparing Petro-Electric and battery-electric front modules"
               fill
               sizes="100vw"
               className="object-cover"
@@ -705,7 +634,7 @@ export default function ProjectDynamoPage() {
             <article className="border border-white/10 bg-white/[0.04] p-6">
               <h3 className="text-xl font-semibold">BEV · Battery-electric vehicle</h3>
               <p className="mt-3 leading-7 text-slate-300">
-                The same body, controls, thermal backbone, and electric drive use the Forward and Midship Energy
+                The same body, controls, thermal backbone, and electric drive use the Forward and Amidships Energy
                 Bays for supplemental battery capacity and power electronics, with no onboard prime mover.
               </p>
             </article>
@@ -721,44 +650,30 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <PropulsionComparison />
-
-      <section className="bg-[#07131d] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">The locomotive principle</p>
-              <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-                A diesel locomotive is already an electric-drive vehicle.
-              </h2>
-            </div>
-            <div className="space-y-5 text-lg leading-8 text-slate-200">
-              <p>
-                In a diesel-electric locomotive, the diesel engine turns an alternator. The electricity it produces
-                powers traction motors that turn the wheels. There is no conventional mechanical transmission
-                between the engine and the wheels.
-              </p>
-              <p>
-                Dynamo Petro-Electric uses the same division of labor, then adds a plug-in traction battery for
-                routine electric driving, regenerative braking, and power buffering. The Power Cassette can remain
-                off during ordinary trips and start when the vehicle needs additional energy or system conditioning.
-              </p>
-            </div>
-          </div>
-          <figure className="mt-10 overflow-hidden border border-white/10 bg-black">
-            <Image
-              src={`${assetRoot}/highroad-locomotive.png`}
-              alt="Dynamo Highroad SUV beside a locomotive at a working intermodal yard"
-              width={1672}
-              height={941}
-              sizes="100vw"
-              className="h-auto w-full"
-            />
-            <figcaption className="border-t border-white/10 px-5 py-4 text-sm leading-6 text-slate-300">
-              The Midnight Blue Highroad and a diesel-electric locomotive use electric traction motors at the
-              wheels; Dynamo adds plug-in operation and a traction battery sized for routine electric travel.
-            </figcaption>
-          </figure>
+      <section className="relative min-h-[34rem] w-full overflow-hidden bg-[#07131d] sm:aspect-[16/9] sm:max-h-[52rem] sm:min-h-[24rem]">
+        <Image
+          src={`${assetRoot}/highroad-locomotive.png`}
+          alt="Dynamo Highroad SUV beside a locomotive at a working intermodal yard"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07131d]/95 via-[#07131d]/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 max-w-4xl p-6 text-white sm:p-10">
+          <p className="text-lg font-medium leading-7 sm:text-2xl sm:leading-9">
+            One platform can scale from everyday mobility to serious work.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
+            Beside a modern diesel-electric locomotive, the principle becomes immediately legible. A conventional
+            diesel-electric locomotive generates its traction electricity onboard from diesel fuel: its diesel
+            engine drives an alternator, and electric traction motors turn the wheels.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200 sm:text-base sm:leading-7">
+            The Highroad&mdash;pictured in Midnight Blue metallic&mdash;and other Dynamo PE vehicles add a plug-in
+            traction battery for routine battery-only driving, regenerative braking, and power buffering. The
+            onboard generator can therefore remain off during ordinary trips, starting only when additional energy
+            or system conditioning requires it.
+          </p>
         </div>
       </section>
 
@@ -767,36 +682,24 @@ export default function ProjectDynamoPage() {
       <section className="bg-[#0a1d28] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
-            Production and service logic
+            Common parts, deliberate variety
           </p>
           <h2 className="mt-4 max-w-5xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            When demand moves, production can move with it.
+            Share what customers touch. Modularize what each body must shape differently.
           </h2>
           <div className="mt-10 grid gap-4 lg:grid-cols-3">
             {[
               [
-                "Common interfaces",
-                "Shared hard points, high-voltage connections, thermal backbones, controls, and Energy Bay interfaces support both energy strategies.",
+                "Exact shared parts",
+                "Visors, console modules, switchgear, charge-port hardware, latches, sensors, seat mechanisms, and the partially recessed fixed-grip door-handle cartridge.",
               ],
               [
-                "Component families",
-                "Electric drive units, electronics, switches, latches, seat hardware, sensors, and scaled modules repeat where repetition earns value.",
+                "Shared modules, tailored housings",
+                "Headlamp projectors, taillamp elements, mirror motors and cameras, fascia sensors, and window-trim profiles repeat inside body-specific outer forms.",
               ],
               [
-                "Body-specific engineering",
-                "Tooling, crash structure, cooling, plumbing, packaging, capacity, and exterior forms remain tailored to each mission.",
-              ],
-              [
-                "Production flexibility",
-                "PE and BEV output can rebalance as customer preference, policy, fuel prices, charging access, and demand change.",
-              ],
-              [
-                "Service continuity",
-                "Shared diagnostics, training, parts logic, and accumulated technician knowledge continue across the family.",
-              ],
-              [
-                "Useful derivatives",
-                "New bodies and higher-output versions retain the architecture and production system while receiving the engineering their missions require.",
+                "Scaled component families",
+                "One wheel design spans a few load-rated diameters. Low-, medium-, and high-profile front clips share lamps, badge, radar, tow-eye, cooling modules, and service logic.",
               ],
             ].map(([title, text]) => (
               <article key={title} className="border border-white/12 bg-white/[0.04] p-7">
@@ -806,18 +709,19 @@ export default function ProjectDynamoPage() {
             ))}
           </div>
           <p className="mt-8 max-w-4xl text-lg leading-8 text-slate-200">
-            The architecture carries forward the expensive knowledge and interfaces that should remain stable.
-            Each body still receives the tooling, structure, thermal capacity, and packaging its job demands.
+            The objective is not to make every body wear the same skin. It is to reduce unique part numbers,
+            tooling, training, and inventory while preserving the Captain sedan&apos;s elegance, the Estate sport
+            wagon&apos;s utility, and the taller vehicles&apos; distinct proportions.
           </p>
         </div>
       </section>
 
       <section id="family" className="scroll-mt-24 bg-[#0a1725] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">Body variety as product strategy</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">One family, nine answers</p>
           <div className="mt-4 grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Nine vehicles, each with a reason to exist.
+              Legendary family. Strong DNA.
             </h2>
             <p className="text-lg leading-8 text-slate-300">
               The XTour CUV and Foreman pickup establish a true medium profile above the Estate sport wagon. The
@@ -874,7 +778,7 @@ export default function ProjectDynamoPage() {
               Three kinds of versatility
             </p>
             <h3 className="mt-3 max-w-3xl text-balance text-3xl font-semibold">
-              Versatility works best when each vehicle has a defined mission.
+              No vehicle should have to be all things to all people.
             </h3>
             <div className="mt-7 grid gap-5 lg:grid-cols-3">
               {[
@@ -905,8 +809,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <div className="flex flex-col">
-      <section className="relative order-[40] overflow-hidden bg-[#071522]">
+      <section className="relative overflow-hidden bg-[#071522]">
         <div className="relative min-h-[78vh]">
           <Image
             src={`${assetRoot}/captain-cabin-safe.png`}
@@ -1003,7 +906,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="relative order-[50] min-h-[82vh] overflow-hidden">
+      <section className="relative min-h-[82vh] overflow-hidden">
         <Image
           src={`${assetRoot}/performance-low-photoreal.png`}
           alt="Performance-tuned Dynamo Fastback, Captain, and Estate on a wet proving ground"
@@ -1030,14 +933,14 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="order-[10] bg-[#0a1725] py-16 sm:py-24">
+      <section className="bg-[#0a1725] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
             Utility without uniformity
           </p>
           <div className="mt-4 grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
             <h2 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Different bodies put shared architecture to different work.
+              Shared architecture does not mean one shape fits all.
             </h2>
             <p className="text-lg leading-8 text-slate-300">
               A taller van body can use Dynamo&apos;s low floor and common structural battery to prioritize passenger
@@ -1110,7 +1013,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="order-[20] bg-black py-16 sm:py-24">
+      <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">
             One architecture. Different work.
@@ -1160,7 +1063,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="order-[30] grid bg-[#071522] lg:grid-cols-[1.12fr_0.88fr]">
+      <section className="grid bg-[#071522] lg:grid-cols-[1.12fr_0.88fr]">
         <ImageLightbox
           src={`${assetRoot}/sedan-interior-v2.png`}
           alt="Dynamo Captain sedan interior"
@@ -1200,7 +1103,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="relative order-[70] overflow-hidden border-y border-white/10 bg-[#0d2632] py-16 sm:py-24">
+      <section className="relative overflow-hidden border-y border-white/10 bg-[#0d2632] py-16 sm:py-24">
         <ParticleWaveform className="inset-x-0 top-0 h-80 w-full opacity-25" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
@@ -1222,9 +1125,9 @@ export default function ProjectDynamoPage() {
             </article>
             <article className="border border-white/14 bg-[#071522]/85 p-7 sm:p-9">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#72b49a]">Value to the company</p>
-              <h3 className="mt-3 text-3xl font-semibold">Rebalance PE and BEV while the underlying system endures.</h3>
+              <h3 className="mt-3 text-3xl font-semibold">Change the mix without restarting the program.</h3>
               <ul className="mt-6 space-y-4 text-lg leading-8 text-slate-300">
-                <li>The electric-native architecture begins with the battery, electric drive units, crash structure, cooling, cabin package, and assembly sequence.</li>
+                <li>The electric-first architecture is designed around battery, e-drives, crash structure, cooling, and assembly—not retrofitted from ICE.</li>
                 <li>Shared hard points, electronics, software, tooling, parts, service knowledge, and suppliers support nine profiled models and additional derivatives.</li>
                 <li>Production can rebalance between PE and BEV as customer preference, incentives, regulations, fuel prices, charging access, and market conditions move.</li>
                 <li>Specialty bodies and performance versions can be added without abandoning the manufacturing and service logic beneath them.</li>
@@ -1238,20 +1141,19 @@ export default function ProjectDynamoPage() {
             </p>
           </div>
           <p className="mt-6 text-sm leading-6 text-slate-400">
-            Platform flexibility occurs in engineering and production. The energy strategy is selected as the
-            vehicle is built; individual owners are not expected to exchange a Power Cassette for supplemental
-            batteries after purchase.
+            Platform flexibility occurs in engineering and production. Project Dynamo does not assume that an
+            individual owner can exchange a generator module for supplemental batteries after purchase.
           </p>
         </div>
       </section>
 
-      <section className="order-[60] bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
+      <section className="bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
             Simulated 2027 design targets
           </p>
           <h2 className="mt-4 max-w-4xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            The concept makes claims that can be tested.
+            Simulated dimensions and performance. Grounded enough to evaluate.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
             These figures are concept-level estimates derived from current comparable vehicles, package arithmetic,
@@ -1306,7 +1208,7 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="order-[65] bg-white py-16 text-[#071522] sm:py-24">
+      <section className="bg-white py-16 text-[#071522] sm:py-24">
         <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--blue)]">
             Internal Captain calibration
@@ -1354,21 +1256,21 @@ export default function ProjectDynamoPage() {
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
             <article className="border-t-4 border-[#9c2826] bg-[#f6f4ee] p-6">
               <h3 className="text-xl font-semibold">Where PE gives ground</h3>
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-650">
                 Generator-running efficiency is only one condition, and a PE remains more complex than a BEV. Its
                 case depends on routine charging and the value of rapid liquid-fuel refueling when needed.
               </p>
             </article>
             <article className="border-t-4 border-[#9c2826] bg-[#f6f4ee] p-6">
               <h3 className="text-xl font-semibold">Where BEV leads</h3>
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-650">
                 The full-electric version is simpler, more efficient, and cheaper to maintain because it carries no
                 engine, fuel, exhaust, or emissions hardware.
               </p>
             </article>
             <article className="border-t-4 border-[var(--forest)] bg-[#f6f4ee] p-6">
               <h3 className="text-xl font-semibold">Where PE becomes competitive</h3>
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-650">
                 In the stated scenario, 70% plugged-in electric mileage keeps most routine travel quiet and electric
                 while the generator protects long-distance flexibility.
               </p>
@@ -1391,15 +1293,15 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="relative order-[75] overflow-hidden bg-[#071522] py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-[#071522] py-16 sm:py-24">
         <ParticleWaveform className="inset-x-0 bottom-0 h-72 w-full" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#72b49a]">
-              Value across the system
+              The value a platform preserves
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-              Dynamo is judged twice: by the vehicles it produces and by the capability it preserves.
+              A durable product strategy protects more than invested capital.
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-8 text-slate-200">
@@ -1415,11 +1317,9 @@ export default function ProjectDynamoPage() {
               also leaves room for thoughtful details—the hidden badge beneath a liftgate, a real physical
               control, a lower loading height—that tell customers cost discipline did not become indifference.
             </p>
-            <p className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
-              Each vehicle must compete on cost, utility, performance, efficiency, comfort, and durability. The
-              architecture creates the larger advantage by carrying useful capability from one product decision to
-              the next.
-            </p>
+            <blockquote className="border-l-4 border-[#ef6654] pl-6 text-2xl font-medium leading-9 text-white">
+              Engineered to benchmarks, not down to a price point.
+            </blockquote>
             <p>
               Shareholder value is one kind of corporate value. It is not the only kind, nor the source from which
               all the others flow. A resilient platform can create financial value precisely because it also
@@ -1429,19 +1329,19 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="order-[80] bg-[#111d29] py-16 sm:py-24">
+      <section className="bg-[#111d29] py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ef6654]">The honest engineering brief</p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold">The work still ahead.</h2>
+            <h2 className="mt-4 text-balance text-4xl font-semibold">What still has to be proved.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
               "A PE vehicle remains more complex and maintenance-intensive than a pure BEV.",
-              "The Power Cassette, fuel, exhaust, cooling, and battery can erase weight savings if the complete PE system is not aggressively optimized.",
+              "The generator, fuel, exhaust, cooling, and battery can erase weight savings if the module is not aggressively optimized.",
               "Sustained towing and mountain-grade performance depend on generator output, battery buffer, and thermal capacity.",
               "Occasional engine operation creates fuel-aging, oil-conditioning, catalyst-temperature, noise, vibration, and emissions challenges that require condition-based controls and validation.",
-              "Common Forward and Midship Energy Bay interfaces do not mean a literal one-for-one volume swap; crash, cooling, plumbing, capacity, and structure still differ by model and energy strategy.",
+              "Common Forward and Amidships Energy Bay interfaces do not mean a literal one-for-one volume swap; crash, cooling, plumbing, capacity, and structure still differ by model and energy strategy.",
               "Cost, durability, repairability, certification, and real-world efficiency require full engineering validation.",
             ].map((item) => (
               <p key={item} className="border border-white/12 bg-white/[0.04] p-5 leading-7 text-slate-200">
@@ -1452,37 +1352,41 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="relative order-[90] overflow-hidden bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
+      <section className="relative overflow-hidden bg-[#e9e6dc] py-16 text-[#071522] sm:py-24">
         <ParticleWaveform className="inset-x-0 bottom-0 h-72 w-full opacity-15" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">Series-electric precedents</p>
-          <h2 className="mt-4 max-w-5xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Series-electric drive on the road.
-          </h2>
-          <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-700">
-            Three different applications show an engine-driven generator supplying an electric drivetrain in
-            production or approved low-volume road vehicles. Each establishes part of the propulsion case; none is
-            presented as a direct Dynamo analogue.
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">
+            Series electric and scalable architecture precedents
           </p>
-          <PrecedentGrid items={publication.precedents.filter((item) => item.category === "Series electric propulsion")} />
-        </div>
-      </section>
-
-      <section className="order-[100] bg-white py-16 text-[#071522] sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9c2826]">Architecture precedents</p>
           <h2 className="mt-4 max-w-5xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Manufacturers are already building flexible electric programs.
+            The building blocks are real. Dynamo organizes them differently.
           </h2>
           <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-700">{publication.precedent_conclusion}</p>
-          <PrecedentGrid items={publication.precedents.filter((item) => item.category !== "Series electric propulsion")} />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {publication.precedents.map((precedent) => (
+              <article key={precedent.name} className="flex h-full flex-col border border-black/12 bg-white p-6">
+                <div className="flex flex-wrap gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em]">
+                  <span className="bg-[#071522] px-2.5 py-1 text-white">{precedent.category}</span>
+                  <span className="border border-black/15 px-2.5 py-1 text-slate-600">{precedent.status}</span>
+                </div>
+                <h3 className="mt-5 text-xl font-semibold">{precedent.name}</h3>
+                <p className="mt-3 flex-1 leading-7 text-slate-700">{precedent.summary}</p>
+                <a
+                  href={precedent.source_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-[var(--blue)] underline underline-offset-4"
+                >
+                  {precedent.source_label}
+                  <ArrowUpRight className="ml-1.5 h-4 w-4" />
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="order-[110]">
-        <FuturePossibilitiesSection />
-      </div>
-      </div>
+      <FuturePossibilitiesSection />
 
       <section className="relative min-h-[72vh] overflow-hidden">
         <Image
@@ -1525,51 +1429,21 @@ export default function ProjectDynamoPage() {
         </div>
       </section>
 
-      <section className="border-b-8 border-[#9c2826] bg-[#050d17] py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
+      <section className="border-b-8 border-[#9c2826] bg-[#050d17] py-16">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <Image
             src={`${assetRoot}/clark-trapezoid-floating.png`}
-            alt="Red and chrome trapezoid badge"
+            alt="Red and chrome Clark Trapezoid badge"
             width={1536}
             height={1024}
-            className="mx-auto w-full max-w-md object-contain drop-shadow-[0_22px_30px_rgba(0,0,0,0.32)]"
+            className="mx-auto mb-8 w-full max-w-2xl object-contain drop-shadow-[0_22px_30px_rgba(0,0,0,0.32)]"
           />
-          <p className="mt-8 text-xl font-medium italic text-[#ef6654]">
+          <p className="mt-7 text-xl font-medium italic text-[#ef6654]">
             {publication.closing}
           </p>
-          <div className="mx-auto my-12 h-px max-w-4xl bg-white/15" />
-          <div className="grid gap-8 text-left text-sm leading-7 text-slate-300 md:grid-cols-2">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">About this study</p>
-              <p className="mt-4 text-justify">{publication.disclaimer}</p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#72b49a]">Image credits</p>
-              <p className="mt-4 text-justify">{publication.image_credit}</p>
-              <a
-                href="https://www.pexels.com/license/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex font-semibold text-[#55a9d6] underline underline-offset-4"
-              >
-                Pexels License
-                <ArrowUpRight className="ml-1.5 h-4 w-4" />
-              </a>
-            </div>
-          </div>
-          <div className="mx-auto mt-12 flex max-w-4xl flex-col items-center border-t border-white/15 pt-10">
-            <Image
-              src="/cognisint-logo.png"
-              alt="Cognisint"
-              width={1024}
-              height={1024}
-              className="h-20 w-20 object-contain"
-            />
-            <p className="mt-6 max-w-3xl text-center text-sm leading-7 text-slate-300">{publication.copyright}</p>
-            <a href="https://www.cognisint.com" className="mt-5 font-semibold text-white underline underline-offset-4">
-              {publication.website}
-            </a>
-          </div>
+          <p className="mx-auto mt-10 max-w-4xl text-xs leading-6 text-slate-400">
+            {publication.disclaimer}
+          </p>
         </div>
       </section>
     </main>

@@ -1,8 +1,6 @@
-# Project Dynamo auto show viewbook
+# Project Dynamo auto show brochure
 
-This directory contains the maintainable ReportLab source for the existing public Project Dynamo brochure. The
-builder replaces that file in place with the synchronized 24-page auto show viewbook; it does not create a second
-technical PDF.
+This directory contains the maintainable source for the existing public Project Dynamo brochure.
 
 ## Build
 
@@ -26,7 +24,3 @@ and hardware swatches mirror the finish treatments defined in
 
 The generated file replaces
 `public/projects/project-dynamo/project-dynamo-auto-show-brochure.pdf`.
-
-The front cover is a nonphotographic gradient with no Clark badge. The inside cover carries the independent-study
-note as a centered, fully justified lockup followed by the approved free-floating trapezoid badge. Photography is
-kept separate from solid text fields throughout the viewbook.
