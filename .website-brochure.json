@@ -23,7 +23,8 @@
       "app/portfolio/project-dynamo/palette.ts"
     ],
     "asset_globs": [
-      "public/projects/project-dynamo/*.png"
+      "public/projects/project-dynamo/*.png",
+      "public/projects/project-dynamo/*.jpg"
     ],
     "required_phrases": [
       {
@@ -69,7 +70,7 @@
         ]
       },
       {
-        "text": "Amidships Energy Bay",
+        "text": "Midship Energy Bay",
         "in": [
           "website",
           "brochure"
@@ -104,9 +105,24 @@
         ]
       },
       {
-        "text": "Not every vehicle needs to be shaped like an expensive basketball shoe.",
+        "text": "basketball shoe.",
         "in": [
-          "website"
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "Power Cassette",
+        "in": [
+          "website",
+          "brochure"
+        ]
+      },
+      {
+        "text": "fictional manufacturer and brand",
+        "in": [
+          "website",
+          "brochure"
         ]
       },
       {
