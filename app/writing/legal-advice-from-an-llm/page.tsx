@@ -2,27 +2,37 @@ import { Button } from "@/components/ui/button"
 import ShareButton from "@/components/share-button"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Legal Advice From an LLM? Better Call a J.D. | Cognisint",
   description:
-    "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+    "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
   openGraph: {
     title: "Legal Advice From an LLM? Better Call a J.D.",
     description:
-      "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+      "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
     url: "/writing/legal-advice-from-an-llm",
     siteName: "Cognisint",
     type: "article",
     publishedTime: "2026-08-09",
     authors: ["David W. Towne"],
+    images: [
+      {
+        url: "/og-legal-advice-from-llm.png",
+        width: 1200,
+        height: 630,
+        alt: "An illustrated divide between a stone path to legal institutions and a glowing AI-generated path.",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Legal Advice From an LLM? Better Call a J.D.",
     description:
-      "AI-assisted work must still be owned by someone with actual duties, actual judgment, and actual accountability.",
+      "AI assisted legal work can be useful, but it still has to be owned by a professional with actual duties, judgment, and accountability.",
+    images: ["/og-legal-advice-from-llm.png"],
   },
 }
 
@@ -69,6 +79,17 @@ export default function LegalAdviceFromAnLlmArticle() {
               />
             </div>
           </header>
+
+          <figure className="border-b border-slate-200 bg-[var(--ink)]">
+            <Image
+              src="/legal-advice-from-llm-hero.png"
+              alt="An illustrated divide between a stone path to legal institutions and a glowing AI-generated path."
+              width={1448}
+              height={1086}
+              priority
+              className="h-auto w-full"
+            />
+          </figure>
 
           <div className="article-body space-y-6 px-6 py-8 text-lg leading-8 sm:px-10 lg:px-12">
             <p>
@@ -124,9 +145,9 @@ export default function LegalAdviceFromAnLlmArticle() {
                 unlicensed persons
               </a>{" "}
               from holding themselves out as entitled to practice, or furnishing legal advice in a way that crosses
-              into the practice of law. The point of those restrictions is not to protect lawyers’ famously delicate
-              egos. It is to protect the public from untrained legal counsel, unreliable legal advice, and confusion
-              about who is actually accountable for the advice being given.
+              into the practice of law. The point of those restrictions is not to pad lawyers’ hourly billing; it is to
+              protect the public from untrained legal counsel, unreliable legal advice, and confusion about who is
+              actually accountable for the advice being given.
             </p>
 
             <p>
@@ -179,9 +200,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              That is the easy case. Fake cases are fake cases. A competent lawyer should catch them. A court does not
-              need a new philosophical framework to sanction an attorney who files invented authorities, then responds
-              to the problem with more invented authorities.
+              That is the easier scenario. Fake cases are fake cases. A competent lawyer should catch them. A court does
+              not need a new philosophical framework to sanction an attorney who files invented authorities, then
+              responds to the problem with more invented authorities.
             </p>
 
             <p>The harder problem is what happens when the AI does not hallucinate.</p>
@@ -222,9 +243,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              The legal profession’s emerging response to this problem is not especially glamorous, but it is much
-              better than panic. The answer is not “never use AI.” Nor is it “confess that AI touched the document.” The
-              answer is that AI-assisted work remains the responsibility of the human professional who uses it.
+              Perhaps the best question is not “did AI touch this?” but “who owns the final work, and what process makes
+              that ownership meaningful?” Law’s emerging answer is not that AI can never be used. It is that AI-assisted
+              work must still be owned by someone with actual duties, actual judgment, and actual accountability.
             </p>
 
             <p>
@@ -289,11 +310,6 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              The legal profession points toward a better question: not “did AI touch this?” but “who owns the final
-              work, and what process makes that ownership meaningful?”
-            </p>
-
-            <p>
               For lawyers, ownership means professional judgment, verification, candor, confidentiality, and
               accountability. For government agencies, it should mean transparent rules, human review, clear lines of
               responsibility, and a meaningful ability to challenge automated or AI-assisted outcomes. For schools in
@@ -303,8 +319,9 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              Law’s emerging answer is not that AI can never be used. It is that AI-assisted work must still be owned by
-              someone with actual duties, actual judgment, and actual accountability.
+              Prohibition and panic are self-defeating. The answer is not “never use AI.” Nor is it “confess that AI
+              touched the document.” The answer is that AI-assisted work remains the responsibility of the human
+              professional who uses it.
             </p>
 
             <p>
@@ -315,7 +332,11 @@ export default function LegalAdviceFromAnLlmArticle() {
             </p>
 
             <p>
-              <em>Part Three will lay out a practical path forward for public institutions and agencies.</em>
+              <em>
+                This essay was edited for clarity after initial publication. Part Three will lay out a practical path
+                forward for public institutions and agencies. Illustration created by the author with the assistance of
+                generative AI.
+              </em>
             </p>
           </div>
 
