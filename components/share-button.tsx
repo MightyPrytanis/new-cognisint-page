@@ -24,6 +24,32 @@ export default function ShareButton({
 
   const getShareUrl = () => window.location.href
 
+  async function copyPageLink(url: string) {
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(url)
+        return true
+      } catch {
+        // Fall through to the legacy copy path when clipboard permission is unavailable.
+      }
+    }
+
+    try {
+      const textArea = document.createElement("textarea")
+      textArea.value = url
+      textArea.setAttribute("readonly", "")
+      textArea.style.position = "fixed"
+      textArea.style.opacity = "0"
+      document.body.appendChild(textArea)
+      textArea.select()
+      const copied = document.execCommand("copy")
+      document.body.removeChild(textArea)
+      return copied
+    } catch {
+      return false
+    }
+  }
+
   async function sharePage() {
     const shareTitle = title || document.title || "Cognisint"
     const url = getShareUrl()
@@ -37,18 +63,10 @@ export default function ShareButton({
       }
     }
 
-    if (navigator.clipboard) {
-      await navigator.clipboard.writeText(url)
-    } else {
-      const textArea = document.createElement("textarea")
-      textArea.value = url
-      textArea.setAttribute("readonly", "")
-      textArea.style.position = "fixed"
-      textArea.style.opacity = "0"
-      document.body.appendChild(textArea)
-      textArea.select()
-      document.execCommand("copy")
-      document.body.removeChild(textArea)
+    const copiedLink = await copyPageLink(url)
+
+    if (!copiedLink) {
+      return
     }
 
     setCopied(true)
