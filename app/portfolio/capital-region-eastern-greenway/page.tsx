@@ -26,6 +26,7 @@ function Figure({
   height,
   caption,
   priority = false,
+  className = "",
 }: {
   src: string
   alt: string
@@ -33,9 +34,10 @@ function Figure({
   height: number
   caption: string
   priority?: boolean
+  className?: string
 }) {
   return (
-    <figure>
+    <figure className={className}>
       <div className="overflow-hidden border border-border bg-white shadow-[0_24px_65px_rgba(7,21,34,0.12)]">
         <Image
           src={src}
@@ -49,6 +51,19 @@ function Figure({
       </div>
       <figcaption className="mt-3 text-sm leading-6 text-muted-foreground">{caption}</figcaption>
     </figure>
+  )
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-6 space-y-4 text-lg leading-8 text-muted-foreground">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[var(--forest)]" aria-hidden="true" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -75,7 +90,7 @@ export default function CapitalRegionEasternGreenwayPage() {
                 Regional planning and policy framework
               </p>
               <h1 className="mt-5 max-w-5xl text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-7xl">
-                Capital Region Eastern Greenway
+                Proposal: The Capital Region Eastern Greenway
               </h1>
               <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-200">
                 An integrated mobility, conservation, and development strategy for the eastern edge of Greater Lansing.
@@ -89,8 +104,8 @@ export default function CapitalRegionEasternGreenwayPage() {
                 strategy practice.
               </p>
               <p className="mt-4 text-sm leading-6 text-slate-300">
-                Conceptual illustrations are planning aids, not engineering drawings, surveyed alignments, or findings
-                of feasibility.
+                Conceptual illustrations are planning aids requiring engineering, surveying, cost, and feasibility
+                review.
               </p>
             </div>
           </div>
@@ -125,7 +140,7 @@ export default function CapitalRegionEasternGreenwayPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-border px-4 sm:px-6 md:grid-cols-4 md:divide-y-0 lg:px-8">
           <div className="px-4 py-5 sm:px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">Facility</p>
-            <p className="mt-2 font-semibold text-foreground">Limited-access expressway</p>
+            <p className="mt-2 font-semibold text-foreground">Limited-access expressway*</p>
           </div>
           <div className="px-4 py-5 sm:px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">Roadway</p>
@@ -137,8 +152,15 @@ export default function CapitalRegionEasternGreenwayPage() {
           </div>
           <div className="px-4 py-5 sm:px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--blue)]">Purpose</p>
-            <p className="mt-2 font-semibold text-foreground">Mobility without induced sprawl</p>
+            <p className="mt-2 font-semibold text-foreground">Mobility with binding anti-sprawl controls</p>
           </div>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pt-3 text-sm leading-6 text-muted-foreground sm:px-6 lg:px-8">
+          <strong className="text-foreground">* Expressway And Freeway.</strong> An expressway limits direct property
+          access and may include selected at-grade intersections. A freeway uses full access control and grade
+          separation. The terms are often used interchangeably in Michigan and elsewhere in the United States. The
+          Greenway combines limited parcel access with selected at-grade public-road intersections; only its I-69 and
+          I-96 termini are conceived as grade-separated interchanges.
         </div>
       </section>
 
@@ -150,8 +172,112 @@ export default function CapitalRegionEasternGreenwayPage() {
             width={1672}
             height={941}
             priority
-            caption="The Greenway is conceived as a divided, limited-access expressway embedded in a permanent conservation landscape. At-grade intersections provide selective permeability; the absence of driveways and frontage access preserves regional movement and prevents ribbon development."
+            caption="The Greenway combines a divided, limited-access roadway with a permanent conservation landscape. Selected roads meet it at carefully designed at-grade intersections; the absence of driveways and frontage access preserves regional movement and prevents ribbon development."
           />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
+                Regional Context
+              </p>
+              <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
+                The Missing Eastern Connection
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-muted-foreground">
+              <p>
+                I-69 arcs across the north of Greater Lansing, I-96 across the south, and US-127 and I-496 carry much
+                of the central north-south and east-west movement. The regional system has no comparable eastern leg
+                between I-69 and I-96.
+              </p>
+              <p>
+                The Greenway tests whether that missing connection can be supplied inside a permanent conservation
+                corridor while avoiding the land-consumption pattern of a conventional beltway.
+              </p>
+            </div>
+          </div>
+          <Figure
+            src={`${assetRoot}/lansing-regional-road-context.png`}
+            alt="Simplified regional road map showing Greater Lansing's existing major roads and a dashed conceptual eastern connection"
+            width={1220}
+            height={680}
+            className="mx-auto mt-10 max-w-2xl"
+            caption="Simplified regional context. Existing major roads wrap around Lansing and East Lansing on the north, west, and south; the dashed green line shows the missing eastern connection as a planning concept. Existing road geometry is from U.S. Census Bureau TIGER/Line 2025."
+          />
+        </div>
+      </section>
+
+      <section className="section-band">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
+              Consequences The Design Must Address
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+              Does Regional Mobility Require Harsh Tradeoffs?
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              High-volume roads were built to connect places, shorten trips, carry freight, and open access to jobs.
+              They did those things. They also displaced residents, divided neighborhoods, made automobile travel the
+              easiest or only practical choice in many places, and extended development into land that required ever
+              more roads, utilities, and public services.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              The consequences differ with context. When high-volume roads were built through established urban
+              neighborhoods, acquisition and the roadway itself displaced people and divided the communities that
+              remained. When the same road-building model extended into suburban and rural land, it encouraged
+              automobile-dependent development and spread infrastructure, environmental, and service costs across a
+              larger area.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-10 lg:grid-cols-2">
+            <div className="border-t-4 border-[var(--blue)] pt-6">
+              <h3 className="text-2xl font-semibold">When High Volume Roads Cut Through Developed Communities</h3>
+              <BulletList
+                items={[
+                  "Acquisition can remove homes, businesses, institutions, and historic places. Compensation cannot re-create the resulting customer bases, social networks, or neighborhood economy.",
+                  "The roadway can sever vehicle and pedestrian connections, turn local streets into dead ends, and isolate parts of a neighborhood. The Olds Freeway/I-496 did this in Lansing.",
+                  "Urban freeway and urban-renewal programs often cut through racial and ethnic minority, low-income, immigrant, and working-class neighborhoods where land was cheaper or political resistance was weaker.",
+                ]}
+              />
+            </div>
+            <div className="border-t-4 border-[var(--forest)] pt-6">
+              <h3 className="text-2xl font-semibold">When High Volume Roads Extend Through Suburban And Rural Areas</h3>
+              <BulletList
+                items={[
+                  "Fast roads, stroads, and dispersed development can make walking and bicycling indirect, encourage automobile trips, and make fixed-route transit difficult to support.",
+                  "Roads and the development they enable can consume farmland and green space, fragment habitat, alter water systems, and increase wildlife-vehicle collision risks.",
+                  "Dispersed growth extends roads, utilities, emergency response, and other public services across a larger area, creating long-term maintenance and operating obligations.",
+                ]}
+              />
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-border pt-8">
+            <h3 className="text-2xl font-semibold">Effects In Either Setting</h3>
+            <BulletList
+              items={[
+                "New capacity can attract diverted, longer, shifted, or entirely new trips; evidence and modeling must establish any congestion relief.",
+                "More driving creates more crash exposure, higher speeds increase severity, and construction and maintenance consume substantial land, materials, and energy.",
+              ]}
+            />
+          </div>
+
+          <div className="mt-12 border-l-4 border-[var(--forest)] bg-[color-mix(in_srgb,var(--forest)_8%,white)] px-6 py-6">
+            <h3 className="text-xl font-semibold text-foreground">The Greenway&apos;s Response</h3>
+            <BulletList
+              items={[
+                "Control access through strict frontage limits and selected crossings, with development concentrated at compact nodes.",
+                "Protect land while providing a separated trail, transit reservation, and integrated water and wildlife systems.",
+                "Compare the proposal with a genuine no-build alternative and account for its full lifecycle costs.",
+              ]}
+            />
+          </div>
         </div>
       </section>
 
@@ -162,15 +288,16 @@ export default function CapitalRegionEasternGreenwayPage() {
               The regional choice
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Build structure before fragmentation makes structure impossible.
+              Build Infrastructure Before Fragmentation Makes It Cost-Prohibitive
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-8 text-muted-foreground">
             <p>
-              Greater Lansing still possesses a coherent eastern landscape of farms, wetlands, woodlots, and open land.
-              Growth from Okemos and Haslett toward Williamston and Bath is steadily consuming that coherence. Once the
-              land is divided by scattered subdivisions, driveways, and utility extensions, both conservation and
-              meaningful corridor planning become far more expensive.
+              Greater Lansing, including many areas within a short distance of suburbanized or even fully urbanized
+              areas, still possesses a coherent eastern landscape of farms, wetlands, woodlots, and open land. Growth
+              from Okemos and Haslett toward Williamston and Bath is steadily consuming that coherence. Once the land is
+              divided by scattered subdivisions, driveways, and utility extensions, both conservation and meaningful
+              corridor planning become far more expensive.
             </p>
             <p>
               The Greenway responds before that pattern becomes irreversible. It combines a north–south regional
@@ -178,8 +305,11 @@ export default function CapitalRegionEasternGreenwayPage() {
               nonmotorized transportation, and a framework for concentrating new development at planned nodes.
             </p>
             <p className="font-semibold text-foreground">
-              The proposal is not anti-growth. It is a strategy for directing growth where infrastructure can support
-              it without consuming the landscape that gives the region its identity and resilience.
+              The Greenway offers a potential response to transportation, green space, conservation, and growth
+              management needs by combining the regional connectivity of a beltway, the landscape integration of a
+              parkway, and the land protection of a greenbelt while accounting for the problems associated with each.
+              It directs growth toward places where infrastructure can support it while preserving the landscape that
+              gives the region its identity and resilience.
             </p>
           </div>
         </div>
@@ -190,52 +320,25 @@ export default function CapitalRegionEasternGreenwayPage() {
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
-                A deliberately intermediate facility
+                Road Design
               </p>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
-                Neither freeway nor stroad
+                The Greenway&apos;s Design
               </h2>
             </div>
             <p className="max-w-3xl text-lg leading-8 text-muted-foreground">
-              Michigan usage has often blurred the terms, but a freeway and an expressway are not the same thing. The
-              distinction is central to this concept.
+              A four-lane, limited-access roadway with two through lanes in each direction, a wide future transit and
+              managed-flex reserve, selected at-grade junctions, and grade-separated I-69 and I-96 termini.
             </p>
           </div>
 
-          <div className="mt-10 grid border border-border bg-white md:grid-cols-3">
-            <article className="p-7 sm:p-9">
-              <h3 className="text-xl font-semibold text-foreground">Freeway</h3>
-              <p className="mt-4 leading-7 text-muted-foreground">
-                Full control of access and complete grade separation. Traffic enters only through ramps and
-                interchanges; streets, railroads, trails, and other crossings pass above or below the roadway.
-              </p>
-            </article>
-            <article className="border-y-4 border-[var(--forest)] bg-[color-mix(in_srgb,var(--forest)_8%,white)] p-7 sm:p-9 md:border-x md:border-y-4">
-              <div className="flex items-center gap-3">
-                <Route className="h-6 w-6 text-[var(--forest)]" aria-hidden="true" />
-                <h3 className="text-2xl font-semibold text-[var(--navy)]">Expressway</h3>
-              </div>
-              <p className="mt-4 leading-7 text-foreground">
-                Limited access without complete grade separation. Direct property access is prohibited, while selected
-                roads meet the corridor at carefully designed, signalized or unsignalized at-grade intersections.
-              </p>
-            </article>
-            <article className="p-7 sm:p-9">
-              <h3 className="text-xl font-semibold text-foreground">Stroad</h3>
-              <p className="mt-4 leading-7 text-muted-foreground">
-                A high-speed arterial burdened with driveways, turning conflicts, and continuous commercial frontage.
-                It attempts to provide movement and local access simultaneously and performs both functions poorly.
-              </p>
-              <p className="mt-4 font-semibold text-foreground">The Greenway is not a stroad.</p>
-            </article>
-          </div>
-
-          <div className="mt-8 border-l-4 border-[var(--blue)] bg-white px-6 py-5 text-lg leading-8 text-foreground shadow-sm">
-            Only the I-69 and I-96 termini are conceived as grade-separated interchanges. Major intermediate roads
-            remain selectively permeable through signals, roundabouts, Michigan Lefts, RCUTs, or other
-            context-appropriate intersection forms. A new Red Cedar River bridge and likely railroad flyovers are
-            separate crossing needs, not invitations to convert every intersection into an interchange.
-          </div>
+          <BulletList
+            items={[
+              "Only the I-69 and I-96 termini are conceived as grade-separated interchanges.",
+              "Major intermediate roads remain selectively permeable through signals, roundabouts, Michigan Lefts, RCUTs, or other forms selected for the specific location.",
+              "The Red Cedar River bridge and likely railroad flyovers are separate crossings.",
+            ]}
+          />
         </div>
       </section>
 
@@ -247,23 +350,23 @@ export default function CapitalRegionEasternGreenwayPage() {
                 Corridor geography
               </p>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                A new eastern edge for the Capital Region
+                A New Eastern Edge For The Capital Region
               </h2>
             </div>
             <p className="text-lg leading-8 text-slate-200">
-              The conceptual alignment follows the Woodbury–Shoesmith–Burkley spine and adjoining property lines from
-              I-69 to I-96, east of Haslett and Okemos and west of Williamston. Much of the southern half crosses
-              farmland where no road exists today.
+              The conceptual route follows a north-south alignment along Woodbury, Shoesmith, and Burkley roads and
+              property lines from I-69 to I-96, east of Haslett and Okemos and west of Williamston. Much of the
+              southern half crosses farmland where no road exists today.
             </p>
           </div>
 
           <div className="mt-10">
             <Figure
               src={`${assetRoot}/definitive-route-map.png`}
-              alt="Definitive conceptual route map for the Capital Region Eastern Greenway between I-69 and I-96"
+              alt="Conceptual route map for the Capital Region Eastern Greenway between I-69 and I-96"
               width={2048}
               height={1246}
-              caption="Definitive conceptual route map. Exact alignment, intersection control, environmental impacts, right-of-way, and costs would require formal study. The concept assumes no direct frontage access and permanent conservation controls within the corridor."
+              caption="Conceptual route map. Exact alignment, intersection control, environmental impacts, right-of-way, and costs require formal study. The concept assumes no direct frontage access and permanent conservation controls within the corridor."
             />
           </div>
         </div>
@@ -273,15 +376,15 @@ export default function CapitalRegionEasternGreenwayPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
-              The corridor as a public landscape
+              The Corridor As A Public Landscape
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              More than pavement with amenities
+              How The Corridor Fits Together
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              The Greenway is organized as a sequence of functional zones. The road is one controlled subsystem within
-              a wider environmental and civic corridor, not the organizing purpose to which everything else is added
-              later.
+              The Greenway is organized as a sequence of functional zones. The road functions as one integrated
+              subsystem within a wider environmental and civic corridor whose optional features can be adapted by
+              location.
             </p>
           </div>
 
@@ -291,14 +394,14 @@ export default function CapitalRegionEasternGreenwayPage() {
               alt="Conceptual cross section of the Capital Region Eastern Greenway showing conservation, trail, water management, ha-ha, safety, roadway, and median zones"
               width={1774}
               height={887}
-              caption="Conceptual cross section. Widths illustrate a planning framework and are not final design criteria. The median reserve is not a third through lane; it preserves future flexibility for transit, managed lanes, carpool use, emergency operations, or other needs."
+              caption="Conceptual cross section. The sequence of roadway, recovery, water, trail, landscape, and conservation areas illustrates how the corridor's functions fit together. Dimensions remain subject to engineering and environmental study."
             />
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <article className="border-t-4 border-[var(--forest)] pt-6">
               <Leaf className="h-7 w-7 text-[var(--forest)]" aria-hidden="true" />
-              <h3 className="mt-4 text-xl font-semibold">Conservation and access control</h3>
+              <h3 className="mt-4 text-xl font-semibold">Conservation And Access Control</h3>
               <p className="mt-3 leading-7 text-muted-foreground">
                 Public land, conservation easements, farmland-preservation agreements, development-rights acquisition,
                 and limited-access rights establish a durable green edge without requiring public ownership of every
@@ -307,7 +410,7 @@ export default function CapitalRegionEasternGreenwayPage() {
             </article>
             <article className="border-t-4 border-[var(--blue)] pt-6">
               <Waves className="h-7 w-7 text-[var(--blue)]" aria-hidden="true" />
-              <h3 className="mt-4 text-xl font-semibold">Water and habitat infrastructure</h3>
+              <h3 className="mt-4 text-xl font-semibold">Water And Habitat Infrastructure</h3>
               <p className="mt-3 leading-7 text-muted-foreground">
                 Naturalized ponds, wetlands, bioswales, rain gardens, culverts, and wildlife passages manage runoff and
                 snowmelt while maintaining ecological continuity.
@@ -315,7 +418,7 @@ export default function CapitalRegionEasternGreenwayPage() {
             </article>
             <article className="border-t-4 border-[var(--navy)] pt-6">
               <Route className="h-7 w-7 text-[var(--navy)]" aria-hidden="true" />
-              <h3 className="mt-4 text-xl font-semibold">Movement at several scales</h3>
+              <h3 className="mt-4 text-xl font-semibold">Movement At Several Scales</h3>
               <p className="mt-3 leading-7 text-muted-foreground">
                 Regional traffic, transit, walking, cycling, recreation, and local crossings occupy distinct but
                 connected spaces. The design preserves safety and legibility without turning the corridor into a wall.
@@ -329,36 +432,24 @@ export default function CapitalRegionEasternGreenwayPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-28">
           <Figure
             src={`${assetRoot}/ha-ha-detail.png`}
-            alt="Photorealistic concept detail showing a landscape-facing ha-ha edge between a nonmotorized trail and roadway safety zone"
+            alt="Conceptual landscape-facing Ha-Ha edge between a nonmotorized trail and roadway safety zone"
             width={1698}
             height={926}
-            caption="Conceptual ha-ha detail. The abrupt retaining face is oriented toward the landscape and trail side; from the roadway, the edge recedes into the landform rather than reading as a continuous wall."
+            caption="The landscape-facing “Ha-Ha” is one possible boundary treatment within the larger water, safety, trail, and conservation system."
           />
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
-              Separation without rupture
+              Design Detail
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
-              How a ha-ha works
+              A Landscape-facing “Ha-Ha”
             </h2>
             <div className="mt-6 space-y-5 text-lg leading-8 text-muted-foreground">
               <p>
-                A ha-ha is an abrupt, landscape-integrated vertical edge paired with a ditch or change in grade. It
-                creates a physical boundary while preserving longer sightlines and avoiding continuous fencing or a
-                conventional barrier wall.
-              </p>
-              <p>
-                Here, the visible retaining face addresses the landscape side, discouraging people, deer, pets, and
-                off-road vehicles from entering the traffic zone. The landform funnels movement toward designated
-                crossings and regularly spaced wildlife underpasses.
-              </p>
-              <p>
-                The roadway-side safety and runoff zone remains distinct. Its shallow ditch is shaped to capture water,
-                store snow, and slow or contain an errant vehicle without forming a ramp toward the trail.
-              </p>
-              <p className="font-semibold text-foreground">
-                Ha-has do some of the work normally assigned to fencing and full grade separation through landform,
-                sightline, sound, and behavioral guidance.
+                A “Ha-Ha”—a short, abrupt retaining edge paired with a ditch or change in grade—is one possible boundary
+                tool. Here, its visible face would address the landscape and trail side while the roadway side rises
+                gradually. It could discourage entry and help guide people or animals toward designed crossings while
+                preserving open views.
               </p>
             </div>
           </div>
@@ -370,51 +461,62 @@ export default function CapitalRegionEasternGreenwayPage() {
           <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">
-                History as a design constraint
+                History As A Design Constraint
               </p>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
-                Lansing has already lived both outcomes.
+                Black Lansing And MSU: Same Region, Unequal Result
               </h2>
             </div>
             <div className="space-y-6 text-lg leading-8 text-muted-foreground">
               <p>
-                I-496 cut through Main Street and the heart of Black Lansing, removing homes, businesses, community
-                institutions, and historic landmarks including the Ransom E. Olds mansion. Its costs were borne by a
-                community with little power to alter the state&apos;s preferred alignment.
+                In the 1960s, I-496, also known as the Ransom E. Olds Freeway, cut through Main Street and the heart of
+                Black Lansing, removing homes, businesses, community institutions, and historic landmarks,
+                including—ironically—the Ransom E. Olds mansion. Its costs were borne by a community with little power
+                to alter the state&apos;s preferred alignment.
               </p>
               <p>
-                The proposed Campus Freeway met a different fate. Michigan State University and President John A.
-                Hannah could marshal political influence unavailable to Lansing&apos;s Black neighborhoods. The campus
-                alignment was cancelled; its intended entrance is now the comparatively tranquil, green Trowbridge Road
-                approach.
+                The proposed cross-campus freeway—the eastern half of the same crosstown route, intended to connect
+                where I-496 meets US-127—met a different fate. John A. Hannah, MSU&apos;s president from 1941 to 1969,
+                oversaw the university&apos;s rise to national prominence. In 1971, after sustained student, faculty,
+                neighborhood, and municipal opposition, the MSU Board of Trustees rejected the route and East Lansing
+                withdrew support.
               </p>
               <p>
-                The contrast is not an argument against regional mobility. It is an argument that transportation
-                choices are also choices about power, land, and the future form of communities. The Greenway begins
-                with those consequences rather than treating them as mitigation after a roadway decision has already
-                been made.
+                MSU possessed leverage unavailable to Black Lansing. The university built during Hannah&apos;s presidency
+                controlled a consolidated campus, had a powerful governing board, substantial wealth and political
+                standing, and benefited from the racial and institutional privilege accorded a major public university.
+                Black residents and merchants along Main Street—already constrained by discriminatory housing,
+                lending, and real-estate systems—lacked a comparable institution able to force reconsideration.
+              </p>
+              <p>
+                Transportation choices distribute power as well as movement. The Greenway begins with those
+                consequences in view.
               </p>
             </div>
           </div>
 
           <div className="mt-16 grid gap-8 border-t border-border pt-12 md:grid-cols-2">
             <div>
-              <h3 className="text-2xl font-semibold">Avoiding the all-or-nothing trap</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">Facility Type</p>
+              <h3 className="mt-4 text-2xl font-semibold">Rethinking Michigan&apos;s Road Strategy</h3>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Michigan&apos;s historic preference for either full freeway construction or no meaningful improvement
-                has obscured useful intermediate forms: expressways, super-twos, access-managed bypasses, and selective
-                grade separation. The abandoned US-23 freeway proposal in northeast Lower Michigan illustrates the
-                cost. When federal review required alternatives short of a full freeway, MDOT abandoned the project,
-                leaving the region&apos;s mobility, safety, isolation, and economic disadvantages unresolved.
+                has obscured useful middle forms: expressways, super-twos, access-managed bypasses, and selective grade
+                separation. The Greenway is one example of innovative thinking outside a freeway-or-nothing binary.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold">Designed for today, governed for tomorrow</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest)]">Future Governance</p>
+              <h3 className="mt-4 text-2xl font-semibold">
+                A Design Adaptable To The Needs Of The Community Now And In The Future
+              </h3>
               <p className="mt-4 leading-7 text-muted-foreground">
-                The Greenway is not designed for eventual freeway conversion, but neither is conversion made physically
-                impossible. As with East Beltline, Old 27, Telegraph Road, or M-37, future generations could acquire
-                more right-of-way and add grade separations. What permits or prevents that choice is public will. The
-                present task is to meet present needs without paying now for a freeway the region may never require.
+                The Greenway is designed to meet present needs while preserving room for future transit, managed
+                operations, revised intersection treatments, and other mobility technologies when evidence and funding
+                support them. Future communities retain authority to modify the corridor to address new needs or
+                choices. Later freeway conversion would require new right-of-way, overpasses, ramps, environmental
+                review, funding, and public authorization. The present design directs current investment toward current
+                needs while leaving that future decision open.
               </p>
             </div>
           </div>
@@ -425,14 +527,15 @@ export default function CapitalRegionEasternGreenwayPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--forest-light)]">
-              Read the complete proposal
+              Read The Complete Proposal
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              A practical framework for regional order, not a finished engineering plan.
+              What The White Paper Covers
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-200">
-              The 23-page white paper develops the historical case, corridor concept, access model, conservation
-              strategy, cross section, stakeholder framework, and questions requiring formal study.
+              The revised white paper develops the historical case, corridor concept, access model, known
+              transportation and land-use risks, conservation strategy, cross section, stakeholder framework, and
+              questions requiring formal study.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
