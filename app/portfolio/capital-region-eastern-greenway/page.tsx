@@ -466,6 +466,14 @@ export default function CapitalRegionEasternGreenwayPage() {
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
                 Black Lansing And MSU: Same Region, Unequal Result
               </h2>
+              <Figure
+                src={`${assetRoot}/main-street-logan-pre-496.png`}
+                alt="Historic view north on Logan Street across Main Street and St. Joseph Highway before I-496"
+                width={1940}
+                height={1564}
+                className="mt-8"
+                caption="Logan Street looking north across Main Street and St. Joseph Highway before I-496. Undated photograph published in City Pulse, December 5, 2018, p. 12; the photographer and rights holder are unidentified."
+              />
             </div>
             <div className="space-y-6 text-lg leading-8 text-muted-foreground">
               <p>
