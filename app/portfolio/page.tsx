@@ -25,19 +25,7 @@ export const metadata: Metadata = {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    label: "Product & Platform Strategy",
-    title: "Project Dynamo",
-    description:
-      "An independent proposal for an established North American–based global automaker: a ground-up electric-drive platform with battery-electric and generator-extended energy strategies.",
-    href: "/portfolio/project-dynamo",
-    linkLabel: "Explore the design study",
-    src: "/projects/project-dynamo/estate.png",
-    width: 1672,
-    height: 941,
-    featured: true,
-  },
-  {
-    label: "Regional Planning Concept",
+    label: "Regional Planning Concept · Revised as of August 31, 2026",
     title: "Capital Region Eastern Greenway",
     description:
       "A portfolio white paper proposing an integrated mobility, conservation, and development framework for the eastern edge of Greater Lansing.",
@@ -46,6 +34,7 @@ const portfolioItems: PortfolioItem[] = [
     src: "/projects/capital-region-eastern-greenway/aerial-overview.png",
     width: 1672,
     height: 941,
+    featured: true,
   },
   {
     label: "Essay · August 9, 2026",
